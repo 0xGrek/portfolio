@@ -12,3 +12,18 @@
         left: -10px;
     }
 }
+
+// @mixin before_ellipse {
+//     &:before {
+//         content: '';
+//         position: absolute;
+//         width: 15px;
+//         height: 15px;
+//         color: $main-color;
+//         border-radius: 100%;
+//         background: $main-color;
+//         top: 17%;
+//         left: -23px;
+
+//     }
+// }
