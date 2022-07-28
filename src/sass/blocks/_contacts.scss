@@ -31,10 +31,45 @@
     &__form {
         margin-top: 30px;
         display: grid;
-        grid-template: 45px 190px 45px / repeat(2, 280px);
+        grid-template: 45px 180px 45px / repeat(2, 230px);
         justify-content: space-between;
-        row-gap: 27px;
-    
+        column-gap: 30px;
+
+        label {
+            display: block;
+            position: absolute;
+            height: 18px;
+            padding: 0 8px;
+            top: -9px;
+            left: 25px;
+            background-color: #ffff;
+        }
     }
- 
+    &__input {
+        position: relative;
+        
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0 20px;
+            font-size: 16px;
+        }
+    }
+    &__textarea {
+        grid-column: 1/3;
+        position: relative;
+        margin-top: 30px;
+        textarea {
+            width: 100%;
+            height: 100%;
+            //убррать бегунок винзу
+            resize: none;
+            padding: 20px 20px;
+            font-size: 15px;
+        }
+    }
+    &__btn {
+        margin-top: 80px;
+        border: none;
+    }
 }
