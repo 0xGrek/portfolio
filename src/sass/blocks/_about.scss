@@ -35,15 +35,15 @@
          display: grid;
          grid-template-columns: 40px 240px;
          column-gap: 20px;
-
         }
         &-circle {
             @include before_circle;
             position: relative;
-            padding: 15px 0 0 15px;
-            &::before {
-                top: 0;
-                left: 1px ;
+            padding: 0 15px;
+            &:before {
+                top: -13px;
+                left: -3px;
+            }
             }
         }
         &-text {
@@ -51,4 +51,5 @@
             line-height: 18px;
         }
     }
-}
+
+

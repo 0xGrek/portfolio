@@ -6,24 +6,9 @@
         width: 36px;
         height: 36px;
         border-radius: 100%;
-        background: $main-color;
+        background: linear-gradient(90deg,#825d1a,#ffcc58);
         z-index: -1;
         top: -20%;
         left: -10px;
     }
 }
-
-// @mixin before_ellipse {
-//     &:before {
-//         content: '';
-//         position: absolute;
-//         width: 15px;
-//         height: 15px;
-//         color: $main-color;
-//         border-radius: 100%;
-//         background: $main-color;
-//         top: 17%;
-//         left: -23px;
-
-//     }
-// }

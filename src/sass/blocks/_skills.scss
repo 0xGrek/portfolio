@@ -1,57 +1,77 @@
 .skills {
     padding-top: 125px;
     &__wrapper {
-        margin-top: 125px;
+        margin-top: 100px;
+        padding: 0 100px;
         display: grid;
         grid-template-columns: repeat(4, minmax(100px, 1fr));
         grid-template-rows: repeat(2, minmax(100px, 1fr));
         row-gap: 20px;
-        justify-items: center;
-        align-items: center;
+       
+    
     }
     &__column {
+        display: block;
+        background-color: rgba(50, 50, 55, 1);
+        width: 200px;
+        height: 200px;
+        border: 2px solid $main-color;
+        border-radius: 30px;
+        position: relative;
+        box-shadow: 0px 5px 15px rgba(242, 192, 55, 1);
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+           
+    
+        }
         &-text {
-            margin-top: 10px;
+            margin-top: 150px;
             text-align: center;
             font-weight: 700;
             font-size: 14px;
+            opacity: 0.1;
         }
     }
     &__raitings {
         margin-top: 120px;
         display: grid;
-        grid-template: repeat(2, 75px)/repeat(3,350px);
-        row-gap: 50px;
+        grid-template: repeat(1, 75px)/repeat(3,1fr);
         column-gap: 50px;
+        border: 1px solid #f2c037;
+        padding: 30px 20px;
+        box-shadow: 0px 5px 15px rgba(242, 192, 55, 1);
         &-item {
             display: grid;
             grid-template: 21px 14px/ 200px 35px;
             justify-content: space-between;
             align-content: space-between;
-        
+            
         }
         &-title {
             @include before_circle;
             position: relative;
             padding: 4px 0 0 4px;
+            z-index: 2;
         }
         &-line{
-            width: 350px;
+            width: 300px;
             height: 14px;
-            background: #E8E4DE;
+            background: #7b7a7a;
             border-radius: 4px;
             span {
                 display: block;
                 width: 350px;
                 height: 14px;
-                background: #FFA501;
+                background: linear-gradient(90deg,#825d1a,#ffcc58);
                 border-radius: 4px;
             }
         }
         &-counter {
             font-weight: 700;
             font-size: 17px;
-           
         }
     }
 }
