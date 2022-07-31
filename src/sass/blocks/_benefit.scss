@@ -17,7 +17,7 @@
                     position: absolute;
                     top: -8px;
                     left: 0;
-                    background-color: black;
+                    background-color: $gold-background;
                 }
             }
         }
@@ -31,7 +31,7 @@
                 position: absolute;
                 width: 15px;
                 height: 15px;
-                background: $main-color;
+                background: linear-gradient(90deg,#825d1a,#ffcc58);;
                 border-radius: 100%;
                 left: -7px;
                 top: 50%;
@@ -46,7 +46,7 @@
             position: absolute;
             height: 1px;
             width: 43px;
-            background-color: black;
+            background-color: $gold-background;
             top: 63px;
         }
         &-head {
@@ -72,9 +72,7 @@
                 position: absolute;
                 left: 11px;
                 top: 11px;
-
             }
-            
         }
     }
 }

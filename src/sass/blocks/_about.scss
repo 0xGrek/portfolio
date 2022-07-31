@@ -37,13 +37,11 @@
          column-gap: 20px;
         }
         &-circle {
-            @include before_circle;
             position: relative;
-            padding: 0 15px;
+            padding: 15px 0 0 9px;
+            @include before_circle;
             &:before {
-                top: -13px;
-                left: -3px;
-            }
+                top: 0;
             }
         }
         &-text {
@@ -51,5 +49,5 @@
             line-height: 18px;
         }
     }
-
+}
 
