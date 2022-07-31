@@ -1,7 +1,7 @@
 .promo {
     min-height: 100vh;
     position: relative;
-    // background: url('/src/img/Background.jpg') no-repeat 50%/cover;
+    background: url('../../img/IMG_20180524_070316.jpg') no-repeat 50%/cover;
     padding-top: 250px;
     .container {
         padding-right: 100px;
@@ -14,7 +14,7 @@
     &__btns {
         margin-top: 25px;
         display: flex;
-        width: 270px;
+        width: 250px;
         align-items: center;
         justify-content: space-between;
     }
