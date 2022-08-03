@@ -1,13 +1,19 @@
 .promo {
     min-height: 100vh;
     position: relative;
-    background: url('../../img/IMG_20180524_070316.jpg') no-repeat 50%/cover;
+    background: url('/src/img/photo_2022-08-03_09-31-03.jpg') no-repeat 82%/cover;
     padding-top: 250px;
+    padding-bottom: 250px;
+    .hamburger {
+        &:hover {
+            background-color: $gold_background;
+            
+        }
+    }
     .container {
-        padding-right: 100px;
     }
     &__title {
-        width: 535px;
+        width: 660px;
         margin-top: 10px;
         z-index: 2;
     }
