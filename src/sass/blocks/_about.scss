@@ -27,7 +27,7 @@
     &__text {
         margin-top: 20px;
         font-size: 22px;
-        line-height: 21px;
+        line-height: 30px;
     }
     &__skills {
         display: grid;
@@ -49,8 +49,9 @@
             }
         }
         &-text {
-            font-size: 18px;
-            line-height: 18px;
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 23px;
         }
     }
 }
