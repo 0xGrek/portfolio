@@ -314,7 +314,7 @@
     }
     .promo {
         padding: 200px 0 200px 0;
-        background: url('/src/img/photo_2022-08-03_09-31-03.jpg') no-repeat 63%/cover;
+        background: url('../../img/111111111111.HEIC.jpg') no-repeat 63%/cover;
         &__link {
             font-size: 12px;
         }
@@ -417,9 +417,7 @@
             margin-top: 40px;
             row-gap: 20px;
             grid-template-columns: repeat(auto-fit, 140px);
-  
         }
-
         &__raitings {
             margin: 40px 5px 20px 5px;
             &-line {
@@ -427,6 +425,14 @@
             }
             &-item {
                 grid-template-columns: 200px 37px;
+            }
+            &-title {
+                &:before {
+                    width: 25px;
+                    height: 25px;
+                    top: 3%;
+                    left: -4px;
+                }
             }
         }
         &__column {

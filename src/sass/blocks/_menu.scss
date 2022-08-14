@@ -86,16 +86,16 @@
             text-decoration: none;
         }
     }
-    &__social {
-        position: absolute;
-        bottom: 150px;
-        width: 90px;
-        left: 125px;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    // &__social {
+    //     position: absolute;
+    //     bottom: 150px;
+    //     width: 90px;
+    //     left: 125px;
+    //     transform: translateX(-50%);
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
     &__overlay {
         position: fixed;
         top: 0;

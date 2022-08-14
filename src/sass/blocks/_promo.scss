@@ -1,15 +1,11 @@
 .promo {
     min-height: 100vh;
     position: relative;
-    background: url('/src/img/111111111111.HEIC.jpg') no-repeat 82%/cover;
+    background: url('../../img/111111111111.HEIC.jpg') no-repeat 82%/cover ;
     padding-top: 250px;
     padding-bottom: 250px;
-    opacity: 0.7;
+    // opacity: 0.7;
     .hamburger {
-        &:hover {
-            background-color: $gold_background;
-            
-        }
     }
     .container {
     }
