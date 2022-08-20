@@ -4,11 +4,11 @@ const   hamburger = document.querySelector ('.hamburger'),
 
 hamburger.addEventListener('click', () => {
     menu.classList.add('active');
-})
+});
 
 closeElem.addEventListener('click', () => {
     menu.classList.remove('active');
-})
+});
 
 
 const counters = document.querySelectorAll('.skills__raitings-counter'),
@@ -17,10 +17,9 @@ const counters = document.querySelectorAll('.skills__raitings-counter'),
 counters.forEach( (item, i) => {
     lines [i].style.width = item.innerHTML;
 
-
-
-
 });
+
+
 
 
 

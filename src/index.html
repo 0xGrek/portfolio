@@ -10,6 +10,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Primary Meta Tags -->
     <title>Web-developer</title>
     <meta name="title" content="Web-developer">
@@ -360,15 +361,15 @@
 
         <div class="portfolio__wrapper">
             <a href="/project/WebStudio/" class="portfolio__item" target="_blank" rel="noreferrer noopener">
-                <img src="img/works/mac.jpg" alt="uber">
+                <img src="img/works/mac.jpg" alt="WebStudio">
             </a>
             <a href="https://www.uber.ivanenko.dp.ua/" class="portfolio__item" target="_blank" rel="noreferrer noopener">
-                <img src="img/works/uber.jpg" alt="smartRun"> 
+                <img src="img/works/uber.jpg" alt="Uber"> 
             </a>
-            <a href="/project/SmartRun/" class="portfolio__item" target="_blank" rel="noreferrer noopener">
-                <img src="img/works/pulse.jpg" alt="Intern">
+            <a href="https://www.smart.ivanenko.dp.ua/" class="portfolio__item" target="_blank" rel="noreferrer noopener">
+                <img src="img/works/pulse.jpg" alt="SmartRun">
             </a>
-            <a href="#" class="portfolio__item vertical">
+            <a href="/project/SmartRun/" class="portfolio__item vertical">
                 <img src="img/works/plans.jpg" alt="Intern">
             </a>
             <a href="#" class="portfolio__item">
@@ -416,7 +417,7 @@
                 </div>
                 <form action="#" class="contacts__form">
                     <div class="contacts__input">
-                        <input required name="name" id="name" type="text">
+                        <input required minlength="2" name="name" id="name" type="text">
                         <label for="name">Your name</label>
                     </div>
                     <div class="contacts__input">
@@ -425,7 +426,7 @@
                     </div>
 
                     <div class="contacts__textarea">
-                        <textarea name="text" id="text"></textarea>
+                        <textarea minlength="10" name="text" id="text"></textarea>
                         <label for="text">Your message</label>
                     </div>
                         <div class="contacts__triggers">
@@ -444,5 +445,8 @@
 </section> 
 
     <script src="js/script.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    
+    
 </body>
 </html>
