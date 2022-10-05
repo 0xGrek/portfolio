@@ -6,10 +6,27 @@
         grid-template: repeat(2, 280px) / repeat(4, 280px);
         grid-auto-rows: 280px;
         gap: 15px;
-        a{
+        a {
             border: 2px solid #f2c037;
             box-shadow: 0 5px 15px #f2c037;
             border-radius: 30px;
+            // position: relative;
+            // &:before {
+            //     content: "";
+            //     position: absolute;
+            //     right: 20px;
+            //     top: 20px;
+            //     width: 15px;
+            //     height: 15px;
+            //     border-radius: 100%;
+            //     border: 2px solid #825d1a;
+            //     transition: all 0.6s;
+            // }
+            &:hover {
+                &:before {
+                    background-color: #ffcc58;
+                }
+            }
             img {
                 border-radius: 30px;
             }
@@ -25,10 +42,13 @@
     }
     &__item {
         transition: all 0.6s;
+        &-active {
+            color: red;
+        }
         img {
-           width: 100%;
-           height: 100%;
-           object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         &:hover {
             transform: scale(1.05);

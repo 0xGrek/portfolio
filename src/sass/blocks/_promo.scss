@@ -1,7 +1,7 @@
 .promo {
     min-height: 100vh;
     position: relative;
-    background: url('../../img/111111111111.HEIC.jpg') no-repeat 82%/cover ;
+    background: url("../../img/IMG_8803.HEIC-min.jpg") no-repeat 82% / cover;
     padding-top: 250px;
     padding-bottom: 250px;
     // opacity: 0.7;
@@ -28,6 +28,6 @@
         &:hover {
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
             cursor: pointer;
-         }
+        }
     }
 }

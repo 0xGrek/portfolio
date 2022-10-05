@@ -1,13 +1,12 @@
-
 @mixin before_circle {
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         width: 36px;
         height: 36px;
         border-radius: 100%;
-        background: linear-gradient(90deg,#825d1a,#ffcc58);
+        background: linear-gradient(90deg, #825d1a, #ffcc58);
         top: -20%;
         left: -10px;
     }

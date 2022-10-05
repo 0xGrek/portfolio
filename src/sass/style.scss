@@ -1,9 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,700;1,500&display=swap');
-@import 'base/variables';
-@import 'base/mixins';
+@font-face {
+    font-family: reg;
+    src: url(../../fonts/SourceSerifPro-Regular.ttf);
+    font-weight: 400;
+}
+
+@import "base/variables";
+@import "base/mixins";
 
 * {
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: reg;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,19 +29,17 @@ p {
     margin: 0;
 }
 body {
-   background-color: $background;
-   
+    background-color: $background;
 }
+@import "blocks/promo";
+@import "blocks/title";
+@import "blocks/buttons";
+@import "blocks/sidepanel";
+@import "blocks/menu";
+@import "blocks/about";
+@import "blocks/benefit";
+@import "blocks/skills";
+@import "blocks/portfolio";
+@import "blocks/contacts";
 
-@import 'blocks/promo';
-@import 'blocks/title';
-@import 'blocks/buttons';
-@import 'blocks/sidepanel';
-@import 'blocks/menu';
-@import 'blocks/about';
-@import 'blocks/benefit';
-@import 'blocks/skills';
-@import 'blocks/portfolio';
-@import 'blocks/contacts';
-
-@import 'blocks/media';
+@import "blocks/media";

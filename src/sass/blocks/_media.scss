@@ -24,18 +24,18 @@
             grid-auto-rows: 280px;
             justify-content: space-between;
             row-gap: 30px;
-            .horizontal, .vertical {
+            .horizontal,
+            .vertical {
                 grid-row: unset;
                 grid-column: unset;
             }
         }
-    } 
+    }
     .contacts {
         &__wrapper {
             grid-template-columns: 320px 500px;
         }
     }
-   
 }
 
 @media (max-width: 1200px) {
@@ -47,17 +47,17 @@
     }
     .about {
         &__wrapper {
-             grid-template-columns: 300px 585px;
-             column-gap: 35px;
-             row-gap: 30px;
+            grid-template-columns: 300px 585px;
+            column-gap: 35px;
+            row-gap: 30px;
         }
         &__skills {
             grid-template-columns: repeat(2, 275px);
             grid-template-rows: repeat(2, minmax(50px, auto));
-            column-gap: 20px; 
+            column-gap: 20px;
             &-item {
                 grid-template-columns: 25px 235px;
-                column-gap: 20px
+                column-gap: 20px;
             }
         }
     }
@@ -78,12 +78,13 @@
             grid-auto-rows: 250px;
             justify-content: space-around;
             row-gap: 30px;
-            .horizontal, .vertical {
+            .horizontal,
+            .vertical {
                 grid-row: unset;
                 grid-column: unset;
             }
         }
-    } 
+    }
     .contacts {
         &__wrapper {
             grid-template-columns: 330px 500px;
@@ -94,7 +95,6 @@
             grid-template-columns: repeat(auto-fit, 230px);
             justify-content: space-between;
             row-gap: 15px;
-            
         }
     }
 }
@@ -110,29 +110,29 @@
         &__wrapper {
             grid-template-columns: 300px 360px;
             row-gap: 15px;
-       }
-       &__text {
-        font-size: 15px;
-       }
-       &__skills {
-        grid-template-columns: 350px;
-        grid-auto-rows: minmax(50px, auto); 
-        &-item {
-            grid-template-columns: 25px 300px;
         }
-        
-        &-circle {
-            padding: 12px 0 0 3px;
-            &::before {
-                width: 30px;
-                height: 30px;
+        &__text {
+            font-size: 15px;
+        }
+        &__skills {
+            grid-template-columns: 350px;
+            grid-auto-rows: minmax(50px, auto);
+            &-item {
+                grid-template-columns: 25px 300px;
+            }
+
+            &-circle {
+                padding: 12px 0 0 3px;
+                &::before {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &-text {
+                font-size: 13px;
+                margin-top: 5px;
             }
         }
-        &-text {
-            font-size: 13px;
-            margin-top: 5px;
-        }
-       }
     }
     .title {
         &__fz14 {
@@ -164,7 +164,6 @@
             &-item {
                 grid-template-columns: 150px 30px;
                 row-gap: 50px;
-                
             }
             &-title {
                 &:before {
@@ -183,19 +182,17 @@
     }
     .contacts {
         &__wrapper {
-            grid-template-columns: 250px 380px;   
+            grid-template-columns: 250px 380px;
         }
         &__form {
-            grid-template-columns: auto ;
+            grid-template-columns: auto;
             grid-template-rows: 45px 150px 35px;
         }
         &__textarea {
             margin-top: 15px;
         }
     }
-    
 }
-
 
 @media (max-width: 768px) {
     .container {
@@ -203,7 +200,7 @@
     }
     .promo {
         &__title {
-            width: 300px;
+            max-width: 300px;
         }
         &__link {
             font-size: 15px;
@@ -212,7 +209,6 @@
     .title {
         &__fz14 {
             font-size: 18px;
-
         }
         &__fz16 {
             font-size: 13px;
@@ -230,7 +226,8 @@
         margin-top: 15px;
     }
     .btn {
-        &__about, &__portfolio {
+        &__about,
+        &__portfolio {
             padding: 5px 15px;
         }
     }
@@ -247,7 +244,6 @@
             margin-top: 20px;
             &-item {
                 grid-template-columns: 40px 200px;
-              
             }
         }
     }
@@ -269,8 +265,6 @@
         }
     }
     .skills {
-        &__wrapper {
-        }
         &__raitings {
             margin-top: 80px;
             grid-template: repeat(3, 75px) / repeat(1, 1fr);
@@ -291,7 +285,6 @@
                 }
             }
         }
-
     }
     .price {
         &__wrapper {
@@ -301,11 +294,10 @@
     }
     .contacts {
         &__wrapper {
-            grid-template: 340px auto auto/1fr; 
+            grid-template: 340px auto auto/1fr;
         }
     }
 }
-
 
 @media (max-width: 576px) {
     .container {
@@ -313,8 +305,15 @@
         padding: 0 10px;
     }
     .promo {
+        &__title {
+            max-width: 240px;
+        }
+        &__btns {
+            margin-top: 35px;
+            width: 170px;
+        }
         padding: 200px 0 200px 0;
-        background: url('../../img/111111111111.HEIC.jpg') no-repeat 63%/cover;
+        background: url("../../img/IMG_8803.HEIC-min.jpg") no-repeat 63% / cover;
         &__link {
             font-size: 12px;
         }
@@ -322,15 +321,15 @@
             height: 20px;
             span {
                 width: 23px;
-               &.long {
-                width: 26px;
-               }
+                &.long {
+                    width: 26px;
+                }
             }
         }
     }
     .menu {
         &__block {
-        width: 180px;
+            width: 180px;
         }
         &__link {
             font-size: 18px;
@@ -346,7 +345,6 @@
         }
         &__fz36 {
             font-size: 17px;
-         
         }
         &__fz48 {
             font-size: 20px;
@@ -361,10 +359,7 @@
             }
         }
     }
-    .promo__btns {
-        margin-top: 35px;
-        width: 190px;
-    }
+
     .about {
         padding-top: 40px;
         &__wrapper {
@@ -377,7 +372,6 @@
             grid-template-columns: 1fr;
             &-item {
                 grid-template-columns: 40px 1fr;
-                
             }
             &-text {
                 font-size: 13px;
@@ -456,7 +450,8 @@
             grid-template-columns: repeat(auto-fit, 230px);
             row-gap: 15px;
         }
-        &__type, &__count {
+        &__type,
+        &__count {
             font-size: 12px;
         }
         &__descr {
@@ -471,12 +466,11 @@
             grid-template-rows: 45px 45px 140px;
         }
         &__input {
-           display: grid;
-           grid-column: 1/3;
+            display: grid;
+            grid-column: 1/3;
         }
         &__policy {
             font-size: 10px;
         }
     }
 }
-
