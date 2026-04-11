@@ -125,7 +125,7 @@ const categoryColors: Record<string, string> = {
     role="dialog"
     aria-modal="true"
     aria-label={t(lang, project.titleKey as any)}
-    style="display: none; position: fixed; inset: 0; z-index: 9999;"
+    style="display: none; position: fixed; inset: 0; z-index: 9999; display: none; align-items: center; justify-content: center; padding: 1rem;"
   >
     <!-- Backdrop -->
     <div
@@ -134,27 +134,23 @@ const categoryColors: Record<string, string> = {
       data-close
     ></div>
 
-    <!-- Modal panel -->
+    <!-- Modal content — flex child, centered by parent -->
     <div
-      class="modal-panel"
-      style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1rem; pointer-events: none;"
+      class="modal-content"
+      style="position: relative; z-index: 1; width: 100%; max-width: 42rem; max-height: 90vh; overflow-y: auto; border-radius: 1rem; background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 25px 60px rgba(0,0,0,0.5);"
     >
-      <div
-        class="modal-content"
-        style="position: relative; pointer-events: all; width: 100%; max-width: 42rem; max-height: 90vh; overflow-y: auto; border-radius: 1rem; background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 25px 60px rgba(0,0,0,0.5);"
+      <!-- Close button -->
+      <button
+        class="modal-close-btn"
+        data-close
+        aria-label="Close modal"
+        style="position: absolute; top: 1rem; right: 1rem; z-index: 10; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--border); background-color: var(--bg-secondary); color: var(--text-secondary); font-size: 1.125rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.15s, border-color 0.15s;"
       >
-        <!-- Close button -->
-        <button
-          class="modal-close-btn"
-          data-close
-          aria-label="Close modal"
-          style="position: sticky; top: 0; float: right; margin: 1rem 1rem 0 0; z-index: 10; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--border); background-color: var(--bg-secondary); color: var(--text-secondary); font-size: 1.125rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.15s, border-color 0.15s;"
-        >
-          &times;
-        </button>
+        &times;
+      </button>
 
-        <!-- Inner content with padding -->
-        <div style="padding: 1.5rem 1.75rem 1.75rem; clear: right;">
+      <!-- Inner content with padding -->
+      <div style="padding: 1.5rem 1.75rem 1.75rem;">
           <!-- Category dot + title row -->
           <div style="display: flex; align-items: center; gap: 0.625rem; margin-bottom: 1rem;">
             <div
