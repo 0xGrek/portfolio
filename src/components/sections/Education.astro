@@ -40,7 +40,7 @@ const upcomingCerts = [
       {education.map((edu, index) => (
         <div
           class={`edu-card relative p-5 rounded-xl flex flex-col card-hover reveal ${edu.noteKey ? 'swat-card' : ''}`}
-          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.08}s;`}
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.08}s; box-shadow: var(--shadow-sm);`}
         >
           <!-- Icon + status -->
           <div class="flex items-start justify-between mb-4">
