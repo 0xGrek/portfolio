@@ -33,7 +33,7 @@ export const en = {
   about_p1:
     'I started in law enforcement and economic security — investigating financial crimes and understanding how fraud works from the inside. In 2022, I transitioned into tech, teaching myself everything from HTML/CSS to Python, TypeScript, and blockchain development.',
   about_p2:
-    'By 2023 I was building serious crypto infrastructure: CEX withdrawal scripts, multi-chain wallet managers, airdrop bots, NFT minters — 101 tools across 13 categories before AI-assisted coding was a thing. Real engineering, real problems, real solutions.',
+    'By March 2023 I was building serious crypto infrastructure: CEX withdrawal scripts, multi-chain wallet managers, airdrop bots, NFT minters — 101 tools across 13 categories before AI-assisted coding was a thing. Real engineering, real problems, real solutions.',
   about_p3:
     'Today I combine that operational depth with AI orchestration and on-chain analytics. I build multi-agent systems, track wallets and token flows, research protocol vulnerabilities, and help businesses automate what takes humans hours.',
   about_unique:
