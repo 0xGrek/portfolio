@@ -283,12 +283,11 @@ const categoryColors: Record<string, string> = {
       if (!modal) return;
       closeModal(true); // close any open one instantly
       currentModal = modal;
-      // Save scroll position and lock body without triggering scroll reset
-      var scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = '-' + scrollY + 'px';
-      document.body.style.left = '0';
-      document.body.style.right = '0';
+      // Lock scroll on <html> to avoid creating a new containing block for
+      // position:fixed children (setting body position:fixed would offset the
+      // modal off-screen when the page is scrolled).
+      modal._savedScrollY = window.scrollY;
+      document.documentElement.style.overflow = 'hidden';
       document.body.classList.add('modal-open');
       modal.style.display = 'block';
       var content = modal.querySelector('.modal-content');
