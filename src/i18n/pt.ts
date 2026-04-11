@@ -142,9 +142,9 @@ export const pt = {
 
   proj_toolkit_title: 'Toolkit Cripto — 101 Ferramentas',
   proj_toolkit_desc:
-    '101 ferramentas de automação criadas antes da era do vibe-coding. Scripts de levantamento CEX (9 exchanges), geradores de carteiras multi-chain (6 chains), coletores de tokens (20+ redes EVM), claimers de airdrops e bots de farming de protocolos.',
+    '101 ferramentas de automação para DeFi, airdrops e NFTs — criadas quando a maioria não tinha software',
   proj_toolkit_long:
-    'O toolkit completo criado entre 2023 e 2024 — antes de a IA tornar isso fácil. 101 ferramentas em 13 categorias: automação CEX API para Binance, OKX, Bybit, Bitget, CoinEx, Gate e outros; geradores de carteiras multi-chain para EVM, Solana, Bitcoin (Taproot/BRC-20), TON, SUI e Aptos; coletores de tokens para 20+ redes EVM; verificadores e claimers de elegibilidade para airdrops; bots de minting de NFT; scripts sniper para guerras de gás; farming de telemóveis Solana via ADB; automação de browser com ZennoPoster (21+ projetos) e Browser Automation Studio. Engenharia real — não código gerado.',
+    'Construídas entre 2023-2024, antes da programação assistida por IA se tornar comum. Estas ferramentas davam-nos vantagem competitiva: farmámos airdrops em escala (LayerZero, Arbitrum, zkSync), mintámos NFTs mais rápido que os concorrentes com scripts de gas war, e automatizámos interações com protocolos DeFi em mais de 10 blockchains. O toolkit inclui geradores de carteiras (6 redes), coletores de tokens (15+ redes EVM), automação de levantamentos de exchanges (9 exchanges via ccxt), farming de Solana via ADB e automação de browser com ZennoPoster e BAS. Quando outros clicavam botões manualmente, nós tínhamos software.',
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Competências',
