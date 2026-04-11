@@ -1,0 +1,90 @@
+---
+import { t } from '../../i18n/index';
+import type { Lang } from '../../i18n/index';
+import { experience } from '../../data/experience';
+import SectionTitle from '../ui/SectionTitle.astro';
+import TechTag from '../ui/TechTag.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="experience" class="py-20" style="background-color: var(--bg-secondary);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle title={t(lang, 'experience_title')} />
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div
+        class="absolute left-4 sm:left-6 top-0 bottom-0 w-px"
+        style="background-color: var(--border);"
+      ></div>
+
+      <div class="space-y-10">
+        {experience.map((exp, index) => (
+          <div class="relative pl-12 sm:pl-16">
+            <!-- Timeline dot -->
+            <div
+              class="absolute left-2 sm:left-4 top-1.5 w-5 h-5 rounded-full border-2 flex items-center justify-center"
+              style="background-color: var(--bg); border-color: var(--accent);"
+            >
+              <div class="w-2 h-2 rounded-full" style="background-color: var(--accent);"></div>
+            </div>
+
+            <!-- Card -->
+            <div
+              class="p-5 sm:p-6 rounded-xl"
+              style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+            >
+              <!-- Header row -->
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                <div>
+                  <h3 class="text-lg font-bold" style="color: var(--text);">
+                    {t(lang, exp.titleKey as any)}
+                  </h3>
+                  <p class="text-sm font-medium" style="color: var(--accent);">
+                    {t(lang, exp.companyKey as any)}
+                  </p>
+                </div>
+                <div class="text-right shrink-0">
+                  <p class="text-sm font-mono" style="color: var(--text-secondary);">
+                    {t(lang, exp.periodKey as any)}
+                  </p>
+                  <p class="text-xs" style="color: var(--text-secondary);">
+                    {t(lang, exp.locationKey as any)}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <p class="text-sm leading-relaxed mb-4" style="color: var(--text-secondary);">
+                {t(lang, exp.descriptionKey as any)}
+              </p>
+
+              <!-- Bullet points -->
+              <ul class="space-y-1.5 mb-4">
+                {exp.bullets.map((bulletKey) => (
+                  <li class="flex items-start gap-2 text-sm" style="color: var(--text-secondary);">
+                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background-color: var(--accent);"></span>
+                    {t(lang, bulletKey as any)}
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Tech tags -->
+              <div class="flex flex-wrap gap-2">
+                {exp.tags.map((tag) => (
+                  <TechTag label={tag} />
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

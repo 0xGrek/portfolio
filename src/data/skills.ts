@@ -1,0 +1,105 @@
+export interface SkillCategory {
+  id: string;
+  titleKey: string;
+  skills: string[];
+}
+
+export const skillCategories: SkillCategory[] = [
+  {
+    id: 'blockchain',
+    titleKey: 'skills_blockchain',
+    skills: [
+      'EVM (Ethereum, Polygon, Arbitrum, Optimism, Base)',
+      'Solana',
+      'Bitcoin (Ordinals, Taproot, BRC-20)',
+      'SUI',
+      'Aptos',
+      'TON',
+      'StarkNet',
+      'Berachain',
+      'DeFi Protocols (50+)',
+      'NFTs & Minting',
+      'On-chain Analytics',
+      'Arbitrage Strategies',
+      'Wallet Clustering',
+      'Protocol Exploit Research',
+    ],
+  },
+  {
+    id: 'automation',
+    titleKey: 'skills_automation',
+    skills: [
+      '101 tools built',
+      'CEX API (ccxt, 9 exchanges)',
+      'ZennoPoster (advanced)',
+      'Browser Automation Studio (BAS)',
+      'Playwright',
+      'Puppeteer',
+      'Dolphin Anty',
+      'AdsPower',
+      'Telegram Bots (python-telegram-bot, Telethon)',
+      'Web Scraping (httpx, BeautifulSoup)',
+      'ADB / Mobile Automation',
+      'Multi-account Infrastructure (1000+)',
+    ],
+  },
+  {
+    id: 'ai',
+    titleKey: 'skills_ai',
+    skills: [
+      'Multi-agent Systems',
+      'Claude Code (daily)',
+      'MCP Protocol',
+      'Prompt Engineering',
+      'LLM Integration (Claude, Gemini, GPT)',
+      'AI Orchestration',
+      'Groq Whisper (speech-to-text)',
+      'AI Summarization Pipelines',
+      'LLM Routing & Classification',
+    ],
+  },
+  {
+    id: 'dev',
+    titleKey: 'skills_dev',
+    skills: [
+      'Python',
+      'JavaScript / TypeScript',
+      'React 19',
+      'Flask',
+      'Supabase',
+      'PostgreSQL',
+      'SQLAlchemy',
+      'Pydantic',
+      'Vercel',
+      'Render.com',
+      'asyncio',
+      'httpx',
+      'REST APIs',
+      'Git',
+    ],
+  },
+  {
+    id: 'security',
+    titleKey: 'skills_security',
+    skills: [
+      'Web3 Vulnerability Research',
+      'Casino Exploit Analysis',
+      'Airdrop Abuse Vector Identification',
+      'On-chain Forensics',
+      'Wallet Clustering & Attribution',
+      'Suspicious Flow Detection',
+      'Financial Crime Investigation (law enforcement background)',
+      'KYC / AML Awareness',
+    ],
+  },
+  {
+    id: 'languages',
+    titleKey: 'skills_languages',
+    skills: [
+      'Ukrainian (Native)',
+      'Russian (Native)',
+      'English (Professional — B2/C1)',
+      'Portuguese (A2)',
+    ],
+  },
+];

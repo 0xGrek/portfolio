@@ -1,0 +1,204 @@
+export const pt = {
+  // ── Meta ──────────────────────────────────────────────
+  meta_title: 'Serhii Ivanenko — Engenheiro Web3 & Automação com IA',
+  meta_description:
+    'Ex-agente de segurança económica, agora especialista Web3. 101 ferramentas de automação, forense cripto, orquestração de IA. Baseado em Lisboa, Portugal.',
+  meta_keywords:
+    'conformidade cripto Lisboa, forense blockchain Portugal, AML cripto Europa, engenheiro automação Web3, analista on-chain',
+
+  // ── Nav ───────────────────────────────────────────────
+  nav_about: 'Sobre',
+  nav_experience: 'Experiência',
+  nav_projects: 'Projetos',
+  nav_skills: 'Competências',
+  nav_education: 'Formação',
+  nav_blog: 'Blog',
+  nav_contact: 'Contacto',
+  nav_cv: 'Descarregar CV',
+
+  // ── Hero ──────────────────────────────────────────────
+  hero_greeting: 'Olá, sou',
+  hero_name: 'Serhii Ivanenko',
+  hero_handle: '0xGrek',
+  hero_title: 'Engenheiro Web3 & Automação com IA',
+  hero_subtitle:
+    'Ex-agente de segurança económica, agora especialista Web3. 101 ferramentas de automação em 10+ blockchains. Baseado em Lisboa, disponível para trabalho remoto em todo o mundo.',
+  hero_cta_projects: 'Ver Projetos',
+  hero_cta_contact: 'Contactar',
+  hero_available: 'Disponível para oportunidades',
+  hero_location: 'Lisboa, Portugal',
+
+  // ── About ─────────────────────────────────────────────
+  about_title: 'Sobre Mim',
+  about_p1:
+    'Comecei nas forças de segurança e na segurança económica — a investigar crimes financeiros e a perceber como funciona a fraude por dentro. Em 2022, mudei para tecnologia, aprendendo tudo por conta própria, de HTML/CSS a Python, TypeScript e desenvolvimento blockchain.',
+  about_p2:
+    'Em 2023, já construía infraestrutura cripto a sério: scripts de levantamento CEX, gestores de carteiras multi-chain, bots de airdrops, minters de NFT — 101 ferramentas em 13 categorias antes da era do coding assistido por IA. Engenharia real, problemas reais, soluções reais.',
+  about_p3:
+    'Hoje, combino essa profundidade operacional com orquestração de IA e análise on-chain. Construo sistemas multi-agente, monitorizo carteiras e fluxos de tokens, investigo vulnerabilidades de protocolos e ajudo empresas a automatizar o que leva horas a humanos.',
+  about_unique:
+    'O que me diferencia: já estive dos dois lados — como investigador e como construtor. Essa perspetiva dupla é rara.',
+
+  // ── Stats ─────────────────────────────────────────────
+  stat_tools: '101',
+  stat_tools_label: 'Ferramentas de automação criadas',
+  stat_chains: '10+',
+  stat_chains_label: 'Blockchains cobertos',
+  stat_years: '3+',
+  stat_years_label: 'Anos em Web3',
+  stat_exchanges: '9',
+  stat_exchanges_label: 'Exchanges CEX automatizadas',
+
+  // ── Experience ────────────────────────────────────────
+  experience_title: 'Experiência',
+
+  exp_onchain_title: 'Analista On-Chain',
+  exp_onchain_company: 'Independente',
+  exp_onchain_period: '2025 – Presente',
+  exp_onchain_location: 'Remoto',
+  exp_onchain_desc:
+    'Monitorização de carteiras em ETH, Polygon e Solana. Análise de manipulação de tokens, rastreamento de fluxos suspeitos em CEX, e investigação de vetores de exploração de protocolos usando Arkham, Nansen, DeBank e BubbleMaps.',
+  exp_onchain_b1: 'Construiu um sistema de monitorização multi-chain de 35 carteiras com alertas Telegram em tempo real',
+  exp_onchain_b2: 'Analisou padrões de manipulação de tokens e fluxos suspeitos de levantamentos CEX',
+  exp_onchain_b3: 'Rastreou clusters de carteiras e identificou padrões de abuso em mecânicas de airdrops',
+  exp_onchain_b4: 'Investigou vetores de exploração de protocolos com base em experiência operacional em 50+ protocolos DeFi',
+
+  exp_ai_title: 'Programador de Automação com IA',
+  exp_ai_company: 'Freelance',
+  exp_ai_period: '2024 – Presente',
+  exp_ai_location: 'Lisboa, Portugal',
+  exp_ai_desc:
+    'Sistemas de orquestração de IA multi-agente, ecossistemas de bots Telegram e agregação de dados imobiliários. Engenharia diária em Claude Code como ambiente principal.',
+  exp_ai_b1: 'Construiu um orquestrador de IA com 8 agentes e despachante LLM para classificação automática de conteúdo do Telegram',
+  exp_ai_b2: 'Criou um ecossistema de 11 bots Telegram para rastreamento de vida, fitness, planeamento e transcrição YouTube',
+  exp_ai_b3: 'Desenvolveu um agregador imobiliário que raspa 4 portais portugueses — 12.000+ anúncios com deteção de fraude',
+  exp_ai_b4: 'Construiu um bot de digest (Telethon) que gera resumos de IA a partir do histórico de canais por agendamento',
+
+  exp_crypto_title: 'Operador Cripto & Engenheiro de Automação',
+  exp_crypto_company: 'Independente',
+  exp_crypto_period: '2023 – 2024',
+  exp_crypto_location: 'Remoto',
+  exp_crypto_desc:
+    'Construiu e operou 100+ ferramentas de automação em EVM, Solana, Bitcoin, TON, SUI, Aptos e StarkNet. Geriu infraestrutura de 1.000+ contas. Executou estratégias de arbitragem CEX/DEX e farming de protocolos.',
+  exp_crypto_b1: 'Construiu 50+ ferramentas: minters de NFT, scripts para guerras de gás, claimers de airdrops',
+  exp_crypto_b2: 'Automação CEX para 9 exchanges (Binance, OKX, Bybit, Bitget, CoinEx, Gate) via Python/ccxt',
+  exp_crypto_b3: 'Ferramentas multi-chain: geradores de carteiras (6 chains), coletores de tokens (15+ EVM), limpadores de contas',
+  exp_crypto_b4: 'Geriu infraestrutura de 1.000+ contas com browsers anti-deteção (Dolphin Anty, AdsPower)',
+  exp_crypto_b5: 'Executou arbitragem: spreads CEX/DEX (8+ exchanges), arb de taxa de financiamento, mercados de previsão (Polymarket, Kalshi)',
+  exp_crypto_b6: 'Descobriu e explorou vulnerabilidades em plataformas de casino Web3 — individualmente e em equipas',
+
+  exp_freelance_title: 'Programador Web',
+  exp_freelance_company: 'Freelancer.com',
+  exp_freelance_period: '2022 – Presente',
+  exp_freelance_location: 'Lisboa, Portugal',
+  exp_freelance_desc:
+    'Desenvolvimento web full-stack. Criou PWAs, landing pages e aplicações web. Evoluiu de HTML/CSS/JS para React, TypeScript e Supabase.',
+  exp_freelance_b1: 'Completou cursos de desenvolvimento web (Udemy, 2022), criou portfólio e landing pages',
+  exp_freelance_b2: 'Evoluiu de HTML/CSS/JS para full-stack: JavaScript, TypeScript, React, Python',
+  exp_freelance_b3: 'Criou um jogo de Máfia multijogador como PWA (React 19, TypeScript, Zustand, Supabase), publicado no Vercel',
+
+  // ── Projects ──────────────────────────────────────────
+  projects_title: 'Projetos',
+  projects_subtitle: 'Trabalho selecionado — sistemas em produção, não demos.',
+  project_tech: 'Stack Tecnológico',
+  project_view: 'Ver Detalhes',
+  project_close: 'Fechar',
+  project_screenshots: 'Capturas de Ecrã',
+  project_video: 'Vídeo Demo',
+
+  proj_mafia_title: 'Jogo Máfia — Controlador para Anfitrião',
+  proj_mafia_desc:
+    'PWA completa para organizar sessões de Máfia ao vivo. 17 papéis, 3 facções, 16 cartas de artefactos, sincronização em tempo real na nuvem. Inclui simulador Monte Carlo para equilíbrio do jogo.',
+  proj_mafia_long:
+    'Uma PWA de produção criada para organizar sessões ao vivo de Máfia com amigos. O motor do jogo é determinístico: 17 papéis únicos, 3 facções e 16 cartas de artefactos que modificam o estado do jogo de formas complexas. O estado em tempo real é sincronizado via Supabase para que vários dispositivos possam participar simultaneamente. O simulador Monte Carlo executa 1.000 jogos simulados para validar o equilíbrio de papéis. Publicado no Vercel com suporte completo offline.',
+
+  proj_realty_title: 'Portugal Realty — Agregador Imobiliário',
+  proj_realty_desc:
+    'Raspa 4 portais imobiliários portugueses, elimina duplicados em 12.000+ anúncios, deteta relistagens fraudulentas e fornece calculadora de hipoteca com regras fiscais portuguesas de 2026.',
+  proj_realty_long:
+    'Criado por necessidade real — encontrar habitação em Lisboa é difícil. O agregador raspa o Idealista, Imovirtual, Remax e Era em simultâneo, elimina duplicados entre portais usando impressões digitais de endereços e deteta padrões suspeitos como o mesmo imóvel listado várias vezes a preços diferentes. A calculadora de hipoteca aplica as regras fiscais portuguesas atuais (IMT, IS, taxas bancárias). 12.000+ anúncios ativos na base de dados. Corre no Render.com com backend PostgreSQL.',
+
+  proj_orchestrator_title: 'Orquestrador de Conhecimento com IA',
+  proj_orchestrator_desc:
+    'Sistema multi-agente que encaminha conteúdo entre 8 agentes de IA especializados via classificação LLM. Dashboard Tkinter com rastreamento de progresso em tempo real.',
+  proj_orchestrator_long:
+    'O sistema que uso diariamente para gerir o meu próprio pipeline de informação. O conteúdo chega de canais Telegram e é classificado automaticamente por um despachante LLM num de 8 domínios de agentes especializados: pesquisa cripto, análise on-chain, arbitragem, inteligência de carreira, ferramentas IA, retrodrops, citações e temas gerais. Cada agente tem a sua própria memória (MEMORY.md), base de conhecimento e janela de contexto. Construído em Claude CLI com lógica de orquestração personalizada.',
+
+  proj_tgbots_title: 'Ecossistema de Bots Telegram',
+  proj_tgbots_desc:
+    '11 bots Telegram em produção para rastreamento de vida, fitness, planeamento, transcrição YouTube e captura de conhecimento — todos geridos via dashboard Flask.',
+  proj_tgbots_long:
+    '11 bots Telegram a correr em paralelo, cada um com um papel específico: rastreamento de hábitos diários, diário de treinos, planeamento alimentar, gestão de tarefas, transcrição YouTube com processamento em fila assíncrona (Groq Whisper) e captura de conhecimento com sumarização por IA (Gemini). Um dashboard Flask central fornece controlos de administrador, visualização de logs e monitorização de saúde dos bots.',
+
+  proj_wallet_title: 'Monitor de Carteiras On-Chain',
+  proj_wallet_desc:
+    'Sistema Python assíncrono que monitoriza 35 carteiras em ETH, Polygon e Solana com alertas Telegram em tempo real para movimentos significativos.',
+  proj_wallet_long:
+    'Um sistema de monitorização em produção que corro diariamente para inteligência on-chain. Monitoriza 35 carteiras em três chains usando polling ativo e recetores de webhook passivos. Movimentos significativos — grandes transferências, novas posições em tokens, interações com protocolos — acionam alertas imediatos no Telegram com links de transação e contexto. Construído com asyncio para polling concorrente de chains. O sistema já apanhou vários movimentos de "smart money" minutos após acontecerem.',
+
+  proj_ton_title: 'TON Gift Flipper',
+  proj_ton_desc: 'Sistema multi-agente de trading NFT — bot de produção com 115K linhas e 4 instâncias paralelas',
+  proj_ton_long: 'Sistema de trading assíncrono multi-agente de nível de produção para o marketplace NFT TON. Construído em Python 3.11, executa 4 instâncias de bot em paralelo (de Elite 50 TON a Trash 1 TON), cada uma a gerir um par de contas de trading no Telegram. O sistema utiliza mais de 400 sessões Pyrogram para scanning paralelo do marketplace, integra 6 APIs externas (MRKT, Portal, Gift Satellite, Peek.tg, oráculo xGift, canal Snipes) e implementa estratégias de trading sofisticadas: outbidding com precisão nano-TON, repricing dinâmico em 4 etapas, mecânica cross-rebuy e testes A/B de estratégias. Inclui gestão de risco, backtesting, paper trading, dashboard FastAPI e bot admin aiogram no Telegram. O maior projeto pessoal com 115.000 linhas de código Python.',
+
+  proj_toolkit_title: 'Toolkit Cripto — 101 Ferramentas',
+  proj_toolkit_desc:
+    '101 ferramentas de automação criadas antes da era do vibe-coding. Scripts de levantamento CEX (9 exchanges), geradores de carteiras multi-chain (6 chains), coletores de tokens (20+ redes EVM), claimers de airdrops e bots de farming de protocolos.',
+  proj_toolkit_long:
+    'O toolkit completo criado entre 2023 e 2024 — antes de a IA tornar isso fácil. 101 ferramentas em 13 categorias: automação CEX API para Binance, OKX, Bybit, Bitget, CoinEx, Gate e outros; geradores de carteiras multi-chain para EVM, Solana, Bitcoin (Taproot/BRC-20), TON, SUI e Aptos; coletores de tokens para 20+ redes EVM; verificadores e claimers de elegibilidade para airdrops; bots de minting de NFT; scripts sniper para guerras de gás; farming de telemóveis Solana via ADB; automação de browser com ZennoPoster (21+ projetos) e Browser Automation Studio. Engenharia real — não código gerado.',
+
+  // ── Skills ────────────────────────────────────────────
+  skills_title: 'Competências',
+  skills_blockchain: 'Blockchain',
+  skills_automation: 'Automação',
+  skills_ai: 'IA & ML',
+  skills_dev: 'Desenvolvimento',
+  skills_security: 'Segurança & Conformidade',
+  skills_languages: 'Idiomas',
+
+  // ── Education ─────────────────────────────────────────
+  education_title: 'Formação & Certificações',
+
+  edu_law_title: 'Licenciatura — Forças de Segurança',
+  edu_law_school: 'Universidade Estadual de Assuntos Internos de Dnipropetrovsk',
+  edu_law_period: '2017 – 2020',
+  edu_law_location: 'Dnipro, Ucrânia',
+  edu_law_desc: 'Curso presencial. Especialização em metodologia das forças de segurança e investigação de crimes financeiros.',
+
+  edu_econ_title: 'Licenciatura — Economia & Segurança Económica',
+  edu_econ_school: 'DDUVS',
+  edu_econ_period: '2020 – 2024',
+  edu_econ_location: 'Dnipro, Ucrânia',
+  edu_econ_desc: 'Curso pós-laboral. Especialização: Análise Económica e Proteção da Economia. Toda a componente curricular concluída — exame de estado final pendente.',
+
+  edu_swat_title: 'Certificado — Formação Policial SWAT',
+  edu_swat_school: 'Unidade Especial de Polícia CORD, Ministério do Interior da Ucrânia',
+  edu_swat_period: 'Junho – Julho 2021',
+  edu_swat_location: 'Kiev, Ucrânia',
+  edu_swat_desc: 'Programa de formação tática especializada. Com apoio da Embaixada dos EUA na Ucrânia (ISLEA). Certificado n.º 1381.',
+  edu_swat_note: 'Com apoio da Embaixada dos EUA na Ucrânia (ISLEA). Certificado n.º 1381',
+
+  // ── Blog ──────────────────────────────────────────────
+  blog_title: 'Blog',
+  blog_subtitle: 'Escrevo sobre conformidade cripto, forense on-chain e automação com IA.',
+  blog_read_more: 'Ler Mais',
+  blog_all_posts: 'Todos os Artigos',
+  blog_empty: 'Artigos em breve.',
+
+  // ── Contact ───────────────────────────────────────────
+  contact_title: 'Contactar',
+  contact_subtitle:
+    'Disponível para posições a tempo inteiro em segurança Web3, conformidade ou automação com IA — e projetos freelance. Vamos conversar.',
+  contact_form_name: 'O Seu Nome',
+  contact_form_email: 'O Seu Email',
+  contact_form_message: 'Mensagem',
+  contact_form_submit: 'Enviar Mensagem',
+  contact_form_success: 'Mensagem enviada! Responderei em menos de 24 horas.',
+  contact_form_error: 'Algo correu mal. Por favor, envie-me um email diretamente.',
+  contact_available: 'Disponível para novas oportunidades',
+  contact_response_time: 'Tempo de resposta: < 24 horas',
+
+  // ── Footer ────────────────────────────────────────────
+  footer_built_with: 'Criado com Astro + Tailwind',
+  footer_rights: '© 2026 Serhii Ivanenko. Todos os direitos reservados.',
+  footer_privacy: 'Política de Privacidade',
+} as const;

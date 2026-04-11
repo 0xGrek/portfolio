@@ -1,0 +1,95 @@
+---
+import { t } from '../../i18n/index';
+import type { Lang } from '../../i18n/index';
+import SectionTitle from '../ui/SectionTitle.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const placeholderPosts = [
+  {
+    title: 'On-chain Forensics: Tracing Stolen Funds Across Bridges',
+    excerpt: 'A deep dive into how token flows can be traced through cross-chain bridges using Arkham, Nansen, and custom Python scripts.',
+    category: 'Forensics',
+    readTime: '8 min',
+  },
+  {
+    title: 'Building 101 Crypto Automation Tools: Lessons Learned',
+    excerpt: 'What I learned building 101 crypto automation tools before AI-assisted coding became mainstream. Real engineering, real mistakes.',
+    category: 'Automation',
+    readTime: '12 min',
+  },
+  {
+    title: 'Multi-Agent AI Systems: Architecture for Knowledge Management',
+    excerpt: 'How I built an 8-agent AI orchestrator to manage my information pipeline — and why the architecture scales.',
+    category: 'AI',
+    readTime: '10 min',
+  },
+];
+---
+
+<section id="blog" class="py-20" style="background-color: var(--bg);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      title={t(lang, 'blog_title')}
+      subtitle={t(lang, 'blog_subtitle')}
+    />
+
+    <!-- Coming soon notice -->
+    <div
+      class="flex items-center gap-3 px-4 py-3 rounded-lg mb-8 text-sm"
+      style="background-color: rgba(255,166,87,0.1); color: #ffa657; border: 1px solid rgba(255,166,87,0.3);"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+      {t(lang, 'blog_empty')}
+    </div>
+
+    <!-- Placeholder cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {placeholderPosts.map((post) => (
+        <article
+          class="relative p-5 rounded-xl opacity-60 cursor-default"
+          style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+        >
+          <!-- Category + read time -->
+          <div class="flex items-center justify-between mb-3">
+            <span
+              class="px-2 py-0.5 rounded text-xs font-semibold"
+              style="background-color: var(--bg-secondary); color: var(--accent);"
+            >
+              {post.category}
+            </span>
+            <span class="text-xs" style="color: var(--text-secondary);">
+              {post.readTime} read
+            </span>
+          </div>
+
+          <h3 class="text-sm font-bold mb-2 leading-snug" style="color: var(--text);">
+            {post.title}
+          </h3>
+
+          <p class="text-xs leading-relaxed" style="color: var(--text-secondary);">
+            {post.excerpt}
+          </p>
+
+          <!-- Coming soon pill -->
+          <div class="mt-4">
+            <span
+              class="inline-block px-2 py-0.5 rounded-full text-xs"
+              style="background-color: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border);"
+            >
+              Coming soon
+            </span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,208 @@
+---
+import { t } from '../../i18n/index';
+import type { Lang } from '../../i18n/index';
+import LangSwitcher from './LangSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const navItems = [
+  { key: 'nav_about' as const, href: '#about' },
+  { key: 'nav_experience' as const, href: '#experience' },
+  { key: 'nav_projects' as const, href: '#projects' },
+  { key: 'nav_skills' as const, href: '#skills' },
+  { key: 'nav_education' as const, href: '#education' },
+  { key: 'nav_blog' as const, href: '#blog' },
+  { key: 'nav_contact' as const, href: '#contact' },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 border-b header-glass"
+  style="border-color: var(--border);"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a
+      href={`/${lang}/`}
+      class="logo-link text-lg font-bold tracking-tight flex items-center gap-1"
+      style="color: var(--accent);"
+    >
+      <span class="font-mono text-xl">SI</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-6">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="nav-link text-sm font-medium transition-colors"
+          data-section={item.href.replace('#', '')}
+          style="color: var(--text-secondary);"
+        >
+          {t(lang, item.key)}
+        </a>
+      ))}
+    </div>
+
+    <!-- Right side: LangSwitcher + ThemeToggle + mobile hamburger -->
+    <div class="flex items-center gap-3">
+      <LangSwitcher lang={lang} />
+      <ThemeToggle />
+
+      <!-- Mobile hamburger (CSS-only checkbox hack) -->
+      <label for="mobile-menu-toggle" class="md:hidden cursor-pointer p-2 rounded" style="color: var(--text);">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </label>
+    </div>
+  </nav>
+
+  <!-- Mobile menu toggle (hidden checkbox) -->
+  <input type="checkbox" id="mobile-menu-toggle" class="peer hidden" />
+
+  <!-- Mobile nav dropdown -->
+  <div
+    class="md:hidden max-h-0 overflow-hidden peer-checked:max-h-96 border-t mobile-nav-panel"
+    style="border-color: var(--border); background-color: var(--bg-secondary);"
+  >
+    <div class="px-4 py-3 flex flex-col gap-3">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="mobile-nav-link text-sm font-medium py-2 border-b transition-colors hover:opacity-80"
+          style="color: var(--text-secondary); border-color: var(--border);"
+        >
+          {t(lang, item.key)}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<style>
+  .header-glass {
+    background-color: color-mix(in srgb, var(--bg) 80%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .header-glass.header-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .logo-link {
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  .logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  .nav-link {
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    transition: width 0.2s ease;
+  }
+  .nav-link:hover {
+    color: var(--text) !important;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .nav-link.active {
+    color: var(--accent) !important;
+  }
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Mobile nav slide-in */
+  .mobile-nav-panel {
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-nav-link {
+    transition: color 0.15s ease, padding-left 0.15s ease;
+  }
+  .mobile-nav-link:hover {
+    padding-left: 6px;
+    color: var(--accent) !important;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var header = document.getElementById('site-header');
+    var lastY = 0;
+    var ticking = false;
+
+    // ── Hide / show on scroll ───────────────────────────────────
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (y > 80 && y > lastY) {
+            header.classList.add('header-hidden');
+          } else {
+            header.classList.remove('header-hidden');
+          }
+          lastY = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // ── Active section highlight ────────────────────────────────
+    var navLinks = document.querySelectorAll('.nav-link[data-section]');
+    var sections = [];
+    navLinks.forEach(function (link) {
+      var id = link.getAttribute('data-section');
+      var el = document.getElementById(id);
+      if (el) sections.push({ id: id, el: el, link: link });
+    });
+
+    if ('IntersectionObserver' in window && sections.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var link = document.querySelector('.nav-link[data-section="' + entry.target.id + '"]');
+          if (!link) return;
+          if (entry.isIntersecting) {
+            navLinks.forEach(function (l) { l.classList.remove('active'); });
+            link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+      sections.forEach(function (s) { io.observe(s.el); });
+    }
+
+    // ── Close mobile menu on nav link click ────────────────────
+    document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var toggle = document.getElementById('mobile-menu-toggle');
+        if (toggle) toggle.checked = false;
+      });
+    });
+  })();
+</script>

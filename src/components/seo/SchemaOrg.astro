@@ -1,0 +1,46 @@
+---
+import type { Lang } from '../../i18n/index';
+import { t } from '../../i18n/index';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Serhii Ivanenko',
+  alternateName: '0xGrek',
+  url: `https://0xgrek.dev/${lang}/`,
+  image: 'https://0xgrek.dev/og-default.png',
+  description: t(lang, 'meta_description'),
+  jobTitle: t(lang, 'hero_title'),
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Lisbon',
+    addressCountry: 'PT',
+  },
+  sameAs: [
+    'https://github.com/0xGrek',
+    'https://linkedin.com/in/serhii-ivanenko',
+    'https://x.com/0xGrek',
+    'https://t.me/Ivanenko0xGrek',
+  ],
+  knowsAbout: [
+    'Blockchain Analytics',
+    'On-chain Forensics',
+    'Crypto Automation',
+    'AI Orchestration',
+    'Multi-agent Systems',
+    'DeFi Protocols',
+    'Python Programming',
+    'TypeScript',
+    'Web3 Security',
+  ],
+  knowsLanguage: ['Ukrainian', 'Russian', 'English', 'Portuguese'],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

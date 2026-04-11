@@ -1,0 +1,101 @@
+---
+import { t } from '../../i18n/index';
+import type { Lang } from '../../i18n/index';
+import { projects } from '../../data/projects';
+import SectionTitle from '../ui/SectionTitle.astro';
+import TechTag from '../ui/TechTag.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const categoryColors: Record<string, string> = {
+  web: '#58a6ff',
+  crypto: '#f7931a',
+  ai: '#a371f7',
+  analytics: '#3fb950',
+  trading: '#ffa657',
+};
+---
+
+<section id="projects" class="py-20" style="background-color: var(--bg);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      title={t(lang, 'projects_title')}
+      subtitle={t(lang, 'projects_subtitle')}
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <article
+          class="relative flex flex-col rounded-xl overflow-hidden group transition-transform hover:-translate-y-1"
+          style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+        >
+          <!-- Screenshot placeholder / header -->
+          <div
+            class="relative h-40 flex items-center justify-center"
+            style={`background: linear-gradient(135deg, var(--bg-secondary), var(--bg)); border-bottom: 1px solid var(--border);`}
+          >
+            <!-- Category dot -->
+            <div
+              class="absolute top-3 left-3 w-2 h-2 rounded-full"
+              style={`background-color: ${categoryColors[project.category] || 'var(--accent)'};`}
+            ></div>
+
+            <!-- Featured badge -->
+            {project.featured && (
+              <span
+                class="absolute top-3 right-3 px-2 py-0.5 rounded text-xs font-bold"
+                style="background-color: var(--accent); color: #fff;"
+              >
+                Featured
+              </span>
+            )}
+
+            <!-- Project icon placeholder -->
+            <span class="text-4xl font-bold font-mono opacity-20" style="color: var(--text);">
+              {project.id.slice(0, 2).toUpperCase()}
+            </span>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col flex-1 p-5">
+            <h3 class="text-base font-bold mb-2 leading-snug" style="color: var(--text);">
+              {t(lang, project.titleKey as any)}
+            </h3>
+
+            <p class="text-sm leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
+              {t(lang, project.descriptionKey as any)}
+            </p>
+
+            <!-- Key metric badge -->
+            {project.metrics && project.metrics[0] && (
+              <div class="mb-3">
+                <span
+                  class="inline-block px-2 py-0.5 rounded-full text-xs font-semibold"
+                  style="background-color: rgba(88,166,255,0.1); color: var(--accent); border: 1px solid rgba(88,166,255,0.2);"
+                >
+                  {project.metrics[0].value}
+                </span>
+              </div>
+            )}
+
+            <!-- Tech tags (max 4) -->
+            <div class="flex flex-wrap gap-1.5">
+              {project.tech.slice(0, 4).map((tech) => (
+                <TechTag label={tech} />
+              ))}
+              {project.tech.length > 4 && (
+                <span class="text-xs" style="color: var(--text-secondary);">
+                  +{project.tech.length - 4} more
+                </span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import { t } from '../../i18n/index';
+import type { Lang } from '../../i18n/index';
+import { skillCategories } from '../../data/skills';
+import SectionTitle from '../ui/SectionTitle.astro';
+import TechTag from '../ui/TechTag.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="skills" class="py-20" style="background-color: var(--bg-secondary);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle title={t(lang, 'skills_title')} />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillCategories.map((category) => (
+        <div
+          class="p-5 rounded-xl"
+          style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+        >
+          <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--accent);">
+            {t(lang, category.titleKey as any)}
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <TechTag label={skill} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
