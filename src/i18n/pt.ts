@@ -35,7 +35,7 @@ export const pt = {
   about_p2:
     'Desde março de 2023, criei 101 ferramentas de automação em mais de 10 blockchains — tudo antes da era da programação assistida por IA. O maior sistema, TON Gift Flipper, é uma plataforma de negociação multiagente com 115 000 linhas de código: 4 bots paralelos, mais de 400 sessões Pyrogram, integração com 6 APIs de marketplaces. Sei como os protocolos são explorados porque operei on-chain em escala — encontrei vulnerabilidades em casinos Web3, rastreei clusters de carteiras e analisei manipulação de tokens por dentro.',
   about_p3:
-    'Hoje, combino essa profundidade operacional com orquestração de IA e análise on-chain. Construo sistemas multi-agente, monitorizo carteiras e fluxos de tokens, investigo vulnerabilidades de protocolos e ajudo empresas a automatizar o que leva horas a humanos.',
+    'Atualmente foco-me em análise on-chain — rastreio de carteiras, análise de fluxos de tokens, investigação de exploits em protocolos. Construo sistemas multiagente com IA e ecossistemas de bots no Telegram. 6 projetos em produção, todos a funcionar. Baseado em Lisboa. Disponível para relocalização.',
   about_unique:
     'Formação policial mais engenharia Web3. Compreendo como os sistemas são explorados e como construí-los de forma segura. Esta perspetiva é rara.',
 
