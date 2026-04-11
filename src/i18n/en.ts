@@ -41,13 +41,13 @@ export const en = {
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
-  stat_tools_label: 'Automation tools built',
+  stat_tools_label: 'Tools Built',
   stat_chains: '10+',
-  stat_chains_label: 'Blockchains covered',
-  stat_years: '3+',
-  stat_years_label: 'Years in Web3',
-  stat_exchanges: '9',
-  stat_exchanges_label: 'CEX exchanges automated',
+  stat_chains_label: 'Blockchains',
+  stat_years: '115K',
+  stat_years_label: 'Lines of Code',
+  stat_exchanges: '6',
+  stat_exchanges_label: 'Production Projects',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
