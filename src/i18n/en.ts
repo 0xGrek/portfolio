@@ -99,7 +99,7 @@ export const en = {
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Projects',
-  projects_subtitle: 'Selected work — production systems, not demos.',
+  projects_subtitle: "What I've built",
   project_tech: 'Tech Stack',
   project_view: 'View Details',
   project_close: 'Close',
