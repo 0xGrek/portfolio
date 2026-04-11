@@ -37,7 +37,7 @@ export const pt = {
   about_p3:
     'Hoje, combino essa profundidade operacional com orquestração de IA e análise on-chain. Construo sistemas multi-agente, monitorizo carteiras e fluxos de tokens, investigo vulnerabilidades de protocolos e ajudo empresas a automatizar o que leva horas a humanos.',
   about_unique:
-    'O que me diferencia: já estive dos dois lados — como investigador e como construtor. Essa perspetiva dupla é rara.',
+    'Formação policial mais engenharia Web3. Compreendo como os sistemas são explorados e como construí-los de forma segura. Esta perspetiva é rara.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
