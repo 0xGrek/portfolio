@@ -149,10 +149,11 @@ export const ru = {
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Навыки',
   skills_blockchain: 'Блокчейн',
-  skills_automation: 'Автоматизация',
-  skills_ai: 'AI и ML',
+  skills_onchain: 'Инструменты ончейн-аналитики',
+  skills_automation: 'Крипто-автоматизация',
+  skills_ai: 'AI и агенты',
   skills_dev: 'Разработка',
-  skills_security: 'Безопасность и комплаенс',
+  skills_security: 'Безопасность и форензика',
   skills_languages: 'Языки',
 
   // ── Education ─────────────────────────────────────────
