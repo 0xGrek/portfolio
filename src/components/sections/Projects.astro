@@ -20,44 +20,56 @@ const categoryColors: Record<string, string> = {
 };
 ---
 
-<section id="projects" class="py-20" style="background-color: var(--bg);">
+<section id="projects" class="py-24" style="background-color: var(--bg);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionTitle
-      title={t(lang, 'projects_title')}
-      subtitle={t(lang, 'projects_subtitle')}
-    />
+    <div class="reveal">
+      <SectionTitle
+        title={t(lang, 'projects_title')}
+        subtitle={t(lang, 'projects_subtitle')}
+      />
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <article
-          class="relative flex flex-col rounded-xl overflow-hidden group transition-transform hover:-translate-y-1"
-          style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+          class="project-card relative flex flex-col rounded-xl overflow-hidden group card-hover reveal"
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s;`}
         >
-          <!-- Screenshot placeholder / header -->
+          <!-- Header area -->
           <div
-            class="relative h-40 flex items-center justify-center"
-            style={`background: linear-gradient(135deg, var(--bg-secondary), var(--bg)); border-bottom: 1px solid var(--border);`}
+            class="relative h-40 flex items-center justify-center overflow-hidden"
+            style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg)); border-bottom: 1px solid var(--border);"
           >
             <!-- Category dot -->
             <div
-              class="absolute top-3 left-3 w-2 h-2 rounded-full"
+              class="absolute top-3 left-3 w-2.5 h-2.5 rounded-full"
               style={`background-color: ${categoryColors[project.category] || 'var(--accent)'};`}
             ></div>
 
-            <!-- Featured badge -->
+            <!-- Featured badge — top-right -->
             {project.featured && (
               <span
-                class="absolute top-3 right-3 px-2 py-0.5 rounded text-xs font-bold"
-                style="background-color: var(--accent); color: #fff;"
+                class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-xs font-bold tracking-wide"
+                style="background-color: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.4);"
               >
-                Featured
+                ★ Featured
               </span>
             )}
 
-            <!-- Project icon placeholder -->
-            <span class="text-4xl font-bold font-mono opacity-20" style="color: var(--text);">
+            <!-- Project monogram -->
+            <span class="text-5xl font-bold font-mono select-none" style="color: var(--text); opacity: 0.12;">
               {project.id.slice(0, 2).toUpperCase()}
             </span>
+
+            <!-- "View Details" hover overlay -->
+            <div
+              class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              style="background-color: rgba(var(--accent-rgb), 0.08);"
+            >
+              <span class="text-sm font-semibold px-4 py-1.5 rounded-full" style="color: var(--accent); border: 1px solid var(--accent);">
+                View Details
+              </span>
+            </div>
           </div>
 
           <!-- Content -->
@@ -70,26 +82,29 @@ const categoryColors: Record<string, string> = {
               {t(lang, project.descriptionKey as any)}
             </p>
 
-            <!-- Key metric badge -->
+            <!-- Metrics -->
             {project.metrics && project.metrics[0] && (
-              <div class="mb-3">
-                <span
-                  class="inline-block px-2 py-0.5 rounded-full text-xs font-semibold"
-                  style="background-color: rgba(88,166,255,0.1); color: var(--accent); border: 1px solid rgba(88,166,255,0.2);"
-                >
-                  {project.metrics[0].value}
-                </span>
+              <div class="mb-3 flex flex-wrap gap-2">
+                {project.metrics.map((m) => (
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold"
+                    style="background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.2);"
+                  >
+                    <strong>{m.value}</strong>
+                    {m.label && <span style="opacity: 0.75;">{m.label}</span>}
+                  </span>
+                ))}
               </div>
             )}
 
             <!-- Tech tags (max 4) -->
-            <div class="flex flex-wrap gap-1.5">
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t" style="border-color: var(--border);">
               {project.tech.slice(0, 4).map((tech) => (
                 <TechTag label={tech} />
               ))}
               {project.tech.length > 4 && (
-                <span class="text-xs" style="color: var(--text-secondary);">
-                  +{project.tech.length - 4} more
+                <span class="text-xs px-2 py-0.5 rounded" style="color: var(--text-secondary); background-color: var(--bg-secondary);">
+                  +{project.tech.length - 4}
                 </span>
               )}
             </div>
@@ -99,3 +114,19 @@ const categoryColors: Record<string, string> = {
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('#projects .reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
