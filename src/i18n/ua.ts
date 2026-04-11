@@ -41,13 +41,13 @@ export const ua = {
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
-  stat_tools_label: 'Інструментів автоматизації',
+  stat_tools_label: 'Інструментів',
   stat_chains: '10+',
-  stat_chains_label: 'Блокчейнів охоплено',
-  stat_years: '3+',
-  stat_years_label: 'Роки у Web3',
-  stat_exchanges: '9',
-  stat_exchanges_label: 'CEX бірж автоматизовано',
+  stat_chains_label: 'Блокчейнів',
+  stat_years: '115K',
+  stat_years_label: 'Рядків коду',
+  stat_exchanges: '6',
+  stat_exchanges_label: 'Продакшн проєктів',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
