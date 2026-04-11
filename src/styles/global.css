@@ -221,14 +221,40 @@
   animation: pulse-green 2s ease-in-out infinite;
 }
 
-/* Card hover lift */
+/* Card hover lift — bouncy premium feel */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transform: translateX(-100%) skewX(-12deg);
+  pointer-events: none;
+  z-index: 1;
+  transition: none;
+}
+.card-hover:hover::before {
+  animation: shine-sweep 0.55s ease forwards;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(var(--accent-rgb), 0.15);
-  border-color: rgba(var(--accent-rgb), 0.4) !important;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(var(--accent-rgb), 0.15);
+  border-color: rgba(var(--accent-rgb), 0.45) !important;
+}
+.card-hover:active {
+  transform: translateY(-2px);
+  transition-duration: 0.1s;
 }
 
 /* Scroll-reveal via Intersection Observer */
