@@ -2,7 +2,7 @@ export const en = {
   // ── Meta ──────────────────────────────────────────────
   meta_title: 'Serhii Ivanenko — Web3 & AI Automation Engineer',
   meta_description:
-    'Former law enforcement officer turned Web3 practitioner. 101 automation tools, crypto forensics, AI orchestration. Based in Lisbon, Portugal.',
+    'Self-taught Web3 builder and automation engineer. 101 automation tools, 115K LOC trading system, 10+ blockchains. Based in Lisbon, Portugal.',
   meta_keywords:
     'crypto compliance Lisbon, blockchain forensics Portugal, AML crypto Europe, Web3 automation engineer, on-chain analyst',
 
