@@ -170,12 +170,12 @@ export const en = {
   edu_econ_location: 'Dnipro, Ukraine',
   edu_econ_desc: 'Part-time. Economic Analytics & Protection of Economy specialization. All coursework completed — final state examination pending.',
 
-  edu_swat_title: 'Police SWAT Certificate',
-  edu_swat_school: 'CORD Special Police Force, Ministry of Interior of Ukraine',
-  edu_swat_period: 'June – July 2021',
+  edu_swat_title: 'Police SWAT Training Certificate',
+  edu_swat_school: 'Ministry of Interior of Ukraine',
+  edu_swat_period: '2021',
   edu_swat_location: 'Kyiv, Ukraine',
-  edu_swat_desc: 'Specialized tactical training program. Supported by U.S. Embassy in Ukraine (ISLEA). Certificate #1381.',
-  edu_swat_note: 'Supported by U.S. Embassy in Ukraine (ISLEA). Certificate #1381',
+  edu_swat_desc: 'Specialized tactical training program. Tactical training programme supported by the US Embassy in Ukraine.',
+  edu_swat_note: 'Tactical training programme supported by the US Embassy in Ukraine',
 
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
