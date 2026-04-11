@@ -33,7 +33,7 @@ export const en = {
   about_p1:
     'I spent 5 years in Ukrainian law enforcement, including a SWAT certification programme supported by the US Embassy. In 2022 I left the police and started teaching myself to code — HTML, CSS, JavaScript, then Python and TypeScript. No bootcamp, no CS degree. By March 2023 I was working full-time in Web3.',
   about_p2:
-    'By March 2023 I was building serious crypto infrastructure: CEX withdrawal scripts, multi-chain wallet managers, airdrop bots, NFT minters — 101 tools across 13 categories before AI-assisted coding was a thing. Real engineering, real problems, real solutions.',
+    'Since March 2023, I have built 101 automation tools across 10+ blockchains — all before AI-assisted coding became mainstream. My largest system, TON Gift Flipper, is a 115,000 LOC multi-agent trading platform: 4 parallel bots, 400+ Pyrogram sessions, 6 marketplace API integrations. I know how protocols get exploited because I\'ve operated on-chain at scale — found vulnerabilities in Web3 casinos, tracked wallet clusters, and analyzed token manipulation patterns from the inside.',
   about_p3:
     'Today I combine that operational depth with AI orchestration and on-chain analytics. I build multi-agent systems, track wallets and token flows, research protocol vulnerabilities, and help businesses automate what takes humans hours.',
   about_unique:
