@@ -33,10 +33,12 @@ const dataVariant = variant;
 
 {href ? (
   <a href={href} class={baseClass} style={style} data-variant={dataVariant} {...rest}>
+    {variant === 'primary' && <span class="btn-shimmer-overlay" aria-hidden="true"></span>}
     <slot />
   </a>
 ) : (
   <button class={baseClass} style={style} data-variant={dataVariant} {...rest}>
+    {variant === 'primary' && <span class="btn-shimmer-overlay" aria-hidden="true"></span>}
     <slot />
   </button>
 )}
