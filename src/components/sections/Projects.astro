@@ -247,8 +247,9 @@ const categoryColors: Record<string, string> = {
     border-color: var(--accent) !important;
   }
 
-  /* Body scroll lock */
-  body.modal-open {
+  /* Scroll lock — applied to <html> so position:fixed children
+     (the modal) keep the viewport as their containing block */
+  html:has(body.modal-open) {
     overflow: hidden;
   }
 
