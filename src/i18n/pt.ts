@@ -170,12 +170,12 @@ export const pt = {
   edu_econ_location: 'Dnipro, Ucrânia',
   edu_econ_desc: 'Curso pós-laboral. Especialização: Análise Económica e Proteção da Economia. Toda a componente curricular concluída — exame de estado final pendente.',
 
-  edu_swat_title: 'Certificado — Formação Policial SWAT',
-  edu_swat_school: 'Unidade Especial de Polícia CORD, Ministério do Interior da Ucrânia',
-  edu_swat_period: 'Junho – Julho 2021',
+  edu_swat_title: 'Certificado de Formação Tática SWAT',
+  edu_swat_school: 'Ministério do Interior da Ucrânia',
+  edu_swat_period: '2021',
   edu_swat_location: 'Kiev, Ucrânia',
-  edu_swat_desc: 'Programa de formação tática especializada. Com apoio da Embaixada dos EUA na Ucrânia (ISLEA). Certificado n.º 1381.',
-  edu_swat_note: 'Com apoio da Embaixada dos EUA na Ucrânia (ISLEA). Certificado n.º 1381',
+  edu_swat_desc: 'Programa de formação tática especializada. Programa de formação tática apoiado pela Embaixada dos EUA na Ucrânia.',
+  edu_swat_note: 'Programa de formação tática apoiado pela Embaixada dos EUA na Ucrânia',
 
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
