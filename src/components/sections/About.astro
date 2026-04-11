@@ -47,12 +47,12 @@ const stats = [
 
       <!-- Right: Stats grid -->
       <div class="grid grid-cols-2 gap-4 reveal">
-        {stats.map((stat) => (
+        {stats.map((stat, i) => (
           <div
-            class="stat-card p-6 rounded-xl text-center card-hover"
-            style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+            class="stat-card p-6 rounded-xl text-center card-hover reveal"
+            style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${i * 0.1}s;`}
           >
-            <div class="text-3xl sm:text-4xl font-bold mb-2" style="color: var(--accent);">
+            <div class="stat-value text-3xl sm:text-4xl font-bold mb-2" style="color: var(--accent);">
               {t(lang, stat.value)}
             </div>
             <div class="text-sm" style="color: var(--text-secondary);">
