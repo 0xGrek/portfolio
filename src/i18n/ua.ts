@@ -142,12 +142,12 @@ export const ua = {
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Навички',
-  skills_blockchain: 'Блокчейн',
-  skills_onchain: 'Інструменти ончейн-аналітики',
+  skills_forensics: 'Ончейн-форензика',
+  skills_blockchain: 'Блокчейн та DeFi',
   skills_automation: 'Крипто-автоматизація',
-  skills_ai: 'AI та агенти',
+  skills_agents: 'AI та агентні системи',
   skills_dev: 'Розробка',
-  skills_security: 'Безпека та форензика',
+  skills_security: 'Безпека та комплаєнс',
   skills_languages: 'Мови',
 
   // ── Education ─────────────────────────────────────────
