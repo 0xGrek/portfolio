@@ -149,10 +149,11 @@ export const pt = {
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Competências',
   skills_blockchain: 'Blockchain',
-  skills_automation: 'Automação',
-  skills_ai: 'IA & ML',
+  skills_onchain: 'Ferramentas de Análise On-Chain',
+  skills_automation: 'Automação Cripto',
+  skills_ai: 'IA & Agentes',
   skills_dev: 'Desenvolvimento',
-  skills_security: 'Segurança & Conformidade',
+  skills_security: 'Segurança & Forense',
   skills_languages: 'Idiomas',
 
   // ── Education ─────────────────────────────────────────
