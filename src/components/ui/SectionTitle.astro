@@ -7,15 +7,33 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<div class="mb-12">
+<div class="section-title-wrap mb-12">
   <h2 class="text-3xl sm:text-4xl font-bold mb-3" style="color: var(--text);">
     {title}
   </h2>
-  <!-- Accent underline — animated width on section reveal -->
-  <div class="section-underline h-1 w-12 rounded-full mb-4" style="background: linear-gradient(90deg, var(--accent), var(--accent-hover));"></div>
+  <!-- Accent underline — grows when parent .reveal becomes active/visible -->
+  <div class="section-underline-track h-1 w-48 rounded-full mb-4 overflow-hidden" style="background-color: var(--border);">
+    <div class="section-underline-bar h-full rounded-full" style="background: linear-gradient(90deg, var(--accent), var(--accent-hover)); transform: scaleX(0); transform-origin: left; transition: transform 0.8s ease 0.2s;"></div>
+  </div>
   {subtitle && (
     <p class="text-base sm:text-lg max-w-2xl leading-relaxed" style="color: var(--text-secondary);">
       {subtitle}
     </p>
   )}
 </div>
+
+<script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var bars = document.querySelectorAll('.section-underline-bar');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.style.transform = 'scaleX(1)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    bars.forEach(function (bar) { io.observe(bar); });
+  })();
+</script>
