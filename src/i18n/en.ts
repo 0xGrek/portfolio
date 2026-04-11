@@ -142,9 +142,9 @@ export const en = {
 
   proj_toolkit_title: 'Crypto Automation Toolkit — 101 Tools',
   proj_toolkit_desc:
-    '101 automation tools built pre-vibe-coding era. CEX withdrawal scripts (9 exchanges), multi-chain wallet generators (6 chains), token collectors (20+ EVM networks), airdrop claimers, and protocol farming bots.',
+    '101 automation tools for DeFi, airdrops, and NFTs — built when most people had no software',
   proj_toolkit_long:
-    'The full toolkit built between 2023 and 2024 — before AI-assisted coding made this easy. 101 tools across 13 categories: CEX API automation for Binance, OKX, Bybit, Bitget, CoinEx, Gate, Backpack, and others; multi-chain wallet generators for EVM, Solana, Bitcoin (Taproot/BRC-20), TON, SUI, and Aptos; token collectors sweeping 20+ EVM networks; airdrop eligibility checkers and claimers; NFT minting bots; gas war sniper scripts; Solana phone farming via ADB; browser automation with ZennoPoster (21+ projects) and Browser Automation Studio. Real engineering — not generated code.',
+    'Built between 2023-2024, before AI-assisted coding went mainstream. These tools gave us a competitive edge: we farmed airdrops at scale (LayerZero, Arbitrum, zkSync), minted NFTs faster than competitors with gas war sniping scripts, and automated DeFi protocol interactions across 10+ blockchains. The toolkit includes multi-chain wallet generators (6 chains), token collectors (15+ EVM networks), CEX withdrawal automation (9 exchanges via ccxt), Solana phone farming via ADB, and browser automation through ZennoPoster and BAS. When others were clicking buttons manually, we had software doing it at scale.',
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Skills',
