@@ -110,7 +110,7 @@ export const en = {
   proj_mafia_desc:
     'Full-featured PWA for hosting live Mafia games. 17 roles, 3 factions, 16 artifact cards, real-time cloud sync. Includes a Monte Carlo simulator for game balance tuning.',
   proj_mafia_long:
-    'A production PWA built for hosting live-session Mafia games with friends. The game engine is deterministic: 17 unique roles, 3 factions, and 16 artifact cards that modify game state in complex ways. Real-time state is synced via Supabase so multiple devices can participate simultaneously. The Monte Carlo simulator runs 1,000 simulated games to validate role balance — an engineering approach I applied from probability analysis in my law enforcement background. Deployed on Vercel with full offline support.',
+    'A production PWA built for hosting live-session Mafia games with friends. The game engine is deterministic: 17 unique roles, 3 factions, and 16 artifact cards that modify game state in complex ways. Real-time state is synced via Supabase so multiple devices can participate simultaneously. The Monte Carlo simulator runs 1,000 simulated games to validate role balance — an engineering approach grounded in probability analysis. Deployed on Vercel with full offline support.',
 
   proj_realty_title: 'Portugal Realty — Real Estate Aggregator',
   proj_realty_desc:
