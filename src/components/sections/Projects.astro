@@ -283,8 +283,14 @@ const categoryColors: Record<string, string> = {
       if (!modal) return;
       closeModal(true); // close any open one instantly
       currentModal = modal;
-      modal.style.display = 'block';
+      // Save scroll position and lock body without triggering scroll reset
+      var scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + scrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
       document.body.classList.add('modal-open');
+      modal.style.display = 'block';
       var content = modal.querySelector('.modal-content');
       if (content) {
         content.classList.remove('modal-exiting');
@@ -306,7 +312,14 @@ const categoryColors: Record<string, string> = {
 
       function hide() {
         modal.style.display = 'none';
+        // Restore scroll position before removing body lock
+        var scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
         document.body.classList.remove('modal-open');
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
         if (content) content.classList.remove('modal-exiting');
         currentModal = null;
       }
