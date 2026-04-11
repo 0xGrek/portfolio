@@ -31,7 +31,7 @@ export const en = {
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
   about_p1:
-    'I studied law enforcement and economics at university in Ukraine — which gave me a deep understanding of how financial systems work, how fraud operates, and how investigations are conducted. But I never went into policing. In 2022, I taught myself to code and dove straight into Web3.',
+    'I spent 5 years in Ukrainian law enforcement, including a SWAT certification programme supported by the US Embassy. In 2022 I left the police and started teaching myself to code — HTML, CSS, JavaScript, then Python and TypeScript. No bootcamp, no CS degree. By March 2023 I was working full-time in Web3.',
   about_p2:
     'By March 2023 I was building serious crypto infrastructure: CEX withdrawal scripts, multi-chain wallet managers, airdrop bots, NFT minters — 101 tools across 13 categories before AI-assisted coding was a thing. Real engineering, real problems, real solutions.',
   about_p3:
