@@ -63,18 +63,20 @@ const socials = [
 ];
 ---
 
-<section id="contact" class="py-20" style="background-color: var(--bg-secondary);">
+<section id="contact" class="py-24" style="background-color: var(--bg-secondary);">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <SectionTitle
-      title={t(lang, 'contact_title')}
-      subtitle={t(lang, 'contact_subtitle')}
-    />
+    <div class="reveal">
+      <SectionTitle
+        title={t(lang, 'contact_title')}
+        subtitle={t(lang, 'contact_subtitle')}
+      />
+    </div>
 
     <!-- Available badge + location -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-10 reveal">
       <div
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-full"
-        style="background-color: rgba(63,185,80,0.1); color: #3fb950; border: 1px solid rgba(63,185,80,0.3);"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full pulse-green-glow"
+        style="background-color: rgba(63,185,80,0.12); color: #3fb950; border: 1px solid rgba(63,185,80,0.35);"
       >
         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
         <span class="text-sm font-medium">{t(lang, 'contact_available')}</span>
@@ -93,26 +95,26 @@ const socials = [
     </div>
 
     <!-- Social link cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      {socials.map((s) => (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 reveal">
+      {socials.map((s, index) => (
         <a
           href={s.href}
           target={s.external ? '_blank' : undefined}
           rel={s.external ? 'noopener noreferrer' : undefined}
           aria-label={s.name}
-          class="social-card group flex items-center gap-4 px-5 py-4 rounded-xl text-left transition-all"
+          class="social-card group flex items-center gap-4 px-5 py-4 rounded-xl text-left"
           style={`background-color: var(--card-bg); border: 1px solid ${s.borderColor};`}
         >
           <!-- Icon -->
           <div
-            class="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center transition-colors"
+            class="flex-shrink-0 w-11 h-11 rounded-lg flex items-center justify-center"
             style={`background-color: ${s.color}; color: ${s.iconColor};`}
           >
             <Fragment set:html={s.icon} />
           </div>
 
           <!-- Text -->
-          <div class="min-w-0 flex-1">
+          <div class="min-w-0 flex-1 text-left">
             <p class="text-xs font-semibold uppercase tracking-wider mb-0.5" style="color: var(--text-secondary);">
               {s.name}
             </p>
@@ -132,7 +134,7 @@ const socials = [
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1 group-hover:translate-x-0 transition-transform"
+            class="flex-shrink-0 social-card-arrow"
             style="color: var(--accent);"
           >
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -149,7 +151,30 @@ const socials = [
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
   .social-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    border-color: rgba(var(--accent-rgb), 0.4) !important;
+  }
+  .social-card-arrow {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .social-card:hover .social-card-arrow {
+    opacity: 1;
+    transform: translateX(0);
   }
 </style>
+
+<script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('#contact .reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
