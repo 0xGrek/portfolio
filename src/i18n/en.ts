@@ -118,12 +118,6 @@ export const en = {
   proj_realty_long:
     'Built out of genuine need — finding housing in Lisbon is painful. The aggregator scrapes Idealista, Imovirtual, Remax, and Era simultaneously, deduplicates listings across portals using address fingerprinting, and flags suspicious patterns like the same property being relisted multiple times at different prices. The mortgage calculator applies current Portuguese fiscal rules (IMT, IS, bank rates) for accurate monthly payment estimates. 12,000+ active listings in the database. Runs on Render.com with PostgreSQL backend.',
 
-  proj_orchestrator_title: 'AI Knowledge Orchestrator',
-  proj_orchestrator_desc:
-    'Multi-agent system routing content across 8 specialized AI agents via LLM classification. Tkinter dashboard with live progress tracking.',
-  proj_orchestrator_long:
-    'The system I use daily to manage my own information pipeline. Content arrives from Telegram channels and is automatically classified by an LLM dispatcher into one of 8 specialized agent domains: crypto research, on-chain analytics, arbitrage, career intelligence, AI tools, retrodrops, quotes, and general themes. Each agent has its own memory (MEMORY.md), knowledge base, and context window. The Tkinter dashboard shows live processing status. Built on Claude CLI with custom orchestration logic — the same architecture that powers the system behind this portfolio.',
-
   proj_tgbots_title: 'Telegram Bot Ecosystem',
   proj_tgbots_desc:
     '11 production Telegram bots for life tracking, fitness logging, planning, YouTube transcription, and knowledge capture — all managed via a Flask dashboard.',
