@@ -50,6 +50,9 @@ const canonicalUrl = Astro.url.href;
     <slot name="head" />
   </head>
   <body class="min-h-screen" style="background-color: var(--bg); color: var(--text);">
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
     <Header lang={lang} />
     <main>
       <slot />
@@ -71,6 +74,20 @@ const canonicalUrl = Astro.url.href;
         document.querySelectorAll('.reveal').forEach(function (el) {
           observer.observe(el);
         });
+      })();
+
+      // Scroll progress bar
+      (function () {
+        var bar = document.getElementById('scroll-progress');
+        if (!bar) return;
+        function updateProgress() {
+          var scrollTop = window.scrollY || document.documentElement.scrollTop;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var progress = docHeight > 0 ? scrollTop / docHeight : 0;
+          bar.style.transform = 'scaleX(' + progress + ')';
+        }
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
       })();
     </script>
   </body>
