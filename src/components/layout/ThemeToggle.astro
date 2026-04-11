@@ -48,7 +48,21 @@
 
     btn.addEventListener('click', function () {
       var current = localStorage.getItem('theme') || 'dark';
+      // Spin animation on toggle
+      btn.style.animation = 'none';
+      btn.offsetHeight; /* reflow */
+      btn.style.animation = 'toggleRotate 0.35s ease forwards';
       applyTheme(current === 'dark' ? 'light' : 'dark');
     });
   })();
 </script>
+
+<style>
+  @keyframes toggleRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(160deg); }
+  }
+  .theme-toggle-btn {
+    transition: color 0.2s ease;
+  }
+</style>
