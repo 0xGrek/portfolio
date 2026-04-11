@@ -99,7 +99,7 @@ export const ru = {
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Проекты',
-  projects_subtitle: 'Избранные работы — боевые системы, не демо.',
+  projects_subtitle: 'Что я построил',
   project_tech: 'Технологический стек',
   project_view: 'Подробнее',
   project_close: 'Закрыть',
