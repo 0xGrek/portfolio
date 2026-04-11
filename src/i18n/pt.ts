@@ -33,7 +33,7 @@ export const pt = {
   about_p1:
     'Trabalhei 5 anos nas forças policiais da Ucrânia, incluindo uma certificação SWAT num programa apoiado pela Embaixada dos EUA. Em 2022 deixei a polícia e comecei a aprender programação por conta própria — HTML, CSS, JavaScript, depois Python e TypeScript. Sem bootcamps, sem licenciatura em informática. Em março de 2023 já trabalhava a tempo inteiro em Web3.',
   about_p2:
-    'Em março de 2023, já construía infraestrutura cripto a sério: scripts de levantamento CEX, gestores de carteiras multi-chain, bots de airdrops, minters de NFT — 101 ferramentas em 13 categorias antes da era do coding assistido por IA. Engenharia real, problemas reais, soluções reais.',
+    'Desde março de 2023, criei 101 ferramentas de automação em mais de 10 blockchains — tudo antes da era da programação assistida por IA. O maior sistema, TON Gift Flipper, é uma plataforma de negociação multiagente com 115 000 linhas de código: 4 bots paralelos, mais de 400 sessões Pyrogram, integração com 6 APIs de marketplaces. Sei como os protocolos são explorados porque operei on-chain em escala — encontrei vulnerabilidades em casinos Web3, rastreei clusters de carteiras e analisei manipulação de tokens por dentro.',
   about_p3:
     'Hoje, combino essa profundidade operacional com orquestração de IA e análise on-chain. Construo sistemas multi-agente, monitorizo carteiras e fluxos de tokens, investigo vulnerabilidades de protocolos e ajudo empresas a automatizar o que leva horas a humanos.',
   about_unique:
