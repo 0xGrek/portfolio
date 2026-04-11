@@ -11,9 +11,9 @@ interface Props {
 const { lang } = Astro.props;
 
 const statusStyles: Record<string, string> = {
-  completed: 'background-color: rgba(63,185,80,0.1); color: #3fb950; border-color: rgba(63,185,80,0.3);',
-  pending: 'background-color: rgba(255,166,87,0.1); color: #ffa657; border-color: rgba(255,166,87,0.3);',
-  'in-progress': 'background-color: rgba(88,166,255,0.1); color: var(--accent); border-color: rgba(88,166,255,0.3);',
+  completed: 'background-color: rgba(63,185,80,0.12); color: #3fb950; border-color: rgba(63,185,80,0.35);',
+  pending: 'background-color: rgba(251,191,36,0.12); color: #f59e0b; border-color: rgba(251,191,36,0.35);',
+  'in-progress': 'background-color: rgba(88,166,255,0.12); color: var(--accent); border-color: rgba(88,166,255,0.35);',
 };
 
 const statusLabels: Record<string, string> = {
@@ -22,6 +22,11 @@ const statusLabels: Record<string, string> = {
   'in-progress': 'In Progress',
 };
 
+const upcomingCerts = [
+  { name: 'CCFC', full: 'Certified Crypto Forensics Consultant' },
+  { name: 'CRC', full: 'Certified Risk Consultant' },
+  { name: 'CAMS', full: 'Certified Anti-Money Laundering Specialist' },
+];
 ---
 
 <section id="education" class="py-20" style="background-color: var(--bg);">
