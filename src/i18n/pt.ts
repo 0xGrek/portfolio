@@ -22,7 +22,7 @@ export const pt = {
   hero_handle: '0xGrek',
   hero_title: 'Engenheiro Web3 & Automação com IA',
   hero_subtitle:
-    'Ex-agente de segurança económica, agora especialista Web3. 101 ferramentas de automação em 10+ blockchains. Baseado em Lisboa, disponível para trabalho remoto em todo o mundo.',
+    'Ex-agente de segurança económica, agora especialista Web3. Sistema de trading com 115K linhas de código, 6 projetos em produção, 10+ blockchains. Baseado em Lisboa, disponível para trabalho remoto em todo o mundo.',
   hero_cta_projects: 'Ver Projetos',
   hero_cta_contact: 'Contactar',
   hero_available: 'Disponível para oportunidades',
