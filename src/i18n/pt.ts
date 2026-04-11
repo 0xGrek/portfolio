@@ -31,13 +31,13 @@ export const pt = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
   about_p1:
-    'Trabalhei 5 anos nas forças policiais da Ucrânia, incluindo uma certificação SWAT num programa apoiado pela Embaixada dos EUA. Em 2022 deixei a polícia e comecei a aprender programação por conta própria — HTML, CSS, JavaScript, depois Python e TypeScript. Sem bootcamps, sem licenciatura em informática. Em março de 2023 já trabalhava a tempo inteiro em Web3.',
+    'Programador autodidata baseado em Lisboa. Começou a programar em 2022, passou a tempo inteiro em Web3 em março de 2023. Sem bootcamps, sem licenciatura em informática — só construindo.',
   about_p2:
-    'Desde março de 2023, criei 101 ferramentas de automação em mais de 10 blockchains — tudo antes da era da programação assistida por IA. O maior sistema, TON Gift Flipper, é uma plataforma de negociação multiagente com 115 000 linhas de código: 4 bots paralelos, mais de 400 sessões Pyrogram, integração com 6 APIs de marketplaces. Sei como os protocolos são explorados porque operei on-chain em escala — encontrei vulnerabilidades em casinos Web3, rastreei clusters de carteiras e analisei manipulação de tokens por dentro.',
+    'Criou 101 ferramentas de automação em mais de 10 blockchains antes da era da programação assistida por IA. Maior projeto: TON Gift Flipper — 115K linhas de Python, 4 instâncias de bot em paralelo, 400+ sessões Pyrogram, integração com 6 APIs de marketplaces. 6 projetos em produção, todos a funcionar.',
   about_p3:
-    'Atualmente foco-me em análise on-chain — rastreio de carteiras, análise de fluxos de tokens, investigação de exploits em protocolos. Construo sistemas multiagente com IA e ecossistemas de bots no Telegram. 6 projetos em produção, todos a funcionar. Baseado em Lisboa. Disponível para relocalização.',
+    'Foco atual: análise on-chain, sistemas multi-agente com IA e ecossistemas de bots no Telegram. Rastreio de clusters de carteiras, análise de fluxos de tokens, investigação de vetores de exploit em protocolos. Ferramentas de trabalho diário: Arkham, Nansen, Dune Analytics, Chainalysis, DeBank, Tenderly, Bubblemaps, Breadcrumbs, TRM Labs.',
   about_unique:
-    '5 anos nas forças policiais treinaram o reconhecimento de padrões sob pressão. 101 ferramentas construídas de raiz treinaram engenharia sem rede de segurança. Esta combinação — instinto investigativo mais código de produção — não é algo que se encontre num currículo típico de programador.',
+    '5 anos nas forças policiais → reconhecimento de padrões que se aplica diretamente à forense on-chain.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
