@@ -31,13 +31,13 @@ export const en = {
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
   about_p1:
-    'I spent 5 years in Ukrainian law enforcement, including a SWAT certification programme supported by the US Embassy. In 2022 I left the police and started teaching myself to code — HTML, CSS, JavaScript, then Python and TypeScript. No bootcamp, no CS degree. By March 2023 I was working full-time in Web3.',
+    'Self-taught developer based in Lisbon. Started coding in 2022, went full-time Web3 in March 2023. No bootcamp, no CS degree — just building.',
   about_p2:
-    'Since March 2023, I have built 101 automation tools across 10+ blockchains — all before AI-assisted coding became mainstream. My largest system, TON Gift Flipper, is a 115,000 LOC multi-agent trading platform: 4 parallel bots, 400+ Pyrogram sessions, 6 marketplace API integrations. I know how protocols get exploited because I\'ve operated on-chain at scale — found vulnerabilities in Web3 casinos, tracked wallet clusters, and analyzed token manipulation patterns from the inside.',
+    'Built 101 automation tools across 10+ blockchains before AI-assisted coding went mainstream. Largest system: TON Gift Flipper — 115K LOC Python, 4 parallel bot instances, 400+ Pyrogram sessions, 6 marketplace API integrations. 6 production projects shipped, all running.',
   about_p3:
-    'Now I focus on on-chain analytics — wallet tracking, token flow analysis, protocol exploit research. I build multi-agent AI systems and Telegram bot ecosystems. 6 production projects shipped, all working systems. Based in Lisbon. Open to relocate anywhere.',
+    'Current focus: on-chain analytics, multi-agent AI systems, and Telegram bot ecosystems. Tracking wallet clusters, analyzing token flows, researching protocol exploit vectors. Tools I work with daily: Arkham, Nansen, Dune Analytics, Chainalysis, DeBank, Tenderly, Bubblemaps, Breadcrumbs, TRM Labs.',
   about_unique:
-    '5 years in law enforcement trained pattern recognition under pressure. 101 tools built from scratch trained engineering without guardrails. That combination — investigative instinct plus production-grade code — is not something you find on a typical dev resume.',
+    '5 years in law enforcement → pattern recognition that transfers directly to on-chain forensics.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
