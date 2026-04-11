@@ -33,7 +33,7 @@ export const pt = {
   about_p1:
     'Comecei nas forças de segurança e na segurança económica — a investigar crimes financeiros e a perceber como funciona a fraude por dentro. Em 2022, mudei para tecnologia, aprendendo tudo por conta própria, de HTML/CSS a Python, TypeScript e desenvolvimento blockchain.',
   about_p2:
-    'Em 2023, já construía infraestrutura cripto a sério: scripts de levantamento CEX, gestores de carteiras multi-chain, bots de airdrops, minters de NFT — 101 ferramentas em 13 categorias antes da era do coding assistido por IA. Engenharia real, problemas reais, soluções reais.',
+    'Em março de 2023, já construía infraestrutura cripto a sério: scripts de levantamento CEX, gestores de carteiras multi-chain, bots de airdrops, minters de NFT — 101 ferramentas em 13 categorias antes da era do coding assistido por IA. Engenharia real, problemas reais, soluções reais.',
   about_p3:
     'Hoje, combino essa profundidade operacional com orquestração de IA e análise on-chain. Construo sistemas multi-agente, monitorizo carteiras e fluxos de tokens, investigo vulnerabilidades de protocolos e ajudo empresas a automatizar o que leva horas a humanos.',
   about_unique:
