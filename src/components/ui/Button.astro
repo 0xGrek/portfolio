@@ -50,18 +50,33 @@ const dataVariant = variant;
     overflow: hidden;
   }
   .btn:hover {
-    opacity: 0.88;
-    transform: translateY(-1px);
+    opacity: 0.92;
+    transform: translateY(-1px) scale(1.02);
   }
   .btn[data-variant="primary"]:hover {
-    box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.35);
+    box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.4);
   }
   .btn[data-variant="secondary"]:hover {
     background-color: rgba(var(--accent-rgb), 0.08) !important;
     box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.2);
   }
   .btn:active {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
+  }
+
+  /* Shimmer overlay for primary buttons */
+  .btn-shimmer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 </style>
