@@ -12,32 +12,34 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<section id="experience" class="py-20" style="background-color: var(--bg-secondary);">
+<section id="experience" class="py-24" style="background-color: var(--bg-secondary);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionTitle title={t(lang, 'experience_title')} />
+    <div class="reveal">
+      <SectionTitle title={t(lang, 'experience_title')} />
+    </div>
 
     <!-- Timeline -->
     <div class="relative">
-      <!-- Vertical line -->
+      <!-- Vertical gradient line -->
       <div
         class="absolute left-4 sm:left-6 top-0 bottom-0 w-px"
-        style="background-color: var(--border);"
+        style="background: linear-gradient(to bottom, var(--accent) 0%, rgba(var(--accent-rgb), 0.3) 60%, transparent 100%);"
       ></div>
 
       <div class="space-y-10">
         {experience.map((exp, index) => (
-          <div class="relative pl-12 sm:pl-16">
+          <div class="relative pl-12 sm:pl-16 reveal" style={`transition-delay: ${index * 0.08}s;`}>
             <!-- Timeline dot -->
             <div
-              class="absolute left-2 sm:left-4 top-1.5 w-5 h-5 rounded-full border-2 flex items-center justify-center"
-              style="background-color: var(--bg); border-color: var(--accent);"
+              class="timeline-dot absolute left-2 sm:left-4 top-1.5 w-5 h-5 rounded-full border-2 flex items-center justify-center cursor-pointer"
+              style="background-color: var(--bg-secondary); border-color: var(--accent);"
             >
               <div class="w-2 h-2 rounded-full" style="background-color: var(--accent);"></div>
             </div>
 
             <!-- Card -->
             <div
-              class="p-5 sm:p-6 rounded-xl"
+              class="exp-card p-5 sm:p-6 rounded-xl card-hover"
               style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
             >
               <!-- Header row -->
@@ -51,10 +53,14 @@ const { lang } = Astro.props;
                   </p>
                 </div>
                 <div class="text-right shrink-0">
-                  <p class="text-sm font-mono" style="color: var(--text-secondary);">
+                  <!-- Period badge -->
+                  <span
+                    class="inline-block px-2.5 py-1 rounded-md text-xs font-mono font-medium"
+                    style="background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.2);"
+                  >
                     {t(lang, exp.periodKey as any)}
-                  </p>
-                  <p class="text-xs" style="color: var(--text-secondary);">
+                  </span>
+                  <p class="text-xs mt-1" style="color: var(--text-secondary);">
                     {t(lang, exp.locationKey as any)}
                   </p>
                 </div>
@@ -76,7 +82,7 @@ const { lang } = Astro.props;
               </ul>
 
               <!-- Tech tags -->
-              <div class="flex flex-wrap gap-2">
+              <div class="flex flex-wrap gap-2 pt-2 border-t" style="border-color: var(--border);">
                 {exp.tags.map((tag) => (
                   <TechTag label={tag} />
                 ))}
@@ -88,3 +94,19 @@ const { lang } = Astro.props;
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('#experience .reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
