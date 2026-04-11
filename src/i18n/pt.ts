@@ -31,7 +31,7 @@ export const pt = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
   about_p1:
-    'Comecei nas forças de segurança e na segurança económica — a investigar crimes financeiros e a perceber como funciona a fraude por dentro. Em 2022, mudei para tecnologia, aprendendo tudo por conta própria, de HTML/CSS a Python, TypeScript e desenvolvimento blockchain.',
+    'Estudei aplicação da lei e economia na universidade na Ucrânia — o que me deu uma compreensão profunda dos sistemas financeiros, fraude e investigações. Mas não segui a carreira policial. Em 2022, aprendi programação por conta própria e mergulhei direto no Web3.',
   about_p2:
     'Em março de 2023, já construía infraestrutura cripto a sério: scripts de levantamento CEX, gestores de carteiras multi-chain, bots de airdrops, minters de NFT — 101 ferramentas em 13 categorias antes da era do coding assistido por IA. Engenharia real, problemas reais, soluções reais.',
   about_p3:
