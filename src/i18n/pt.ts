@@ -2,7 +2,7 @@ export const pt = {
   // ── Meta ──────────────────────────────────────────────
   meta_title: 'Serhii Ivanenko — Engenheiro Web3 & Automação com IA',
   meta_description:
-    'Web3 builder autodidata e engenheiro de automação. 101 ferramentas, sistema de trading com 115K linhas de código, 10+ blockchains. Baseado em Lisboa, Portugal.',
+    '0xGrek — Programador Web3 e analista on-chain. 101 ferramentas, 115K linhas de código, 10+ blockchains. Autodidata. Ex-polícia. Lisboa.',
   meta_keywords:
     'conformidade cripto Lisboa, forense blockchain Portugal, AML cripto Europa, engenheiro automação Web3, analista on-chain',
 
