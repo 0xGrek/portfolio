@@ -99,7 +99,7 @@ export const ua = {
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Проєкти',
-  projects_subtitle: 'Вибрані роботи — продакшн-системи, не демо.',
+  projects_subtitle: 'Що я побудував',
   project_tech: 'Стек технологій',
   project_view: 'Детальніше',
   project_close: 'Закрити',
