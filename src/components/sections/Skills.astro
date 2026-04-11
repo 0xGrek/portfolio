@@ -10,19 +10,34 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+
+// Category icons
+const categoryIcons: Record<string, string> = {
+  skills_blockchain: '⛓',
+  skills_analytics: '📊',
+  skills_compliance: '🛡',
+  skills_automation: '⚙️',
+  skills_ai: '🤖',
+  skills_dev: '💻',
+};
 ---
 
-<section id="skills" class="py-20" style="background-color: var(--bg-secondary);">
+<section id="skills" class="py-24" style="background-color: var(--bg-secondary);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionTitle title={t(lang, 'skills_title')} />
+    <div class="reveal">
+      <SectionTitle title={t(lang, 'skills_title')} />
+    </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {skillCategories.map((category) => (
+      {skillCategories.map((category, index) => (
         <div
-          class="p-5 rounded-xl"
-          style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+          class="skill-card p-5 rounded-xl card-hover reveal"
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s;`}
         >
-          <h3 class="text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--accent);">
+          <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--accent);">
+            <span class="text-base" aria-hidden="true">
+              {categoryIcons[category.titleKey] || '▸'}
+            </span>
             {t(lang, category.titleKey as any)}
           </h3>
           <div class="flex flex-wrap gap-2">
@@ -35,3 +50,19 @@ const { lang } = Astro.props;
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('#skills .reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
