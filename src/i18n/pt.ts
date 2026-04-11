@@ -99,7 +99,7 @@ export const pt = {
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Projetos',
-  projects_subtitle: 'Trabalho selecionado — sistemas em produção, não demos.',
+  projects_subtitle: 'O que construí',
   project_tech: 'Stack Tecnológico',
   project_view: 'Ver Detalhes',
   project_close: 'Fechar',
