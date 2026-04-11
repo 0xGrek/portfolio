@@ -96,7 +96,7 @@ const socials = [
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.name}
-              class="social-hover"
+              class={`social-hover social-hero--${s.name.toLowerCase().replace(/[^a-z]/g, '')}`}
               style="color: var(--text-secondary);"
             >
               <Fragment set:html={s.icon} />
