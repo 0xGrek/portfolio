@@ -369,6 +369,31 @@
   border: none;
 }
 
+/* ─── Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  body {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .card-hover::before {
+    animation: none !important;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px) !important;
+  }
+  .tech-tag-hover:hover {
+    transform: none !important;
+  }
+  .social-hover:hover {
+    transform: scale(1.1) !important;
+  }
+}
+
 /* ─── Print styles ─────────────────────────────────────────────── */
 @media print {
   header, footer, .no-print {
