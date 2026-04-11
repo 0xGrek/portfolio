@@ -20,9 +20,9 @@ export const ua = {
   hero_greeting: 'Привіт, я',
   hero_name: 'Сергій Іваненко',
   hero_handle: '0xGrek',
-  hero_title: 'Web3 та AI-інженер з автоматизації',
+  hero_title: 'Інженер Web3 Security & Automation',
   hero_subtitle:
-    '101 інструмент створено. 115K рядків коду у продакшні. 0 буткемпів. Web3 білдер з 2023.',
+    '101 інструмент створено. 115K рядків коду у продакшні. Web3 білдер з 2023.',
   hero_cta_projects: 'Переглянути проєкти',
   hero_cta_contact: 'Написати мені',
   hero_available: 'Відкритий до пропозицій',
