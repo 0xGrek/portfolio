@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://0xgrek.com',
+  site: 'https://0xgrek.dev',
   integrations: [
     tailwind(),
     sitemap({
