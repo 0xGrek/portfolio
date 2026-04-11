@@ -118,12 +118,6 @@ export const pt = {
   proj_realty_long:
     'Criado por necessidade real — encontrar habitação em Lisboa é difícil. O agregador raspa o Idealista, Imovirtual, Remax e Era em simultâneo, elimina duplicados entre portais usando impressões digitais de endereços e deteta padrões suspeitos como o mesmo imóvel listado várias vezes a preços diferentes. A calculadora de hipoteca aplica as regras fiscais portuguesas atuais (IMT, IS, taxas bancárias). 12.000+ anúncios ativos na base de dados. Corre no Render.com com backend PostgreSQL.',
 
-  proj_orchestrator_title: 'Orquestrador de Conhecimento com IA',
-  proj_orchestrator_desc:
-    'Sistema multi-agente que encaminha conteúdo entre 8 agentes de IA especializados via classificação LLM. Dashboard Tkinter com rastreamento de progresso em tempo real.',
-  proj_orchestrator_long:
-    'O sistema que uso diariamente para gerir o meu próprio pipeline de informação. O conteúdo chega de canais Telegram e é classificado automaticamente por um despachante LLM num de 8 domínios de agentes especializados: pesquisa cripto, análise on-chain, arbitragem, inteligência de carreira, ferramentas IA, retrodrops, citações e temas gerais. Cada agente tem a sua própria memória (MEMORY.md), base de conhecimento e janela de contexto. Construído em Claude CLI com lógica de orquestração personalizada.',
-
   proj_tgbots_title: 'Ecossistema de Bots Telegram',
   proj_tgbots_desc:
     '11 bots Telegram em produção para rastreamento de vida, fitness, planeamento, transcrição YouTube e captura de conhecimento — todos geridos via dashboard Flask.',
