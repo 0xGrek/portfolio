@@ -37,7 +37,7 @@ export const en = {
   about_p3:
     'Today I combine that operational depth with AI orchestration and on-chain analytics. I build multi-agent systems, track wallets and token flows, research protocol vulnerabilities, and help businesses automate what takes humans hours.',
   about_unique:
-    "What makes me different: I've been on both sides — as an investigator and as a builder. That perspective is rare.",
+    'Law enforcement education meets Web3 engineering. I understand both how systems are exploited and how to build them securely. That perspective is rare.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
