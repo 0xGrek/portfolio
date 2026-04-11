@@ -32,7 +32,7 @@ const categoryIcons: Record<string, string> = {
       {skillCategories.map((category, index) => (
         <div
           class="skill-card p-5 rounded-xl card-hover reveal"
-          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s;`}
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s; box-shadow: var(--shadow-sm);`}
         >
           <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--accent);">
             <span class="text-base" aria-hidden="true">
