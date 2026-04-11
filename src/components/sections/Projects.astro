@@ -296,7 +296,7 @@ const categoryColors: Record<string, string> = {
         });
       }
       // Trap focus: focus close button
-      var closeBtn = modal.querySelector('[data-close]');
+      var closeBtn = modal.querySelector('button[data-close]');
       if (closeBtn) setTimeout(function () { closeBtn.focus(); }, 50);
     }
 
