@@ -26,16 +26,40 @@ const variantStyles = {
   secondary: 'background-color: transparent; color: var(--accent); border: 1px solid var(--accent);',
 };
 
-const baseClass = `inline-flex items-center justify-center font-medium rounded-lg transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 ${sizeClasses[size]} ${className}`;
+const baseClass = `btn inline-flex items-center justify-center font-medium rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${sizeClasses[size]} ${className}`;
 const style = variantStyles[variant];
+const dataVariant = variant;
 ---
 
 {href ? (
-  <a href={href} class={baseClass} style={style} {...rest}>
+  <a href={href} class={baseClass} style={style} data-variant={dataVariant} {...rest}>
     <slot />
   </a>
 ) : (
-  <button class={baseClass} style={style} {...rest}>
+  <button class={baseClass} style={style} data-variant={dataVariant} {...rest}>
     <slot />
   </button>
 )}
+
+<style>
+  .btn {
+    transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+  .btn[data-variant="primary"]:hover {
+    box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.35);
+  }
+  .btn[data-variant="secondary"]:hover {
+    background-color: rgba(var(--accent-rgb), 0.08) !important;
+    box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.2);
+  }
+  .btn:active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
