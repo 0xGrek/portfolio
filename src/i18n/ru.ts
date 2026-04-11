@@ -20,9 +20,9 @@ export const ru = {
   hero_greeting: 'Привет, я',
   hero_name: 'Сергей Иваненко',
   hero_handle: '0xGrek',
-  hero_title: 'Web3 & AI-инженер по автоматизации',
+  hero_title: 'Инженер Web3 Security & Automation',
   hero_subtitle:
-    '101 инструмент создан. 115K строк кода в продакшне. 0 буткемпов. Web3 билдер с 2023.',
+    '101 инструмент создан. 115K строк кода в продакшне. Web3 билдер с 2023.',
   hero_cta_projects: 'Смотреть проекты',
   hero_cta_contact: 'Написать мне',
   hero_available: 'Открыт к предложениям',
