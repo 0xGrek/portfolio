@@ -81,33 +81,6 @@ const statusLabels: Record<string, string> = {
       ))}
     </div>
 
-    <!-- Upcoming certifications -->
-    <div class="reveal">
-      <h3 class="text-lg font-bold mb-5 flex items-center gap-2" style="color: var(--text);">
-        <span style="color: var(--accent);">▸</span> Upcoming Certifications
-      </h3>
-      <div class="flex flex-wrap gap-4">
-        {upcomingCerts.map((cert) => (
-          <div
-            class="flex items-center gap-3 px-4 py-3 rounded-xl card-hover"
-            style="background-color: var(--bg-secondary); border: 1px solid var(--border);"
-          >
-            <span class="font-bold font-mono text-sm" style="color: var(--accent);">
-              {cert.name}
-            </span>
-            <span class="text-sm" style="color: var(--text-secondary);">
-              {cert.full}
-            </span>
-            <span
-              class="px-2 py-0.5 rounded-md text-xs font-semibold"
-              style="background-color: rgba(163,113,247,0.12); color: #a371f7; border: 1px solid rgba(163,113,247,0.3);"
-            >
-              Planned
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
   </div>
 </section>
 
