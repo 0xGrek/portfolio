@@ -162,11 +162,6 @@
   100% { background-position: 200% center; }
 }
 
-@keyframes lineGrow {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
-}
-
 @keyframes valPop {
   0%   { transform: scale(0.5); opacity: 0; }
   70%  { transform: scale(1.1); }
