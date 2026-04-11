@@ -216,6 +216,16 @@ const categoryColors: Record<string, string> = {
 ))}
 
 <style>
+  /* Featured projects get an accent border glow */
+  .project-featured {
+    border-color: rgba(var(--accent-rgb), 0.3) !important;
+    box-shadow: var(--shadow-sm), 0 0 0 1px rgba(var(--accent-rgb), 0.12);
+  }
+  .project-featured:hover {
+    border-color: rgba(var(--accent-rgb), 0.6) !important;
+    box-shadow: var(--shadow-md), 0 0 20px rgba(var(--accent-rgb), 0.15) !important;
+  }
+
   /* Entrance / exit animation keyframes */
   @keyframes modalFadeIn {
     from { opacity: 0; transform: scale(0.95); }
