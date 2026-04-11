@@ -31,7 +31,7 @@ export const en = {
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
   about_p1:
-    'I started in law enforcement and economic security — investigating financial crimes and understanding how fraud works from the inside. In 2022, I transitioned into tech, teaching myself everything from HTML/CSS to Python, TypeScript, and blockchain development.',
+    'I studied law enforcement and economics at university in Ukraine — which gave me a deep understanding of how financial systems work, how fraud operates, and how investigations are conducted. But I never went into policing. In 2022, I taught myself to code and dove straight into Web3.',
   about_p2:
     'By March 2023 I was building serious crypto infrastructure: CEX withdrawal scripts, multi-chain wallet managers, airdrop bots, NFT minters — 101 tools across 13 categories before AI-assisted coding was a thing. Real engineering, real problems, real solutions.',
   about_p3:
