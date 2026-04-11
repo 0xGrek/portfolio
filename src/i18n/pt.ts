@@ -22,7 +22,7 @@ export const pt = {
   hero_handle: '0xGrek',
   hero_title: 'Engenheiro Web3 & Automação com IA',
   hero_subtitle:
-    'Web3 builder e engenheiro de automação. Sistema de trading com 115K linhas de código. 101 ferramentas em mais de 10 blockchains. Autodidata desde 2022. Lisboa, disponível globalmente.',
+    '101 ferramentas criadas. 115K linhas de código em produção. 0 bootcamps. Web3 builder desde 2023.',
   hero_cta_projects: 'Ver Projetos',
   hero_cta_contact: 'Contactar',
   hero_available: 'Disponível para oportunidades',
