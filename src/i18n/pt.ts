@@ -31,7 +31,7 @@ export const pt = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
   about_p1:
-    'Estudei aplicação da lei e economia na universidade na Ucrânia — o que me deu uma compreensão profunda dos sistemas financeiros, fraude e investigações. Mas não segui a carreira policial. Em 2022, aprendi programação por conta própria e mergulhei direto no Web3.',
+    'Trabalhei 5 anos nas forças policiais da Ucrânia, incluindo uma certificação SWAT num programa apoiado pela Embaixada dos EUA. Em 2022 deixei a polícia e comecei a aprender programação por conta própria — HTML, CSS, JavaScript, depois Python e TypeScript. Sem bootcamps, sem licenciatura em informática. Em março de 2023 já trabalhava a tempo inteiro em Web3.',
   about_p2:
     'Em março de 2023, já construía infraestrutura cripto a sério: scripts de levantamento CEX, gestores de carteiras multi-chain, bots de airdrops, minters de NFT — 101 ferramentas em 13 categorias antes da era do coding assistido por IA. Engenharia real, problemas reais, soluções reais.',
   about_p3:
