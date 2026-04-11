@@ -148,12 +148,12 @@ export const es = {
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Habilidades',
-  skills_blockchain: 'Blockchain',
-  skills_onchain: 'Herramientas de Analítica On-Chain',
-  skills_automation: 'Automatización Crypto',
-  skills_ai: 'IA & Agentes',
+  skills_forensics: 'Forense On-Chain',
+  skills_blockchain: 'Blockchain y DeFi',
+  skills_automation: 'Automatización Cripto',
+  skills_agents: 'IA y Sistemas de Agentes',
   skills_dev: 'Desarrollo',
-  skills_security: 'Seguridad & Forense',
+  skills_security: 'Seguridad y Cumplimiento',
   skills_languages: 'Idiomas',
 
   // ── Education ─────────────────────────────────────────
