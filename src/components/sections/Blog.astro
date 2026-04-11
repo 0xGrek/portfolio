@@ -34,14 +34,15 @@ const placeholderPosts = [
 <section id="blog" class="py-24" style="background-color: var(--bg);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="reveal">
-    <SectionTitle
-      title={t(lang, 'blog_title')}
-      subtitle={t(lang, 'blog_subtitle')}
-    />
+      <SectionTitle
+        title={t(lang, 'blog_title')}
+        subtitle={t(lang, 'blog_subtitle')}
+      />
+    </div>
 
     <!-- Coming soon notice -->
     <div
-      class="flex items-center gap-3 px-4 py-3 rounded-lg mb-8 text-sm"
+      class="flex items-center gap-3 px-4 py-3 rounded-lg mb-8 text-sm reveal"
       style="background-color: rgba(255,166,87,0.1); color: #ffa657; border: 1px solid rgba(255,166,87,0.3);"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -54,16 +55,16 @@ const placeholderPosts = [
 
     <!-- Placeholder cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {placeholderPosts.map((post) => (
+      {placeholderPosts.map((post, index) => (
         <article
-          class="relative p-5 rounded-xl opacity-60 cursor-default"
-          style="background-color: var(--card-bg); border: 1px solid var(--card-border);"
+          class="blog-placeholder relative p-5 rounded-xl cursor-default reveal"
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); opacity: 0.55; transition-delay: ${index * 0.07}s;`}
         >
           <!-- Category + read time -->
           <div class="flex items-center justify-between mb-3">
             <span
-              class="px-2 py-0.5 rounded text-xs font-semibold"
-              style="background-color: var(--bg-secondary); color: var(--accent);"
+              class="px-2.5 py-1 rounded-md text-xs font-semibold"
+              style="background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.2);"
             >
               {post.category}
             </span>
@@ -83,8 +84,8 @@ const placeholderPosts = [
           <!-- Coming soon pill -->
           <div class="mt-4">
             <span
-              class="inline-block px-2 py-0.5 rounded-full text-xs"
-              style="background-color: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border);"
+              class="inline-block px-2.5 py-1 rounded-full text-xs font-medium"
+              style="background-color: rgba(255,166,87,0.1); color: #ffa657; border: 1px solid rgba(255,166,87,0.25);"
             >
               Coming soon
             </span>
@@ -94,3 +95,16 @@ const placeholderPosts = [
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('#blog .reveal');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
