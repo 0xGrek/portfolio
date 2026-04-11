@@ -37,7 +37,7 @@ export const pt = {
   about_p3:
     'Atualmente foco-me em análise on-chain — rastreio de carteiras, análise de fluxos de tokens, investigação de exploits em protocolos. Construo sistemas multiagente com IA e ecossistemas de bots no Telegram. 6 projetos em produção, todos a funcionar. Baseado em Lisboa. Disponível para relocalização.',
   about_unique:
-    'Formação policial mais engenharia Web3. Compreendo como os sistemas são explorados e como construí-los de forma segura. Esta perspetiva é rara.',
+    '5 anos nas forças policiais treinaram o reconhecimento de padrões sob pressão. 101 ferramentas construídas de raiz treinaram engenharia sem rede de segurança. Esta combinação — instinto investigativo mais código de produção — não é algo que se encontre num currículo típico de programador.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
