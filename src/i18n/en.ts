@@ -22,7 +22,7 @@ export const en = {
   hero_handle: '0xGrek',
   hero_title: 'Web3 & AI Automation Engineer',
   hero_subtitle:
-    'Former economic security officer turned Web3 practitioner. 101 automation tools across 10+ blockchains. Based in Lisbon, open to remote opportunities worldwide.',
+    'Former economic security officer turned Web3 practitioner. 115K LOC trading system, 6 production projects, 10+ blockchains. Based in Lisbon, open to remote opportunities worldwide.',
   hero_cta_projects: 'View Projects',
   hero_cta_contact: 'Get in Touch',
   hero_available: 'Open to opportunities',
