@@ -1,9 +1,9 @@
 import { en } from './en';
 import { ua } from './ua';
-import { ru } from './ru';
 import { pt } from './pt';
+import { es } from './es';
 
-export const languages = { en, ua, ru, pt } as const;
+export const languages = { en, ua, pt, es } as const;
 export type Lang = keyof typeof languages;
 export const defaultLang: Lang = 'en';
 
