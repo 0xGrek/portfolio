@@ -311,14 +311,12 @@ const categoryColors: Record<string, string> = {
 
       function hide() {
         modal.style.display = 'none';
-        // Restore scroll position before removing body lock
-        var scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.left = '';
-        document.body.style.right = '';
+        // Restore scroll lock and position
+        document.documentElement.style.overflow = '';
         document.body.classList.remove('modal-open');
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        var savedY = modal._savedScrollY || 0;
+        modal._savedScrollY = 0;
+        window.scrollTo(0, savedY);
         if (content) content.classList.remove('modal-exiting');
         currentModal = null;
       }
