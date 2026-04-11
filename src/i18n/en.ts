@@ -37,7 +37,7 @@ export const en = {
   about_p3:
     'Now I focus on on-chain analytics — wallet tracking, token flow analysis, protocol exploit research. I build multi-agent AI systems and Telegram bot ecosystems. 6 production projects shipped, all working systems. Based in Lisbon. Open to relocate anywhere.',
   about_unique:
-    'Law enforcement education meets Web3 engineering. I understand both how systems are exploited and how to build them securely. That perspective is rare.',
+    '5 years in law enforcement trained pattern recognition under pressure. 101 tools built from scratch trained engineering without guardrails. That combination — investigative instinct plus production-grade code — is not something you find on a typical dev resume.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
