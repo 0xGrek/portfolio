@@ -285,7 +285,7 @@ const categoryColors: Record<string, string> = {
       modal._savedScrollY = window.scrollY;
       document.documentElement.style.overflow = 'hidden';
       document.body.classList.add('modal-open');
-      modal.style.display = 'block';
+      modal.style.display = 'flex';
       var content = modal.querySelector('.modal-content');
       if (content) {
         content.classList.remove('modal-exiting');
