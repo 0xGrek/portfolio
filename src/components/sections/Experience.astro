@@ -95,6 +95,19 @@ const { lang } = Astro.props;
   </div>
 </section>
 
+<style>
+  @keyframes timeline-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
+  }
+  .timeline-line {
+    animation: timeline-pulse 4s ease-in-out infinite;
+  }
+  .exp-card {
+    box-shadow: var(--shadow-sm);
+  }
+</style>
+
 <script is:inline>
   (function () {
     if (!('IntersectionObserver' in window)) return;
