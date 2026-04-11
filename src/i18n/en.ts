@@ -22,7 +22,7 @@ export const en = {
   hero_handle: '0xGrek',
   hero_title: 'Web3 & AI Automation Engineer',
   hero_subtitle:
-    'Web3 builder and automation engineer. 115K LOC trading system. 101 tools across 10+ blockchains. Self-taught developer since 2022. Based in Lisbon, open worldwide.',
+    '101 tools built. 115K LOC shipped. 0 bootcamps attended. Web3 builder since 2023.',
   hero_cta_projects: 'View Projects',
   hero_cta_contact: 'Get in Touch',
   hero_available: 'Open to opportunities',
