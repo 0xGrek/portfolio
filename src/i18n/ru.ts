@@ -41,13 +41,13 @@ export const ru = {
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
-  stat_tools_label: 'Инструментов автоматизации',
+  stat_tools_label: 'Инструментов',
   stat_chains: '10+',
-  stat_chains_label: 'Блокчейнов охвачено',
-  stat_years: '3+',
-  stat_years_label: 'Лет в Web3',
-  stat_exchanges: '9',
-  stat_exchanges_label: 'CEX бирж автоматизировано',
+  stat_chains_label: 'Блокчейнов',
+  stat_years: '115K',
+  stat_years_label: 'Строк кода',
+  stat_exchanges: '6',
+  stat_exchanges_label: 'Продакшн проектов',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Опыт',
