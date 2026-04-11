@@ -35,7 +35,7 @@ export const en = {
   about_p2:
     'Since March 2023, I have built 101 automation tools across 10+ blockchains — all before AI-assisted coding became mainstream. My largest system, TON Gift Flipper, is a 115,000 LOC multi-agent trading platform: 4 parallel bots, 400+ Pyrogram sessions, 6 marketplace API integrations. I know how protocols get exploited because I\'ve operated on-chain at scale — found vulnerabilities in Web3 casinos, tracked wallet clusters, and analyzed token manipulation patterns from the inside.',
   about_p3:
-    'Today I combine that operational depth with AI orchestration and on-chain analytics. I build multi-agent systems, track wallets and token flows, research protocol vulnerabilities, and help businesses automate what takes humans hours.',
+    'Now I focus on on-chain analytics — wallet tracking, token flow analysis, protocol exploit research. I build multi-agent AI systems and Telegram bot ecosystems. 6 production projects shipped, all working systems. Based in Lisbon. Open to relocate anywhere.',
   about_unique:
     'Law enforcement education meets Web3 engineering. I understand both how systems are exploited and how to build them securely. That perspective is rare.',
 
