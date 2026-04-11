@@ -63,6 +63,19 @@
     /* Subtle dot-grid noise texture */
     background-image: radial-gradient(circle, rgba(128,128,128,0.04) 1px, transparent 1px);
     background-size: 24px 24px;
+    /* Page load fade-in */
+    opacity: 0;
+    animation: page-fade-in 0.4s ease 0.05s forwards;
+  }
+
+  /* Typography polish */
+  p, li {
+    line-height: 1.7;
+  }
+
+  /* Interactive elements cursor */
+  button, a, [role="button"], label[for] {
+    cursor: pointer;
   }
 
   /* Themed text selection */
