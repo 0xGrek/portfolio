@@ -283,13 +283,21 @@
 
 /* TechTag hover */
 .tech-tag-hover {
-  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
-  cursor: default;
+  transition: background-color 0.15s ease,
+              color 0.15s ease,
+              border-color 0.15s ease,
+              transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
 }
 .tech-tag-hover:hover {
   background-color: rgba(var(--accent-rgb), 0.12) !important;
   color: var(--accent) !important;
   border-color: rgba(var(--accent-rgb), 0.35) !important;
+  transform: scale(1.08);
+}
+.tech-tag-hover:active {
+  transform: scale(0.97);
+  background-color: rgba(var(--accent-rgb), 0.22) !important;
 }
 
 /* Social link hover */
