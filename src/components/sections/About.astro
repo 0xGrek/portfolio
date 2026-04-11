@@ -82,6 +82,16 @@ const stats = [
     font-style: normal;
     font-family: Georgia, serif;
   }
+  /* Pop animation triggers on the stat value when parent becomes visible */
+  .stat-card.visible .stat-value,
+  .stat-card.active .stat-value {
+    animation: valPop 0.6s ease forwards;
+  }
+  @keyframes valPop {
+    0%   { transform: scale(0.5); opacity: 0; }
+    70%  { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+  }
 </style>
 
 <script is:inline>
