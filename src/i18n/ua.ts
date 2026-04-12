@@ -78,10 +78,10 @@ export const ua = {
   exp_webdev_company: 'Незалежно',
   exp_webdev_period: '2023 – дотепер',
   exp_webdev_location: '',
-  exp_webdev_desc: '15+ production Telegram-ботів, веб-додатки, лендінги, портфоліо-сайти.',
-  exp_webdev_b1: '15+ Telegram-ботів у production',
-  exp_webdev_b2: 'Full-stack веб-додатки та лендінги',
-  exp_webdev_b3: 'Автоматизація бізнес-процесів',
+  exp_webdev_desc: 'Telegram-боти та міні-додатки. Побудував систему з 11 ботів для лайф-трекінгу та бізнес-автоматизації.',
+  exp_webdev_b1: '15+ Telegram-ботів та міні-додатків у production',
+  exp_webdev_b2: 'Система з 11 ботів для лайф-трекінгу, фітнесу, планування',
+  exp_webdev_b3: 'Веб-додатки, лендінги та портфоліо-сайти',
 
   // Experience — AI Development
   exp_ai_dev_title: 'AI-розробник',
