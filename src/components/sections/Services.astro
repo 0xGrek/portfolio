@@ -9,89 +9,28 @@ interface Props {
 
 const { lang } = Astro.props;
 
-const services = [
-  {
-    id: 'construction',
-    icon: '🏗️',
-    example: true,
-  },
-  {
-    id: 'finance',
-    icon: '🏦',
-    example: false,
-  },
-  {
-    id: 'ecommerce',
-    icon: '🛒',
-    example: false,
-  },
-  {
-    id: 'food',
-    icon: '🍰',
-    example: false,
-  },
-  {
-    id: 'social',
-    icon: '📹',
-    example: false,
-    featured: true,
-  },
-  {
-    id: 'marketing',
-    icon: '📊',
-    example: false,
-  },
-  {
-    id: 'crypto',
-    icon: '🔐',
-    example: true,
-  },
-  {
-    id: 'ai',
-    icon: '🤖',
-    example: false,
-  },
-  {
-    id: 'telegram',
-    icon: '📱',
-    example: true,
-  },
-  {
-    id: 'medical',
-    icon: '🏥',
-    example: false,
-  },
-  {
-    id: 'auto',
-    icon: '🚗',
-    example: false,
-  },
-  {
-    id: 'legal',
-    icon: '⚖️',
-    example: false,
-  },
-  {
-    id: 'hotels',
-    icon: '🏨',
-    example: false,
-  },
-  {
-    id: 'logistics',
-    icon: '📦',
-    example: false,
-  },
-  {
-    id: 'flowers',
-    icon: '💐',
-    example: false,
-  },
-  {
-    id: 'hvac',
-    icon: '🌀',
-    example: false,
-    featured: true,
-  },
+const servicesRegular = [
+  { id: 'food',       icon: '🍰', example: false },
+  { id: 'medical',    icon: '🏥', example: false },
+  { id: 'auto',       icon: '🚗', example: false },
+  { id: 'legal',      icon: '⚖️', example: false },
+  { id: 'hotels',     icon: '🏨', example: false },
+  { id: 'logistics',  icon: '📦', example: false },
+  { id: 'flowers',    icon: '💐', example: false },
+  { id: 'ecommerce',  icon: '🛒', example: false },
+  { id: 'construction', icon: '🏗️', example: true },
+  { id: 'hvac',       icon: '🌀', example: false, featured: true },
+];
+
+const servicesIT = [
+  { id: 'research',   icon: '🔍', example: false },
+  { id: 'bizanalytics', icon: '📊', example: false },
+  { id: 'crypto',     icon: '🔐', example: true },
+  { id: 'ai',         icon: '🤖', example: false },
+  { id: 'telegram',   icon: '📱', example: true },
+  { id: 'social',     icon: '📹', example: false, featured: true },
+  { id: 'marketing',  icon: '📈', example: false },
+  { id: 'finance',    icon: '🏦', example: false },
 ];
 ---
 
