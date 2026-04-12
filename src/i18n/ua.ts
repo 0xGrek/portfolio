@@ -98,7 +98,10 @@ export const ua = {
   exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: 'Правоохоронна діяльність.',
+  exp_police_desc: 'Правоохоронна діяльність, робота з документацією та базами даних.',
+  exp_police_b1: '',
+  exp_police_b2: '',
+  exp_police_b3: '',
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Проєкти',
