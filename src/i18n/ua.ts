@@ -23,7 +23,7 @@ export const ua = {
   hero_handle: '0xGrek',
   hero_title: 'Автоматизую все, що рухається. On-Chain Analyst, Web3 Researcher.',
   hero_subtitle:
-    '100+ інструментів автоматизації створено. Airdrop Hunter. У Web3 з 2023, у розробці з 2022.',
+    'У розробці з 2022. У Web3 з 2023. 100+ інструментів автоматизації. 10+ блокчейнів.',
   hero_cta_projects: 'Переглянути проєкти',
   hero_cta_contact: 'Написати мені',
   hero_available: 'Відкритий до пропозицій',
