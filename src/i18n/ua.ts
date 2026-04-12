@@ -98,7 +98,7 @@ export const ua = {
   exp_police_company: 'НПУ',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: 'Служба в різних підрозділах Національної поліції України',
+  exp_police_desc: '',
   exp_police_b1: 'Патрульна поліція',
   exp_police_b2: 'Карний розшук — аналітична та оперативно-розшукова діяльність',
   exp_police_b3: 'Тактична група — спецоперації',
