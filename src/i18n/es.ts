@@ -285,7 +285,7 @@ export const es = {
   services_bizanalytics_examples: 'Por ejemplo:|Entiende tus números: CAC, LTV, churn, márgenes — en lenguaje sencillo|Dashboards que rastrean lo que realmente importa, no métricas de vanidad|Informes de IA que explican POR QUÉ cayeron los ingresos, no solo que cayeron|Para dueños de negocios que no saben a dónde va su dinero',
 
   services_cta_title: '¿No encontraste tu sector?',
-  services_cta_desc: 'Automatizamos todo lo que te causa dolor de cabeza. Informes, notificaciones, entrada de datos, monitoreo — cualquier rutina que consume tu tiempo. Cuéntanos qué haces manualmente y te mostraremos exactamente cómo un bot o IA lo hará por ti.',
+  services_cta_desc: 'Automatizamos todo lo que te causa dolor de cabeza. Informes, notificaciones, entrada de datos, monitoreo — cualquier rutina que consume tu tiempo. Cuéntanos qué haces manualmente y te mostramos cómo un bot o AI puede hacerlo por ti. 1 hora ahorrada al día = 7 horas a la semana = 2–4 días extra que puedes redirigir al crecimiento de tu negocio.',
   services_cta_button: 'Contactar',
 
   // ── Footer ────────────────────────────────────────────
