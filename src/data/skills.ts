@@ -125,9 +125,8 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       'Ukrainian (Native)',
       'Russian (Native)',
-      'English (B2)',
+      'English (A2)',
       'Portuguese (A2)',
-      'Spanish (Basic)',
     ],
   },
 ];
