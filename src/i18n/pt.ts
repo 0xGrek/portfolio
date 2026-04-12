@@ -251,6 +251,9 @@ export const pt = {
   services_flowers_title: 'Floristas e Lojas de Presentes',
   services_flowers_desc: 'Bot de encomenda: ocasião, orçamento, data de entrega → sugestões enviadas instantaneamente. CRM memoriza datas: aniversário da esposa → marido recebe lembrete 5 dias antes. Notificações em massa antes de feriados: "Dia dos Namorados daqui a 3 dias — encomende agora?" — vendas no piloto automático.',
 
+  services_hvac_title: 'AVAC, Ventilação e Serviços de Instalação',
+  services_hvac_desc: 'Cliente insere a área e tipo de divisão → bot calcula orçamento instantâneo, sem necessidade de ligar para um engenheiro. Bot de vendas com IA, website completo, catálogo de produtos e painel de administração — produto completo, não apenas um chatbot. Qualificação automática de leads e follow-up para que nenhum cliente se perca.',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Criado com Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. Todos os direitos reservados.',
