@@ -38,7 +38,7 @@ export const pt = {
   about_p3:
     'Foco atual: análise on-chain, sistemas multi-agente com IA, ecossistemas Telegram. A investigar vetores de exploit em protocolos. Disponível para relocalização.',
   about_unique:
-    '3 anos nas forças de segurança antes de transitar para a tecnologia.'
+    '3 anos nas forças de segurança antes de transitar para a tecnologia.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
