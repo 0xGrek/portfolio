@@ -264,7 +264,7 @@ export const pt = {
   services_bizanalytics_desc: 'Ajudo a perceber os seus números: CAC, LTV, churn, margens — em linguagem simples. Construo dashboards que acompanham o que realmente importa. Relatórios com IA que explicam PORQUÊ a receita caiu, não só que caiu. Para proprietários que não sabem para onde vai o dinheiro.',
 
   services_cta_title: 'Não encontrou a sua área?',
-  services_cta_desc: 'Qualquer trabalho rotineiro que consome o seu tempo — relatórios, mensagens, entrada de dados, monitoramento — posso automatizar. Diga-me o que faz manualmente e mostro-lhe exatamente como um bot ou IA pode fazê-lo por si.',
+  services_cta_desc: 'Automatizamos tudo o que lhe causa dor de cabeça. Relatórios, notificações, entrada de dados, monitoramento — qualquer rotina que consome seu tempo. Diga-nos o que faz manualmente e mostraremos exatamente como um bot ou IA fará isso por você.',
   services_cta_button: 'Contactar',
 
   // ── Footer ────────────────────────────────────────────
