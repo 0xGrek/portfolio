@@ -31,13 +31,13 @@ export const en = {
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
   about_p1:
-    'Self-taught developer based in Lisbon. Started coding in 2022, went full-time Web3 in March 2023. No bootcamp, no CS degree — just building.',
+    'Self-taught developer. Started coding in 2022 — first Udemy courses, then Web3 automation from March 2023. No bootcamp, no CS degree. Built everything from scratch: minting, parsing, on-chain tracking, multi-account infrastructure across every major blockchain — L1, L2.',
   about_p2:
-    'Built 101 automation tools across 10+ blockchains before AI-assisted coding went mainstream. Largest system: TON Gift Flipper — 115K LOC Python, 4 parallel bot instances, 400+ Pyrogram sessions, 6 marketplace API integrations. 6 production projects shipped, all running.',
+    '100+ automation tools for DeFi, airdrops, NFTs, and on-chain operations. Biggest project: TON Gift Flipper — multi-agent async trading system. Works across all major chains. Back when there was no AI coding — everything was manual.',
   about_p3:
-    'Current focus: on-chain analytics, multi-agent AI systems, and Telegram bot ecosystems. Tracking wallet clusters, analyzing token flows, researching protocol exploit vectors. Tools I work with daily: Arkham, Nansen, Dune Analytics, Chainalysis, DeBank, Tenderly, Bubblemaps, Breadcrumbs, TRM Labs.',
+    'Current focus: on-chain analytics, multi-agent AI systems, Telegram ecosystems. Investigating protocol exploit vectors. Open to relocation.',
   about_unique:
-    '5 years in law enforcement — criminal investigation and surveillance → pattern recognition for on-chain forensics.',
+    '5 years in law enforcement — criminal investigation and surveillance → pattern recognition that transfers directly to on-chain forensics.'
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
