@@ -202,7 +202,7 @@ export const en = {
   // ── Services ──────────────────────────────────────────
   services_title: 'How I Can Help',
   services_subtitle: 'Real solutions for real businesses — no jargon, just results',
-  services_disclaimer: "I'm a solo developer working with AI tools. I build focused, practical solutions — not enterprise software. If you need a simple bot, automation, or dashboard that solves one specific problem — I'm your person. For large-scale ERP or CRM systems, I'll honestly tell you to look for a team.",
+  services_disclaimer: "",
   services_cat_regular: 'For Regular Business',
   services_cat_it: 'For IT & Companies',
 
