@@ -206,62 +206,83 @@ export const es = {
   services_cat_regular: 'Para Negocios Comunes',
   services_cat_it: 'Para IT y Empresas',
 
+  services_show_more: 'Más detalles ▼',
+  services_show_less: 'Menos detalles ▲',
+
   services_construction_title: 'Construcción e Inmobiliaria',
-  services_construction_desc: 'Tu cliente ve fotos del progreso diario en Telegram — sin más llamadas "¿cómo va todo?". Todos los anuncios de 10+ portales en un solo lugar, actualizado cada hora. Anuncios duplicados y fraudulentos marcados automáticamente.',
+  services_construction_desc: 'Actualizaciones de progreso automatizadas, agregación de anuncios y detección de fraude.',
   services_construction_example: 'Construido: Portugal Realty — 12K anuncios de 4 portales al día',
+  services_construction_examples: 'Por ejemplo:|Tu cliente ve fotos del progreso diario en Telegram — sin más llamadas "¿cómo va todo?"|Todos los anuncios de 10+ portales en un solo lugar, actualizado cada hora|Anuncios duplicados y fraudulentos marcados automáticamente|Nuevo lead del portal → notificación inmediata al gestor',
 
   services_finance_title: 'Finanzas y Banca',
-  services_finance_desc: 'Sabes en el momento en que algo inusual ocurre en tus cuentas. Informes de cumplimiento que se escriben solos. Dashboards con tu situación financiera real — actualizados automáticamente, sin trabajo manual.',
+  services_finance_desc: 'Monitorización de cuentas en tiempo real, informes de cumplimiento automáticos y dashboards financieros.',
+  services_finance_examples: 'Por ejemplo:|Alerta instantánea cuando algo inusual ocurre en tus cuentas|Informes de cumplimiento que se escriben solos — sin analista|Dashboard con tu situación financiera real, actualizado automáticamente|Patrones de transacciones sospechosos marcados antes de convertirse en problemas',
 
   services_ecommerce_title: 'E-commerce y Retail',
-  services_ecommerce_desc: 'Bot recupera el 10% de los carritos abandonados y notifica automáticamente el estado del pedido. Tus clientes hacen pedidos, pagan y reciben actualizaciones — todo en Telegram, sin llamarte. Conoces los precios de la competencia antes de fijar los tuyos.',
+  services_ecommerce_desc: 'Recuperación de carritos abandonados, automatización de estado de pedidos y monitorización de precios.',
+  services_ecommerce_examples: 'Por ejemplo:|Bot recupera el 10% de carritos abandonados con un mensaje de seguimiento oportuno|Clientes hacen pedidos, pagan y reciben actualizaciones — todo en Telegram, sin llamarte|Conoces los precios de la competencia antes de fijar los tuyos|Alertas automáticas de reposición cuando el inventario baja del umbral',
 
   services_food_title: 'Panaderías, Restaurantes y Salones',
-  services_food_desc: 'Bot acepta pedidos 24/7, confirma automáticamente, envía "tu pedido está listo" — los camareros dejan de contestar llamadas. Control de calidad con IA: el bot evalúa fotos de los platos entregados y detecta desviaciones de calidad automáticamente. Recordatorios de cita reducen ausencias. Especiales del día publicados en Instagram sin mover un dedo.',
+  services_food_desc: 'Automatización de pedidos y comunicación con clientes para restauración y salones.',
+  services_food_examples: 'Por ejemplo:|Bot acepta pedidos 24/7, confirma automáticamente, envía "tu pedido está listo"|Control de calidad con IA: el bot evalúa fotos de platos y detecta desviaciones de estándares|Recordatorios de cita reducen ausencias un 30–50%|Especiales del día publicados en Instagram sin mover un dedo',
 
   services_social_title: 'Redes Sociales y Contenido',
-  services_social_desc: 'Grabas UN vídeo largo → IA corta los 10 mejores momentos para Reels y TikTok, genera subtítulos y hashtags, programa publicaciones automáticamente. Notificación matutina: "Hoy publica a las 12:00 y 18:00, aquí están tus clips." Monitoreo de competidores: qué está en tendencia en tu nicho ahora mismo.',
+  services_social_desc: 'Un vídeo largo se convierte en una semana de contenido — IA corta, subtitula y programa todo.',
+  services_social_examples: 'Por ejemplo:|Grabas UN vídeo → IA corta los 10 mejores momentos para Reels y TikTok|Subtítulos y hashtags generados automáticamente|Notificación matutina: "Hoy publica a las 12:00 y 18:00, aquí están tus clips"|Monitoreo de competidores: qué está en tendencia en tu nicho ahora mismo',
 
   services_marketing_title: 'Marketing y Analítica',
-  services_marketing_desc: 'Bot responde a clientes 24/7, los cualifica y pasa solo leads listos a tu equipo. Ves exactamente qué publican los competidores, qué les funciona y qué no. Cada semana un informe llega a tu bandeja de entrada — sin que nadie lo haya preparado.',
+  services_marketing_desc: 'Bot de cualificación de leads, seguimiento de competidores e informes semanales automáticos.',
+  services_marketing_examples: 'Por ejemplo:|Bot responde a clientes 24/7, los cualifica y pasa solo leads listos al equipo|Ves exactamente qué publican los competidores, qué les funciona y qué no|Cada semana un informe llega a tu bandeja sin que nadie lo haya preparado|Pruebas A/B de creativos con resultados compilados automáticamente',
 
   services_crypto_title: 'Cripto y Web3',
-  services_crypto_desc: 'Alerta instantánea cuando una cartera importante mueve dinero. Bots que hacen farming de airdrops, reclaman recompensas y gestionan posiciones DeFi mientras duermes. Si algo parece sospechoso on-chain, encuentro adónde fue el dinero.',
+  services_crypto_desc: 'Monitorización de carteras, automatización de airdrops y forense on-chain.',
   services_crypto_example: 'Construido: monitor de 35 carteras en ETH, Polygon, Solana',
+  services_crypto_examples: 'Por ejemplo:|Alerta instantánea cuando una cartera importante mueve dinero|Bots hacen farming de airdrops, reclaman recompensas y gestionan posiciones DeFi mientras duermes|¿Algo parece sospechoso on-chain? Rastro adónde fue el dinero|Monitorización multi-chain: ETH, Polygon, Solana y mucho más',
 
   services_ai_title: 'IA y Automatización para Cualquier Negocio',
-  services_ai_desc: 'Producto completo — bot de ventas con IA, website, catálogo de productos y panel de administración. No solo un chatbot: un sistema completo que tu equipo de ventas realmente usa. PDFs, facturas y emails procesados automáticamente. Nota de voz → IA transcribe, extrae tareas y envía resumen al equipo.',
+  services_ai_desc: 'Sistema completo de ventas con IA, catálogo de productos, panel de administración y procesamiento de documentos.',
+  services_ai_examples: 'Por ejemplo:|Producto completo — bot de ventas con IA, website, catálogo y panel de administración|No solo un chatbot: sistema completo que el equipo de ventas realmente usa|PDFs, facturas y emails procesados automáticamente|Nota de voz → IA transcribe, extrae tareas y envía resumen al equipo',
 
   services_telegram_title: 'Bots y Mini-Apps de Telegram',
-  services_telegram_desc: 'Un bot que trabaja para tu negocio las 24 horas — acepta pedidos, responde preguntas, envía recordatorios. Pagos integrados, sin checkout externo. Tus clientes nunca necesitan salir de Telegram.',
+  services_telegram_desc: 'Bots Telegram personalizados para pedidos, pagos y comunicación con clientes las 24 horas.',
   services_telegram_example: 'Construido: ecosistema de 11 bots para life & business tracking',
+  services_telegram_examples: 'Por ejemplo:|Bot acepta pedidos y responde preguntas en cualquier momento|Pagos integrados — sin checkout externo|Tus clientes nunca necesitan salir de Telegram|Mini-app con catálogo, carrito e historial de pedidos dentro de Telegram',
 
   services_medical_title: 'Clínicas Médicas y Dentistas',
-  services_medical_desc: 'Bot de citas — el paciente elige médico, fecha y hora en segundos. Recordatorios automáticos 24h y 2h antes de la visita — reduce ausencias un 30–50%. IA responde "¿Cuánto cuesta un empaste?" y "¿Cómo prepararme para una extracción?" a cualquier hora.',
+  services_medical_desc: 'Citas automatizadas, recordatorios anti-ausencias y respuestas de IA para pacientes.',
+  services_medical_examples: 'Por ejemplo:|El paciente elige médico, fecha y hora en segundos — sin llamar|Recordatorios automáticos 24h y 2h antes de la visita reducen ausencias un 30–50%|IA responde "¿Cuánto cuesta un empaste?" y "¿Cómo prepararme?" a cualquier hora|Mensaje post-visita con instrucciones de cuidado enviado automáticamente',
 
   services_auto_title: 'Talleres y Autolavados',
-  services_auto_desc: 'Bot de reserva: modelo del coche, problema, fecha — cita instantánea sin llamadas. Actualizaciones automáticas de estado: "Diagnóstico listo", "Piezas pedidas", "Coche listo" — cliente siempre informado. Recordatorios de mantenimiento por kilometraje o tiempo fidelizan clientes.',
+  services_auto_desc: 'Automatización de reservas, notificaciones de estado y recordatorios de mantenimiento para negocios del automóvil.',
+  services_auto_examples: 'Por ejemplo:|Bot de reserva: modelo del coche, problema, fecha — cita instantánea sin llamadas|Actualizaciones automáticas: "Diagnóstico listo", "Piezas pedidas", "Coche listo"|Recordatorios de mantenimiento por kilometraje o tiempo fidelizan clientes|Gestores de flota ven todos los trabajos activos en un dashboard Telegram',
 
   services_legal_title: 'Bufetes y Consultoría Legal',
-  services_legal_desc: 'Bot de cribado con IA: "Describe tu situación" → cualificación → cita con abogado — sin recepcionista. IA genera plantillas de documentos: contratos, reclamaciones, poderes notariales. Seguimiento de plazos con recordatorios de fechas judiciales — nada se escapa.',
+  services_legal_desc: 'Bot de cribado con IA, plantillas de documentos automáticas y seguimiento de plazos para despachos.',
+  services_legal_examples: 'Por ejemplo:|Bot de IA: "Describe tu situación" → cualificación → cita con abogado — sin recepcionista|IA genera plantillas de documentos: contratos, reclamaciones, poderes notariales|Seguimiento de plazos con recordatorios de fechas judiciales — nada se escapa|Nuevas consultas clasificadas automáticamente y dirigidas al especialista correcto',
 
   services_hotels_title: 'Hoteles y Airbnb',
-  services_hotels_desc: 'Conserje de IA en Telegram responde a huéspedes en varios idiomas 24/7 — sin recepción a las 3am. Monitorización de reseñas en todas las plataformas con alerta inmediata ante reseñas negativas. Notificación automática al personal de limpieza al checkout — cero llamadas de coordinación.',
+  services_hotels_desc: 'Conserje de IA multilingüe, monitorización de reseñas y notificaciones automáticas al personal.',
+  services_hotels_examples: 'Por ejemplo:|Conserje de IA responde a huéspedes en varios idiomas 24/7 — sin recepción a las 3am|Monitorización de reseñas en todas las plataformas con alerta inmediata ante negativas|Notificación automática al personal de limpieza al checkout — cero llamadas de coordinación|Bot de upsell sugiere late checkout o upgrade de habitación en el momento adecuado',
 
   services_logistics_title: 'Logística y Entregas',
-  services_logistics_desc: 'Bot de seguimiento: introduce el número de pedido → ve el estado al instante, sin llamar a soporte. Los dueños de flotas de taxi tienen un bot GPS en Telegram — ubicación en vivo, horas trabajadas, análisis de velocidad y comportamiento al volante por conductor. Notificaciones automáticas en cada etapa mantienen a clientes y despachadores sincronizados sin llamadas extra.',
+  services_logistics_desc: 'Bots de seguimiento de pedidos, monitorización GPS de flotas y notificaciones automáticas al despacho.',
+  services_logistics_examples: 'Por ejemplo:|Bot de seguimiento: introduce el número de pedido → estado al instante, sin llamar a soporte|Bot GPS para flotas de taxi: ubicación en vivo, horas, análisis de conducción en Telegram|Notificaciones automáticas en cada etapa mantienen a clientes informados|Análisis de conductores — identifica problemas antes de que cuesten clientes',
 
   services_flowers_title: 'Floristerías y Tiendas de Regalos',
-  services_flowers_desc: 'Bot de pedido: ocasión, presupuesto, fecha de entrega → sugerencias al instante. CRM recuerda fechas: cumpleaños de la esposa → el marido recibe aviso 5 días antes. Notificaciones masivas antes de fiestas: "San Valentín en 3 días — ¡pide ya!" — ventas en piloto automático.',
+  services_flowers_desc: 'Bot de pedidos, recordatorios de fechas CRM y notificaciones masivas antes de festividades.',
+  services_flowers_examples: 'Por ejemplo:|Bot de pedido: ocasión, presupuesto, fecha de entrega → sugerencias al instante|CRM recuerda fechas: cumpleaños de la esposa → el marido recibe aviso 5 días antes|Notificaciones masivas: "San Valentín en 3 días — ¡pide ya!" — ventas en piloto automático|Programa de fidelidad: bot ofrece descuento en el próximo pedido tras compra',
 
   services_hvac_title: 'Climatización, Ventilación e Instalaciones',
-  services_hvac_desc: 'Cliente introduce el tamaño y tipo de habitación → bot calcula presupuesto instantáneo, sin llamar a un ingeniero. Bot de campo para medidores e instaladores: registran medidas in situ, generan lista de materiales con cantidades y optimizan la ruta de entrega — sin papeleo, sin errores. Cualificación automática de leads y seguimiento para que ningún prospecto se pierda.',
+  services_hvac_desc: 'Calculadora de presupuestos instantánea, bot de campo para medidores y cualificación automática de leads.',
+  services_hvac_examples: 'Por ejemplo:|Cliente introduce tamaño y tipo de habitación → bot calcula presupuesto instantáneo, sin ingeniero|Bot de campo: registran medidas in situ, generan lista de materiales con cantidades|Planificación de ruta de entrega integrada — sin papeleo, sin errores|Cualificación automática de leads y seguimiento para que ningún prospecto se pierda',
 
   services_research_title: 'Investigación y Evaluación de Vulnerabilidades',
-  services_research_desc: 'Análisis de bases de datos y detección de agujeros de seguridad antes de que alguien más los encuentre. Investigación de competidores y análisis de mercado con IA. Scraping y estructuración de datos de cualquier fuente pública. Si está en internet — lo encuentro, estructuro y entrego.',
+  services_research_desc: 'Detección de agujeros de seguridad, análisis de competidores y scraping de datos de cualquier fuente pública.',
+  services_research_examples: 'Por ejemplo:|Análisis de bases de datos y detección de agujeros de seguridad antes que nadie|Investigación de competidores y análisis de mercado con IA|Scraping y estructuración de datos de cualquier fuente pública|Si está en internet — lo encuentro, estructuro y entrego',
 
   services_bizanalytics_title: 'Analítica de Negocio y Métricas',
-  services_bizanalytics_desc: 'Te ayudo a entender tus números: CAC, LTV, churn, márgenes — en lenguaje sencillo. Construyo dashboards que rastrean lo que realmente importa. Informes con IA que explican POR QUÉ cayeron los ingresos, no solo que cayeron. Para dueños de negocios que no saben a dónde va su dinero.',
+  services_bizanalytics_desc: 'Dashboards en lenguaje sencillo e informes de IA que explican POR QUÉ cayeron los ingresos.',
+  services_bizanalytics_examples: 'Por ejemplo:|Entiende tus números: CAC, LTV, churn, márgenes — en lenguaje sencillo|Dashboards que rastrean lo que realmente importa, no métricas de vanidad|Informes de IA que explican POR QUÉ cayeron los ingresos, no solo que cayeron|Para dueños de negocios que no saben a dónde va su dinero',
 
   services_cta_title: '¿No encontraste tu sector?',
   services_cta_desc: 'Automatizamos todo lo que te causa dolor de cabeza. Informes, notificaciones, entrada de datos, monitoreo — cualquier rutina que consume tu tiempo. Cuéntanos qué haces manualmente y te mostraremos exactamente cómo un bot o IA lo hará por ti.',
