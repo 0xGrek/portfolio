@@ -251,6 +251,9 @@ export const en = {
   services_flowers_title: 'Flower Shops & Gift Stores',
   services_flowers_desc: 'Order bot: occasion, budget, delivery date → suggestions sent instantly. CRM date memory: wife\'s birthday → husband gets a reminder 5 days before. Pre-holiday mass notifications: "Valentine\'s Day in 3 days — order now?" — drives repeat sales on autopilot.',
 
+  services_hvac_title: 'HVAC, Ventilation & Installation Services',
+  services_hvac_desc: 'Client enters room size and type → bot calculates instant quote, no engineer call needed. AI sales bot with full product catalog website and admin panel — a complete product, not just a chatbot. Automated lead qualification and follow-up so no prospect falls through the cracks.',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. All rights reserved.',
