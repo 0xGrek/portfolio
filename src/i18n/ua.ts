@@ -21,7 +21,7 @@ export const ua = {
   hero_greeting: 'Привіт, я',
   hero_name: 'Сергій Іваненко',
   hero_handle: '0xGrek',
-  hero_title: 'Автоматизую все, що рухається. On-Chain Analyst, Web3 Player & Researcher.',
+  hero_title: 'Автоматизую все, що рухається. On-Chain Analyst, Web3 Researcher.',
   hero_subtitle:
     '100+ інструментів автоматизації створено. AirDrop Hunter. У Web3 з 2023, у розробці з 2022.',
   hero_cta_projects: 'Переглянути проєкти',
