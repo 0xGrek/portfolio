@@ -37,7 +37,7 @@ export const pt = {
   about_p3:
     'Foco atual: análise on-chain, sistemas multi-agente com IA e ecossistemas de bots no Telegram. Rastreio de clusters de carteiras, análise de fluxos de tokens, investigação de vetores de exploit em protocolos. Ferramentas de trabalho diário: Arkham, Nansen, Dune Analytics, Chainalysis, DeBank, Tenderly, Bubblemaps, Breadcrumbs, TRM Labs.',
   about_unique:
-    '5 anos nas forças policiais → reconhecimento de padrões que se aplica diretamente à forense on-chain.',
+    '5 anos nas forças de segurança — investigação criminal e vigilância operativa → reconhecimento de padrões para forense on-chain.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
