@@ -257,6 +257,12 @@ export const en = {
   services_hvac_title: 'HVAC, Ventilation & Installation Services',
   services_hvac_desc: 'Client enters room size and type → bot calculates instant quote, no engineer call needed. AI sales bot with full product catalog website and admin panel — a complete product, not just a chatbot. Automated lead qualification and follow-up so no prospect falls through the cracks.',
 
+  services_research_title: 'Research & Vulnerability Assessment',
+  services_research_desc: 'Database analysis and finding security holes before someone else does. Competitor research and market analysis powered by AI. Data scraping and structuring from any public source. If it\'s online — I can find it, structure it, and deliver it.',
+
+  services_bizanalytics_title: 'Business Analytics & Metrics',
+  services_bizanalytics_desc: 'Help you understand your numbers: CAC, LTV, churn, margins — in plain language. Build dashboards that track what actually matters. AI-powered reports that tell you why your revenue dropped, not just that it did. For business owners who don\'t know where their money goes.',
+
   services_cta_title: "Don't see your industry?",
   services_cta_desc: "Whatever routine work takes your time — reports, messages, data entry, monitoring — I can automate it. Tell me what you do manually and I'll show you exactly how a bot or AI can do it for you.",
   services_cta_button: 'Contact me',
