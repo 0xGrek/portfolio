@@ -17,7 +17,7 @@ const {
   canonicalUrl = Astro.url.href,
 } = Astro.props;
 
-const allLangs: Lang[] = ['en', 'ua', 'pt', 'es'];
+const allLangs: Lang[] = ['en', 'ua', 'pt'];
 
 function getHrefLang(l: Lang): string {
   const base = Astro.url.origin;
