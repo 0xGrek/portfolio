@@ -205,7 +205,7 @@ export const ua = {
 
   // ── Services ──────────────────────────────────────────
   services_title: 'Чим я можу бути корисним',
-  services_subtitle: 'Реальні рішення для реального бізнесу — без жаргону, тільки результат',
+  services_subtitle: '',
   services_disclaimer: '',
   services_cat_regular: 'Для звичайного бізнесу',
   services_cat_it: 'Для IT та компаній',
