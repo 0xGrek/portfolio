@@ -1,6 +1,6 @@
 export const ua = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Сергій Іваненко — Ончейн-аналітик та розробник автоматизації',
+  meta_title: 'Сергій Іваненко — On-Chain Analyst, Web3 Researcher & Automation Developer',
   meta_description:
     '0xGrek — Web3 розробник та ончейн-аналітик. 101 інструмент, 115K рядків коду, 10+ блокчейнів. Самоук. Колишній правоохоронець. Лісабон.',
   meta_keywords:
