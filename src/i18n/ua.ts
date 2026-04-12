@@ -52,6 +52,13 @@ export const ua = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
 
+  exp_police_title: 'Правоохоронець',
+  exp_police_company: 'Національна поліція України',
+  exp_police_period: '2019 – 2022',
+  exp_police_location: 'Україна',
+  exp_police_desc: 'Патруль → Кримінальне розслідування → КОРД. Сертифікація SWAT від Посольства США.',
+  exp_police_b1: 'По 1 року в кожному підрозділі: патруль, кримінальне розслідування (ОСКІ), спецпідрозділ (КОРД)',
+
   exp_onchain_title: 'Ончейн-аналітик',
   exp_onchain_company: 'Незалежно',
   exp_onchain_period: '2025 – дотепер',
