@@ -264,7 +264,7 @@ export const en = {
   services_bizanalytics_desc: 'Help you understand your numbers: CAC, LTV, churn, margins — in plain language. Build dashboards that track what actually matters. AI-powered reports that tell you why your revenue dropped, not just that it did. For business owners who don\'t know where their money goes.',
 
   services_cta_title: "Don't see your industry?",
-  services_cta_desc: "Whatever routine work takes your time — reports, messages, data entry, monitoring — I can automate it. Tell me what you do manually and I'll show you exactly how a bot or AI can do it for you.",
+  services_cta_desc: "We automate everything that causes you headaches. Reports, notifications, data entry, monitoring — any routine that eats your time. Tell us what you do manually, and we'll show exactly how a bot or AI will do it for you.",
   services_cta_button: 'Contact me',
 
   // ── Footer ────────────────────────────────────────────
