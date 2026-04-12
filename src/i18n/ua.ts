@@ -55,7 +55,7 @@ export const ua = {
 
   // Experience — Official
   exp_official_title: 'Розробник ПЗ',
-  exp_official_company: 'Oleksandr Andrianov Unipessoal Lda',
+  exp_official_company: 'IT Компанія, Lda ✱✱✱',
   exp_official_period: 'Червень 2025 – дотепер',
   exp_official_location: 'Лісабон, Португалія',
   exp_official_desc: 'Розробка ПЗ, автоматизація бізнес-процесів, адміністрування серверів та баз даних.',
