@@ -227,7 +227,7 @@ export const pt = {
   services_crypto_example: 'Construído: monitor de 35 carteiras em ETH, Polygon, Solana',
 
   services_ai_title: 'IA e Automação para Qualquer Negócio',
-  services_ai_desc: 'Um chatbot que responde a clientes 24/7 em qualquer idioma — para não ter de ser você. PDFs, faturas e emails processados e organizados automaticamente. As tarefas repetitivas que a sua equipa faz todos os dias — entregues a software que nunca se cansa.',
+  services_ai_desc: 'Produto completo — bot de vendas com IA, website, catálogo de produtos e painel de administração. Não é apenas um chatbot: é um sistema completo que a sua equipa de vendas realmente usa. PDFs, faturas e emails processados automaticamente. Memo de voz → IA transcreve, extrai tarefas e envia resumo à equipa.',
 
   services_telegram_title: 'Bots e Mini-Apps Telegram',
   services_telegram_desc: 'Um bot que trabalha para o seu negócio 24 horas — recebe encomendas, responde a perguntas, envia lembretes. Pagamentos integrados, sem checkout externo necessário. Os seus clientes nunca precisam de sair do Telegram.',
