@@ -202,6 +202,9 @@ export const es = {
   // ── Services ──────────────────────────────────────────
   services_title: 'Cómo Puedo Ayudarte',
   services_subtitle: 'Soluciones reales para negocios reales — sin jerga, solo resultados',
+  services_disclaimer: 'Soy un desarrollador independiente que trabaja con herramientas de IA. Construyo soluciones prácticas y enfocadas — no software empresarial. Si necesitas un bot, automatización o dashboard para un problema específico — soy tu persona. Para ERP o CRM a gran escala — honestamente te recomendaré un equipo.',
+  services_cat_regular: 'Para Negocios Comunes',
+  services_cat_it: 'Para IT y Empresas',
 
   services_construction_title: 'Construcción e Inmobiliaria',
   services_construction_desc: 'Tu cliente ve fotos del progreso diario en Telegram — sin más llamadas "¿cómo va todo?". Todos los anuncios de 10+ portales en un solo lugar, actualizado cada hora. Anuncios duplicados y fraudulentos marcados automáticamente.',
