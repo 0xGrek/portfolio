@@ -32,6 +32,9 @@ const servicesIT = [
   { id: 'marketing',  icon: '📈', example: false },
   { id: 'finance',    icon: '🏦', example: false },
 ];
+
+const showMoreText = t(lang, 'services_show_more' as any);
+const showLessText = t(lang, 'services_show_less' as any);
 ---
 
 <section id="services" class="py-24">
@@ -56,33 +59,62 @@ const servicesIT = [
         <span class="category-line"></span>
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {servicesRegular.map((service, index) => (
-          <div
-            class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
-            style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
-          >
-            <div class="flex items-start gap-4">
-              <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
-              <div class="flex-1 min-w-0">
-                <h3 class="text-base font-bold mb-2" style="color: var(--text);">
-                  {t(lang, `services_${service.id}_title` as any)}
-                </h3>
-                <p class="text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
-                  {t(lang, `services_${service.id}_desc` as any)}
-                </p>
-                {service.example && (
-                  <div
-                    class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium"
-                    style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
-                  >
-                    <span>✓</span>
-                    {t(lang, `services_${service.id}_example` as any)}
-                  </div>
-                )}
+        {servicesRegular.map((service, index) => {
+          const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
+          const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
+          const examplesHeader = examplesParts[0] ?? '';
+          const examplesBullets = examplesParts.slice(1);
+          return (
+            <div
+              class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
+              style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
+            >
+              <div class="flex items-start gap-4">
+                <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-base font-bold mb-2" style="color: var(--text);">
+                    {t(lang, `services_${service.id}_title` as any)}
+                  </h3>
+                  <p class="card-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
+                    {t(lang, `services_${service.id}_desc` as any)}
+                  </p>
+                  {examplesBullets.length > 0 && (
+                    <>
+                      <button
+                        class="show-more-btn text-xs font-medium mb-2 px-0"
+                        data-target={`details-${service.id}-${index}`}
+                        data-show-more={showMoreText}
+                        data-show-less={showLessText}
+                        style="color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.25rem;"
+                      >
+                        {showMoreText}
+                      </button>
+                      <div class="card-details" id={`details-${service.id}-${index}`}>
+                        {examplesHeader && (
+                          <p class="text-xs font-semibold mb-1" style="color: var(--text-secondary); opacity: 0.7;">{examplesHeader}</p>
+                        )}
+                        <ul>
+                          {examplesBullets.map((bullet) => (
+                            <li>{bullet}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  )}
+                  {service.example && (
+                    <div
+                      class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium mt-1"
+                      style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
+                    >
+                      <span>✓</span>
+                      {t(lang, `services_${service.id}_example` as any)}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
 
@@ -94,33 +126,62 @@ const servicesIT = [
         <span class="category-line"></span>
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {servicesIT.map((service, index) => (
-          <div
-            class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
-            style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
-          >
-            <div class="flex items-start gap-4">
-              <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
-              <div class="flex-1 min-w-0">
-                <h3 class="text-base font-bold mb-2" style="color: var(--text);">
-                  {t(lang, `services_${service.id}_title` as any)}
-                </h3>
-                <p class="text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
-                  {t(lang, `services_${service.id}_desc` as any)}
-                </p>
-                {service.example && (
-                  <div
-                    class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium"
-                    style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
-                  >
-                    <span>✓</span>
-                    {t(lang, `services_${service.id}_example` as any)}
-                  </div>
-                )}
+        {servicesIT.map((service, index) => {
+          const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
+          const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
+          const examplesHeader = examplesParts[0] ?? '';
+          const examplesBullets = examplesParts.slice(1);
+          return (
+            <div
+              class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
+              style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
+            >
+              <div class="flex items-start gap-4">
+                <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-base font-bold mb-2" style="color: var(--text);">
+                    {t(lang, `services_${service.id}_title` as any)}
+                  </h3>
+                  <p class="card-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
+                    {t(lang, `services_${service.id}_desc` as any)}
+                  </p>
+                  {examplesBullets.length > 0 && (
+                    <>
+                      <button
+                        class="show-more-btn text-xs font-medium mb-2"
+                        data-target={`details-${service.id}-${index + 100}`}
+                        data-show-more={showMoreText}
+                        data-show-less={showLessText}
+                        style="color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.25rem;"
+                      >
+                        {showMoreText}
+                      </button>
+                      <div class="card-details" id={`details-${service.id}-${index + 100}`}>
+                        {examplesHeader && (
+                          <p class="text-xs font-semibold mb-1" style="color: var(--text-secondary); opacity: 0.7;">{examplesHeader}</p>
+                        )}
+                        <ul>
+                          {examplesBullets.map((bullet) => (
+                            <li>{bullet}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </>
+                  )}
+                  {service.example && (
+                    <div
+                      class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium mt-1"
+                      style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
+                    >
+                      <span>✓</span>
+                      {t(lang, `services_${service.id}_example` as any)}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
 
@@ -160,6 +221,19 @@ const servicesIT = [
     }, { threshold: 0.08 });
     els.forEach(function (el) { io.observe(el); });
   })();
+
+  document.querySelectorAll('.show-more-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = btn.getAttribute('data-target');
+      var showMore = btn.getAttribute('data-show-more');
+      var showLess = btn.getAttribute('data-show-less');
+      var details = document.getElementById(targetId);
+      if (!details) return;
+      var isExpanded = details.classList.contains('expanded');
+      details.classList.toggle('expanded');
+      btn.textContent = isExpanded ? showMore : showLess;
+    });
+  });
 </script>
 
 <style>
@@ -189,5 +263,39 @@ const servicesIT = [
     flex: 1;
     height: 1px;
     background-color: var(--card-border);
+  }
+  .show-more-btn {
+    transition: opacity 0.15s ease;
+  }
+  .show-more-btn:hover {
+    opacity: 0.7;
+  }
+  .card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .card-details.expanded {
+    max-height: 500px;
+  }
+  .card-details ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-details li {
+    padding: 0.2rem 0;
+    padding-left: 1rem;
+    position: relative;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+  .card-details li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
   }
 </style>
