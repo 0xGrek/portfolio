@@ -236,6 +236,12 @@ const categoryColors: Record<string, string> = {
     animation: modalFadeOut 0.18s ease forwards;
   }
 
+  /* dvh support for modal content (overrides inline 90vh) */
+  .modal-content {
+    max-height: 90vh;
+    max-height: 90dvh;
+  }
+
   /* Mobile-specific modal styles */
   @media (max-width: 640px) {
     .project-modal {
