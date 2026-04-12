@@ -204,23 +204,23 @@ export const pt = {
   services_subtitle: 'Soluções reais para negócios reais — sem jargão, só resultados',
 
   services_construction_title: 'Construção e Imobiliário',
-  services_construction_desc: 'Todos os anúncios de 10+ portais num só lugar, atualizado de hora em hora. Alertas instantâneos quando aparece um imóvel com os seus critérios — antes de toda a gente. Anúncios duplicados e fraudulentos sinalizados automaticamente.',
+  services_construction_desc: 'O cliente vê fotos do progresso diário no Telegram — sem mais chamadas "como está a correr?". Todos os anúncios de 10+ portais num só lugar, atualizado de hora em hora. Anúncios duplicados e fraudulentos sinalizados automaticamente.',
   services_construction_example: 'Construído: Portugal Realty — 12K anúncios de 4 portais por dia',
 
   services_finance_title: 'Finanças e Banca',
   services_finance_desc: 'Sabe imediatamente quando algo incomum acontece nas suas contas. Relatórios de compliance que se escrevem sozinhos. Dashboards com a sua situação financeira real — atualizados automaticamente, sem trabalho manual.',
 
   services_ecommerce_title: 'E-commerce e Retalho',
-  services_ecommerce_desc: 'Os seus clientes encomendam, pagam e recebem atualizações — tudo no Telegram, sem ligar para si. Sabe os preços dos concorrentes antes de definir os seus. Alerta quando o stock está a acabar, antes de se tornar um problema.',
+  services_ecommerce_desc: 'Bot recupera 10% dos carrinhos abandonados e notifica automaticamente sobre o estado do pedido. Os seus clientes encomendam, pagam e recebem atualizações — tudo no Telegram, sem ligar para si. Sabe os preços dos concorrentes antes de definir os seus.',
 
   services_food_title: 'Padarias, Restaurantes e Salões',
-  services_food_desc: 'Clientes veem o menu, fazem pedidos e pagam no Telegram — até a meia-noite. Lembretes de marcação enviados automaticamente, menos faltas. As suas especialidades do dia publicadas no Instagram sem mexer um dedo.',
+  services_food_desc: 'Bot aceita pedidos 24/7, confirma automaticamente, envia "o seu pedido está pronto" — os empregados param de atender chamadas. Lembretes de marcação enviados automaticamente, menos faltas. As suas especialidades do dia publicadas no Instagram sem mexer um dedo.',
 
   services_social_title: 'Redes Sociais e Conteúdo',
   services_social_desc: 'Um vídeo transforma-se em 10 Reels, Shorts e TikToks — cortados e publicados automaticamente. Legendas, hashtags e agendamento tratados enquanto dorme. Bot monitoriza o seu nicho e traz ideias de conteúdo frescas todas as manhãs. Instagram, TikTok, YouTube e Facebook num clique.',
 
   services_marketing_title: 'Marketing e Análise',
-  services_marketing_desc: 'Veja exatamente o que os concorrentes publicam, o que resulta e o que não resulta. Novos leads contactados automaticamente no momento em que mostram interesse. Todas as semanas um relatório chega à sua caixa de entrada — sem ninguém o ter preparado.',
+  services_marketing_desc: 'Bot responde a clientes 24/7, qualifica-os e passa apenas leads prontos à sua equipa. Veja exatamente o que os concorrentes publicam, o que resulta e o que não resulta. Todas as semanas um relatório chega à sua caixa de entrada — sem ninguém o ter preparado.',
 
   services_crypto_title: 'Cripto e Web3',
   services_crypto_desc: 'Alerta instantâneo quando uma carteira importante move dinheiro. Bots que fazem farming de airdrops, reclamam recompensas e gerem posições DeFi enquanto dorme. Se algo parece suspeito on-chain, descubro para onde foi o dinheiro.',
@@ -232,6 +232,24 @@ export const pt = {
   services_telegram_title: 'Bots e Mini-Apps Telegram',
   services_telegram_desc: 'Um bot que trabalha para o seu negócio 24 horas — recebe encomendas, responde a perguntas, envia lembretes. Pagamentos integrados, sem checkout externo necessário. Os seus clientes nunca precisam de sair do Telegram.',
   services_telegram_example: 'Construído: ecossistema de 11 bots para life & business tracking',
+
+  services_medical_title: 'Clínicas Médicas e Dentistas',
+  services_medical_desc: 'Bot de marcação — o paciente escolhe médico, data e hora em segundos. Lembretes automáticos 24h e 2h antes da consulta — reduz faltas em 30–50%. IA responde a "Quanto custa uma obturação?" e "Como me preparar para uma extração?" a qualquer hora.',
+
+  services_auto_title: 'Oficinas e Lavagens de Carro',
+  services_auto_desc: 'Bot de marcação: modelo do carro, problema, data — agendamento instantâneo sem chamadas. Atualizações automáticas de estado: "Diagnóstico concluído", "Peças encomendadas", "Carro pronto" — cliente sempre informado. Lembretes de manutenção por quilometragem ou tempo fidelizam clientes.',
+
+  services_legal_title: 'Escritórios de Advocacia e Consultoria',
+  services_legal_desc: 'Bot de triagem com IA: "Descreva a sua situação" → qualificação → marcação com advogado — sem recepcionista. IA gera modelos de documentos: contratos, reclamações, procurações. Seguimento de prazos com lembretes de datas judiciais — nada se perde.',
+
+  services_hotels_title: 'Hotéis e Airbnb',
+  services_hotels_desc: 'Concierge de IA no Telegram responde a hóspedes em vários idiomas 24/7 — sem recepção às 3 da manhã. Monitorização de avaliações em todas as plataformas com alerta imediato para avaliações negativas. Notificação automática à limpeza no checkout — zero chamadas de coordenação.',
+
+  services_logistics_title: 'Logística e Entregas',
+  services_logistics_desc: 'Bot de rastreio: introduce o número de encomenda → veja o estado instantaneamente, sem ligar para o suporte. Notificações automáticas em cada fase: "Estafeta partiu", "A caminho", "Entregue". Painel do despachante com atrasos, rotas e KPIs dos motoristas numa vista só.',
+
+  services_flowers_title: 'Floristas e Lojas de Presentes',
+  services_flowers_desc: 'Bot de encomenda: ocasião, orçamento, data de entrega → sugestões enviadas instantaneamente. CRM memoriza datas: aniversário da esposa → marido recebe lembrete 5 dias antes. Notificações em massa antes de feriados: "Dia dos Namorados daqui a 3 dias — encomende agora?" — vendas no piloto automático.',
 
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Criado com Astro + Tailwind',
