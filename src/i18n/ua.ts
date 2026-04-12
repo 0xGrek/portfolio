@@ -67,7 +67,7 @@ export const ua = {
   exp_crypto_auto_title: 'Крипто та автоматизація',
   exp_crypto_auto_company: 'ФОП',
   exp_crypto_auto_period: '2023 – дотепер',
-  exp_crypto_auto_location: '',
+  exp_crypto_auto_location: 'Португалія',
   exp_crypto_auto_desc: 'Крипто-сканери, моніторинг гаманців, DeFi автоматизація, торгові боти та on-chain аналітика.',
   exp_crypto_auto_b1: 'Побудував крипто-сканери та моніторинг гаманців',
   exp_crypto_auto_b2: 'Автоматизував DeFi стратегії та торгові операції',
