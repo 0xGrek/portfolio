@@ -71,8 +71,8 @@ const services = [
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {services.map((service, index) => (
         <div
-          class="service-card p-6 rounded-xl reveal"
-          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
+          class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
+          style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
         >
           <div class="flex items-start gap-4">
             <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
