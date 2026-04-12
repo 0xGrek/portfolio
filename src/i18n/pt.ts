@@ -31,13 +31,13 @@ export const pt = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
   about_p1:
-    'Programador autodidata baseado em Lisboa. Começou a programar em 2022, passou a tempo inteiro em Web3 em março de 2023. Sem bootcamps, sem licenciatura em informática — só construindo.',
+    'Programador autodidata. Começou a programar em 2022 — primeiros cursos Udemy, depois automação Web3 desde março de 2023. Sem bootcamps, sem licenciatura em informática. Construiu tudo do zero: minting, parsing, rastreio on-chain, infraestrutura multi-conta em todas as principais blockchains — L1, L2.',
   about_p2:
-    'Criou 101 ferramentas de automação em mais de 10 blockchains antes da era da programação assistida por IA. Maior projeto: TON Gift Flipper — 115K linhas de Python, 4 instâncias de bot em paralelo, 400+ sessões Pyrogram, integração com 6 APIs de marketplaces. 6 projetos em produção, todos a funcionar.',
+    '100+ ferramentas de automação para DeFi, airdrops, NFTs e operações on-chain. Maior projeto: TON Gift Flipper — sistema de trading assíncrono multi-agente. Funciona em todas as principais chains. Antes de existir programação assistida por IA — tudo era manual.',
   about_p3:
-    'Foco atual: análise on-chain, sistemas multi-agente com IA e ecossistemas de bots no Telegram. Rastreio de clusters de carteiras, análise de fluxos de tokens, investigação de vetores de exploit em protocolos. Ferramentas de trabalho diário: Arkham, Nansen, Dune Analytics, Chainalysis, DeBank, Tenderly, Bubblemaps, Breadcrumbs, TRM Labs.',
+    'Foco atual: análise on-chain, sistemas multi-agente com IA, ecossistemas Telegram. A investigar vetores de exploit em protocolos. Disponível para relocalização.',
   about_unique:
-    '5 anos nas forças de segurança — investigação criminal e vigilância operativa → reconhecimento de padrões para forense on-chain.',
+    '5 anos nas forças de segurança — investigação criminal e vigilância operativa → reconhecimento de padrões que se aplica diretamente à forense on-chain.'
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
