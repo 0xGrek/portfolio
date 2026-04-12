@@ -12,6 +12,16 @@ export interface Education {
 
 export const education: Education[] = [
   {
+    id: 'lyceum',
+    titleKey: 'edu_lyceum_title',
+    schoolKey: 'edu_lyceum_school',
+    periodKey: 'edu_lyceum_period',
+    locationKey: 'edu_lyceum_location',
+    descriptionKey: 'edu_lyceum_desc',
+    type: 'degree',
+    status: 'completed',
+  },
+  {
     id: 'law',
     titleKey: 'edu_law_title',
     schoolKey: 'edu_law_school',
