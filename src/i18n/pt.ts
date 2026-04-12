@@ -11,6 +11,7 @@ export const pt = {
   nav_experience: 'Experiência',
   nav_projects: 'Projetos',
   nav_skills: 'Competências',
+  nav_services: 'Serviços',
   nav_education: 'Formação',
   nav_blog: 'Blog',
   nav_contact: 'Contacto',
