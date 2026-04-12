@@ -254,6 +254,10 @@ export const pt = {
   services_hvac_title: 'AVAC, Ventilação e Serviços de Instalação',
   services_hvac_desc: 'Cliente insere a área e tipo de divisão → bot calcula orçamento instantâneo, sem necessidade de ligar para um engenheiro. Bot de vendas com IA, website completo, catálogo de produtos e painel de administração — produto completo, não apenas um chatbot. Qualificação automática de leads e follow-up para que nenhum cliente se perca.',
 
+  services_cta_title: 'Não encontrou a sua área?',
+  services_cta_desc: 'Qualquer trabalho rotineiro que consome o seu tempo — relatórios, mensagens, entrada de dados, monitoramento — posso automatizar. Diga-me o que faz manualmente e mostro-lhe exatamente como um bot ou IA pode fazê-lo por si.',
+  services_cta_button: 'Contactar',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Criado com Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. Todos os direitos reservados.',
