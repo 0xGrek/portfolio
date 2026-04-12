@@ -198,6 +198,40 @@ export const pt = {
   contact_available: 'Disponível para novas oportunidades',
   contact_response_time: 'Tempo de resposta: < 24 horas',
 
+  // ── Services ──────────────────────────────────────────
+  services_title: 'Como Posso Ajudar',
+  services_subtitle: 'Soluções reais para negócios reais — sem jargão, só resultados',
+
+  services_construction_title: 'Construção e Imobiliário',
+  services_construction_desc: 'Todos os anúncios de 10+ portais num só lugar, atualizado de hora em hora. Alertas instantâneos quando aparece um imóvel com os seus critérios — antes de toda a gente. Anúncios duplicados e fraudulentos sinalizados automaticamente.',
+  services_construction_example: 'Construído: Portugal Realty — 12K anúncios de 4 portais por dia',
+
+  services_finance_title: 'Finanças e Banca',
+  services_finance_desc: 'Sabe imediatamente quando algo incomum acontece nas suas contas. Relatórios de compliance que se escrevem sozinhos. Dashboards com a sua situação financeira real — atualizados automaticamente, sem trabalho manual.',
+
+  services_ecommerce_title: 'E-commerce e Retalho',
+  services_ecommerce_desc: 'Os seus clientes encomendam, pagam e recebem atualizações — tudo no Telegram, sem ligar para si. Sabe os preços dos concorrentes antes de definir os seus. Alerta quando o stock está a acabar, antes de se tornar um problema.',
+
+  services_food_title: 'Padarias, Restaurantes e Salões',
+  services_food_desc: 'Clientes veem o menu, fazem pedidos e pagam no Telegram — até a meia-noite. Lembretes de marcação enviados automaticamente, menos faltas. As suas especialidades do dia publicadas no Instagram sem mexer um dedo.',
+
+  services_social_title: 'Redes Sociais e Conteúdo',
+  services_social_desc: 'Um vídeo transforma-se em 10 Reels, Shorts e TikToks — cortados e publicados automaticamente. Legendas, hashtags e agendamento tratados enquanto dorme. Bot monitoriza o seu nicho e traz ideias de conteúdo frescas todas as manhãs. Instagram, TikTok, YouTube e Facebook num clique.',
+
+  services_marketing_title: 'Marketing e Análise',
+  services_marketing_desc: 'Veja exatamente o que os concorrentes publicam, o que resulta e o que não resulta. Novos leads contactados automaticamente no momento em que mostram interesse. Todas as semanas um relatório chega à sua caixa de entrada — sem ninguém o ter preparado.',
+
+  services_crypto_title: 'Cripto e Web3',
+  services_crypto_desc: 'Alerta instantâneo quando uma carteira importante move dinheiro. Bots que fazem farming de airdrops, reclamam recompensas e gerem posições DeFi enquanto dorme. Se algo parece suspeito on-chain, descubro para onde foi o dinheiro.',
+  services_crypto_example: 'Construído: monitor de 35 carteiras em ETH, Polygon, Solana',
+
+  services_ai_title: 'IA e Automação para Qualquer Negócio',
+  services_ai_desc: 'Um chatbot que responde a clientes 24/7 em qualquer idioma — para não ter de ser você. PDFs, faturas e emails processados e organizados automaticamente. As tarefas repetitivas que a sua equipa faz todos os dias — entregues a software que nunca se cansa.',
+
+  services_telegram_title: 'Bots e Mini-Apps Telegram',
+  services_telegram_desc: 'Um bot que trabalha para o seu negócio 24 horas — recebe encomendas, responde a perguntas, envia lembretes. Pagamentos integrados, sem checkout externo necessário. Os seus clientes nunca precisam de sair do Telegram.',
+  services_telegram_example: 'Construído: ecossistema de 11 bots para life & business tracking',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Criado com Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. Todos os direitos reservados.',
