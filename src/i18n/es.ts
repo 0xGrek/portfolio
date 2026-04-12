@@ -64,7 +64,7 @@ export const es = {
   exp_onchain_period: '2025 – Presente',
   exp_onchain_location: 'Remoto',
   exp_onchain_desc:
-    'Monitoreo multi-chain de wallets en ETH, Polygon y Solana. Análisis de manipulación de tokens, rastreo de flujos sospechosos en CEX e investigación de vectores de exploits en protocolos usando Arkham, Nansen, DeBank y BubbleMaps.',
+    '100+ herramientas de automatización construidas. En desarrollo desde 2022, en Web3 desde 2023. Monitoreo multi-chain de wallets en ETH, Polygon y Solana. Análisis de manipulación de tokens, rastreo de flujos sospechosos en CEX e investigación de vectores de exploits en protocolos usando Arkham, Nansen, DeBank y BubbleMaps.',
   exp_onchain_b1: 'Construí un sistema de monitoreo multi-chain que rastrea 35 wallets con alertas en tiempo real vía Telegram',
   exp_onchain_b2: 'Analicé patrones de manipulación de tokens y flujos sospechosos de retiros en CEX',
   exp_onchain_b3: 'Rastreé clusters de wallets e identifiqué patrones de abuso en mecánicas de airdrops',
