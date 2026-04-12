@@ -214,7 +214,7 @@ export const en = {
   services_ecommerce_desc: 'Bot recovers 10% of abandoned carts and auto-notifies about order status. Your customers order, pay, and get updates — all inside Telegram, without calling you. Know exactly what competitors charge before you set your prices.',
 
   services_food_title: 'Bakeries, Restaurants & Salons',
-  services_food_desc: 'Bot accepts orders 24/7, confirms automatically, sends "your order is ready" — waiters stop answering phones. Booking reminders sent automatically so you get fewer no-shows. Your daily specials posted to Instagram without you lifting a finger.',
+  services_food_desc: 'Bot accepts orders 24/7, confirms automatically, sends "your order is ready" — waiters stop answering phones. AI food quality control: bot evaluates photos of delivered dishes and flags quality issues automatically. Booking reminders cut no-shows. Daily specials posted to Instagram without you lifting a finger.',
 
   services_social_title: 'Social Media & Content',
   services_social_desc: 'One video becomes 10 Reels, Shorts, and TikTok clips — cut and posted automatically. Captions, hashtags, and scheduling handled while you sleep. Bot monitors your niche and delivers fresh content ideas every morning. Post to Instagram, TikTok, YouTube, and Facebook in one click.',
