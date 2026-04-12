@@ -255,7 +255,7 @@ export const en = {
   services_flowers_desc: 'Order bot: occasion, budget, delivery date → suggestions sent instantly. CRM date memory: wife\'s birthday → husband gets a reminder 5 days before. Pre-holiday mass notifications: "Valentine\'s Day in 3 days — order now?" — drives repeat sales on autopilot.',
 
   services_hvac_title: 'HVAC, Ventilation & Installation Services',
-  services_hvac_desc: 'Client enters room size and type → bot calculates instant quote, no engineer call needed. AI sales bot with full product catalog website and admin panel — a complete product, not just a chatbot. Automated lead qualification and follow-up so no prospect falls through the cracks.',
+  services_hvac_desc: 'Client enters room size and type → bot calculates instant quote, no engineer call needed. Field bot for surveyors and installers: log measurements on-site, auto-generate material buy-lists with quantities, and plan delivery routes — zero paperwork, zero errors. Automated lead qualification and follow-up so no prospect falls through the cracks.',
 
   services_research_title: 'Research & Vulnerability Assessment',
   services_research_desc: 'Database analysis and finding security holes before someone else does. Competitor research and market analysis powered by AI. Data scraping and structuring from any public source. If it\'s online — I can find it, structure it, and deliver it.',
