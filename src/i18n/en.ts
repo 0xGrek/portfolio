@@ -249,7 +249,7 @@ export const en = {
   services_hotels_desc: 'AI concierge in Telegram answers guest questions in multiple languages 24/7 — no front desk needed at 3am. Review monitoring across all platforms with instant alert on negative reviews. Auto-notification to cleaning staff on checkout — zero coordination calls.',
 
   services_logistics_title: 'Logistics & Delivery',
-  services_logistics_desc: 'Customer tracking bot: enter order number → see status instantly, no calls to support. Auto-notifications at each stage: "Courier departed", "Out for delivery", "Delivered". Dispatcher dashboard with delays, routes, and driver KPIs in one view.',
+  services_logistics_desc: 'Customer tracking bot: enter order number → see status instantly, no calls to support. Taxi fleet owners get a GPS monitoring bot — live driver location, hours worked, speed and driving behavior per driver, all in one Telegram dashboard. Auto-notifications at every stage keep customers and dispatchers in sync without extra calls.',
 
   services_flowers_title: 'Flower Shops & Gift Stores',
   services_flowers_desc: 'Order bot: occasion, budget, delivery date → suggestions sent instantly. CRM date memory: wife\'s birthday → husband gets a reminder 5 days before. Pre-holiday mass notifications: "Valentine\'s Day in 3 days — order now?" — drives repeat sales on autopilot.',
