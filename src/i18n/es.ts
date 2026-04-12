@@ -255,7 +255,7 @@ export const es = {
   services_flowers_desc: 'Bot de pedido: ocasión, presupuesto, fecha de entrega → sugerencias al instante. CRM recuerda fechas: cumpleaños de la esposa → el marido recibe aviso 5 días antes. Notificaciones masivas antes de fiestas: "San Valentín en 3 días — ¡pide ya!" — ventas en piloto automático.',
 
   services_hvac_title: 'Climatización, Ventilación e Instalaciones',
-  services_hvac_desc: 'Cliente introduce el tamaño y tipo de habitación → bot calcula presupuesto instantáneo, sin llamar a un ingeniero. Bot de ventas con IA, website completo, catálogo de productos y panel de administración — producto completo, no solo un chatbot. Cualificación automática de leads y seguimiento para que ningún prospecto se pierda.',
+  services_hvac_desc: 'Cliente introduce el tamaño y tipo de habitación → bot calcula presupuesto instantáneo, sin llamar a un ingeniero. Bot de campo para medidores e instaladores: registran medidas in situ, generan lista de materiales con cantidades y optimizan la ruta de entrega — sin papeleo, sin errores. Cualificación automática de leads y seguimiento para que ningún prospecto se pierda.',
 
   services_research_title: 'Investigación y Evaluación de Vulnerabilidades',
   services_research_desc: 'Análisis de bases de datos y detección de agujeros de seguridad antes de que alguien más los encuentre. Investigación de competidores y análisis de mercado con IA. Scraping y estructuración de datos de cualquier fuente pública. Si está en internet — lo encuentro, estructuro y entrego.',
