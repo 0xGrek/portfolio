@@ -254,6 +254,10 @@ export const en = {
   services_hvac_title: 'HVAC, Ventilation & Installation Services',
   services_hvac_desc: 'Client enters room size and type → bot calculates instant quote, no engineer call needed. AI sales bot with full product catalog website and admin panel — a complete product, not just a chatbot. Automated lead qualification and follow-up so no prospect falls through the cracks.',
 
+  services_cta_title: "Don't see your industry?",
+  services_cta_desc: "Whatever routine work takes your time — reports, messages, data entry, monitoring — I can automate it. Tell me what you do manually and I'll show you exactly how a bot or AI can do it for you.",
+  services_cta_button: 'Contact me',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. All rights reserved.',
