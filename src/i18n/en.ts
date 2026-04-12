@@ -20,7 +20,7 @@ export const en = {
   hero_greeting: "Hi, I'm",
   hero_name: 'Serhii Ivanenko',
   hero_handle: '0xGrek',
-  hero_title: 'Web3 Security & Automation Engineer',
+  hero_title: 'On-Chain Analyst & Automation Developer',
   hero_subtitle:
     '101 tools built. 115K LOC shipped. Web3 builder since 2023.',
   hero_cta_projects: 'View Projects',
