@@ -87,7 +87,7 @@ export const ua = {
   exp_ai_dev_title: 'AI-розробник',
   exp_ai_dev_company: 'ФОП',
   exp_ai_dev_period: '2026 – дотепер',
-  exp_ai_dev_location: '',
+  exp_ai_dev_location: 'Португалія',
   exp_ai_dev_desc: 'Multi-agent AI системи, автоматизація контенту та соцмереж, інтеграція Claude/Gemini.',
   exp_ai_dev_b1: 'Оркестрація 11 AI-агентів для обробки даних',
   exp_ai_dev_b2: 'Автоматизація контенту та аналітики соцмереж',
