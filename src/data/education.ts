@@ -29,6 +29,16 @@ export const education: Education[] = [
     locationKey: 'edu_econ_location',
     descriptionKey: 'edu_econ_desc',
     type: 'degree',
+    status: 'in-progress',
+  },
+  {
+    id: 'swat',
+    titleKey: 'edu_swat_title',
+    schoolKey: 'edu_swat_school',
+    periodKey: 'edu_swat_period',
+    locationKey: 'edu_swat_location',
+    descriptionKey: 'edu_swat_desc',
+    type: 'certificate',
     status: 'completed',
   },
 ];
