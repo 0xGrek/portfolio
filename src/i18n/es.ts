@@ -257,6 +257,12 @@ export const es = {
   services_hvac_title: 'Climatización, Ventilación e Instalaciones',
   services_hvac_desc: 'Cliente introduce el tamaño y tipo de habitación → bot calcula presupuesto instantáneo, sin llamar a un ingeniero. Bot de ventas con IA, website completo, catálogo de productos y panel de administración — producto completo, no solo un chatbot. Cualificación automática de leads y seguimiento para que ningún prospecto se pierda.',
 
+  services_research_title: 'Investigación y Evaluación de Vulnerabilidades',
+  services_research_desc: 'Análisis de bases de datos y detección de agujeros de seguridad antes de que alguien más los encuentre. Investigación de competidores y análisis de mercado con IA. Scraping y estructuración de datos de cualquier fuente pública. Si está en internet — lo encuentro, estructuro y entrego.',
+
+  services_bizanalytics_title: 'Analítica de Negocio y Métricas',
+  services_bizanalytics_desc: 'Te ayudo a entender tus números: CAC, LTV, churn, márgenes — en lenguaje sencillo. Construyo dashboards que rastrean lo que realmente importa. Informes con IA que explican POR QUÉ cayeron los ingresos, no solo que cayeron. Para dueños de negocios que no saben a dónde va su dinero.',
+
   services_cta_title: '¿No encontraste tu sector?',
   services_cta_desc: 'Cualquier trabajo rutinario que te quite tiempo — informes, mensajes, ingreso de datos, monitoreo — puedo automatizarlo. Cuéntame qué haces manualmente y te muestro exactamente cómo un bot o IA puede hacerlo por ti.',
   services_cta_button: 'Contactar',
