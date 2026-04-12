@@ -7,6 +7,7 @@ export interface Experience {
   descriptionKey: string;
   bullets: string[]; // i18n keys for bullet points
   tags: string[];
+  icon?: string;
 }
 
 export const experience: Experience[] = [
