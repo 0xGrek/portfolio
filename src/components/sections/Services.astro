@@ -38,39 +38,88 @@ const servicesIT = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="reveal">
       <SectionTitle title={t(lang, 'services_title')} />
-      <p class="text-center mb-12 text-base" style="color: var(--text-secondary);">
+      <p class="text-center mb-4 text-base" style="color: var(--text-secondary);">
         {t(lang, 'services_subtitle')}
+      </p>
+      <p class="text-center mb-12 text-sm italic max-w-3xl mx-auto leading-relaxed" style="color: var(--text-secondary); opacity: 0.75;">
+        {t(lang, 'services_disclaimer' as any)}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {services.map((service, index) => (
-        <div
-          class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
-          style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
-        >
-          <div class="flex items-start gap-4">
-            <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-base font-bold mb-2" style="color: var(--text);">
-                {t(lang, `services_${service.id}_title` as any)}
-              </h3>
-              <p class="text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
-                {t(lang, `services_${service.id}_desc` as any)}
-              </p>
-              {service.example && (
-                <div
-                  class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium"
-                  style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
-                >
-                  <span>✓</span>
-                  {t(lang, `services_${service.id}_example` as any)}
-                </div>
-              )}
+    <!-- Category 1: Regular Business -->
+    <div class="reveal mb-10">
+      <h2 class="category-header text-lg font-semibold mb-6 flex items-center gap-3" style="color: var(--text);">
+        <span class="category-line"></span>
+        {t(lang, 'services_cat_regular' as any)}
+        <span class="category-line"></span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {servicesRegular.map((service, index) => (
+          <div
+            class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
+            style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-base font-bold mb-2" style="color: var(--text);">
+                  {t(lang, `services_${service.id}_title` as any)}
+                </h3>
+                <p class="text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
+                  {t(lang, `services_${service.id}_desc` as any)}
+                </p>
+                {service.example && (
+                  <div
+                    class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium"
+                    style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
+                  >
+                    <span>✓</span>
+                    {t(lang, `services_${service.id}_example` as any)}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+    </div>
+
+    <!-- Category 2: IT & Companies -->
+    <div class="reveal mb-10">
+      <h2 class="category-header text-lg font-semibold mb-6 flex items-center gap-3" style="color: var(--text);">
+        <span class="category-line"></span>
+        {t(lang, 'services_cat_it' as any)}
+        <span class="category-line"></span>
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {servicesIT.map((service, index) => (
+          <div
+            class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
+            style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
+          >
+            <div class="flex items-start gap-4">
+              <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-base font-bold mb-2" style="color: var(--text);">
+                  {t(lang, `services_${service.id}_title` as any)}
+                </h3>
+                <p class="text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
+                  {t(lang, `services_${service.id}_desc` as any)}
+                </p>
+                {service.example && (
+                  <div
+                    class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium"
+                    style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
+                  >
+                    <span>✓</span>
+                    {t(lang, `services_${service.id}_example` as any)}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
 
     <div
