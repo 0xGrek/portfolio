@@ -52,6 +52,13 @@ export const en = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
 
+  exp_police_title: 'Law Enforcement Officer',
+  exp_police_company: 'National Police of Ukraine',
+  exp_police_period: '2019 – 2022',
+  exp_police_location: 'Ukraine',
+  exp_police_desc: 'Patrol → Criminal Investigation → SWAT (KORD). U.S. Embassy SWAT certified.',
+  exp_police_b1: '1 year in each unit: patrol, criminal investigation (OSKI), special forces (KORD)',
+
   exp_onchain_title: 'On-Chain Analyst',
   exp_onchain_company: 'Independent',
   exp_onchain_period: '2025 – Present',
