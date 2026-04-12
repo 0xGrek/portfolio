@@ -130,21 +130,21 @@ const categoryColors: Record<string, string> = {
     <!-- Backdrop -->
     <div
       class="modal-backdrop"
-      style="position: absolute; inset: 0; background: rgba(0,0,0,0.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);"
+      style="position: absolute; inset: 0; background: rgba(0,0,0,0.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); touch-action: none;"
       data-close
     ></div>
 
     <!-- Modal content — flex child, centered by parent -->
     <div
       class="modal-content"
-      style="position: relative; z-index: 1; width: 100%; max-width: 42rem; max-height: 90vh; overflow-y: auto; border-radius: 1rem; background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 25px 60px rgba(0,0,0,0.5);"
+      style="position: relative; z-index: 1; width: 100%; max-width: 42rem; max-height: 90dvh; max-height: 90vh; overflow-y: auto; overflow-x: hidden; border-radius: 1rem; background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 25px 60px rgba(0,0,0,0.5); overscroll-behavior: contain; -webkit-overflow-scrolling: touch;"
     >
       <!-- Close button -->
       <button
         class="modal-close-btn"
         data-close
         aria-label="Close modal"
-        style="position: absolute; top: 1rem; right: 1rem; z-index: 10; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--border); background-color: var(--bg-secondary); color: var(--text-secondary); font-size: 1.125rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.15s, border-color 0.15s;"
+        style="position: absolute; top: 1rem; right: 1rem; z-index: 10; width: 2.75rem; height: 2.75rem; min-width: 44px; min-height: 44px; border-radius: 50%; border: 1px solid var(--border); background-color: var(--bg-secondary); color: var(--text-secondary); font-size: 1.125rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.15s, border-color 0.15s;"
       >
         &times;
       </button>
