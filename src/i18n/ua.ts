@@ -85,7 +85,7 @@ export const ua = {
 
   // Experience — AI Development
   exp_ai_dev_title: 'AI-розробник',
-  exp_ai_dev_company: 'ФОП (Португалія)',
+  exp_ai_dev_company: 'Freelance',
   exp_ai_dev_period: '2024 – дотепер',
   exp_ai_dev_location: '',
   exp_ai_dev_desc: 'Multi-agent AI системи, автоматизація контенту та соцмереж, інтеграція Claude/Gemini.',
