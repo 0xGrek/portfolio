@@ -23,28 +23,93 @@ const categoryIcons: Record<string, string> = {
 };
 ---
 
+<style>
+  .skill-card .skill-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.32s ease, opacity 0.28s ease, padding 0.28s ease;
+    padding-top: 0;
+  }
+
+  /* Desktop: expand on hover */
+  @media (hover: hover) {
+    .skill-card:hover .skill-body {
+      max-height: 600px;
+      opacity: 1;
+      padding-top: 0.75rem;
+    }
+    .skill-card:hover .skill-arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  /* Mobile / touch: expand on .open class (toggled by JS) */
+  .skill-card.open .skill-body {
+    max-height: 600px;
+    opacity: 1;
+    padding-top: 0.75rem;
+  }
+  .skill-card.open .skill-arrow {
+    transform: rotate(90deg);
+  }
+
+  .skill-arrow {
+    display: inline-block;
+    transition: transform 0.28s ease;
+    font-style: normal;
+    font-size: 0.65rem;
+    opacity: 0.55;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .skill-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .skill-count {
+    font-size: 0.7rem;
+    font-weight: 500;
+    opacity: 0.45;
+    margin-left: 0.25rem;
+    flex-shrink: 0;
+  }
+</style>
+
 <section id="skills" class="py-24" style="background-color: var(--bg-secondary);">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="reveal">
       <SectionTitle title={t(lang, 'skills_title')} />
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {skillCategories.map((category, index) => (
         <div
-          class="skill-card p-5 rounded-xl card-hover reveal"
+          class="skill-card rounded-xl reveal"
           style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s; box-shadow: var(--shadow-sm);`}
+          data-skill-card
         >
-          <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--accent);">
-            <span class="text-base" aria-hidden="true">
+          <div class="skill-header px-5 py-4" data-skill-trigger>
+            <span class="text-base flex-shrink-0" aria-hidden="true">
               {categoryIcons[category.titleKey] || '▸'}
             </span>
-            {t(lang, category.titleKey as any)}
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            {category.skills.map((skill) => (
-              <TechTag label={skill} />
-            ))}
+            <h3 class="text-sm font-bold uppercase tracking-wider" style="color: var(--accent);">
+              {t(lang, category.titleKey as any)}
+            </h3>
+            <span class="skill-count">({category.skills.length})</span>
+            <span class="skill-arrow" aria-hidden="true">▶</span>
+          </div>
+          <div class="skill-body px-5 pb-4">
+            <div class="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <TechTag label={skill} />
+              ))}
+            </div>
           </div>
         </div>
       ))}
@@ -54,16 +119,29 @@ const categoryIcons: Record<string, string> = {
 
 <script is:inline>
   (function () {
-    if (!('IntersectionObserver' in window)) return;
-    var els = document.querySelectorAll('#skills .reveal');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
+    // Intersection observer for reveal animations
+    if ('IntersectionObserver' in window) {
+      var els = document.querySelectorAll('#skills .reveal');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(function (el) { io.observe(el); });
+    }
+
+    // Touch/click toggle for mobile (devices without hover)
+    var cards = document.querySelectorAll('[data-skill-card]');
+    cards.forEach(function (card) {
+      var trigger = card.querySelector('[data-skill-trigger]');
+      if (!trigger) return;
+      trigger.addEventListener('click', function () {
+        // On hover-capable devices, click still works as a toggle fallback
+        card.classList.toggle('open');
       });
-    }, { threshold: 0.1 });
-    els.forEach(function (el) { io.observe(el); });
+    });
   })();
 </script>
