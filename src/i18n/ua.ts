@@ -171,6 +171,12 @@ export const ua = {
   edu_econ_location: 'Дніпро, Україна',
   edu_econ_desc: 'Заочна форма. Спеціалізація: Економічна аналітика та захист економіки.',
 
+  edu_lyceum_title: 'Військовий ліцей',
+  edu_lyceum_school: 'Криворізький ліцей з посиленою військово-фізичною підготовкою',
+  edu_lyceum_period: '2013 – 2017',
+  edu_lyceum_location: 'Кривий Ріг, Україна',
+  edu_lyceum_desc: '',
+
   edu_cert_title: 'Сертифікат тактичної підготовки',
   edu_cert_school: 'МВС України',
   edu_cert_period: '2021',
