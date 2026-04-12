@@ -18,8 +18,12 @@ export const experience: Experience[] = [
     periodKey: 'exp_police_period',
     locationKey: 'exp_police_location',
     descriptionKey: 'exp_police_desc',
-    bullets: [],
-    tags: [],
+    bullets: [
+      'exp_police_b1',
+      'exp_police_b2',
+      'exp_police_b3',
+    ],
+    tags: ['Кримінальний розшук', 'Тактична група', 'СВАТ', 'КОРД'],
     icon: 'shield',
   },
   {
