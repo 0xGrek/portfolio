@@ -38,6 +38,7 @@ export const education: Education[] = [
     periodKey: 'edu_swat_period',
     locationKey: 'edu_swat_location',
     descriptionKey: 'edu_swat_desc',
+    noteKey: 'edu_swat_note',
     type: 'certificate',
     status: 'completed',
   },
