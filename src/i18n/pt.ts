@@ -257,6 +257,12 @@ export const pt = {
   services_hvac_title: 'AVAC, Ventilação e Serviços de Instalação',
   services_hvac_desc: 'Cliente insere a área e tipo de divisão → bot calcula orçamento instantâneo, sem necessidade de ligar para um engenheiro. Bot de vendas com IA, website completo, catálogo de produtos e painel de administração — produto completo, não apenas um chatbot. Qualificação automática de leads e follow-up para que nenhum cliente se perca.',
 
+  services_research_title: 'Pesquisa e Avaliação de Vulnerabilidades',
+  services_research_desc: 'Análise de bases de dados e deteção de falhas de segurança antes que outra pessoa o faça. Pesquisa de concorrentes e análise de mercado com IA. Scraping e estruturação de dados de qualquer fonte pública. Se está online — encontro, estruturo e entrego.',
+
+  services_bizanalytics_title: 'Análise de Negócio e Métricas',
+  services_bizanalytics_desc: 'Ajudo a perceber os seus números: CAC, LTV, churn, margens — em linguagem simples. Construo dashboards que acompanham o que realmente importa. Relatórios com IA que explicam PORQUÊ a receita caiu, não só que caiu. Para proprietários que não sabem para onde vai o dinheiro.',
+
   services_cta_title: 'Não encontrou a sua área?',
   services_cta_desc: 'Qualquer trabalho rotineiro que consome o seu tempo — relatórios, mensagens, entrada de dados, monitoramento — posso automatizar. Diga-me o que faz manualmente e mostro-lhe exatamente como um bot ou IA pode fazê-lo por si.',
   services_cta_button: 'Contactar',
