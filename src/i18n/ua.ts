@@ -58,10 +58,10 @@ export const ua = {
   exp_official_company: 'Oleksandr Andrianov Unipessoal Lda',
   exp_official_period: 'Червень 2025 – дотепер',
   exp_official_location: 'Лісабон, Португалія',
-  exp_official_desc: 'Розробка програмного забезпечення, підтримка коду, адміністрування серверів та баз даних. Постійний контракт.',
-  exp_official_b1: 'Розробка та підтримка production систем',
-  exp_official_b2: 'Адміністрування серверів та баз даних',
-  exp_official_b3: 'Технічна підтримка IT-інфраструктури',
+  exp_official_desc: 'Розробка ПЗ, автоматизація бізнес-процесів, адміністрування серверів та баз даних.',
+  exp_official_b1: 'Розробка та підтримка production-систем',
+  exp_official_b2: 'Автоматизація звітності, метрик та бізнес-аналітики',
+  exp_official_b3: 'Адміністрування серверів, баз даних та IT-інфраструктури',
 
   // Experience — Crypto & Automation
   exp_crypto_auto_title: 'Крипто та автоматизація',
