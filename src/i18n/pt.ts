@@ -52,6 +52,13 @@ export const pt = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiência',
 
+  exp_police_title: 'Agente da Lei',
+  exp_police_company: 'Polícia Nacional da Ucrânia',
+  exp_police_period: '2019 – 2022',
+  exp_police_location: 'Ucrânia',
+  exp_police_desc: 'Patrulha → Investigação Criminal → SWAT (KORD). Certificado SWAT pela Embaixada dos EUA.',
+  exp_police_b1: '1 ano em cada unidade: patrulha, investigação criminal (OSKI), forças especiais (KORD)',
+
   exp_onchain_title: 'Analista On-Chain',
   exp_onchain_company: 'Independente',
   exp_onchain_period: '2025 – Presente',
