@@ -32,7 +32,7 @@ function getHrefLang(l: Lang): string {
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalUrl} />
 
-<!-- Hreflang for all 4 locales -->
+<!-- Hreflang for all 3 locales -->
 {allLangs.map((l) => (
   <link rel="alternate" hreflang={l} href={getHrefLang(l)} />
 ))}
