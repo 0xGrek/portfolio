@@ -31,7 +31,7 @@ export const en = {
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
   about_p1:
-    'Self-taught developer. Started coding in 2022 — first Udemy courses, then Web3 automation from March 2023. No bootcamp, no CS degree. Built everything from scratch: minting, parsing, on-chain tracking, multi-account infrastructure across every major blockchain — L1, L2.',
+    'Born 1999. Self-taught developer. Started coding in 2022 — first Udemy courses, then Web3 automation from March 2023. No bootcamp, no CS degree. Built everything from scratch: minting, parsing, on-chain tracking, multi-account infrastructure across every major blockchain — L1, L2.',
   about_p2:
     '100+ automation tools for DeFi, airdrops, NFTs, and on-chain operations. Biggest project: TON Gift Flipper — multi-agent async trading system. Works across all major chains. Back when there was no AI coding — everything was manual.',
   about_p3:
