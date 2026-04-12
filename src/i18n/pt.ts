@@ -56,8 +56,7 @@ export const pt = {
   exp_police_company: 'Polícia Nacional da Ucrânia',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Ucrânia',
-  exp_police_desc: 'Três anos de serviço — patrulha, investigação criminal, unidade especial.',
-  exp_police_b1: '1 ano em cada unidade. Certificado pela Embaixada dos EUA.',
+  exp_police_desc: 'Polícia de patrulha (2019) → Investigação criminal (2020) → Unidade especial (2021). Certificado pela Embaixada dos EUA.',
 
   exp_onchain_title: 'Analista On-Chain',
   exp_onchain_company: 'Independente',
