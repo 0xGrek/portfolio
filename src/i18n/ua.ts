@@ -94,12 +94,12 @@ export const ua = {
   exp_ai_dev_b3: 'Інтеграція Claude, Gemini, MCP серверів',
 
   // Experience — Police
-  exp_police_title: 'Національна поліція України (НПУ)',
-  exp_police_company: 'НПУ',
+  exp_police_title: 'Правоохоронець',
+  exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: '',
-  exp_police_b1: 'Патрульна поліція',
+  exp_police_desc: 'Забезпечення правопорядку, аналітична та оперативно-розшукова діяльність.',
+  exp_police_b1: 'Патрульна поліція — забезпечення правопорядку',
   exp_police_b2: 'Карний розшук — аналітична та оперативно-розшукова діяльність',
   exp_police_b3: 'Взаємодія з іншими підрозділами та координація',
 
