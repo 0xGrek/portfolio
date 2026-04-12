@@ -203,30 +203,33 @@ export const en = {
   services_subtitle: 'Real solutions for real businesses — no jargon, just results',
 
   services_construction_title: 'Construction & Real Estate',
-  services_construction_desc: 'Automated property parsing from 10+ portals. Price monitoring bots with instant alerts for new listings. Fraud detection for suspicious relistings.',
+  services_construction_desc: 'All listings from 10+ portals in one place, updated every hour. Get instant alerts when a property matching your criteria appears — before anyone else sees it. Duplicate and fraud listings flagged automatically.',
   services_construction_example: 'Built: Portugal Realty — 12K listings from 4 portals daily',
 
   services_finance_title: 'Finance & Banking',
-  services_finance_desc: 'Transaction monitoring and anomaly detection. Automated reporting and compliance tools. Risk scoring dashboards with real-time alerts.',
+  services_finance_desc: 'Know the moment something unusual happens in your accounts. Compliance reports that write themselves. Dashboards that show your real financial picture — updated automatically, no manual work.',
 
   services_ecommerce_title: 'E-commerce & Retail',
-  services_ecommerce_desc: 'Telegram bots for orders, payments, and customer support. Price comparison automation across competitors. Inventory tracking and restocking alerts.',
+  services_ecommerce_desc: 'Your customers order, pay, and get updates — all inside Telegram, without calling you. Know exactly what competitors charge before you set your prices. Get notified when stock runs low before it becomes a problem.',
 
-  services_food_title: 'Food & Services',
-  services_food_desc: 'Telegram ordering bot with menu, payments, and delivery tracking. Booking automation with client reminders. Social media auto-posting from your product catalog.',
+  services_food_title: 'Bakeries, Restaurants & Salons',
+  services_food_desc: 'Clients browse your menu, place orders, and pay — all in Telegram, even at midnight. Booking reminders sent automatically so you get fewer no-shows. Your daily specials posted to Instagram without you lifting a finger.',
+
+  services_social_title: 'Social Media & Content',
+  services_social_desc: 'One video becomes 10 Reels, Shorts, and TikTok clips — cut and posted automatically. Captions, hashtags, and scheduling handled while you sleep. Bot monitors your niche and delivers fresh content ideas every morning. Post to Instagram, TikTok, YouTube, and Facebook in one click.',
 
   services_marketing_title: 'Marketing & Analytics',
-  services_marketing_desc: 'Social media parsing and competitor analysis. Lead generation bots and automated outreach. Custom reporting dashboards updated automatically.',
+  services_marketing_desc: 'See exactly what your competitors post, what works for them, and what does not. New leads contacted automatically the moment they show interest. Every week a report lands in your inbox — no one had to prepare it.',
 
   services_crypto_title: 'Crypto & Web3',
-  services_crypto_desc: 'Wallet monitoring and real-time alert systems. DeFi automation, airdrop tools, on-chain investigation and forensics.',
+  services_crypto_desc: 'Instant alert the moment an important wallet moves money. Bots that farm airdrops, claim rewards, and manage DeFi positions while you sleep. If something smells wrong on-chain, I find out where the money went.',
   services_crypto_example: 'Built: 35-wallet monitor across ETH, Polygon, Solana',
 
-  services_ai_title: 'AI & Automation',
-  services_ai_desc: 'AI chatbots for customer support in any language. Document processing and data extraction from PDFs, emails, tables. Multi-agent systems for complex business workflows.',
+  services_ai_title: 'AI & Automation for Any Business',
+  services_ai_desc: 'A chatbot that answers customer questions 24/7 in any language — so you do not have to. PDFs, invoices, and emails processed and sorted automatically. Repetitive tasks your team does every day — handed off to software that never gets tired.',
 
-  services_telegram_title: 'Telegram Ecosystem',
-  services_telegram_desc: 'Custom Telegram bots for any business need. Channel management and auto-moderation. Mini-apps with payment integration.',
+  services_telegram_title: 'Telegram Bots & Mini-Apps',
+  services_telegram_desc: 'A bot that works for your business around the clock — taking orders, answering questions, sending reminders. Payments built in, no third-party checkout needed. Your clients never need to leave Telegram.',
   services_telegram_example: 'Built: 11-bot ecosystem for life & business tracking',
 
   // ── Footer ────────────────────────────────────────────
