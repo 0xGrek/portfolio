@@ -153,17 +153,17 @@ export const en = {
   // ── Education ─────────────────────────────────────────
   education_title: 'Education & Certifications',
 
-  edu_law_title: "Bachelor's — Law Enforcement",
-  edu_law_school: 'Dnipropetrovsk State University of Internal Affairs',
-  edu_law_period: '2017 – 2020',
+  edu_law_title: "Bachelor's — Law Enforcement (Criminal Investigation)",
+  edu_law_school: 'Dnipropetrovsk State University of Internal Affairs (DDUVS)',
+  edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ukraine',
-  edu_law_desc: 'Full-time degree program. Specialized in law enforcement methodology and financial crime investigation.',
+  edu_law_desc: 'Full-time degree program. Specialized in criminal investigation and surveillance (operative work).',
 
-  edu_econ_title: "Bachelor's — Economics & Economic Security",
+  edu_econ_title: "Bachelor's — Economics (Economic Analytics & Economic Security)",
   edu_econ_school: 'DDUVS',
   edu_econ_period: '2020 – 2024',
   edu_econ_location: 'Dnipro, Ukraine',
-  edu_econ_desc: 'Part-time. Economic Analytics & Protection of Economy specialization. All coursework completed — final state examination pending.',
+  edu_econ_desc: 'Part-time. Economic Analytics & Protection of Economy specialization.',
 
   edu_swat_title: 'Police SWAT Training Certificate',
   edu_swat_school: 'Ministry of Interior of Ukraine',
