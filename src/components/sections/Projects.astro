@@ -295,6 +295,14 @@ const categoryColors: Record<string, string> = {
     /* ── Modal logic ───────────────────────────────────── */
     var currentModal = null;
 
+    // iOS Safari: prevent background scroll via touchmove
+    function preventTouchMove(e) {
+      // Allow scrolling within .modal-content but nowhere else
+      if (!e.target.closest('.modal-content')) {
+        e.preventDefault();
+      }
+    }
+
     function openModal(modalId) {
       var modal = document.getElementById(modalId);
       if (!modal) return;
@@ -306,6 +314,8 @@ const categoryColors: Record<string, string> = {
       modal._savedScrollY = window.scrollY;
       document.documentElement.style.overflow = 'hidden';
       document.body.classList.add('modal-open');
+      // iOS Safari fix: block touchmove on document to prevent background scroll
+      document.addEventListener('touchmove', preventTouchMove, { passive: false });
       modal.style.display = 'flex';
       var content = modal.querySelector('.modal-content');
       if (content) {
