@@ -8,14 +8,14 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: 'en',
+        defaultLocale: 'ua',
         locales: { en: 'en-US', ua: 'uk-UA', pt: 'pt-PT', es: 'es-ES' },
       },
     }),
   ],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'ua', 'pt', 'es'],
+    defaultLocale: 'ua',
+    locales: ['ua', 'en', 'pt', 'es'],
     routing: { prefixDefaultLocale: true },
   },
 });
