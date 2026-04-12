@@ -249,7 +249,7 @@ export const es = {
   services_hotels_desc: 'Conserje de IA en Telegram responde a huéspedes en varios idiomas 24/7 — sin recepción a las 3am. Monitorización de reseñas en todas las plataformas con alerta inmediata ante reseñas negativas. Notificación automática al personal de limpieza al checkout — cero llamadas de coordinación.',
 
   services_logistics_title: 'Logística y Entregas',
-  services_logistics_desc: 'Bot de seguimiento: introduce el número de pedido → ve el estado al instante, sin llamar a soporte. Notificaciones automáticas en cada etapa: "Mensajero en camino", "En reparto", "Entregado". Panel del despachador con retrasos, rutas y KPIs de conductores en una sola vista.',
+  services_logistics_desc: 'Bot de seguimiento: introduce el número de pedido → ve el estado al instante, sin llamar a soporte. Los dueños de flotas de taxi tienen un bot GPS en Telegram — ubicación en vivo, horas trabajadas, análisis de velocidad y comportamiento al volante por conductor. Notificaciones automáticas en cada etapa mantienen a clientes y despachadores sincronizados sin llamadas extra.',
 
   services_flowers_title: 'Floristerías y Tiendas de Regalos',
   services_flowers_desc: 'Bot de pedido: ocasión, presupuesto, fecha de entrega → sugerencias al instante. CRM recuerda fechas: cumpleaños de la esposa → el marido recibe aviso 5 días antes. Notificaciones masivas antes de fiestas: "San Valentín en 3 días — ¡pide ya!" — ventas en piloto automático.',
