@@ -99,7 +99,7 @@ export const ua = {
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
   exp_police_desc: '',
-  exp_police_b1: 'Патрульна поліція (2019) → Кримінальний розшук (2020) → Спецпідрозділ (2021)',
+  exp_police_b1: 'Патрульна поліція (2019) → Карний розшук (2020) → Спецпідрозділ (2021)',
   exp_police_b2: '',
   exp_police_b3: '',
 
