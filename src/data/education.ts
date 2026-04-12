@@ -31,15 +31,4 @@ export const education: Education[] = [
     type: 'degree',
     status: 'completed',
   },
-  {
-    id: 'swat',
-    titleKey: 'edu_swat_title',
-    schoolKey: 'edu_swat_school',
-    periodKey: 'edu_swat_period',
-    locationKey: 'edu_swat_location',
-    descriptionKey: 'edu_swat_desc',
-    noteKey: 'edu_swat_note',
-    type: 'certificate',
-    status: 'completed',
-  },
 ];
