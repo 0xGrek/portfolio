@@ -11,6 +11,17 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    id: 'police',
+    titleKey: 'exp_police_title',
+    companyKey: 'exp_police_company',
+    periodKey: 'exp_police_period',
+    locationKey: 'exp_police_location',
+    descriptionKey: 'exp_police_desc',
+    bullets: ['exp_police_b1'],
+    tags: [],
+    icon: 'shield',
+  },
+  {
     id: 'freelance',
     titleKey: 'exp_freelance_title',
     companyKey: 'exp_freelance_company',
