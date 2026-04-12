@@ -12,6 +12,48 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    id: 'official',
+    titleKey: 'exp_official_title',
+    companyKey: 'exp_official_company',
+    periodKey: 'exp_official_period',
+    locationKey: 'exp_official_location',
+    descriptionKey: 'exp_official_desc',
+    bullets: [
+      'exp_official_b1',
+      'exp_official_b2',
+      'exp_official_b3',
+    ],
+    tags: ['TypeScript', 'Python', 'PostgreSQL', 'Linux', 'Docker', 'Git', 'REST API'],
+  },
+  {
+    id: 'crypto_eng',
+    titleKey: 'exp_crypto_eng_title',
+    companyKey: 'exp_crypto_eng_company',
+    periodKey: 'exp_crypto_eng_period',
+    locationKey: 'exp_crypto_eng_location',
+    descriptionKey: 'exp_crypto_eng_desc',
+    bullets: [
+      'exp_crypto_eng_b1',
+      'exp_crypto_eng_b2',
+      'exp_crypto_eng_b3',
+    ],
+    tags: ['Python', 'web3.py', 'ccxt', 'EVM', 'Solana', 'TON', 'Telegram', 'Multi-agent AI'],
+  },
+  {
+    id: 'webdev',
+    titleKey: 'exp_webdev_title',
+    companyKey: 'exp_webdev_company',
+    periodKey: 'exp_webdev_period',
+    locationKey: 'exp_webdev_location',
+    descriptionKey: 'exp_webdev_desc',
+    bullets: [
+      'exp_webdev_b1',
+      'exp_webdev_b2',
+      'exp_webdev_b3',
+    ],
+    tags: ['React', 'TypeScript', 'Python', 'Astro', 'Supabase', 'Telegram Bot API', 'Vercel'],
+  },
+  {
     id: 'police',
     titleKey: 'exp_police_title',
     companyKey: 'exp_police_company',
