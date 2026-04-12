@@ -56,8 +56,7 @@ export const en = {
   exp_police_company: 'National Police of Ukraine',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Ukraine',
-  exp_police_desc: 'Three years of service — patrol, criminal investigation, special unit.',
-  exp_police_b1: '1 year in each unit. U.S. Embassy certified.',
+  exp_police_desc: 'Patrol police (2019) → Criminal investigation (2020) → Special unit (2021). U.S. Embassy certified.',
 
   exp_onchain_title: 'On-Chain Analyst',
   exp_onchain_company: 'Independent',
