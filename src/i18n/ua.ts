@@ -60,7 +60,7 @@ export const ua = {
   exp_police_desc: 'Правоохоронна діяльність (2019) → Кримінальний розшук (2020) → Спецпідрозділ (2021).',
 
   exp_onchain_title: 'Розробник автоматизації',
-  exp_onchain_company: 'Незалежно',
+  exp_onchain_company: 'Фріланс',
   exp_onchain_period: '2025 – дотепер',
   exp_onchain_location: 'Дистанційно',
   exp_onchain_desc:
