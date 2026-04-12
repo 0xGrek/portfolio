@@ -41,9 +41,11 @@ const servicesIT = [
       <p class="text-center mb-4 text-base" style="color: var(--text-secondary);">
         {t(lang, 'services_subtitle')}
       </p>
-      <p class="text-center mb-12 text-sm italic max-w-3xl mx-auto leading-relaxed" style="color: var(--text-secondary); opacity: 0.75;">
-        {t(lang, 'services_disclaimer' as any)}
-      </p>
+      {t(lang, 'services_disclaimer' as any) && (
+        <p class="text-center mb-12 text-sm italic max-w-3xl mx-auto leading-relaxed" style="color: var(--text-secondary); opacity: 0.75;">
+          {t(lang, 'services_disclaimer' as any)}
+        </p>
+      )}
     </div>
 
     <!-- Category 1: Regular Business -->
