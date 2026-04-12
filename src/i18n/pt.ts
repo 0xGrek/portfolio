@@ -31,7 +31,7 @@ export const pt = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
   about_p1:
-    'Programador autodidata. Começou a programar em 2022 — primeiros cursos Udemy, depois automação Web3 desde março de 2023. Sem bootcamps, sem licenciatura em informática. Construiu tudo do zero: minting, parsing, rastreio on-chain, infraestrutura multi-conta em todas as principais blockchains — L1, L2.',
+    'Nascido em 1999. Programador autodidata. Começou a programar em 2022 — primeiros cursos Udemy, depois automação Web3 desde março de 2023. Sem bootcamps, sem licenciatura em informática. Construiu tudo do zero: minting, parsing, rastreio on-chain, infraestrutura multi-conta em todas as principais blockchains — L1, L2.',
   about_p2:
     '100+ ferramentas de automação para DeFi, airdrops, NFTs e operações on-chain. Maior projeto: TON Gift Flipper — sistema de trading assíncrono multi-agente. Funciona em todas as principais chains. Antes de existir programação assistida por IA — tudo era manual.',
   about_p3:
