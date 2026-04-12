@@ -214,7 +214,7 @@ export const es = {
   services_ecommerce_desc: 'Bot recupera el 10% de los carritos abandonados y notifica automáticamente el estado del pedido. Tus clientes hacen pedidos, pagan y reciben actualizaciones — todo en Telegram, sin llamarte. Conoces los precios de la competencia antes de fijar los tuyos.',
 
   services_food_title: 'Panaderías, Restaurantes y Salones',
-  services_food_desc: 'Bot acepta pedidos 24/7, confirma automáticamente, envía "tu pedido está listo" — los camareros dejan de contestar llamadas. Recordatorios de cita enviados automáticamente, menos ausencias. Tus especiales del día publicados en Instagram sin mover un dedo.',
+  services_food_desc: 'Bot acepta pedidos 24/7, confirma automáticamente, envía "tu pedido está listo" — los camareros dejan de contestar llamadas. Control de calidad con IA: el bot evalúa fotos de los platos entregados y detecta desviaciones de calidad automáticamente. Recordatorios de cita reducen ausencias. Especiales del día publicados en Instagram sin mover un dedo.',
 
   services_social_title: 'Redes Sociales y Contenido',
   services_social_desc: 'Un vídeo se convierte en 10 Reels, Shorts y TikToks — cortados y publicados automáticamente. Subtítulos, hashtags y programación resueltos mientras duermes. Bot monitoriza tu nicho y trae ideas de contenido frescas cada mañana. Instagram, TikTok, YouTube y Facebook en un clic.',
