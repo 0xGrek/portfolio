@@ -5,7 +5,7 @@ import { es } from './es';
 
 export const languages = { en, ua, pt, es } as const;
 export type Lang = keyof typeof languages;
-export const defaultLang: Lang = 'en';
+export const defaultLang: Lang = 'ua';
 
 export function t(lang: Lang, key: keyof typeof en): string {
   return languages[lang]?.[key] ?? languages[defaultLang][key] ?? key;
