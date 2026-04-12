@@ -37,7 +37,7 @@ export const en = {
   about_p3:
     'Current focus: on-chain analytics, multi-agent AI systems, and Telegram bot ecosystems. Tracking wallet clusters, analyzing token flows, researching protocol exploit vectors. Tools I work with daily: Arkham, Nansen, Dune Analytics, Chainalysis, DeBank, Tenderly, Bubblemaps, Breadcrumbs, TRM Labs.',
   about_unique:
-    '5 years in law enforcement → pattern recognition that transfers directly to on-chain forensics.',
+    '5 years in law enforcement — criminal investigation and surveillance → pattern recognition for on-chain forensics.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
