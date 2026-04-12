@@ -31,4 +31,14 @@ export const education: Education[] = [
     type: 'degree',
     status: 'in-progress',
   },
+  {
+    id: 'cert',
+    titleKey: 'edu_cert_title',
+    schoolKey: 'edu_cert_school',
+    periodKey: 'edu_cert_period',
+    locationKey: 'edu_cert_location',
+    descriptionKey: 'edu_cert_desc',
+    type: 'certificate',
+    status: 'completed',
+  },
 ];
