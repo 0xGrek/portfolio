@@ -202,6 +202,9 @@ export const en = {
   // ── Services ──────────────────────────────────────────
   services_title: 'How I Can Help',
   services_subtitle: 'Real solutions for real businesses — no jargon, just results',
+  services_disclaimer: "I'm a solo developer working with AI tools. I build focused, practical solutions — not enterprise software. If you need a simple bot, automation, or dashboard that solves one specific problem — I'm your person. For large-scale ERP or CRM systems, I'll honestly tell you to look for a team.",
+  services_cat_regular: 'For Regular Business',
+  services_cat_it: 'For IT & Companies',
 
   services_construction_title: 'Construction & Real Estate',
   services_construction_desc: 'Your client sees daily progress photos in Telegram — no more "how\'s it going?" calls. All listings from 10+ portals in one place, updated every hour. Duplicate and fraud listings flagged automatically.',
