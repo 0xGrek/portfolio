@@ -217,7 +217,7 @@ export const es = {
   services_food_desc: 'Bot acepta pedidos 24/7, confirma automáticamente, envía "tu pedido está listo" — los camareros dejan de contestar llamadas. Control de calidad con IA: el bot evalúa fotos de los platos entregados y detecta desviaciones de calidad automáticamente. Recordatorios de cita reducen ausencias. Especiales del día publicados en Instagram sin mover un dedo.',
 
   services_social_title: 'Redes Sociales y Contenido',
-  services_social_desc: 'Un vídeo se convierte en 10 Reels, Shorts y TikToks — cortados y publicados automáticamente. Subtítulos, hashtags y programación resueltos mientras duermes. Bot monitoriza tu nicho y trae ideas de contenido frescas cada mañana. Instagram, TikTok, YouTube y Facebook en un clic.',
+  services_social_desc: 'Grabas UN vídeo largo → IA corta los 10 mejores momentos para Reels y TikTok, genera subtítulos y hashtags, programa publicaciones automáticamente. Notificación matutina: "Hoy publica a las 12:00 y 18:00, aquí están tus clips." Monitoreo de competidores: qué está en tendencia en tu nicho ahora mismo.',
 
   services_marketing_title: 'Marketing y Analítica',
   services_marketing_desc: 'Bot responde a clientes 24/7, los cualifica y pasa solo leads listos a tu equipo. Ves exactamente qué publican los competidores, qué les funciona y qué no. Cada semana un informe llega a tu bandeja de entrada — sin que nadie lo haya preparado.',
