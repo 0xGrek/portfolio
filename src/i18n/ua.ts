@@ -95,7 +95,7 @@ export const ua = {
 
   // Experience — Police
   exp_police_title: 'Національна поліція України (НПУ)',
-  exp_police_company: 'Національна поліція України',
+  exp_police_company: 'НПУ',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
   exp_police_desc: 'Служба в різних підрозділах Національної поліції України',
