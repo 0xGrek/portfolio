@@ -227,7 +227,7 @@ export const en = {
   services_crypto_example: 'Built: 35-wallet monitor across ETH, Polygon, Solana',
 
   services_ai_title: 'AI & Automation for Any Business',
-  services_ai_desc: 'A chatbot that answers customer questions 24/7 in any language — so you do not have to. PDFs, invoices, and emails processed and sorted automatically. Repetitive tasks your team does every day — handed off to software that never gets tired.',
+  services_ai_desc: 'Full product — AI sales bot with website, product catalog, and admin panel. Not just a chatbot: a complete system your sales team actually uses. PDFs, invoices, and emails processed automatically. Record a voice memo → AI transcribes + extracts action items + sends summary to your team.',
 
   services_telegram_title: 'Telegram Bots & Mini-Apps',
   services_telegram_desc: 'A bot that works for your business around the clock — taking orders, answering questions, sending reminders. Payments built in, no third-party checkout needed. Your clients never need to leave Telegram.',
