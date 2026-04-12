@@ -53,86 +53,52 @@ export const ua = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
 
-  exp_official_title: 'Розробник програмного забезпечення',
-  exp_official_company: 'OLEKSANDR ANDRIANOV UNIPESSOAL LDA',
+  // Experience — Official
+  exp_official_title: 'Розробник ПЗ',
+  exp_official_company: 'Oleksandr Andrianov Unipessoal Lda',
   exp_official_period: 'Червень 2025 – дотепер',
   exp_official_location: 'Лісабон, Португалія',
-  exp_official_desc:
-    'Безстроковий трудовий договір (Sem Termo). Розробка програмного забезпечення, підтримка кодової бази, адміністрування серверів та баз даних, підтримка IT-інфраструктури. Гібридний/дистанційний формат.',
-  exp_official_b1: 'Розробка ПЗ та підтримка кодової бази продакшн-систем',
-  exp_official_b2: 'Адміністрування серверів та баз даних — Linux, PostgreSQL, Docker',
-  exp_official_b3: 'Підтримка IT-інфраструктури та розробка внутрішніх інструментів',
+  exp_official_desc: 'Розробка програмного забезпечення, підтримка коду, адміністрування серверів та баз даних. Постійний контракт.',
+  exp_official_b1: 'Розробка та підтримка production систем',
+  exp_official_b2: 'Адміністрування серверів та баз даних',
+  exp_official_b3: 'Технічна підтримка IT-інфраструктури',
 
-  exp_crypto_eng_title: 'Інженер крипто-автоматизації',
-  exp_crypto_eng_company: 'Фріланс / Незалежно',
-  exp_crypto_eng_period: '2023 – дотепер',
-  exp_crypto_eng_location: 'Дистанційно',
-  exp_crypto_eng_desc:
-    'Побудова торгових ботів, інструментів ончейн-аналітики, DeFi-автоматизація та Telegram-боти для крипто-спільнот. Мультиагентні AI-системи для обробки даних та автоматизації контенту.',
-  exp_crypto_eng_b1: 'Побудував торгові боти та інструменти DeFi-автоматизації на EVM, Solana, TON та Bitcoin',
-  exp_crypto_eng_b2: 'Розробив пайплайни ончейн-аналітики та системи моніторингу гаманців',
-  exp_crypto_eng_b3: 'Задеплоїв мультиагентні AI-системи оркестрації для автоматизованої обробки даних',
+  // Experience — Crypto & Automation
+  exp_crypto_auto_title: 'Крипто та автоматизація',
+  exp_crypto_auto_company: 'Незалежно',
+  exp_crypto_auto_period: '2023 – дотепер',
+  exp_crypto_auto_location: '',
+  exp_crypto_auto_desc: 'Торгові боти, on-chain аналітика, DeFi автоматизація, інструменти для крипто-спільнот.',
+  exp_crypto_auto_b1: 'Торгові боти та DeFi автоматизація',
+  exp_crypto_auto_b2: 'On-chain аналітика та моніторинг',
+  exp_crypto_auto_b3: 'Telegram-боти для крипто-спільнот',
 
+  // Experience — Web Development
   exp_webdev_title: 'Веб-розробник',
-  exp_webdev_company: 'Фріланс / Незалежно',
+  exp_webdev_company: 'Незалежно',
   exp_webdev_period: '2023 – дотепер',
-  exp_webdev_location: 'Лісабон, Португалія',
-  exp_webdev_desc:
-    'Full-stack веб-розробка, автоматизація на основі AI та розробка Telegram-ботів. 15+ продакшн-ботів, портфоліо-сайти, лендінги та веб-додатки.',
-  exp_webdev_b1: 'Побудував 15+ продакшн Telegram-ботів для замовлень, відстеження, платежів та AI-зведень',
-  exp_webdev_b2: 'Розробив full-stack веб-додатки: React, TypeScript, Supabase, Astro, деплой на Vercel',
-  exp_webdev_b3: 'Виконував замовлення на портфоліо-сайти та лендінги через Freelancer.com',
+  exp_webdev_location: '',
+  exp_webdev_desc: '15+ production Telegram-ботів, веб-додатки, лендінги, портфоліо-сайти.',
+  exp_webdev_b1: '15+ Telegram-ботів у production',
+  exp_webdev_b2: 'Full-stack веб-додатки та лендінги',
+  exp_webdev_b3: 'Автоматизація бізнес-процесів',
 
-  exp_police_title: 'Правоохоронець',
+  // Experience — AI Development
+  exp_ai_dev_title: 'AI-розробник',
+  exp_ai_dev_company: 'Незалежно',
+  exp_ai_dev_period: '2024 – дотепер',
+  exp_ai_dev_location: '',
+  exp_ai_dev_desc: 'Multi-agent AI системи, інтеграція Claude/Gemini, MCP сервери, автоматизація контенту.',
+  exp_ai_dev_b1: 'Multi-agent AI оркестрація (11 агентів)',
+  exp_ai_dev_b2: 'Інтеграція Claude, Gemini, MCP серверів',
+  exp_ai_dev_b3: 'Контент-автоматизація та data processing',
+
+  // Experience — Police
+  exp_police_title: 'Поліція',
   exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: 'Правоохоронна діяльність (2019) → Кримінальний розшук (2020) → Спецпідрозділ (2021).',
-
-  exp_onchain_title: 'Розробник автоматизації',
-  exp_onchain_company: 'Фріланс',
-  exp_onchain_period: '2025 – дотепер',
-  exp_onchain_location: 'Дистанційно',
-  exp_onchain_desc:
-    '100+ інструментів автоматизації створено. У розробці з 2022, у Web3 з 2023. Моніторинг гаманців на ETH, Polygon та Solana. Аналіз маніпуляцій токенами, відстеження підозрілих потоків з CEX, дослідження векторів експлуатації протоколів за допомогою Arkham, Nansen, DeBank та BubbleMaps.',
-  exp_onchain_b1: 'Побудував мультичейн систему моніторингу 35 гаманців з Telegram-сповіщеннями в реальному часі',
-  exp_onchain_b2: 'Аналізував патерни маніпуляцій токенами та підозрілі потоки виведення з CEX',
-  exp_onchain_b3: 'Відстежував кластери гаманців та виявляв схеми зловживань у механіках аірдропів',
-  exp_onchain_b4: 'Досліджував вектори експлуатації протоколів на основі операційного досвіду на 50+ DeFi-протоколах',
-
-  exp_ai_title: 'AI-розробник автоматизації',
-  exp_ai_company: 'Фріланс',
-  exp_ai_period: '2024 – дотепер',
-  exp_ai_location: 'Лісабон, Португалія',
-  exp_ai_desc:
-    'Мультиагентні системи AI-оркестрації, екосистеми Telegram-ботів та агрегація даних нерухомості. Щоденна інженерія в Claude Code як основному середовищі.',
-  exp_ai_b1: 'Побудував 8-агентний AI-оркестратор з LLM-диспетчером для автокласифікації контенту з Telegram',
-  exp_ai_b2: 'Створив екосистему з 11 Telegram-ботів для відстеження життя, фітнесу, планування та транскрипції YouTube',
-  exp_ai_b3: 'Розробив агрегатор нерухомості, що сканує 4 португальські портали — 12 000+ оголошень з виявленням шахрайства',
-  exp_ai_b4: 'Побудував дайджест-бот (Telethon), що генерує AI-зведення з історії каналів за розкладом',
-
-  exp_crypto_title: 'Крипто-оператор та інженер автоматизації',
-  exp_crypto_company: 'Фріланс',
-  exp_crypto_period: '2023 – 2024',
-  exp_crypto_location: 'Дистанційно',
-  exp_crypto_desc:
-    'Побудував і керував 100+ інструментами автоматизації на EVM, Solana, Bitcoin, TON, SUI, Aptos та StarkNet. Управляв інфраструктурою з 1 000+ акаунтів. Запускав стратегії CEX/DEX арбітражу та фармінгу протоколів.',
-  exp_crypto_b1: 'Побудував 50+ інструментів автоматизації: мінтери NFT, скрипти для газових воєн, клеймери аірдропів',
-  exp_crypto_b2: 'CEX-автоматизація для 9 бірж (Binance, OKX, Bybit, Bitget, CoinEx, Gate) через Python/ccxt',
-  exp_crypto_b3: 'Мультичейн інструменти для гаманців: генератори (6 чейнів), збирачі токенів (15+ EVM), очищувачі акаунтів',
-  exp_crypto_b4: 'Керував інфраструктурою з 1 000+ акаунтів з антидетект-браузерами (Dolphin Anty, AdsPower)',
-  exp_crypto_b5: 'Запускав арбітраж: CEX/DEX спреди (8+ бірж), арбітраж ставок фінансування, ринки передбачень (Polymarket, Kalshi)',
-  exp_crypto_b6: 'Виявляв і експлуатував вразливості на платформах Web3-казино — самостійно та в командах',
-
-  exp_freelance_title: 'Веб-розробник',
-  exp_freelance_company: 'Freelancer.com',
-  exp_freelance_period: '2022 – дотепер',
-  exp_freelance_location: 'Лісабон, Португалія',
-  exp_freelance_desc:
-    'Full-stack веб-розробка. Розробляв PWA, лендінги та веб-додатки. Прогресував від HTML/CSS/JS до React, TypeScript та Supabase.',
-  exp_freelance_b1: 'Завершив курси з веб-розробки (Udemy, 2022), побудував портфоліо та лендінги',
-  exp_freelance_b2: 'Прогресував від HTML/CSS/JS до full-stack: JavaScript, TypeScript, React, Python',
-  exp_freelance_b3: 'Розробив мультиплеєрну гру "Мафія" як PWA (React 19, TypeScript, Zustand, Supabase), задеплоєну на Vercel',
+  exp_police_desc: 'Правоохоронна діяльність.',
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Проєкти',
