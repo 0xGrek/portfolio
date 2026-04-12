@@ -45,10 +45,10 @@ export const ua = {
   stat_tools_label: 'Інструментів',
   stat_chains: '10+',
   stat_chains_label: 'Блокчейнів',
-  stat_years: '115K',
-  stat_years_label: 'Рядків коду',
-  stat_exchanges: '6',
-  stat_exchanges_label: 'Продакшн проєктів',
+  stat_years: '3',
+  stat_years_label: 'Роки в поліції',
+  stat_exchanges: '12 000+',
+  stat_exchanges_label: 'Оголошень в агрегаторі',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
