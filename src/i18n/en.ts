@@ -206,62 +206,83 @@ export const en = {
   services_cat_regular: 'For Regular Business',
   services_cat_it: 'For IT & Companies',
 
+  services_show_more: 'Show details ▼',
+  services_show_less: 'Hide details ▲',
+
   services_construction_title: 'Construction & Real Estate',
-  services_construction_desc: 'Your client sees daily progress photos in Telegram — no more "how\'s it going?" calls. All listings from 10+ portals in one place, updated every hour. Duplicate and fraud listings flagged automatically.',
+  services_construction_desc: 'Automated progress updates, listing aggregation, and fraud detection for construction and real estate.',
   services_construction_example: 'Built: Portugal Realty — 12K listings from 4 portals daily',
+  services_construction_examples: 'For example:|Client sees daily progress photos in Telegram — no more "how\'s it going?" calls|All listings from 10+ portals in one place, updated every hour|Duplicate and fraud listings flagged automatically|New lead from portal → instant notification to manager',
 
   services_finance_title: 'Finance & Banking',
-  services_finance_desc: 'Know the moment something unusual happens in your accounts. Compliance reports that write themselves. Dashboards that show your real financial picture — updated automatically, no manual work.',
+  services_finance_desc: 'Real-time account monitoring, automated compliance reports, and live financial dashboards.',
+  services_finance_examples: 'For example:|Instant alert when something unusual happens in your accounts|Compliance reports that write themselves — no analyst needed|Dashboard shows your real financial picture, updated automatically|Suspicious transaction patterns flagged before they become problems',
 
   services_ecommerce_title: 'E-commerce & Retail',
-  services_ecommerce_desc: 'Bot recovers 10% of abandoned carts and auto-notifies about order status. Your customers order, pay, and get updates — all inside Telegram, without calling you. Know exactly what competitors charge before you set your prices.',
+  services_ecommerce_desc: 'Abandoned cart recovery, order status automation, and competitor price monitoring.',
+  services_ecommerce_examples: 'For example:|Bot recovers 10% of abandoned carts with a timely follow-up message|Customers order, pay, and get updates — all inside Telegram, no calls to you|Know exactly what competitors charge before you set your prices|Auto-restock alerts when inventory drops below threshold',
 
   services_food_title: 'Bakeries, Restaurants & Salons',
-  services_food_desc: 'Bot accepts orders 24/7, confirms automatically, sends "your order is ready" — waiters stop answering phones. AI food quality control: bot evaluates photos of delivered dishes and flags quality issues automatically. Booking reminders cut no-shows. Daily specials posted to Instagram without you lifting a finger.',
+  services_food_desc: 'Order acceptance, booking reminders, and social media posting — all on autopilot.',
+  services_food_examples: 'For example:|Bot accepts orders 24/7, confirms automatically, sends "your order is ready"|AI food quality control: bot evaluates dish photos and flags deviations from standards|Booking reminders cut no-shows by 30–50%|Daily specials posted to Instagram without you lifting a finger',
 
   services_social_title: 'Social Media & Content',
-  services_social_desc: 'Record ONE long video → AI cuts 10 best moments for Reels and TikTok, generates captions and hashtags, schedules posts automatically. Morning notification: "Today post at 12:00 and 18:00, here are your clips." Competitor monitoring: what\'s trending in your niche right now.',
+  services_social_desc: 'One long video turns into a week of content — AI cuts, captions, and schedules everything.',
+  services_social_examples: 'For example:|Record ONE video → AI cuts 10 best moments for Reels and TikTok|Captions and hashtags generated automatically|Morning notification: "Today post at 12:00 and 18:00, here are your clips"|Competitor monitoring: what\'s trending in your niche right now',
 
   services_marketing_title: 'Marketing & Analytics',
-  services_marketing_desc: 'Bot answers clients 24/7, qualifies them, passes only ready leads to your team. See exactly what your competitors post, what works for them, and what does not. Every week a report lands in your inbox — no one had to prepare it.',
+  services_marketing_desc: 'Lead qualification bot, competitor tracking, and weekly automated reports.',
+  services_marketing_examples: 'For example:|Bot answers clients 24/7, qualifies them, passes only ready leads to your team|See exactly what competitors post, what works for them and what does not|Weekly report lands in your inbox — no one had to prepare it|A/B test ad creatives and get results automatically compiled',
 
   services_crypto_title: 'Crypto & Web3',
-  services_crypto_desc: 'Instant alert the moment an important wallet moves money. Bots that farm airdrops, claim rewards, and manage DeFi positions while you sleep. If something smells wrong on-chain, I find out where the money went.',
+  services_crypto_desc: 'Wallet monitoring, airdrop automation, and on-chain forensics.',
   services_crypto_example: 'Built: 35-wallet monitor across ETH, Polygon, Solana',
+  services_crypto_examples: 'For example:|Instant alert the moment an important wallet moves money|Bots farm airdrops, claim rewards, manage DeFi positions while you sleep|Something smells wrong on-chain? I trace where the money went|Multi-chain wallet monitoring across ETH, Polygon, Solana and more',
 
   services_ai_title: 'AI & Automation for Any Business',
-  services_ai_desc: 'Full product — AI sales bot with website, product catalog, and admin panel. Not just a chatbot: a complete system your sales team actually uses. PDFs, invoices, and emails processed automatically. Record a voice memo → AI transcribes + extracts action items + sends summary to your team.',
+  services_ai_desc: 'Full AI sales system with product catalog, admin panel, and document processing.',
+  services_ai_examples: 'For example:|Full product — AI sales bot with website, catalog, and admin panel|Not just a chatbot: a complete system your sales team actually uses|PDFs, invoices, and emails processed automatically|Voice memo → AI transcribes + extracts action items + sends summary to team',
 
   services_telegram_title: 'Telegram Bots & Mini-Apps',
-  services_telegram_desc: 'A bot that works for your business around the clock — taking orders, answering questions, sending reminders. Payments built in, no third-party checkout needed. Your clients never need to leave Telegram.',
+  services_telegram_desc: 'Custom Telegram bots that handle orders, payments, and customer communication 24/7.',
   services_telegram_example: 'Built: 11-bot ecosystem for life & business tracking',
+  services_telegram_examples: 'For example:|Bot takes orders and answers questions around the clock|Payments built in — no third-party checkout needed|Clients never need to leave Telegram|Mini-app with product catalog, cart, and order history inside Telegram',
 
   services_medical_title: 'Medical Clinics & Dentists',
-  services_medical_desc: 'Appointment booking bot — patients pick doctor, date, and time in seconds. Auto-reminders 24h and 2h before visit — reduces no-shows by 30–50%. AI FAQ answers "How much is a filling?" and "How to prepare for extraction?" around the clock.',
+  services_medical_desc: 'Appointment booking, no-show reduction reminders, and AI FAQ for patients.',
+  services_medical_examples: 'For example:|Patients pick doctor, date, and time in seconds — no phone needed|Auto-reminders 24h and 2h before visit reduce no-shows by 30–50%|AI answers "How much is a filling?" and "How to prepare?" around the clock|Post-visit follow-up message with care instructions sent automatically',
 
   services_auto_title: 'Auto Repair & Car Washes',
-  services_auto_desc: 'Booking bot: car model, problem, date — instant scheduling without calls. Auto status updates: "Diagnostics done", "Parts ordered", "Car ready" — clients always in the loop. Maintenance reminders based on mileage or time keep customers coming back.',
+  services_auto_desc: 'Booking automation, status update notifications, and maintenance reminders for auto businesses.',
+  services_auto_examples: 'For example:|Booking bot: car model, problem, date — instant scheduling without calls|Auto status updates: "Diagnostics done", "Parts ordered", "Car ready"|Maintenance reminders by mileage or time bring customers back|Fleet managers see all active jobs in one Telegram dashboard',
 
   services_legal_title: 'Law Firms & Consulting',
-  services_legal_desc: 'AI screening bot: "Describe your situation" → qualification → lawyer appointment — no receptionist needed. Template documents generated by AI: contracts, claims, powers of attorney. Deadline tracker with court date reminders so nothing slips through.',
+  services_legal_desc: 'AI screening bot, automated document templates, and deadline tracking for legal practices.',
+  services_legal_examples: 'For example:|AI bot: "Describe your situation" → qualification → lawyer appointment — no receptionist|Template documents generated by AI: contracts, claims, powers of attorney|Deadline tracker with court date reminders so nothing slips through|New inquiry auto-classified by case type and routed to the right specialist',
 
   services_hotels_title: 'Hotels & Airbnb',
-  services_hotels_desc: 'AI concierge in Telegram answers guest questions in multiple languages 24/7 — no front desk needed at 3am. Review monitoring across all platforms with instant alert on negative reviews. Auto-notification to cleaning staff on checkout — zero coordination calls.',
+  services_hotels_desc: 'Multilingual AI concierge, review monitoring, and automated staff notifications.',
+  services_hotels_examples: 'For example:|AI concierge answers guest questions in multiple languages 24/7 — no front desk at 3am|Review monitoring across all platforms with instant alert on negative reviews|Auto-notification to cleaning staff on checkout — zero coordination calls|Upsell bot suggests late checkout or room upgrades at the right moment',
 
   services_logistics_title: 'Logistics & Delivery',
-  services_logistics_desc: 'Customer tracking bot: enter order number → see status instantly, no calls to support. Taxi fleet owners get a GPS monitoring bot — live driver location, hours worked, speed and driving behavior per driver, all in one Telegram dashboard. Auto-notifications at every stage keep customers and dispatchers in sync without extra calls.',
+  services_logistics_desc: 'Order tracking bots, GPS fleet monitoring, and automated dispatch notifications.',
+  services_logistics_examples: 'For example:|Customer tracking bot: enter order number → see status instantly, no calls to support|Taxi fleet GPS bot: live driver location, hours worked, speed per driver in Telegram|Auto-notifications at every delivery stage keep customers informed|Driver performance analytics — identify issues before they cost you clients',
 
   services_flowers_title: 'Flower Shops & Gift Stores',
-  services_flowers_desc: 'Order bot: occasion, budget, delivery date → suggestions sent instantly. CRM date memory: wife\'s birthday → husband gets a reminder 5 days before. Pre-holiday mass notifications: "Valentine\'s Day in 3 days — order now?" — drives repeat sales on autopilot.',
+  services_flowers_desc: 'Order bot, CRM date reminders, and pre-holiday mass notifications for gift businesses.',
+  services_flowers_examples: 'For example:|Order bot: occasion, budget, delivery date → suggestions sent instantly|CRM remembers dates: wife\'s birthday → husband gets a reminder 5 days before|Pre-holiday mass push: "Valentine\'s Day in 3 days — order now?" — repeat sales on autopilot|Loyalty program: bot offers discount on next order after purchase',
 
   services_hvac_title: 'HVAC, Ventilation & Installation Services',
-  services_hvac_desc: 'Client enters room size and type → bot calculates instant quote, no engineer call needed. Field bot for surveyors and installers: log measurements on-site, auto-generate material buy-lists with quantities, and plan delivery routes — zero paperwork, zero errors. Automated lead qualification and follow-up so no prospect falls through the cracks.',
+  services_hvac_desc: 'Instant quote calculator, field measurement bot, and automated lead qualification.',
+  services_hvac_examples: 'For example:|Client enters room size and type → bot calculates instant quote, no engineer call|Field bot: log measurements on-site, auto-generate material buy-lists with quantities|Delivery route planning built in — zero paperwork, zero errors|Automated lead follow-up so no prospect falls through the cracks',
 
   services_research_title: 'Research & Vulnerability Assessment',
-  services_research_desc: 'Database analysis and finding security holes before someone else does. Competitor research and market analysis powered by AI. Data scraping and structuring from any public source. If it\'s online — I can find it, structure it, and deliver it.',
+  services_research_desc: 'Security hole detection, competitor analysis, and data scraping from any public source.',
+  services_research_examples: 'For example:|Database analysis and finding security holes before someone else does|Competitor research and market analysis powered by AI|Data scraping and structuring from any public source|If it\'s online — I find it, structure it, and deliver it',
 
   services_bizanalytics_title: 'Business Analytics & Metrics',
-  services_bizanalytics_desc: 'Help you understand your numbers: CAC, LTV, churn, margins — in plain language. Build dashboards that track what actually matters. AI-powered reports that tell you why your revenue dropped, not just that it did. For business owners who don\'t know where their money goes.',
+  services_bizanalytics_desc: 'Plain-language dashboards and AI reports that explain why revenue dropped, not just that it did.',
+  services_bizanalytics_examples: 'For example:|Understand your numbers: CAC, LTV, churn, margins — in plain language|Dashboards that track what actually matters, not vanity metrics|AI reports that explain WHY revenue dropped, not just that it did|Built for business owners who don\'t know where their money goes',
 
   services_cta_title: "Don't see your industry?",
   services_cta_desc: "We automate everything that causes you headaches. Reports, notifications, data entry, monitoring — any routine that eats your time. Tell us what you do manually, and we'll show exactly how a bot or AI will do it for you.",
