@@ -68,10 +68,10 @@ export const ua = {
   exp_crypto_auto_company: 'Незалежно',
   exp_crypto_auto_period: '2023 – дотепер',
   exp_crypto_auto_location: '',
-  exp_crypto_auto_desc: 'Торгові боти, on-chain аналітика, DeFi автоматизація, інструменти для крипто-спільнот.',
-  exp_crypto_auto_b1: 'Торгові боти та DeFi автоматизація',
-  exp_crypto_auto_b2: 'On-chain аналітика та моніторинг',
-  exp_crypto_auto_b3: 'Telegram-боти для крипто-спільнот',
+  exp_crypto_auto_desc: 'Крипто-сканери, моніторинг гаманців, DeFi автоматизація, торгові боти та on-chain аналітика.',
+  exp_crypto_auto_b1: 'Побудував крипто-сканери та моніторинг гаманців',
+  exp_crypto_auto_b2: 'Автоматизував DeFi стратегії та торгові операції',
+  exp_crypto_auto_b3: 'On-chain аналітика та відстеження транзакцій',
 
   // Experience — Web Development
   exp_webdev_title: 'Веб-розробник',
