@@ -11,6 +11,7 @@ export const ua = {
   nav_experience: 'Досвід',
   nav_projects: 'Проєкти',
   nav_skills: 'Навички',
+  nav_services: 'Послуги',
   nav_education: 'Освіта',
   nav_blog: 'Блог',
   nav_contact: 'Контакт',
