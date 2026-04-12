@@ -11,6 +11,7 @@ export const es = {
   nav_experience: 'Experiencia',
   nav_projects: 'Proyectos',
   nav_skills: 'Habilidades',
+  nav_services: 'Servicios',
   nav_education: 'Educación',
   nav_blog: 'Blog',
   nav_contact: 'Contacto',
