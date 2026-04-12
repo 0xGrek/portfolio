@@ -88,10 +88,10 @@ export const ua = {
   exp_ai_dev_company: 'Незалежно',
   exp_ai_dev_period: '2024 – дотепер',
   exp_ai_dev_location: '',
-  exp_ai_dev_desc: 'Multi-agent AI системи, інтеграція Claude/Gemini, MCP сервери, автоматизація контенту.',
-  exp_ai_dev_b1: 'Multi-agent AI оркестрація (11 агентів)',
-  exp_ai_dev_b2: 'Інтеграція Claude, Gemini, MCP серверів',
-  exp_ai_dev_b3: 'Контент-автоматизація та data processing',
+  exp_ai_dev_desc: 'Multi-agent AI системи, автоматизація контенту та соцмереж, інтеграція Claude/Gemini.',
+  exp_ai_dev_b1: 'Оркестрація 11 AI-агентів для обробки даних',
+  exp_ai_dev_b2: 'Автоматизація контенту та аналітики соцмереж',
+  exp_ai_dev_b3: 'Інтеграція Claude, Gemini, MCP серверів',
 
   // Experience — Police
   exp_police_title: 'Поліція',
