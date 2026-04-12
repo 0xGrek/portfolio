@@ -23,7 +23,7 @@ export const experience: Experience[] = [
       'exp_police_b2',
       'exp_police_b3',
     ],
-    tags: ['Кримінальний розшук', 'Тактична група', 'СВАТ', 'КОРД'],
+    tags: [],
     icon: 'shield',
   },
   {
