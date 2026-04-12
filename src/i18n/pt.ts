@@ -1,6 +1,6 @@
 export const pt = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Serhii Ivanenko — Web3 Security & Automation Engineer',
+  meta_title: 'Serhii Ivanenko — Analista On-Chain & Desenvolvedor de Automação',
   meta_description:
     '0xGrek — Programador Web3 e analista on-chain. 101 ferramentas, 115K linhas de código, 10+ blockchains. Autodidata. Ex-polícia. Lisboa.',
   meta_keywords:
