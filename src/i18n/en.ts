@@ -53,6 +53,36 @@ export const en = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
 
+  exp_official_title: 'Software Developer',
+  exp_official_company: 'OLEKSANDR ANDRIANOV UNIPESSOAL LDA',
+  exp_official_period: 'June 2025 – Present',
+  exp_official_location: 'Lisbon, Portugal',
+  exp_official_desc:
+    'Full-time permanent contract (Sem Termo). Software development, code maintenance, server and database administration, IT infrastructure support. Hybrid/remote.',
+  exp_official_b1: 'Software development and codebase maintenance across production systems',
+  exp_official_b2: 'Server and database administration — Linux, PostgreSQL, Docker',
+  exp_official_b3: 'IT infrastructure support and internal tooling development',
+
+  exp_crypto_eng_title: 'Crypto Automation Engineer',
+  exp_crypto_eng_company: 'Freelance / Independent',
+  exp_crypto_eng_period: '2023 – Present',
+  exp_crypto_eng_location: 'Remote',
+  exp_crypto_eng_desc:
+    'Building trading bots, on-chain analytics tools, DeFi automation, and Telegram bots for crypto communities. Multi-agent AI systems for data processing and content automation.',
+  exp_crypto_eng_b1: 'Built trading bots and DeFi automation tools across EVM, Solana, TON, and Bitcoin',
+  exp_crypto_eng_b2: 'Developed on-chain analytics pipelines and wallet monitoring systems',
+  exp_crypto_eng_b3: 'Deployed multi-agent AI orchestration systems for automated data processing',
+
+  exp_webdev_title: 'Web Developer',
+  exp_webdev_company: 'Freelance / Independent',
+  exp_webdev_period: '2023 – Present',
+  exp_webdev_location: 'Lisbon, Portugal',
+  exp_webdev_desc:
+    'Full-stack web development, AI-powered automation, and Telegram bot development. 15+ production bots, portfolio sites, landing pages, and web applications.',
+  exp_webdev_b1: 'Built 15+ production Telegram bots handling orders, tracking, payments, and AI summaries',
+  exp_webdev_b2: 'Developed full-stack web apps: React, TypeScript, Supabase, Astro, Vercel deployments',
+  exp_webdev_b3: 'Delivered portfolio sites and landing pages for clients via Freelancer.com',
+
   exp_police_title: 'Law Enforcement Officer',
   exp_police_company: 'National Police of Ukraine',
   exp_police_period: '2019 – 2022',
