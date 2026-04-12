@@ -53,6 +53,36 @@ export const ua = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
 
+  exp_official_title: 'Розробник програмного забезпечення',
+  exp_official_company: 'OLEKSANDR ANDRIANOV UNIPESSOAL LDA',
+  exp_official_period: 'Червень 2025 – дотепер',
+  exp_official_location: 'Лісабон, Португалія',
+  exp_official_desc:
+    'Безстроковий трудовий договір (Sem Termo). Розробка програмного забезпечення, підтримка кодової бази, адміністрування серверів та баз даних, підтримка IT-інфраструктури. Гібридний/дистанційний формат.',
+  exp_official_b1: 'Розробка ПЗ та підтримка кодової бази продакшн-систем',
+  exp_official_b2: 'Адміністрування серверів та баз даних — Linux, PostgreSQL, Docker',
+  exp_official_b3: 'Підтримка IT-інфраструктури та розробка внутрішніх інструментів',
+
+  exp_crypto_eng_title: 'Інженер крипто-автоматизації',
+  exp_crypto_eng_company: 'Фріланс / Незалежно',
+  exp_crypto_eng_period: '2023 – дотепер',
+  exp_crypto_eng_location: 'Дистанційно',
+  exp_crypto_eng_desc:
+    'Побудова торгових ботів, інструментів ончейн-аналітики, DeFi-автоматизація та Telegram-боти для крипто-спільнот. Мультиагентні AI-системи для обробки даних та автоматизації контенту.',
+  exp_crypto_eng_b1: 'Побудував торгові боти та інструменти DeFi-автоматизації на EVM, Solana, TON та Bitcoin',
+  exp_crypto_eng_b2: 'Розробив пайплайни ончейн-аналітики та системи моніторингу гаманців',
+  exp_crypto_eng_b3: 'Задеплоїв мультиагентні AI-системи оркестрації для автоматизованої обробки даних',
+
+  exp_webdev_title: 'Веб-розробник',
+  exp_webdev_company: 'Фріланс / Незалежно',
+  exp_webdev_period: '2023 – дотепер',
+  exp_webdev_location: 'Лісабон, Португалія',
+  exp_webdev_desc:
+    'Full-stack веб-розробка, автоматизація на основі AI та розробка Telegram-ботів. 15+ продакшн-ботів, портфоліо-сайти, лендінги та веб-додатки.',
+  exp_webdev_b1: 'Побудував 15+ продакшн Telegram-ботів для замовлень, відстеження, платежів та AI-зведень',
+  exp_webdev_b2: 'Розробив full-stack веб-додатки: React, TypeScript, Supabase, Astro, деплой на Vercel',
+  exp_webdev_b3: 'Виконував замовлення на портфоліо-сайти та лендінги через Freelancer.com',
+
   exp_police_title: 'Правоохоронець',
   exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
