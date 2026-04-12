@@ -65,7 +65,7 @@ export const ua = {
 
   // Experience — Crypto & Automation
   exp_crypto_auto_title: 'Крипто та автоматизація',
-  exp_crypto_auto_company: 'Freelance',
+  exp_crypto_auto_company: 'ФОП',
   exp_crypto_auto_period: '2023 – дотепер',
   exp_crypto_auto_location: '',
   exp_crypto_auto_desc: 'Крипто-сканери, моніторинг гаманців, DeFi автоматизація, торгові боти та on-chain аналітика.',
