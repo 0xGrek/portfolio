@@ -18,7 +18,7 @@ export const experience: Experience[] = [
     periodKey: 'exp_police_period',
     locationKey: 'exp_police_location',
     descriptionKey: 'exp_police_desc',
-    bullets: ['exp_police_b1'],
+    bullets: [],
     tags: [],
     icon: 'shield',
   },
