@@ -57,9 +57,9 @@ export const ua = {
   exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: 'Патрульна поліція (2019) → Кримінальний розшук (2020) → Спецпідрозділ (2021). Сертифікація від Посольства США.',
+  exp_police_desc: 'Правоохоронна діяльність (2019) → Кримінальний розшук (2020) → Спецпідрозділ (2021).',
 
-  exp_onchain_title: 'Ончейн-аналітик',
+  exp_onchain_title: 'Розробник автоматизації',
   exp_onchain_company: 'Незалежно',
   exp_onchain_period: '2025 – дотепер',
   exp_onchain_location: 'Дистанційно',
