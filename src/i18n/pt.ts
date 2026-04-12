@@ -64,7 +64,7 @@ export const pt = {
   exp_onchain_period: '2025 – Presente',
   exp_onchain_location: 'Remoto',
   exp_onchain_desc:
-    'Monitorização de carteiras em ETH, Polygon e Solana. Análise de manipulação de tokens, rastreamento de fluxos suspeitos em CEX, e investigação de vetores de exploração de protocolos usando Arkham, Nansen, DeBank e BubbleMaps.',
+    '100+ ferramentas de automação construídas. Em desenvolvimento desde 2022, em Web3 desde 2023. Monitorização de carteiras em ETH, Polygon e Solana. Análise de manipulação de tokens, rastreamento de fluxos suspeitos em CEX, e investigação de vetores de exploração de protocolos usando Arkham, Nansen, DeBank e BubbleMaps.',
   exp_onchain_b1: 'Construiu um sistema de monitorização multi-chain de 35 carteiras com alertas Telegram em tempo real',
   exp_onchain_b2: 'Analisou padrões de manipulação de tokens e fluxos suspeitos de levantamentos CEX',
   exp_onchain_b3: 'Rastreou clusters de carteiras e identificou padrões de abuso em mecânicas de airdrops',
