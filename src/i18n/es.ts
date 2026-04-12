@@ -202,7 +202,7 @@ export const es = {
   // ── Services ──────────────────────────────────────────
   services_title: 'Cómo Puedo Ayudarte',
   services_subtitle: 'Soluciones reales para negocios reales — sin jerga, solo resultados',
-  services_disclaimer: 'Soy un desarrollador independiente que trabaja con herramientas de IA. Construyo soluciones prácticas y enfocadas — no software empresarial. Si necesitas un bot, automatización o dashboard para un problema específico — soy tu persona. Para ERP o CRM a gran escala — honestamente te recomendaré un equipo.',
+  services_disclaimer: '',
   services_cat_regular: 'Para Negocios Comunes',
   services_cat_it: 'Para IT y Empresas',
 
