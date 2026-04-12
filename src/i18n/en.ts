@@ -38,7 +38,7 @@ export const en = {
   about_p3:
     'Current focus: on-chain analytics, multi-agent AI systems, Telegram ecosystems. Investigating protocol exploit vectors. Open to relocation.',
   about_unique:
-    '3 years in law enforcement before switching to tech.'
+    '3 years in law enforcement before switching to tech.',
 
   // ── Stats ─────────────────────────────────────────────
   stat_tools: '101',
