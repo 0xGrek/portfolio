@@ -198,6 +198,37 @@ export const en = {
   contact_available: 'Currently available for new opportunities',
   contact_response_time: 'Response time: < 24 hours',
 
+  // ── Services ──────────────────────────────────────────
+  services_title: 'How I Can Help',
+  services_subtitle: 'Real solutions for real businesses — no jargon, just results',
+
+  services_construction_title: 'Construction & Real Estate',
+  services_construction_desc: 'Automated property parsing from 10+ portals. Price monitoring bots with instant alerts for new listings. Fraud detection for suspicious relistings.',
+  services_construction_example: 'Built: Portugal Realty — 12K listings from 4 portals daily',
+
+  services_finance_title: 'Finance & Banking',
+  services_finance_desc: 'Transaction monitoring and anomaly detection. Automated reporting and compliance tools. Risk scoring dashboards with real-time alerts.',
+
+  services_ecommerce_title: 'E-commerce & Retail',
+  services_ecommerce_desc: 'Telegram bots for orders, payments, and customer support. Price comparison automation across competitors. Inventory tracking and restocking alerts.',
+
+  services_food_title: 'Food & Services',
+  services_food_desc: 'Telegram ordering bot with menu, payments, and delivery tracking. Booking automation with client reminders. Social media auto-posting from your product catalog.',
+
+  services_marketing_title: 'Marketing & Analytics',
+  services_marketing_desc: 'Social media parsing and competitor analysis. Lead generation bots and automated outreach. Custom reporting dashboards updated automatically.',
+
+  services_crypto_title: 'Crypto & Web3',
+  services_crypto_desc: 'Wallet monitoring and real-time alert systems. DeFi automation, airdrop tools, on-chain investigation and forensics.',
+  services_crypto_example: 'Built: 35-wallet monitor across ETH, Polygon, Solana',
+
+  services_ai_title: 'AI & Automation',
+  services_ai_desc: 'AI chatbots for customer support in any language. Document processing and data extraction from PDFs, emails, tables. Multi-agent systems for complex business workflows.',
+
+  services_telegram_title: 'Telegram Ecosystem',
+  services_telegram_desc: 'Custom Telegram bots for any business need. Channel management and auto-moderation. Mini-apps with payment integration.',
+  services_telegram_example: 'Built: 11-bot ecosystem for life & business tracking',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. All rights reserved.',
