@@ -82,7 +82,7 @@ export const ua = {
   exp_ai_b4: 'Побудував дайджест-бот (Telethon), що генерує AI-зведення з історії каналів за розкладом',
 
   exp_crypto_title: 'Крипто-оператор та інженер автоматизації',
-  exp_crypto_company: 'Самостійно',
+  exp_crypto_company: 'Фріланс',
   exp_crypto_period: '2023 – 2024',
   exp_crypto_location: 'Дистанційно',
   exp_crypto_desc:
