@@ -173,7 +173,7 @@ export const ua = {
 
   edu_lyceum_title: 'Військовий ліцей',
   edu_lyceum_school: 'Криворізький ліцей з посиленою військово-фізичною підготовкою',
-  edu_lyceum_period: '2013 – 2017',
+  edu_lyceum_period: '2015 – 2017',
   edu_lyceum_location: 'Кривий Ріг, Україна',
   edu_lyceum_desc: '',
 
