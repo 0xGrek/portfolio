@@ -285,7 +285,7 @@ export const en = {
   services_bizanalytics_examples: 'For example:|Understand your numbers: CAC, LTV, churn, margins — in plain language|Dashboards that track what actually matters, not vanity metrics|AI reports that explain WHY revenue dropped, not just that it did|Built for business owners who don\'t know where their money goes',
 
   services_cta_title: "Don't see your industry?",
-  services_cta_desc: "We automate everything that causes you headaches. Reports, notifications, data entry, monitoring — any routine that eats your time. Tell us what you do manually, and we'll show exactly how a bot or AI will do it for you.",
+  services_cta_desc: 'We automate everything that causes you headaches. Reports, notifications, data entry, monitoring — any routine that eats your time. Tell us what you do manually, and we\'ll show you exactly how a bot or AI can do it for you. 1 hour saved per day = 7 hours per week = 2–4 extra days you can redirect to growing your business.',
   services_cta_button: 'Contact me',
 
   // ── Footer ────────────────────────────────────────────
