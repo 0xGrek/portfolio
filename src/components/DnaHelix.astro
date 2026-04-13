@@ -189,42 +189,37 @@
 
   /* ─── Project 3D point to 2D screen ─── */
   function project(ux, uz, y, noiseTime, idx) {
-    /* Apply organic noise displacement */
     var noiseAmt = 3.5;
     var nx = smoothNoise(idx * 0.15, noiseTime) * noiseAmt;
     var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * noiseAmt * 0.5;
 
-    /* World coordinates — helix painted on page, scrollY shifts viewport window */
+    /* World X/Z from helix radius */
     var wx = ux * HELIX_RADIUS + nx;
     var wz = uz * HELIX_RADIUS;
-    var wy = y - helixOffsetY + ny;  /* particle page Y minus scroll = viewport Y */
 
-    /* Apply rotY (spin around vertical axis) */
+    /* Screen Y = particle page position - scroll position (direct, no perspective on Y!) */
+    var screenY = y - helixOffsetY + ny;
+
+    /* Rotate only X/Z around Y axis (spin) */
     var cosY = Math.cos(rotY);
     var sinY = Math.sin(rotY);
     var rx = wx * cosY + wz * sinY;
     var rz = -wx * sinY + wz * cosY;
 
-    /* Apply rotX (tilt) */
-    var cosX = Math.cos(rotX);
-    var sinX = Math.sin(rotX);
-    var ry = wy * cosX - rz * sinX;
-    var rz2 = wy * sinX + rz * cosX;
-
-    /* Perspective projection */
-    var fov = 900;
-    var depth = rz2 + fov;
+    /* Simple depth for opacity (no perspective on Y!) */
+    var fov = 600;
+    var depth = rz + fov;
     var scale = fov / (depth > 1 ? depth : 1);
 
+    /* Screen position */
     var cx = W * OFFSET_X;
-    /* cy intentionally 0: wy is already in viewport coords (page Y - scrollY) */
 
     return {
-      x:      cx + rx * scale,
-      y:      ry * scale,
-      z:      rz2,               /* for depth sorting */
-      scale:  scale,
-      depth:  clamp((rz2 + fov) / (fov * 2), 0, 1),  /* 0=back 1=front */
+      x:     cx + rx * scale,
+      y:     screenY,           /* DIRECT screen Y — no perspective transform on vertical axis */
+      z:     rz,
+      scale: scale,
+      depth: clamp((rz + fov) / (fov * 2), 0, 1),
     };
   }
 
