@@ -238,12 +238,17 @@ export const es = {
   edu_econ_location: 'Dnipro, Ucrania',
   edu_econ_desc: 'Especialización: Seguridad Económica y Análisis de Datos.',
 
-  edu_swat_title: 'Certificado de Entrenamiento Táctico Policial (SWAT)',
-  edu_swat_school: 'Ministerio del Interior de Ucrania',
-  edu_swat_period: '2021',
-  edu_swat_location: 'Kiev, Ucrania',
-  edu_swat_desc: 'Programa de entrenamiento táctico especializado. Programa de formación táctica apoyado por la Embajada de EE.UU. en Ucrania.',
-  edu_swat_note: 'Programa de formación táctica apoyado por la Embajada de EE.UU. en Ucrania',
+  edu_lyceum_title: 'Liceo Militar',
+  edu_lyceum_school: 'Liceo de Kryvyi Rih con Formación Militar y Física Intensiva',
+  edu_lyceum_period: '2015 – 2017',
+  edu_lyceum_location: 'Kryvyi Rih, Ucrania',
+  edu_lyceum_desc: '',
+
+  edu_cert_title: 'Certificado de Entrenamiento Táctico',
+  edu_cert_school: 'Ministerio del Interior de Ucrania',
+  edu_cert_period: '2021',
+  edu_cert_location: 'Kiev, Ucrania',
+  edu_cert_desc: 'Programa apoyado por la Embajada de EE.UU. en Ucrania.',
 
   edu_pt_a2_title: 'Certificado de Lengua Portuguesa — A2',
   edu_pt_a2_institution: 'IEFP / Escuela de Lengua Portuguesa',
