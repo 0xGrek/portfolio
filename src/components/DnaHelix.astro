@@ -87,40 +87,38 @@
 
   /* ─── Scroll state ─── */
   var scrollY = 0;
-  var scrollExtra = 0;
   var helixOffsetY = 0;   /* camera travel along Y axis */
 
-  function updateScroll() {
-    scrollY = window.scrollY || document.documentElement.scrollTop;
-    scrollExtra = scrollY * 0.001; /* radians added to rotY per px scrolled */
-    /* Scroll progress 0→1 mapped to helix camera travel */
+  function updateScroll(sy) {
+    scrollY = (typeof sy === 'number') ? sy : (window.scrollY || document.documentElement.scrollTop);
     var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     var progress = Math.min(scrollY / maxScroll, 1);
     helixOffsetY = progress * HELIX_HEIGHT;
   }
 
-  /* Native scroll — works without Lenis */
-  window.addEventListener('scroll', updateScroll, { passive: true });
+  /* Native scroll fallback */
+  window.addEventListener('scroll', function () { updateScroll(); }, { passive: true });
 
-  /* Lenis scroll event — fires when Lenis intercepts scroll */
-  window.addEventListener('lenis-scroll', function (e) {
-    var detail = e.detail || {};
-    if (typeof detail.scroll === 'number') {
-      scrollY = detail.scroll;
-      scrollExtra = scrollY * 0.001;
-      var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      var progress = Math.min(scrollY / maxScroll, 1);
-      helixOffsetY = progress * HELIX_HEIGHT;
+  /* Lenis integration — subscribe after DOM ready, with retry for late init */
+  function tryBindLenis() {
+    var lenis = window.__lenis;
+    if (lenis && lenis.on) {
+      lenis.on('scroll', function (e) {
+        updateScroll(e.scroll);
+      });
     }
-  }, { passive: true });
+  }
+  /* Try immediately (lenis may already be set) then retry at 500ms */
+  tryBindLenis();
+  setTimeout(tryBindLenis, 500);
 
-  /* RAF fallback — re-read scrollY each frame in case Lenis virtual scroll doesn't fire 'scroll' */
-  var _lastScrollY = 0;
+  /* RAF fallback — re-read scrollY every frame (works even without Lenis callback) */
+  var _lastScrollY = -1;
   function rafScrollCheck() {
     var sy = window.scrollY || document.documentElement.scrollTop;
     if (sy !== _lastScrollY) {
       _lastScrollY = sy;
-      updateScroll();
+      updateScroll(sy);
     }
   }
 
