@@ -104,7 +104,7 @@ export const ua = {
   exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
-  exp_police_title: 'Спеціаліст із розслідувань та аналізу даних',
+  exp_police_title: 'Спеціаліст з аналізу даних та системних розслідувань',
   exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
