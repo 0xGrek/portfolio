@@ -115,38 +115,6 @@
     transition: none !important;
   }
 
-  /* ─── Restore custom transitions for interactive elements ── */
-  /* These need their own transitions, not just color/bg */
-  .card-hover {
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.25s ease,
-                border-color 0.25s ease,
-                background-color 500ms ease !important;
-  }
-  .tilt-card {
-    transform-style: preserve-3d;
-    transition: transform 0.15s ease, box-shadow 0.25s ease,
-                background-color 500ms ease !important;
-  }
-  .tech-tag-hover {
-    transition: background-color 0.15s ease,
-                color 0.15s ease,
-                border-color 0.15s ease,
-                transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  }
-  .social-hover {
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-                color 0.2s ease,
-                opacity 0.2s ease !important;
-  }
-  .reveal, .reveal-left, .reveal-right, .reveal-scale {
-    transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.65s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  }
-  .stagger-children > * {
-    transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.55s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  }
 
   /* Typography polish */
   p, li {
