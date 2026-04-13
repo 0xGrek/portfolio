@@ -446,34 +446,7 @@ const categoryIcons: Record<string, string> = {
 
 <script is:inline>
   (function () {
-    /* ── Scroll-reveal ─────────────────────────────────── */
-    if ('IntersectionObserver' in window) {
-      /* Section title reveal */
-      var titleEls = document.querySelectorAll('#projects .reveal');
-      var titleIo = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            titleIo.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      titleEls.forEach(function (el) { titleIo.observe(el); });
-
-      /* Stagger cards grid */
-      var grid = document.querySelector('#projects .stagger-children');
-      if (grid) {
-        var gridIo = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-              gridIo.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.06 });
-        gridIo.observe(grid);
-      }
-    }
+    /* Scroll-reveal handled by global IntersectionObserver in BaseLayout.astro */
 
     /*
      * ── Accordion expand logic ──────────────────────────
