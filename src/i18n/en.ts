@@ -334,6 +334,12 @@ export const en = {
   services_cta_desc: 'I deploy AI agents to automate routine tasks. 1 hour of automation today = 1 free month per year.',
   services_cta_button: 'Contact me',
 
+  // ── Projects UI ───────────────────────────────────────
+  proj_visit_site: 'Visit Site',
+  proj_collapse: 'Collapse ▲',
+  proj_show_more: 'Show more',
+  proj_show_less: 'Collapse',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. All rights reserved.',
