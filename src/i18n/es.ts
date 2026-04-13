@@ -182,6 +182,10 @@ export const es = {
   proj_lucent_long:
     'Construí una plataforma completa de reservas para un negocio de alquiler en Dubái. Listados dinámicos vía Supabase, sistema de reservas Hostaway integrado, selector de monedas (AED/USD) e integración con WhatsApp. Cubre Downtown, Business Bay, Dubai Marina y otras áreas premium.',
 
+  proj_private_title: '50+ Proyectos Privados',
+  proj_private_desc:
+    'Software personalizado para clientes bajo NDA — bots de trading, dashboards analíticos, sistemas de automatización, scrapers y herramientas internas para crypto, inmobiliaria y negocios',
+
   proj_player_title: 'Perfil de Jugador de Fútbol',
   proj_player_desc: 'Tarjeta digital de reclutamiento para jóvenes jugadores y ojeadores',
   proj_player_long:
