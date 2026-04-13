@@ -1,19 +1,15 @@
 export interface ProjectMetric {
-  key: string;
   value: string;
+  label?: string;
 }
 
 export interface Project {
   id: string;
-  slug: string;
   titleKey: string;
   descriptionKey: string;
   longDescriptionKey: string;
   tech: string[];
   category: 'web' | 'crypto' | 'ai' | 'analytics' | 'trading';
-  rating: number; // 1-10
-  screenshots: string[]; // paths in /public/media/projects/{id}/
-  video?: string; // path to .mp4
   featured: boolean;
   links: {
     demo?: string;
