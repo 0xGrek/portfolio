@@ -29,11 +29,11 @@ const categoryColors: Record<string, string> = {
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
       {projects.map((project, index) => (
         <article
-          class={`project-card relative flex flex-col rounded-xl overflow-hidden reveal${project.featured ? ' project-featured' : ''}`}
-          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s;`}
+          class={`project-card relative flex flex-col rounded-xl overflow-hidden${project.featured ? ' project-featured' : ''}`}
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border);`}
           id={`card-${project.id}`}
         >
           <!-- Header area — clickable to toggle expand -->
