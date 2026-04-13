@@ -141,7 +141,6 @@ export const es = {
   exp_webdev_b1: 'Construí 15+ bots de Telegram en producción para pedidos, seguimiento, pagos y resúmenes de IA',
   exp_webdev_b2: 'Desarrollé aplicaciones web full-stack: React, TypeScript, Supabase, Astro, despliegues en Vercel',
   exp_webdev_b3: 'Entregué sitios de portafolio y landing pages para clientes vía Freelancer.com',
-  exp_police_location: 'Ucrania',
 
   exp_onchain_title: 'Desarrollador de Automatización',
   exp_onchain_company: 'Independiente',
