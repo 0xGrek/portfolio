@@ -526,10 +526,16 @@ const categoryIcons: Record<string, string> = {
 
       var isExpanded = card.classList.contains('expanded');
 
-      // Accordion: close all other open cards first
+      // Accordion: close all other open cards INSTANTLY (no animation stutter)
       document.querySelectorAll('.project-card.expanded').forEach(function (openCard) {
         if (openCard !== card) {
+          // Disable transitions, collapse immediately, then re-enable
+          openCard.classList.add('no-transition');
           collapseCard(openCard);
+          // Restore transitions on next frame so future opens animate normally
+          requestAnimationFrame(function () {
+            openCard.classList.remove('no-transition');
+          });
         }
       });
 
