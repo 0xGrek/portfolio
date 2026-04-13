@@ -735,6 +735,80 @@ h1:hover, h2:hover {
   }
 }
 
+/* ─── Section Bridges — gradient connectors between sections ──── */
+.section-bridge {
+  height: 120px;
+  margin: -60px 0;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+.section-bridge::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(var(--accent-rgb), 0.15) 50%, transparent);
+  transform: translateX(-50%);
+}
+
+/* ─── Varying Section Padding — breathing rhythm ─────────────── */
+#about      { padding-top: 8rem; padding-bottom: 6rem; }
+#experience { padding-top: 6rem; padding-bottom: 8rem; }
+#projects   { padding-top: 8rem; padding-bottom: 10rem; }
+#services   { padding-top: 6rem; padding-bottom: 6rem; }
+#education  { padding-top: 4rem; padding-bottom: 6rem; }
+#skills     { padding-top: 4rem; padding-bottom: 8rem; }
+
+/* ─── Available for Work pill ─────────────────────────────────── */
+.available-pill {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 9999px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.available-pill.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.available-pill .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse-green 2s infinite;
+}
+
+/* ─── Ambient Mesh Gradient ───────────────────────────────────── */
+#ambient-mesh {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(var(--accent-rgb), 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, rgba(163, 113, 247, 0.03) 0%, transparent 70%);
+}
+
 /* ─── Print styles ─────────────────────────────────────────────── */
 @media print {
   header, footer, .no-print {
