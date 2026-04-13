@@ -8,29 +8,51 @@ export interface Experience {
   bullets: string[]; // i18n keys for bullet points
   tags: string[];
   icon?: string;
+  highlightsKey?: string; // i18n key for career progression line (police)
 }
 
 export const experience: Experience[] = [
+  {
+    id: 'ai-dev',
+    titleKey: 'exp_ai_title',
+    companyKey: 'exp_ai_company',
+    periodKey: 'exp_ai_period',
+    locationKey: 'exp_ai_location',
+    descriptionKey: 'exp_ai_desc',
+    bullets: ['exp_ai_b1', 'exp_ai_b2', 'exp_ai_b3'],
+    tags: ['Claude', 'MCP', 'Multi-Agent', 'Gemini API', 'Automation'],
+    icon: 'bot',
+  },
   {
     id: 'software-dev',
     titleKey: 'exp_dev_title',
     companyKey: 'exp_dev_company',
     periodKey: 'exp_dev_period',
-    locationKey: 'exp_dev_tech',
+    locationKey: 'exp_dev_location',
     descriptionKey: 'exp_dev_desc',
-    bullets: [],
+    bullets: ['exp_dev_b1', 'exp_dev_b2', 'exp_dev_b3'],
     tags: ['TypeScript', 'Python', 'PostgreSQL', 'Linux', 'Docker', 'Git'],
     icon: 'code',
   },
   {
-    id: 'founder-specialist',
-    titleKey: 'exp_founder_title',
-    companyKey: 'exp_founder_company',
-    periodKey: 'exp_founder_period',
-    locationKey: 'exp_founder_tech',
-    descriptionKey: 'exp_founder_desc',
-    bullets: [],
-    tags: ['Python', 'Web3', 'DeFi', 'AI Agents', 'Telegram API', 'Astro', 'React'],
+    id: 'crypto-automation',
+    titleKey: 'exp_crypto_title',
+    companyKey: 'exp_crypto_company',
+    periodKey: 'exp_crypto_period',
+    locationKey: 'exp_crypto_location',
+    descriptionKey: 'exp_crypto_desc',
+    bullets: ['exp_crypto_b1', 'exp_crypto_b2', 'exp_crypto_b3'],
+    tags: ['Python', 'Telegram API', 'DeFi', 'On-chain', 'AI Agents', 'Web3'],
+  },
+  {
+    id: 'web-dev',
+    titleKey: 'exp_webdev_title',
+    companyKey: 'exp_webdev_company',
+    periodKey: 'exp_webdev_period',
+    locationKey: 'exp_webdev_location',
+    descriptionKey: 'exp_webdev_desc',
+    bullets: ['exp_webdev_b1', 'exp_webdev_b2', 'exp_webdev_b3'],
+    tags: ['Astro', 'React', 'Tailwind', 'Node.js', 'Python', 'Telegram Bots'],
   },
   {
     id: 'police',
@@ -42,5 +64,6 @@ export const experience: Experience[] = [
     bullets: [],
     tags: [],
     icon: 'shield',
+    highlightsKey: 'exp_police_highlights',
   },
 ];
