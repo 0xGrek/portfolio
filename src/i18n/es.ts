@@ -20,14 +20,15 @@ export const es = {
   // ── Hero ──────────────────────────────────────────────
   hero_greeting: 'Hola, soy',
   hero_name: 'Serhii Ivanenko',
-  hero_handle: '0xGrek',
-  hero_title: 'Ingeniero Web3 Security & Automation',
-  hero_subtitle:
-    '101 herramientas construidas. 115K líneas de código en producción. Builder Web3 desde 2023.',
-  hero_cta_projects: 'Ver Proyectos',
-  hero_cta_contact: 'Contactar',
-  hero_available: 'Disponible para oportunidades',
-  hero_location: 'Lisboa, Portugal',
+  hero_handle: '@0xGrek',
+  hero_title: 'Especialista en Automatización e IA',
+  hero_subtitle: 'Especialista en Automatización e IA. Creo sistemas que trabajan por ti.',
+  hero_bio: 'Mi camino: de la investigación criminal al desarrollo de agentes IA. Siempre estoy donde los procesos complejos pueden simplificarse y automatizarse. Hambriento de aprender, siguiendo la tendencia, abierto a desafíos.',
+  hero_status: 'Abierto a propuestas',
+  hero_cta_projects: 'Mis Proyectos',
+  hero_cta_contact: 'Contáctame',
+  hero_available: 'Abierto a propuestas',
+  hero_location: 'UTC+1 [Lisboa, Portugal]',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre mí',
