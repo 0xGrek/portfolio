@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  background: transparent;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
 @layer base {
   /* ─── Dark Mode (Primary) ──────────────────────────────── */
   :root, [data-theme="dark"] {
