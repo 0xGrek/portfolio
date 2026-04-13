@@ -109,7 +109,7 @@
   /* Geometry */
   var HELIX_RADIUS  = isMobile ? 55 : 80;    /* radius of each strand from axis */
   var HELIX_HEIGHT  = isMobile ? H * 4 : H * 4;  /* total length — 4× viewport for scroll travel */
-  var TWIST_TURNS   = 3.5;                   /* how many full rotations */
+  var TWIST_TURNS   = 14;                    /* full rotations — scaled 4× for full-page helix */
   var TWIST_RATE    = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
 
   /* Positioning — off-center for depth */
