@@ -400,8 +400,8 @@ html.lenis body {
 .project-card,
 .private-card,
 [class*="card"] {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 /* 3D tilt — добавляется JS-ом через style inline, класс для transition */
