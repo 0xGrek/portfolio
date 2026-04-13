@@ -78,6 +78,7 @@ const categoryIcons: Record<string, string> = {
 <script is:inline>
   (function () {
     if (!('IntersectionObserver' in window)) return;
+    /* Section title */
     var els = document.querySelectorAll('#skills .reveal');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -88,5 +89,19 @@ const categoryIcons: Record<string, string> = {
       });
     }, { threshold: 0.1 });
     els.forEach(function (el) { io.observe(el); });
+
+    /* Stagger skill cards */
+    var container = document.querySelector('#skills .stagger-children');
+    if (container) {
+      var staggerIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            staggerIo.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      staggerIo.observe(container);
+    }
   })();
 </script>
