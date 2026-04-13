@@ -242,11 +242,11 @@ export const en = {
   edu_law_location: 'Dnipro, Ukraine',
   edu_law_desc: 'Full-time degree program. Specialized in criminal investigation and surveillance (operative work).',
 
-  edu_econ_title: "Bachelor's — Economics (Economic Analytics & Economic Security)",
-  edu_econ_school: 'DDUVS',
-  edu_econ_period: '2020 – 2024',
+  edu_econ_title: "Bachelor's — Economic Analytics",
+  edu_econ_school: 'DSUIA',
+  edu_econ_period: '2020',
   edu_econ_location: 'Dnipro, Ukraine',
-  edu_econ_desc: 'Part-time. Economic Analytics & Protection of Economy specialization.',
+  edu_econ_desc: 'Specialization: Economic Security and Data Analysis.',
 
   edu_swat_title: 'Police SWAT Training Certificate',
   edu_swat_school: 'Ministry of Interior of Ukraine',
