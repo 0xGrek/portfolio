@@ -350,6 +350,8 @@ html.lenis body {
   cursor: pointer;
   will-change: transform;
   transform: translateZ(0);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 /* Shimmer sweep on hover */
 .card-hover::before {
