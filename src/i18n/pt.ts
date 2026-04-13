@@ -34,10 +34,10 @@ export const pt = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
-  about_text_1: "O meu percurso em IT não começou na escola ou universidade — começou nas forças de segurança. Trabalhei em 3 estruturas diferentes, que me ensinaram o essencial: ver padrões no caos, tomar decisões rápidas e corrigir sistematicamente o que não funciona.",
-  about_text_2: 'Depois de me mudar para Lisboa, escolhi o desenvolvimento web como ponto de entrada na tecnologia. Mas ao criar sites, descobri o crypto — um mundo com muito mais ineficiências e oportunidades infinitas para automação.',
-  about_text_3: 'Mergulhei completamente: análise on-chain, bots de minting NFT, arbitragem CEX/DEX, pesquisa de vulnerabilidades. Isto rapidamente cresceu para algo maior — comecei a aceitar encomendas de amigos e colegas da indústria.',
-  about_text_4: 'Hoje combino o papel de desenvolvedor de software numa empresa de IT com a construção dos meus próprios sistemas de AI. A lógica é a mesma desde o início: encontrar onde o negócio perde tempo e dinheiro, e fazer a tecnologia entregar resultados.',
+  about_text_1: "O meu background combina métodos de análise sistemática da experiência em forças de segurança com profunda expertise técnica em AI e Web3. Especializo-me em encontrar ineficiências e construir sistemas autónomos que convertem caos em resultados empresariais claros.",
+  about_text_2: 'Mergulhei completamente: análise on-chain, bots de minting NFT, arbitragem CEX/DEX, pesquisa de vulnerabilidades. Isto rapidamente cresceu para algo maior — comecei a aceitar encomendas de amigos e colegas da indústria.',
+  about_text_3: 'Hoje combino o papel de desenvolvedor de software numa empresa de IT com a construção dos meus próprios sistemas de AI. A lógica é a mesma desde o início: encontrar onde o negócio perde tempo e dinheiro, e fazer a tecnologia entregar resultados.',
+  about_text_4: '',
   about_stats_tools: '100+ Ferramentas',
   about_stats_chains: '10+ Blockchains',
   about_stats_web3: '3+ Anos em Web3',
