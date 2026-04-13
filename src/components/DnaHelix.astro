@@ -391,7 +391,7 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
       isMobile = window.innerWidth < 768;
-      STRAND_COUNT = isMobile ? 60 : 120;
+      STRAND_COUNT = isMobile ? 200 : 450;
       BRIDGE_EVERY = isMobile ? 5 : 4;
       OFFSET_X = isMobile ? 0.5 : 0.72;
       resize();
