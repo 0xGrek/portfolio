@@ -731,10 +731,12 @@ body::after {
   }
   /* All reveal classes — skip animation, show immediately */
   .reveal, .reveal-left, .reveal-right, .reveal-scale,
-  .stagger-children > * {
+  .stagger-children > *,
+  .stagger-children.visible > * {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    transition-delay: 0ms !important;
     filter: none !important;
   }
   .timeline-line-animated {
