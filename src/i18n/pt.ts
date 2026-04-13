@@ -49,7 +49,7 @@ export const pt = {
   exp_ai_desc: 'Sistemas AI multi-agente, automação de conteúdo e redes sociais, integração Claude/Gemini.',
   exp_ai_b1: 'Orquestração de 11 agentes AI para processamento de dados',
   exp_ai_b2: 'Automação de conteúdo e análise de redes sociais',
-  exp_ai_b3: 'Integração Claude, Gemini, servidores MCP',
+  exp_ai_b3: 'Automação de conteúdo e processos analíticos',
 
   // Experience — Software Dev (current)
   exp_dev_title: 'Desenvolvedor de Software',
