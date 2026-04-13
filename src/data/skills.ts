@@ -86,13 +86,12 @@ export const skillCategories: SkillCategory[] = [
       {
         nameKey: 'skills_security_core',
         skills: [
-          'On-chain Forensics',
-          'Wallet Clustering & Attribution',
-          'Smart Contract Vulnerability Analysis',
-          'Exploit Analysis',
-          'OSINT (on-chain → off-chain)',
-          'Sybil Attack Detection',
-          'Financial Crime Investigation (SAR Writing)',
+          'Блокчейн-форензика (розслідування інцидентів)',
+          'Кластеризація гаманців та атрибуція (визначення власника)',
+          'Аналіз вразливостей смартконтрактів та експлойтів',
+          'OSINT (зв\'язок ончейн та офчейн даних)',
+          'Виявлення Sybil-атак (ферм акаунтів)',
+          'Розслідування фінансових злочинів (написання звітів SAR)',
         ],
       },
       {
