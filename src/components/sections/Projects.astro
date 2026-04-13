@@ -222,20 +222,6 @@ const categoryIcons: Record<string, string> = {
                     <span aria-hidden="true">↗</span>
                   </a>
                 )}
-                {project.links.github && (
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link-btn inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200"
-                    style="background-color: rgba(var(--accent-rgb), 0.08); color: var(--text-secondary); border: 1px solid var(--border);"
-                    onclick="event.stopPropagation()"
-                  >
-                    GitHub
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                )}
-
                 <!-- Close / collapse button -->
                 <button
                   class="project-toggle ml-auto inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium transition-all duration-200"
