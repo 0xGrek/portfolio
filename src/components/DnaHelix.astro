@@ -168,10 +168,10 @@
     var nx = smoothNoise(idx * 0.15, noiseTime) * noiseAmt;
     var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * noiseAmt * 0.5;
 
-    /* World coordinates */
+    /* World coordinates — shift Y by camera travel so viewport "scrolls" along helix */
     var wx = ux * HELIX_RADIUS + nx;
     var wz = uz * HELIX_RADIUS;
-    var wy = y + ny;
+    var wy = y - helixOffsetY + ny;
 
     /* Apply rotY (spin around vertical axis) */
     var cosY = Math.cos(rotY);
