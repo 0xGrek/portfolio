@@ -109,10 +109,9 @@ const stats = [
     font-style: normal;
     font-family: Georgia, serif;
   }
-  /* Pop animation triggers on the stat value when parent becomes visible */
-  .stat-card.visible .stat-value,
-  .stat-card.active .stat-value {
-    animation: valPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  /* Pop animation — triggers when stagger-children container becomes visible */
+  .stagger-children.visible .stat-card .stat-value {
+    animation: valPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
   }
   /* Radial glow on stat card hover */
   .stat-card {
