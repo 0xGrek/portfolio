@@ -134,7 +134,7 @@ export const skillCategories: SkillCategory[] = [
       {
         nameKey: 'skills_automation_infra',
         skills: [
-          'Multi-account Infrastructure (1000+)',
+          'Distributed Infrastructure & High-load Management',
           'Anti-fingerprint Management (Dolphin Anty)',
           'Residential Proxy Rotation',
           'RPC Management (Alchemy, QuickNode)',
