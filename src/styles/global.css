@@ -545,21 +545,6 @@
   box-shadow: 0 0 0 6px rgba(var(--accent-rgb), 0.18), 0 0 12px rgba(var(--accent-rgb), 0.3);
 }
 
-/* Scroll progress bar */
-#scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-  transform-origin: left;
-  transform: scaleX(0);
-  z-index: 9999;
-  transition: transform 0.1s linear;
-  pointer-events: none;
-}
-
 /* Stats numbers — tabular figures */
 .stat-value {
   font-variant-numeric: tabular-nums;
