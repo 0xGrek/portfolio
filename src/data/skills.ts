@@ -1,5 +1,5 @@
 export interface SkillSubGroup {
-  nameKey: string;
+  nameKey?: string;
   skills: string[];
 }
 
