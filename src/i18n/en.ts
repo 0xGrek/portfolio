@@ -59,25 +59,62 @@ export const en = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
 
+  // Experience — AI Developer (newest)
+  exp_ai_title: 'AI Developer',
+  exp_ai_company: 'Sole Proprietor',
+  exp_ai_period: '2026 – Present',
+  exp_ai_location: 'Portugal',
+  exp_ai_desc: 'Multi-agent AI systems, content and social media automation, Claude/Gemini integration.',
+  exp_ai_b1: 'Orchestrating 11 AI agents for data processing',
+  exp_ai_b2: 'Content and social media analytics automation',
+  exp_ai_b3: 'Claude, Gemini, MCP servers integration',
+
   // Experience — Software Dev (current)
   exp_dev_title: 'Software Developer',
   exp_dev_company: 'IT Company, Lda | Lisbon, Portugal',
   exp_dev_period: 'June 2025 – Present',
+  exp_dev_location: 'Lisbon, Portugal',
   exp_dev_desc: 'Development and maintenance of production systems, business process automation, server and database administration.',
+  exp_dev_b1: 'Development and maintenance of production systems',
+  exp_dev_b2: 'Reporting, metrics and business analytics automation',
+  exp_dev_b3: 'Server, database and IT infrastructure administration',
   exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
 
-  // Experience — Founder/Specialist (current)
-  exp_founder_title: 'Founder & Technical Specialist (Automation & Web3)',
-  exp_founder_company: 'Sole Proprietor / Freelance | Portugal',
-  exp_founder_period: '2023 – Present',
-  exp_founder_desc: "Building custom solutions in Web3, AI and business automation.\n\n• Automation & Crypto: Trading bots, DeFi strategies, scanners and wallet monitoring systems.\n• AI Systems: Multi-agent systems for data processing, content automation and Claude/Gemini integration.\n• Web Development: Telegram bots (15+ in production), mini-apps and web applications.",
-  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
+  // Experience — Crypto & Automation
+  exp_crypto_title: 'Crypto & Automation',
+  exp_crypto_company: 'Sole Proprietor',
+  exp_crypto_period: '2023 – Present',
+  exp_crypto_location: 'Portugal',
+  exp_crypto_desc: 'Building complex solutions in Web3, AI and business automation.',
+  exp_crypto_b1: 'Built crypto scanners and wallet monitoring',
+  exp_crypto_b2: 'Automated DeFi strategies and trading operations',
+  exp_crypto_b3: 'On-chain analytics and transaction tracking',
+
+  // Experience — Web Developer
+  exp_webdev_title: 'Web Developer',
+  exp_webdev_company: 'Freelance',
+  exp_webdev_period: '2023 – Present',
+  exp_webdev_location: '',
+  exp_webdev_desc: 'Telegram bots and mini-apps. Built a system of 11 bots for life-tracking and business automation.',
+  exp_webdev_b1: '15+ Telegram bots and mini-apps in production',
+  exp_webdev_b2: 'System of 11 bots for life-tracking, fitness, planning',
+  exp_webdev_b3: 'Web apps, landing pages and portfolio sites',
+  exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
   exp_police_title: 'Law Enforcement Officer',
   exp_police_company: 'National Police of Ukraine | Ukraine',
   exp_police_period: '2019 – 2022',
+  exp_police_location: 'Ukraine',
   exp_police_desc: 'Progressed from patrol police to criminal investigation. Experience that developed analytical skills, stress resilience and the ability to find solutions in non-standard situations.',
+  exp_police_highlights: 'Patrol Police (2019) → Criminal Investigation (2020) → Special Unit (2021)',
+
+  // Experience — Founder/Specialist (legacy, kept for compat)
+  exp_founder_title: 'Founder & Technical Specialist (Automation & Web3)',
+  exp_founder_company: 'Sole Proprietor / Freelance | Portugal',
+  exp_founder_period: '2023 – Present',
+  exp_founder_desc: "Building custom solutions in Web3, AI and business automation.\n\n• Automation & Crypto: Trading bots, DeFi strategies, scanners and wallet monitoring systems.\n• AI Systems: Multi-agent systems for data processing, content automation and Claude/Gemini integration.\n• Web Development: Telegram bots (15+ in production), mini-apps and web applications.",
+  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
 
   // legacy keys
   exp_official_title: 'Software Developer',
