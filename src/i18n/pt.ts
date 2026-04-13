@@ -174,7 +174,7 @@ export const pt = {
   edu_law_school: 'Universidade Estadual de Assuntos Internos de Dnipropetrovsk (DDUVS)',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ucrânia',
-  edu_law_desc: 'Curso presencial. Especialização em investigação criminal e vigilância operativa.',
+  edu_law_desc: 'Curso presencial. Especialização em análise de dados, investigação de sistemas e trabalho de inteligência estruturado.',
 
   edu_econ_title: 'Bacharelato — Análise Económica',
   edu_econ_school: 'DSUIA',
