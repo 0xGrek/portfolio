@@ -36,7 +36,7 @@ export const en = {
   about_title: 'About Me',
   about_text_1: "My approach to development is based on investigative logic: I find inefficiencies in business processes and eliminate them with code. Today I combine work at an IT company with building my own multi-agent AI systems.",
   about_text_2: "I dove in completely: on-chain analytics, NFT minting bots, CEX/DEX arbitrage, vulnerability research. This quickly grew into something bigger — I started taking orders from friends and colleagues in the industry.",
-  about_text_3: "Today I combine a software developer role at an IT company with building my own AI systems. The logic is the same as from the start: find where business loses time and money, and make technology deliver results.",
+  about_text_3: '',
   about_text_4: "",
   about_stats_tools: '100+ Tools',
   about_stats_chains: '10+ Blockchains',
