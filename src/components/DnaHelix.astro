@@ -89,14 +89,40 @@
   var scrollY = 0;
   var scrollExtra = 0;
   var helixOffsetY = 0;   /* camera travel along Y axis */
-  window.addEventListener('scroll', function () {
+
+  function updateScroll() {
     scrollY = window.scrollY || document.documentElement.scrollTop;
     scrollExtra = scrollY * 0.001; /* radians added to rotY per px scrolled */
     /* Scroll progress 0→1 mapped to helix camera travel */
     var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     var progress = Math.min(scrollY / maxScroll, 1);
     helixOffsetY = progress * HELIX_HEIGHT;
+  }
+
+  /* Native scroll — works without Lenis */
+  window.addEventListener('scroll', updateScroll, { passive: true });
+
+  /* Lenis scroll event — fires when Lenis intercepts scroll */
+  window.addEventListener('lenis-scroll', function (e) {
+    var detail = e.detail || {};
+    if (typeof detail.scroll === 'number') {
+      scrollY = detail.scroll;
+      scrollExtra = scrollY * 0.001;
+      var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      var progress = Math.min(scrollY / maxScroll, 1);
+      helixOffsetY = progress * HELIX_HEIGHT;
+    }
   }, { passive: true });
+
+  /* RAF fallback — re-read scrollY each frame in case Lenis virtual scroll doesn't fire 'scroll' */
+  var _lastScrollY = 0;
+  function rafScrollCheck() {
+    var sy = window.scrollY || document.documentElement.scrollTop;
+    if (sy !== _lastScrollY) {
+      _lastScrollY = sy;
+      updateScroll();
+    }
+  }
 
   /* ════════════════════════════════════════════════
      DNA HELIX PARAMETERS
