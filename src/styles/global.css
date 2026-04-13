@@ -551,15 +551,6 @@ html.lenis body {
   transform: scaleX(1);
 }
 
-/* Typewriter cursor blink */
-.typewriter-cursor::after {
-  content: '|';
-  color: var(--accent);
-  animation: typewriter-cursor 0.8s ease-in-out infinite;
-  font-weight: 100;
-  margin-left: 1px;
-}
-
 /* Timeline line draw animation */
 .timeline-line-animated {
   transform: scaleY(0);
