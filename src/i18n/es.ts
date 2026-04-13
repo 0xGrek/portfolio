@@ -34,10 +34,10 @@ export const es = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mí',
-  about_text_1: "Mi camino en IT no empezó en la escuela o universidad — empezó en las fuerzas del orden. Trabajé en 3 estructuras diferentes, que me enseñaron lo esencial: ver patrones en el caos, tomar decisiones rápidas y arreglar sistemáticamente lo que no funciona.",
-  about_text_2: 'Tras mudarme a Lisboa, elegí el desarrollo web como punto de entrada en la tecnología. Pero al crear sitios web, descubrí el crypto — un mundo con muchas más ineficiencias y oportunidades infinitas para la automatización.',
-  about_text_3: 'Me sumergí por completo: análisis on-chain, bots de minting NFT, arbitraje CEX/DEX, investigación de vulnerabilidades. Esto rápidamente creció en algo más grande — empecé a aceptar pedidos de amigos y colegas de la industria.',
-  about_text_4: 'Hoy combino el rol de desarrollador de software en una empresa de IT con la construcción de mis propios sistemas de IA. La lógica es la misma desde el principio: encontrar dónde el negocio pierde tiempo y dinero, y hacer que la tecnología entregue resultados.',
+  about_text_1: "Mi background combina métodos de análisis sistemático de la experiencia en fuerzas del orden con profunda expertise técnica en AI y Web3. Me especializo en encontrar ineficiencias y construir sistemas autónomos que convierten el caos en resultados empresariales claros.",
+  about_text_2: 'Me sumergí por completo: análisis on-chain, bots de minting NFT, arbitraje CEX/DEX, investigación de vulnerabilidades. Esto rápidamente creció en algo más grande — empecé a aceptar pedidos de amigos y colegas de la industria.',
+  about_text_3: 'Hoy combino el rol de desarrollador de software en una empresa de IT con la construcción de mis propios sistemas de IA. La lógica es la misma desde el principio: encontrar dónde el negocio pierde tiempo y dinero, y hacer que la tecnología entregue resultados.',
+  about_text_4: '',
   about_stats_tools: '100+ Herramientas',
   about_stats_chains: '10+ Blockchains',
   about_stats_web3: '3+ Años en Web3',
