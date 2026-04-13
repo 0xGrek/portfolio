@@ -336,7 +336,7 @@ export const pt = {
   services_ai_examples: 'O que posso construir:|Sistemas AI multi-agente para análise de dados e geração de conteúdo|Sistema que transforma um vídeo (webinar, podcast) numa semana de conteúdo: clips curtos, posts, artigos com auto-publicação|Integração de modelos AI (Claude, Gemini) nos seus processos empresariais',
 
   services_cta_title: 'Auditoria e Automação Inteligente.',
-  services_cta_desc: 'Identifico processos que consomem recursos excessivos e implemento sistemas AI multi-agente. Resultado: redução de até 80% do tempo gasto em rotina e escalabilidade das capacidades operacionais do seu negócio.',
+  services_cta_desc: 'Implemento agentes AI para automatizar rotinas. 1 hora de automação hoje = 1 mês livre por ano.',
   services_cta_button: 'Contactar',
 
   // ── Footer ────────────────────────────────────────────
