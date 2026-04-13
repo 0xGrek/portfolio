@@ -760,41 +760,6 @@ h1:hover, h2:hover {
 #skills     { padding-top: 4rem; padding-bottom: 8rem; }
 
 /* ─── Available for Work pill ─────────────────────────────────── */
-.available-pill {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(var(--accent-rgb), 0.3);
-  border-radius: 9999px;
-  color: var(--accent);
-  font-size: 0.8rem;
-  font-weight: 500;
-  z-index: 50;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s, transform 0.5s;
-  cursor: pointer;
-  text-decoration: none;
-}
-.available-pill.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.available-pill .pulse-dot {
-  width: 8px;
-  height: 8px;
-  background: #22c55e;
-  border-radius: 50%;
-  animation: pulse-green 2s infinite;
-}
-
 /* ─── Ambient Mesh Gradient ───────────────────────────────────── */
 #ambient-mesh {
   position: fixed;
