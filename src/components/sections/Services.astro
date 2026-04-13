@@ -228,6 +228,19 @@ const servicesIT = [
       });
     }, { threshold: 0.06 });
     staggerGrids.forEach(function (el) { staggerIo.observe(el); });
+
+    /* Mobile tap-to-expand for card details */
+    var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (isTouchDevice) {
+      document.querySelectorAll('#services .service-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          var details = card.querySelector('.card-details');
+          if (details) {
+            details.classList.toggle('expanded');
+          }
+        });
+      });
+    }
   })();
 </script>
 
