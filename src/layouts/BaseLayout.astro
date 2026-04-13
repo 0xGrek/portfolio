@@ -388,6 +388,9 @@ const canonicalUrl = Astro.url.href;
           touchMultiplier: 2,
         });
 
+        // Expose lenis globally so DnaHelix and other components can subscribe
+        (window as any).__lenis = lenis;
+
         // RAF loop
         function raf(time: number) {
           lenis.raf(time);
