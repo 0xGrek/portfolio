@@ -1,79 +1,102 @@
 ---
-// DnaHelix — generative double-helix from particles
-// Pure Canvas2D, no external libraries, fixed viewport decoration
+// DnaHelix — generative double-helix background
+// Pure Canvas 2D, fixed viewport layer, always visible on scroll
+// Architecture copied from WireframeSphere — CSS <style> block, z-index: 0
 ---
 
-<canvas
-  id="dna-helix-canvas"
-  class="fixed inset-0 pointer-events-none"
-  style="z-index: 4; opacity: 0; transition: opacity 2s ease;"
+<div
+  id="dna-helix-container"
   aria-hidden="true"
-></canvas>
+  class="pointer-events-none select-none"
+>
+  <canvas id="dna-helix-canvas"></canvas>
+</div>
 
 <script is:inline>
 (function () {
   'use strict';
 
-  /* ─── Canvas support check ─── */
+  var reducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var container = document.getElementById('dna-helix-container');
   var canvas = document.getElementById('dna-helix-canvas');
-  if (!canvas) return;
+  if (!container || !canvas) return;
+
   var ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) return;
-
   /* ─── DPR & sizing ─── */
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
-  var W = 0, H = 0;
-  var isMobile = window.innerWidth < 768;
+  var VW = window.innerWidth;
+  var VH = window.innerHeight;
+  var isMobile = VW < 768;
 
+  /* ─── Resize canvas + container ─── */
   function resize() {
-    W = window.innerWidth;
-    H = window.innerHeight;
-    canvas.width  = W * DPR;
-    canvas.height = H * DPR;
-    canvas.style.width  = W + 'px';
-    canvas.style.height = H + 'px';
+    VW = window.innerWidth;
+    VH = window.innerHeight;
+    isMobile = VW < 768;
+
+    canvas.width  = VW * DPR;
+    canvas.height = VH * DPR;
+    canvas.style.width  = VW + 'px';
+    canvas.style.height = VH + 'px';
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    container.style.width  = VW + 'px';
+    container.style.height = VH + 'px';
+
+    buildHelix();
   }
 
-  /* ─── Accent color (mirrors DataPlanet logic) ─── */
+  /* ─── Accent color ─── */
   var LANG_COLORS = {
     ua: '0, 122, 255',
     en: '99, 102, 241',
     pt: '20, 184, 166',
     es: '245, 158, 11',
   };
+
   function getAccentRgb() {
     var raw = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
     if (raw) return raw;
     var lang = (document.documentElement.getAttribute('data-lang') || 'en').toLowerCase();
     return LANG_COLORS[lang] || LANG_COLORS['en'];
   }
+
   var accentRgb = getAccentRgb();
-  var langObserver = new MutationObserver(function () { accentRgb = getAccentRgb(); });
-  langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
+  var purpleRgb = '163, 113, 247';
 
-  /* ─── Purple secondary color ─── */
-  var purpleRgb = '163, 113, 247'; /* --purple: #a371f7 */
+  var langObserver = new MutationObserver(function () {
+    accentRgb = getAccentRgb();
+  });
+  langObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-lang', 'lang'],
+  });
 
-  /* ─── Helpers ─── */
-  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+  /* ─── Scroll state ─── */
+  var currentScroll = 0;
 
-  /* ─── Pseudo-noise — value noise via sin ─── */
-  function smoothNoise(x, t) {
-    /* Smooth organic motion using overlapping sine waves */
-    return (
-      Math.sin(x * 0.8 + t * 0.7) * 0.4 +
-      Math.sin(x * 1.3 - t * 0.5) * 0.3 +
-      Math.sin(x * 2.1 + t * 1.1) * 0.2 +
-      Math.sin(x * 3.7 - t * 0.3) * 0.1
-    );
-  }
+  window.addEventListener('scroll', function () {
+    currentScroll = window.scrollY;
+  }, { passive: true });
+
+  /* Lenis compat — check if lenis exposes scroll */
+  var lenisCheckInterval = setInterval(function () {
+    var lenis = window.__lenis || window.lenis;
+    if (lenis && lenis.on) {
+      lenis.on('scroll', function (e) {
+        currentScroll = (e && (e.scroll || e.animatedScroll)) || window.scrollY;
+      });
+      clearInterval(lenisCheckInterval);
+    }
+  }, 200);
 
   /* ─── Mouse ─── */
-  var mouse = { x: W * 0.5, y: H * 0.5 };
+  var mouse = { x: VW * 0.5, y: VH * 0.5 };
   if (!isMobile) {
     document.addEventListener('mousemove', function (e) {
       mouse.x = e.clientX;
@@ -81,218 +104,228 @@
     }, { passive: true });
   }
 
-  /* ════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════
      DNA HELIX PARAMETERS
-  ════════════════════════════════════════════════ */
+  ══════════════════════════════════════════════ */
 
-  /* Particle counts — fixed for viewport fill */
-  var STRAND_COUNT  = isMobile ? 150 : 350;  /* particles per strand */
-  var BRIDGE_EVERY  = isMobile ? 5  : 4;     /* bridge every N particles */
-
-  /* Geometry */
-  var HELIX_RADIUS  = isMobile ? 80 : 120;   /* radius of each strand from axis */
-  var HELIX_HEIGHT  = 0;                     /* set in buildHelix after resize */
-  var TWIST_TURNS   = 10;                    /* full rotations */
-  var TWIST_RATE    = 0;                     /* set in buildHelix */
-
-  /* Positioning — off-center for depth */
-  var OFFSET_X = isMobile ? 0.5 : 0.55;     /* 0.5 = center, 0.55 = slightly right */
+  /* Viewport-filling geometry:
+     HELIX_HEIGHT = VH * 1.2 — helix taller than screen so it always fills */
+  var STRAND_COUNT  = 0;
+  var BRIDGE_EVERY  = 0;
+  var HELIX_RADIUS  = 0;
+  var HELIX_HEIGHT  = 0;
+  var TWIST_TURNS   = 5;
+  var OFFSET_X      = 0;
 
   /* Animation */
-  var ROT_Y_SPEED  = 0.00018;               /* auto-rotation radians/ms */
-  var NOISE_SPEED  = 0.00025;               /* organic noise time rate */
+  var AUTO_ROT_SPEED  = 0.00018; /* radians / ms */
+  var SCROLL_ROT_MULT = 0.0008;  /* scroll parallax factor */
 
-  /* ─── Build helix particles ─── */
+  /* ─── Helix particles ─── */
   var strand1 = [];
   var strand2 = [];
   var bridges = [];
 
   function buildHelix() {
+    STRAND_COUNT  = isMobile ? 180 : 400;
+    BRIDGE_EVERY  = isMobile ? 6   : 4;
+    HELIX_RADIUS  = isMobile ? 70  : 110;
+    HELIX_HEIGHT  = VH * 1.3;  /* taller than viewport → always fills screen */
+    OFFSET_X      = isMobile ? 0.5 : 0.58; /* slightly right of center */
+
     strand1 = [];
     strand2 = [];
     bridges = [];
 
-    /* Fill viewport with slight overflow so edges don't look empty */
-    HELIX_HEIGHT = H * 2.5;
-    TWIST_RATE = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
-
     for (var i = 0; i < STRAND_COUNT; i++) {
-      var t = i / (STRAND_COUNT - 1);      /* 0..1 along the helix */
+      var t = i / (STRAND_COUNT - 1);
       var angle = t * Math.PI * 2 * TWIST_TURNS;
 
-      /* Unit-circle coords for XZ plane */
-      var ux = Math.cos(angle);
-      var uz = Math.sin(angle);
+      var ux  = Math.cos(angle);
+      var uz  = Math.sin(angle);
+      var y   = (t - 0.5) * HELIX_HEIGHT; /* -HELIX_HEIGHT/2 to +HELIX_HEIGHT/2 */
 
-      /* Y centered on screen: -HELIX_HEIGHT/2 to +HELIX_HEIGHT/2 */
-      var y = (t - 0.5) * HELIX_HEIGHT;
+      strand1.push({ ux: ux, uz: uz, y: y, idx: i });
 
-      /* Strand 1 */
-      strand1.push({ ux: ux, uz: uz, y: y, idx: i, baseAngle: angle });
-
-      /* Strand 2 — offset π */
       var ux2 = Math.cos(angle + Math.PI);
       var uz2 = Math.sin(angle + Math.PI);
-      strand2.push({ ux: ux2, uz: uz2, y: y, idx: i, baseAngle: angle + Math.PI });
+      strand2.push({ ux: ux2, uz: uz2, y: y, idx: i + STRAND_COUNT });
 
-      /* Bridge */
-      if (i % BRIDGE_EVERY === 0) {
-        bridges.push(i);
-      }
+      if (i % BRIDGE_EVERY === 0) bridges.push(i);
     }
   }
 
-  /* ─── 3D rotation state ─── */
-  var rotY = 0;       /* auto-rotation */
-  var rotX = 0.12;    /* slight tilt to show depth */
+  /* ─── 3D rotation ─── */
+  var autoRotY = 0;  /* accumulates each frame */
+  var rotX     = 0.15; /* fixed slight X tilt for depth */
 
-  /* ─── Project 3D point to 2D screen ─── */
-  function project(ux, uz, y, noiseTime, idx) {
-    var nx = smoothNoise(idx * 0.15, noiseTime) * 3.5;
-    var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * 1.5;
+  /* ─── Smooth noise for organic motion ─── */
+  var noiseTime = 0;
+  var NOISE_SPEED = 0.00022;
 
-    var wx = ux * HELIX_RADIUS + nx;
+  function smoothNoise(x, t) {
+    return (
+      Math.sin(x * 0.8 + t * 0.7) * 0.35 +
+      Math.sin(x * 1.3 - t * 0.5) * 0.25 +
+      Math.sin(x * 2.1 + t * 1.1) * 0.15 +
+      Math.sin(x * 3.7 - t * 0.3) * 0.08
+    );
+  }
+
+  /* ─── Project 3D → 2D ─── */
+  function project(ux, uz, y, rotY) {
+    var wx = ux * HELIX_RADIUS;
     var wz = uz * HELIX_RADIUS;
-    var wy = y + ny;  /* direct screen-space Y, no scroll offset */
+    var wy = y;
 
-    /* Rotate around Y axis (spin) */
+    /* Rotate Y (spin) */
     var cosY = Math.cos(rotY);
     var sinY = Math.sin(rotY);
     var rx = wx * cosY + wz * sinY;
     var rz = -wx * sinY + wz * cosY;
 
-    /* Apply slight tilt */
+    /* Rotate X (tilt) */
     var cosX = Math.cos(rotX);
     var sinX = Math.sin(rotX);
-    var ry = wy * cosX - rz * sinX;
+    var ry  = wy * cosX - rz * sinX;
     var rz2 = wy * sinX + rz * cosX;
 
-    var fov = 800;
+    var fov   = 700;
     var depth = rz2 + fov;
     var scale = fov / (depth > 1 ? depth : 1);
 
+    var clampFn = function (v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; };
+
     return {
-      x: W * OFFSET_X + rx * scale,
-      y: H * 0.5 + ry * scale,  /* centered on screen */
-      z: rz2,
+      x:     VW * OFFSET_X + rx * scale,
+      y:     VH * 0.5 + ry * scale,
+      z:     rz2,
       scale: scale,
-      depth: clamp((rz2 + fov) / (fov * 2), 0, 1),
+      depth: clampFn((rz2 + fov) / (fov * 2), 0, 1),
     };
   }
 
-  /* ─── Mouse proximity repulsion ─── */
-  function applyMouseForce(projX, projY) {
+  /* ─── Mouse repulsion ─── */
+  function mouseForce(px, py) {
     if (isMobile) return { dx: 0, dy: 0 };
-    var dx = projX - mouse.x;
-    var dy = projY - mouse.y;
-    var dist = Math.sqrt(dx * dx + dy * dy);
-    var repelRadius = 120;
-    if (dist < repelRadius && dist > 0.1) {
-      var force = (1 - dist / repelRadius) * 8;
-      return { dx: (dx / dist) * force, dy: (dy / dist) * force };
+    var dx = px - mouse.x;
+    var dy = py - mouse.y;
+    var d  = Math.sqrt(dx * dx + dy * dy);
+    var R  = 110;
+    if (d < R && d > 0.1) {
+      var f = (1 - d / R) * 7;
+      return { dx: (dx / d) * f, dy: (dy / d) * f };
     }
     return { dx: 0, dy: 0 };
   }
 
-  /* ════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════
      DRAW FRAME
-  ════════════════════════════════════════════════ */
+  ══════════════════════════════════════════════ */
+  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
 
-  function draw(noiseTime) {
-    ctx.clearRect(0, 0, W, H);
+  function draw(rotY) {
+    ctx.clearRect(0, 0, VW, VH);
 
-    /* Light/dark mode opacity multiplier */
     var isDark = document.documentElement.classList.contains('dark');
-    var opacityMult = isDark ? 1.0 : 0.3;
+    var oMult  = isDark ? 1.0 : 0.28;
 
-    /* Project all particles */
+    /* Clip margin — hide particles just outside viewport */
+    var margin = VH * 0.55;
+
     var proj1 = [], proj2 = [];
+
     for (var i = 0; i < STRAND_COUNT; i++) {
       var s1 = strand1[i];
       var s2 = strand2[i];
-      proj1.push(project(s1.ux, s1.uz, s1.y, noiseTime, i));
-      proj2.push(project(s2.ux, s2.uz, s2.y, noiseTime, i + STRAND_COUNT));
+      var nx  = smoothNoise(i * 0.15, noiseTime) * 3.0;
+      var ny  = smoothNoise(i * 0.13 + 100, noiseTime) * 1.2;
+
+      var p1 = project(s1.ux, s1.uz, s1.y + ny, rotY);
+      p1.x += nx;
+      proj1.push(p1);
+
+      var p2 = project(s2.ux, s2.uz, s2.y + ny, rotY);
+      p2.x += nx;
+      proj2.push(p2);
     }
 
-    /* Margin for edge fade — generous so helix doesn't pop */
-    var margin = H * 0.6;
-
-    /* ─── Draw lines along strand 1 ─── */
+    /* ── Strand lines 1 ── */
     for (var i = 0; i < proj1.length - 1; i++) {
       var a = proj1[i], b = proj1[i + 1];
       if (a.y < -margin && b.y < -margin) continue;
-      if (a.y > H + margin && b.y > H + margin) continue;
-      var depthAvg = (a.depth + b.depth) * 0.5;
-      var alpha = clamp(depthAvg * 0.45 + 0.05, 0.04, 0.38) * opacityMult;
+      if (a.y > VH + margin && b.y > VH + margin) continue;
+      var dAvg  = (a.depth + b.depth) * 0.5;
+      var alpha = clamp(dAvg * 0.55 + 0.08, 0.05, 0.45) * oMult;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
-      ctx.lineWidth = 0.8;
+      ctx.strokeStyle = 'rgba(' + accentRgb + ',' + alpha + ')';
+      ctx.lineWidth = 0.9;
       ctx.stroke();
     }
 
-    /* ─── Draw lines along strand 2 ─── */
+    /* ── Strand lines 2 ── */
     for (var i = 0; i < proj2.length - 1; i++) {
       var a = proj2[i], b = proj2[i + 1];
       if (a.y < -margin && b.y < -margin) continue;
-      if (a.y > H + margin && b.y > H + margin) continue;
-      var depthAvg = (a.depth + b.depth) * 0.5;
-      var alpha = clamp(depthAvg * 0.45 + 0.05, 0.04, 0.38) * opacityMult;
+      if (a.y > VH + margin && b.y > VH + margin) continue;
+      var dAvg  = (a.depth + b.depth) * 0.5;
+      var alpha = clamp(dAvg * 0.55 + 0.08, 0.05, 0.45) * oMult;
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = 'rgba(' + purpleRgb + ', ' + alpha + ')';
-      ctx.lineWidth = 0.8;
+      ctx.strokeStyle = 'rgba(' + purpleRgb + ',' + alpha + ')';
+      ctx.lineWidth = 0.9;
       ctx.stroke();
     }
 
-    /* ─── Draw bridges (rungs of the ladder) ─── */
+    /* ── Bridges ── */
     for (var bi = 0; bi < bridges.length; bi++) {
       var i = bridges[bi];
       if (i >= proj1.length) continue;
       var a = proj1[i], b = proj2[i];
-      if (a.y < -margin && b.y < -margin) continue;
-      if (a.y > H + margin && b.y > H + margin) continue;
-      var depthAvg = (a.depth + b.depth) * 0.5;
-      var alpha = clamp(depthAvg * 0.35 + 0.06, 0.05, 0.32) * opacityMult;
+      if ((a.y < -margin && b.y < -margin) || (a.y > VH + margin && b.y > VH + margin)) continue;
+      var dAvg  = (a.depth + b.depth) * 0.5;
+      var alpha = clamp(dAvg * 0.40 + 0.07, 0.06, 0.36) * oMult;
 
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
-      ctx.strokeStyle = 'rgba(255, 255, 255, ' + alpha + ')';
+      ctx.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
       ctx.lineWidth = 0.5;
       ctx.stroke();
 
       /* Bridge endpoint dots */
+      var dotAlpha = clamp(alpha * 1.8, 0, 0.5);
       ctx.beginPath();
-      ctx.arc(a.x, a.y, 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 2.0, 0, 0.45) + ')';
+      ctx.arc(a.x, a.y, 1.3, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + dotAlpha + ')';
       ctx.fill();
 
       ctx.beginPath();
-      ctx.arc(b.x, b.y, 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 2.0, 0, 0.45) + ')';
+      ctx.arc(b.x, b.y, 1.3, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255,255,255,' + dotAlpha + ')';
       ctx.fill();
     }
 
-    /* ─── Draw strand 1 particles ─── */
+    /* ── Particles strand 1 ── */
     for (var i = 0; i < proj1.length; i++) {
       var pt = proj1[i];
-      if (pt.y < -margin || pt.y > H + margin) continue;
-      var mf = applyMouseForce(pt.x, pt.y);
+      if (pt.y < -margin || pt.y > VH + margin) continue;
+      var mf = mouseForce(pt.x, pt.y);
       var px = pt.x + mf.dx;
       var py = pt.y + mf.dy;
 
-      var depthFade = 0.3 + pt.depth * 0.7;
-      var alpha = clamp(depthFade * 0.7, 0.07, 0.85) * opacityMult;
-      var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.6, 4.0) * depthFade;
+      var dFade  = 0.35 + pt.depth * 0.65;
+      var alpha  = clamp(dFade * 0.75, 0.08, 0.9) * oMult;
+      var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.7, 4.5) * dFade;
 
-      /* Glow */
-      if (pt.depth > 0.5 && !isMobile) {
+      /* Glow — desktop only for performance */
+      if (pt.depth > 0.45 && !isMobile) {
         var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3.5);
-        grd.addColorStop(0, 'rgba(' + accentRgb + ', ' + clamp(alpha * 0.5, 0, 0.45) + ')');
-        grd.addColorStop(1, 'rgba(' + accentRgb + ', 0)');
+        grd.addColorStop(0, 'rgba(' + accentRgb + ',' + clamp(alpha * 0.55, 0, 0.5) + ')');
+        grd.addColorStop(1, 'rgba(' + accentRgb + ',0)');
         ctx.beginPath();
         ctx.arc(px, py, radius * 3.5, 0, Math.PI * 2);
         ctx.fillStyle = grd;
@@ -301,26 +334,26 @@
 
       ctx.beginPath();
       ctx.arc(px, py, Math.max(0.5, radius), 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
+      ctx.fillStyle = 'rgba(' + accentRgb + ',' + alpha + ')';
       ctx.fill();
     }
 
-    /* ─── Draw strand 2 particles ─── */
+    /* ── Particles strand 2 ── */
     for (var i = 0; i < proj2.length; i++) {
       var pt = proj2[i];
-      if (pt.y < -margin || pt.y > H + margin) continue;
-      var mf = applyMouseForce(pt.x, pt.y);
+      if (pt.y < -margin || pt.y > VH + margin) continue;
+      var mf = mouseForce(pt.x, pt.y);
       var px = pt.x + mf.dx;
       var py = pt.y + mf.dy;
 
-      var depthFade = 0.3 + pt.depth * 0.7;
-      var alpha = clamp(depthFade * 0.7, 0.07, 0.85) * opacityMult;
-      var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.6, 4.0) * depthFade;
+      var dFade  = 0.35 + pt.depth * 0.65;
+      var alpha  = clamp(dFade * 0.75, 0.08, 0.9) * oMult;
+      var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.7, 4.5) * dFade;
 
-      if (pt.depth > 0.5 && !isMobile) {
+      if (pt.depth > 0.45 && !isMobile) {
         var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3.5);
-        grd.addColorStop(0, 'rgba(' + purpleRgb + ', ' + clamp(alpha * 0.5, 0, 0.45) + ')');
-        grd.addColorStop(1, 'rgba(' + purpleRgb + ', 0)');
+        grd.addColorStop(0, 'rgba(' + purpleRgb + ',' + clamp(alpha * 0.55, 0, 0.5) + ')');
+        grd.addColorStop(1, 'rgba(' + purpleRgb + ',0)');
         ctx.beginPath();
         ctx.arc(px, py, radius * 3.5, 0, Math.PI * 2);
         ctx.fillStyle = grd;
@@ -329,59 +362,99 @@
 
       ctx.beginPath();
       ctx.arc(px, py, Math.max(0.5, radius), 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(' + purpleRgb + ', ' + alpha + ')';
+      ctx.fillStyle = 'rgba(' + purpleRgb + ',' + alpha + ')';
       ctx.fill();
     }
   }
 
-  /* ════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════
      MAIN LOOP
-  ════════════════════════════════════════════════ */
+  ══════════════════════════════════════════════ */
   var lastTime = 0;
-  var noiseTime = 0;
+  var rafId    = null;
 
   function loop(ts) {
     var dt = lastTime === 0 ? 16 : Math.min(ts - lastTime, 50);
     lastTime = ts;
 
-    /* Auto-rotation — steady slow spin */
-    rotY += ROT_Y_SPEED * dt;
+    /* Auto-rotation accumulates */
+    autoRotY += AUTO_ROT_SPEED * dt;
 
-    /* Noise time for organic motion */
+    /* Scroll parallax: helix rotates slowly as user scrolls */
+    var scrollRot = currentScroll * SCROLL_ROT_MULT;
+
+    /* Total rotation */
+    var totalRotY = autoRotY + scrollRot;
+
+    /* Noise time */
     noiseTime += NOISE_SPEED * dt;
 
-    /* Refresh accent in case lang changed */
+    /* Refresh accent for lang switch */
     accentRgb = getAccentRgb();
 
-    draw(noiseTime);
+    draw(totalRotY);
 
-    requestAnimationFrame(loop);
+    rafId = requestAnimationFrame(loop);
+  }
+
+  /* ─── Static draw (reduced motion) ─── */
+  function drawStatic() {
+    autoRotY = 0.3;
+    draw(0.3);
   }
 
   /* ─── Init ─── */
   resize();
-  buildHelix();
-  requestAnimationFrame(loop);
 
-  /* Fade in */
-  setTimeout(function () {
-    canvas.style.opacity = '0.85';
-  }, 800);
+  if (reducedMotion) {
+    drawStatic();
+  } else {
+    lastTime = performance.now();
+    rafId = requestAnimationFrame(loop);
+  }
 
-  /* ─── Resize ─── */
+  /* Cleanup on Astro view transitions */
+  document.addEventListener('astro:before-swap', function () {
+    if (rafId) cancelAnimationFrame(rafId);
+    clearInterval(lenisCheckInterval);
+  });
+
+  /* ─── Resize (debounced) ─── */
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
-      isMobile = window.innerWidth < 768;
-      STRAND_COUNT = isMobile ? 150 : 350;
-      BRIDGE_EVERY = isMobile ? 5 : 4;
-      HELIX_RADIUS = isMobile ? 80 : 120;
-      OFFSET_X = isMobile ? 0.5 : 0.55;
       resize();
-      buildHelix();
     }, 250);
   }, { passive: true });
 
 })();
 </script>
+
+<style>
+  /* ── Fixed full-page layer — IDENTICAL positioning to WireframeSphere ── */
+  #dna-helix-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    /* Fade in smoothly */
+    opacity: 0;
+    animation: helixFadeIn 2s ease 0.4s forwards;
+  }
+
+  #dna-helix-canvas {
+    display: block;
+  }
+
+  @keyframes helixFadeIn {
+    to { opacity: 0.9; }
+  }
+
+  /* Hide on tiny screens */
+  @media (max-width: 400px) {
+    #dna-helix-container {
+      display: none;
+    }
+  }
+</style>
