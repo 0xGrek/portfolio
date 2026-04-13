@@ -606,14 +606,26 @@
 
 /* Glass card utility */
 .glass-card {
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
 }
-.dark .glass-card {
-  background: rgba(22, 27, 34, 0.7);
-  border: 1px solid rgba(255,255,255,0.05);
+
+/* ─── Fluid Typography ──────────────────────────────────── */
+.text-fluid-hero { font-size: clamp(2rem, 8vw, 4.5rem); }
+.text-fluid-h1   { font-size: clamp(1.75rem, 5vw, 3rem); }
+.text-fluid-h2   { font-size: clamp(1.25rem, 3vw, 2rem); }
+.text-fluid-body { font-size: clamp(0.875rem, 1.5vw, 1.125rem); }
+.text-fluid-sm   { font-size: clamp(0.75rem, 1.2vw, 0.875rem); }
+
+/* ─── Section headers — Industrial Style ────────────────── */
+.section-title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* Section gradient divider */
