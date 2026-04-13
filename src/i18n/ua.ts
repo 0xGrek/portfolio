@@ -50,7 +50,7 @@ export const ua = {
   exp_ai_desc: 'Розробка мультиагентних AI-систем, автоматизація створення контенту та впровадження Claude/Gemini.',
   exp_ai_b1: 'Оркестрація системи з 11 AI-агентів для глибокої обробки даних.',
   exp_ai_b2: 'Інтеграція моделей Claude, Gemini та архітектури MCP-серверів.',
-  exp_ai_b3: '',
+  exp_ai_b3: 'Інтеграція моделей Claude, Gemini та архітектури MCP-серверів',
 
   // Experience — Software Dev (current)
   exp_dev_title: 'Розробник ПЗ',
