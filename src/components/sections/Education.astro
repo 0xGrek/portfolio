@@ -106,33 +106,4 @@ const eduIcons: Record<string, string> = {
   }
 </style>
 
-<script is:inline>
-  (function () {
-    if (!('IntersectionObserver' in window)) return;
-    /* Section title */
-    var els = document.querySelectorAll('#education .reveal');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(function (el) { io.observe(el); });
-
-    /* Stagger education cards */
-    var grid = document.querySelector('#education .stagger-children');
-    if (grid) {
-      var staggerIo = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            staggerIo.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.08 });
-      staggerIo.observe(grid);
-    }
-  })();
-</script>
+<!-- Scroll-reveal handled by global IntersectionObserver in BaseLayout.astro -->
