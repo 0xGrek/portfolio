@@ -166,7 +166,7 @@
       /* Unit-sphere-ish coords — we'll apply rotation later */
       var ux = Math.cos(angle);             /* strand 1 X unit */
       var uz = Math.sin(angle);             /* strand 1 Z unit */
-      var y  = t * HELIX_HEIGHT - HELIX_HEIGHT * 0.5;  /* Y: centered */
+      var y  = t * HELIX_HEIGHT;  /* Y: page coords 0..HELIX_HEIGHT */
 
       /* Strand 1 */
       strand1.push({ ux: ux, uz: uz, y: y, idx: i, baseAngle: angle });
