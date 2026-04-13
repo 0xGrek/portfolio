@@ -442,7 +442,18 @@
 
   @keyframes helixFadeIn {
     from { opacity: 0; }
-    to   { opacity: 0.25; }
+    to   { opacity: 0.15; }
+  }
+
+  @keyframes helixFadeInDark {
+    from { opacity: 0; }
+    to   { opacity: 0.45; }
+  }
+
+  /* Dark theme — slightly more visible but still dim */
+  html.dark #dna-helix-container,
+  [data-theme="dark"] #dna-helix-container {
+    animation-name: helixFadeInDark;
   }
 
   /* Reduced motion — skip animation, show immediately */
