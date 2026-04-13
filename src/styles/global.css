@@ -588,17 +588,45 @@
     opacity: 1 !important;
     animation: none !important;
   }
+  /* All reveal classes — skip animation, show immediately */
+  .reveal, .reveal-left, .reveal-right, .reveal-scale,
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+  .timeline-line-animated {
+    transform: scaleY(1) !important;
+    transition: none !important;
+  }
+  .hero-animated-bg {
+    animation: none !important;
+  }
+  .gradient-text {
+    animation: none !important;
+  }
   .card-hover::before {
     animation: none !important;
+    transition: none !important;
   }
   .card-hover:hover {
     transform: translateY(-2px) !important;
+  }
+  .tilt-card {
+    transform: none !important;
   }
   .tech-tag-hover:hover {
     transform: none !important;
   }
   .social-hover:hover {
     transform: scale(1.1) !important;
+  }
+  .particle {
+    display: none !important;
+  }
+  .typewriter-cursor::after {
+    display: none !important;
   }
 }
 
