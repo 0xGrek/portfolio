@@ -104,6 +104,10 @@ const eduIcons: Record<string, string> = {
   .swat-card {
     border-color: rgba(var(--accent-rgb), 0.3) !important;
   }
+  /* Non-interactive display card — override card-hover cursor */
+  .edu-card {
+    cursor: default;
+  }
 </style>
 
 <!-- Scroll-reveal handled by global IntersectionObserver in BaseLayout.astro -->
