@@ -154,6 +154,7 @@
 
     var pageHeight = document.documentElement.scrollHeight;
     HELIX_HEIGHT = pageHeight * 1.2;
+    console.log('DNA buildHelix: pageHeight=' + pageHeight + ', HELIX_HEIGHT=' + HELIX_HEIGHT + ', STRAND_COUNT=' + STRAND_COUNT + ', viewportH=' + H);
     STRAND_COUNT = isMobile ? Math.floor(pageHeight / H * 50) : Math.floor(pageHeight / H * 110);
     TWIST_TURNS = Math.floor(pageHeight / H * 3.5);
     TWIST_RATE = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
