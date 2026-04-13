@@ -126,8 +126,8 @@ const socials = [
       <!-- Right: Avatar + WireframeSphere -->
       <div class="flex justify-center lg:justify-end order-first lg:order-last">
         <div class="relative">
-          <!-- Wireframe sphere — absolutely positioned, centered behind avatar -->
-          <div class="absolute inset-0 flex items-center justify-center" style="z-index: 1; pointer-events: none; overflow: visible;">
+          <!-- Wireframe sphere — absolutely positioned, centered behind avatar, overflows -->
+          <div class="absolute" style="z-index: 1; pointer-events: none; top: 50%; left: 50%; transform: translate(-50%, -50%);">
             <WireframeSphere />
           </div>
           <!-- Glow effect — layered for depth -->
