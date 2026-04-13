@@ -30,7 +30,7 @@ export const en = {
   hero_cta_projects: 'My Projects',
   hero_cta_contact: 'Contact Me',
   hero_available: 'Open to opportunities',
-  hero_location: 'UTC+1 [Lisbon, Portugal]',
+  hero_location: '📍 Lisbon, Portugal — UTC+1 (WET)',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
