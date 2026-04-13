@@ -245,3 +245,19 @@ const socials = [
   .social-hero--x:hover { color: #e7e9ea !important; transform: scale(1.18) rotate(-5deg) !important; }
   .social-hero--telegram:hover { color: #26a5e4 !important; }
 </style>
+
+<script is:inline>
+  (function () {
+    var indicator = document.getElementById('hero-scroll-indicator');
+    if (!indicator) return;
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 100) {
+        indicator.style.opacity = '0';
+        indicator.style.pointerEvents = 'none';
+      } else {
+        indicator.style.opacity = '1';
+        indicator.style.pointerEvents = 'auto';
+      }
+    }, { passive: true });
+  })();
+</script>
