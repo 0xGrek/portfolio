@@ -406,6 +406,99 @@
   animation: shimmer 3s infinite;
 }
 
+/* Button fill animation — left to right on hover */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+.btn-fill:hover::after {
+  transform: translateX(0);
+}
+.btn-fill > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated underline for nav links */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Typewriter cursor blink */
+.typewriter-cursor::after {
+  content: '|';
+  color: var(--accent);
+  animation: typewriter-cursor 0.8s ease-in-out infinite;
+  font-weight: 100;
+  margin-left: 1px;
+}
+
+/* Timeline line draw animation */
+.timeline-line-animated {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.timeline-line-animated.visible {
+  transform: scaleY(1);
+}
+
+/* Timeline dot pulse */
+.timeline-dot-pulse {
+  position: relative;
+}
+.timeline-dot-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(var(--accent-rgb), 0.4);
+  animation: pulse-green 2.5s ease-in-out infinite;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--purple) 50%, var(--accent-hover) 100%);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 9999;
+  transition: transform 0.08s linear;
+  pointer-events: none;
+  box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.5);
+}
+
 /* TechTag hover */
 .tech-tag-hover {
   transition: background-color 0.15s ease,
