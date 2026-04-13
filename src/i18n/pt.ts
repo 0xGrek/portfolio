@@ -334,6 +334,12 @@ export const pt = {
   services_cta_desc: 'Implemento agentes AI para automatizar rotinas. 1 hora de automação hoje = 1 mês livre por ano.',
   services_cta_button: 'Contactar',
 
+  // ── Projects UI ───────────────────────────────────────
+  proj_visit_site: 'Visitar site',
+  proj_collapse: 'Recolher ▲',
+  proj_show_more: 'Mostrar mais',
+  proj_show_less: 'Recolher',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Criado com Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. Todos os direitos reservados.',
