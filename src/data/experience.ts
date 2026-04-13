@@ -51,7 +51,6 @@ export const experience: Experience[] = [
     descriptionKey: 'exp_dev_desc',
     bullets: ['exp_dev_b1', 'exp_dev_b2', 'exp_dev_b3'],
     tags: ['TypeScript', 'Python', 'PostgreSQL', 'Linux', 'Docker', 'Git'],
-    icon: 'code',
   },
   {
     id: 'ai-dev',
