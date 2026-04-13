@@ -125,7 +125,7 @@ export const pt = {
     'Um sistema de monitorização em produção que corro diariamente para inteligência on-chain. Monitoriza 35 carteiras em três chains usando polling ativo e recetores de webhook passivos. Movimentos significativos — grandes transferências, novas posições em tokens, interações com protocolos — acionam alertas imediatos no Telegram com links de transação e contexto. Construído com asyncio para polling concorrente de chains. O sistema já apanhou vários movimentos de "smart money" minutos após acontecerem.',
 
   proj_ton_title: 'TON Gift Flipper',
-  proj_ton_desc: 'Sistema multi-agente de trading NFT — bot de produção com 115K linhas e 4 instâncias paralelas',
+  proj_ton_desc: 'Sistema multi-agente de trading NFT — automação do ciclo completo de trading, eliminando o fator humano. Bot de produção com 115K linhas e 4 instâncias paralelas',
   proj_ton_long: 'Sistema de trading assíncrono multi-agente de nível de produção para o marketplace NFT TON. Arquitetura escalável: 115.000+ LOC. Construído em Python 3.11, executa 4 instâncias de bot em paralelo (de High-tier (50+ TON) a segmentos Entry-level), cada uma a gerir um par de contas de trading no Telegram. O sistema utiliza mais de 400 sessões Pyrogram para scanning paralelo do marketplace, integra 6 APIs externas (MRKT, Portal, Gift Satellite, Peek.tg, oráculo xGift, canal Snipes) e implementa estratégias de trading sofisticadas: outbidding com precisão nano-TON, repricing dinâmico em 4 etapas, mecânica cross-rebuy e testes A/B de estratégias. Inclui gestão de risco, backtesting, paper trading, dashboard FastAPI e bot admin aiogram no Telegram. Ferramentas de alto desempenho para Gas Wars e automação DeFi.',
 
   proj_toolkit_title: 'Toolkit Cripto — 101 Ferramentas',
