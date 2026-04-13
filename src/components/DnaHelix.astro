@@ -438,19 +438,36 @@
   #dna-helix-container {
     position: fixed;
     inset: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 0;
     pointer-events: none;
+    select: none;
     /* Fade in smoothly */
     opacity: 0;
+    will-change: opacity;
     animation: helixFadeIn 2s ease 0.4s forwards;
+    /* Protect animation from global .no-transition override during theme switch */
+    animation-fill-mode: forwards;
   }
 
   #dna-helix-canvas {
     display: block;
+    width: 100%;
+    height: 100%;
   }
 
   @keyframes helixFadeIn {
-    to { opacity: 0.9; }
+    from { opacity: 0; }
+    to   { opacity: 0.9; }
+  }
+
+  /* Reduced motion — skip animation, show immediately */
+  @media (prefers-reduced-motion: reduce) {
+    #dna-helix-container {
+      animation: none !important;
+      opacity: 1 !important;
+    }
   }
 
   /* Hide on tiny screens */
