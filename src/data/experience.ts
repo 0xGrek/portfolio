@@ -20,7 +20,6 @@ export const experience: Experience[] = [
     descriptionKey: 'exp_police_desc',
     bullets: [],
     tags: [],
-    icon: 'shield',
     highlightsKey: 'exp_police_highlights',
   },
   {
