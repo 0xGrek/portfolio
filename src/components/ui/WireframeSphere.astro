@@ -165,7 +165,7 @@
       // depth-based opacity: front z≈1 → bright, back z≈-1 → dim
       var avgZ = (pa.z + pb.z) * 0.5;
       var depthAlpha = (avgZ + 1) * 0.5; // 0..1
-      var lineAlpha = 0.08 + depthAlpha * 0.32; // 0.08 → 0.40
+      var lineAlpha = 0.06 + depthAlpha * 0.24; // 0.06 → 0.30
 
       ctx.beginPath();
       ctx.moveTo(pa.sx, pa.sy);
