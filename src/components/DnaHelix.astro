@@ -407,6 +407,9 @@
   resize();
 
   if (reducedMotion) {
+    /* Show immediately — animation is killed by prefers-reduced-motion CSS, so set opacity directly */
+    container.style.opacity = '1';
+    container.style.animation = 'none';
     drawStatic();
   } else {
     lastTime = performance.now();
