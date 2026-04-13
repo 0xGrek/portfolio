@@ -35,9 +35,9 @@ export const skillCategories: SkillCategory[] = [
       {
         nameKey: 'skills_tech_core_ai',
         skills: [
-          'Multi-agent Orchestration (CrewAI, LangGraph)',
-          'LLM Routing & Classification',
-          'RAG Pipelines',
+          'Оркестрація мультиагентних систем (CrewAI, LangGraph)',
+          'Маршрутизація та класифікація запитів до LLM',
+          'Побудова RAG-конвеєрів (бази знань для AI)',
           'Prompt Engineering',
           'Claude Code',
           'OpenClaw',
