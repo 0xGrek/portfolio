@@ -171,7 +171,7 @@ export const en = {
   // ── Education ─────────────────────────────────────────
   education_title: 'Education & Certifications',
 
-  edu_law_title: "Bachelor's — Law Enforcement (Criminal Investigation)",
+  edu_law_title: "Bachelor's — Data Analysis & Systems Investigation",
   edu_law_school: 'Dnipropetrovsk State University of Internal Affairs (DDUVS)',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ukraine',
