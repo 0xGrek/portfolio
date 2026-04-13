@@ -88,7 +88,7 @@ export const es = {
   exp_police_company: 'Policía Nacional de Ucrania | Ucrania',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Ucrania',
-  exp_police_desc: 'Trabajó en grupos analíticos especializados en la resolución de incidentes críticos. Especializado en el despliegue rápido de herramientas de recopilación de datos en condiciones de campo y gestión de riesgos en tiempo real.',
+  exp_police_desc: 'Desarrollo de metodologías para estructuración de datos desorganizados para toma de decisiones estratégicas. Diseño de sistemas de monitoreo y evaluación de riesgos en tiempo real.',
   exp_police_highlights: '',
 
   // ── Projects ──────────────────────────────────────────
