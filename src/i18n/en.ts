@@ -22,7 +22,7 @@ export const en = {
   hero_name: 'Serhii Ivanenko',
   hero_handle: '@0xGrek',
   hero_title: 'Automation & AI Specialist',
-  hero_subtitle: "Automation & AI Specialist. I build systems that work for you. My path: from criminal investigation to AI agent development. I'm always where complex processes can be simplified and automated. Hungry for learning, riding the trend, open to challenges.",
+  hero_subtitle: "Automation & AI Specialist. I build systems that work for you. My path: from criminal investigation to AI agent development. Hungry for learning, riding the trend, open to challenges.",
   hero_bio: '',
   hero_status: 'Open to opportunities',
   hero_cta_projects: 'My Projects',
