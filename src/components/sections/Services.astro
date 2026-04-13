@@ -269,6 +269,20 @@ const showLessText = t(lang, 'services_show_less' as any);
 </script>
 
 <style>
+  .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: var(--accent);
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+  .service-icon svg {
+    width: 28px;
+    height: 28px;
+  }
   .service-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
