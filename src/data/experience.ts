@@ -7,7 +7,6 @@ export interface Experience {
   descriptionKey: string;
   bullets: string[]; // i18n keys for bullet points
   tags: string[];
-  icon?: string;
   highlightsKey?: string; // i18n key for career progression line (police)
 }
 
