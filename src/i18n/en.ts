@@ -143,9 +143,9 @@ export const en = {
   exp_ai_dev_b1: 'Orchestrating 11 AI agents for data processing',
   exp_ai_dev_b2: 'Content and social media analytics automation',
   exp_ai_dev_b3: 'Claude, Gemini, MCP servers integration',
-  exp_police_b1: 'Patrol Police (2019) → Criminal Investigation (2020) → Special Unit (2021)',
-  exp_police_b2: '',
-  exp_police_b3: '',
+  exp_police_b1: 'Analysis of complex data arrays and detection of hidden patterns',
+  exp_police_b2: 'Building logical connection architectures for solving non-standard cases',
+  exp_police_b3: 'Application of OSINT techniques for data collection and structuring',
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Projects',
