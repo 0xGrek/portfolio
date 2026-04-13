@@ -391,16 +391,31 @@ const categoryColors: Record<string, string> = {
   (function () {
     /* ── Scroll-reveal ─────────────────────────────────── */
     if ('IntersectionObserver' in window) {
-      var els = document.querySelectorAll('#projects .reveal');
-      var io = new IntersectionObserver(function (entries) {
+      /* Section title reveal */
+      var titleEls = document.querySelectorAll('#projects .reveal');
+      var titleIo = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
             e.target.classList.add('visible');
-            io.unobserve(e.target);
+            titleIo.unobserve(e.target);
           }
         });
-      }, { threshold: 0.08 });
-      els.forEach(function (el) { io.observe(el); });
+      }, { threshold: 0.1 });
+      titleEls.forEach(function (el) { titleIo.observe(el); });
+
+      /* Stagger cards grid */
+      var grid = document.querySelector('#projects .stagger-children');
+      if (grid) {
+        var gridIo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              gridIo.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.06 });
+        gridIo.observe(grid);
+      }
     }
 
     /*
