@@ -312,7 +312,10 @@ const canonicalUrl = Astro.url.href;
         updateTimeline();
       })();
 
-      /* ─── 10. GLITCH on page load — hero greeting + subtitle ─── */
+      /* ─── 10. Scroll progress bar — Lenis compat: re-bind to lenis scroll event ─── */
+      /* (lenis dispatches native 'scroll' on window, so the progress bar above works fine) */
+
+      /* ─── 11. GLITCH on page load — hero greeting + subtitle ─── */
       (function () {
         if (prefersReducedMotion) return;
         var GLITCH_CHARS = '01%$#@&!?><{}[]';
