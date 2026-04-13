@@ -389,6 +389,21 @@ html.lenis body {
   transition-duration: 0.1s;
 }
 
+/* ─── Global card backdrop blur — DNA helix readable in empty areas,
+       blurred/hidden behind any element that holds text content ─── */
+.card-hover,
+.exp-card,
+.edu-card,
+.skill-card,
+.stat-card,
+.service-card,
+.project-card,
+.private-card,
+[class*="card"] {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 /* 3D tilt — добавляется JS-ом через style inline, класс для transition */
 .tilt-card {
   transform-style: preserve-3d;
