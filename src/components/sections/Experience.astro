@@ -72,17 +72,32 @@ const { lang } = Astro.props;
               </p>
 
               <!-- Bullet points -->
-              <ul class="space-y-1.5 mb-4">
-                {exp.bullets.map((bulletKey) => {
-                  const text = t(lang, bulletKey as any);
-                  return text ? (
-                    <li class="flex items-start gap-2 text-sm" style="color: var(--text-secondary);">
-                      <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background-color: var(--accent);"></span>
-                      {text}
-                    </li>
-                  ) : null;
-                })}
-              </ul>
+              {exp.bullets.length > 0 && (
+                <ul class="space-y-1.5 mb-4">
+                  {exp.bullets.map((bulletKey) => {
+                    const text = t(lang, bulletKey as any);
+                    return text ? (
+                      <li class="flex items-start gap-2 text-sm" style="color: var(--text-secondary);">
+                        <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background-color: var(--accent);"></span>
+                        {text}
+                      </li>
+                    ) : null;
+                  })}
+                </ul>
+              )}
+
+              <!-- Career progression highlights (e.g. police) -->
+              {exp.highlightsKey && (() => {
+                const highlights = t(lang, exp.highlightsKey as any);
+                return highlights ? (
+                  <div
+                    class="mb-4 px-3 py-2 rounded-lg text-xs font-mono"
+                    style="background-color: rgba(var(--accent-rgb), 0.07); border: 1px solid rgba(var(--accent-rgb), 0.15); color: var(--text-secondary);"
+                  >
+                    {highlights}
+                  </div>
+                ) : null;
+              })()}
 
               <!-- Tech tags -->
               <div class="flex flex-wrap gap-2 pt-2 border-t" style="border-color: var(--border);">
