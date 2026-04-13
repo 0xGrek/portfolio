@@ -251,11 +251,6 @@ html.lenis body {
   100% { transform: translateX(250%) skewX(-12deg); }
 }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
-}
-
 @keyframes pulse-green {
   0%, 100% { box-shadow: 0 0 0 0 var(--green-glow); }
   50%       { box-shadow: 0 0 0 6px transparent; }
