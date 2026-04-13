@@ -47,11 +47,8 @@ const stats = [
             class="stat-card p-6 rounded-xl text-center card-hover reveal glass-card"
             style={`border: 1px solid var(--card-border); transition-delay: ${i * 0.1}s;`}
           >
-            <div class="stat-value text-3xl sm:text-4xl font-bold mb-2" style="color: var(--accent);">
-              {t(lang, stat.value)}
-            </div>
-            <div class="text-sm" style="color: var(--text-secondary); line-height: 1.5;">
-              {t(lang, stat.label)}
+            <div class="stat-value text-xl sm:text-2xl font-bold" style="color: var(--accent);">
+              {t(lang, stat.value as any)}
             </div>
           </div>
         ))}
