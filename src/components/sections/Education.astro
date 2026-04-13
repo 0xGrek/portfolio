@@ -55,11 +55,12 @@ const eduIcons: Record<string, string> = {
           <!-- Icon + status -->
           <div class="flex items-start justify-between mb-4">
             <div
-              class="w-11 h-11 rounded-xl flex items-center justify-center text-xl"
-              style="background-color: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.2);"
-            >
-              {edu.type === 'degree' ? '🎓' : '📜'}
-            </div>
+              class="w-11 h-11 rounded-xl flex items-center justify-center"
+              style="background-color: rgba(var(--accent-rgb), 0.1); border: 1px solid rgba(var(--accent-rgb), 0.2); color: var(--accent);"
+              set:html={eduIcons[edu.id] ?? (edu.type === 'degree'
+                ? `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>`
+                : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.56 14.89L7 22l5-3 5 3-1.56-7.11"/></svg>`)}
+            />
             <!-- Status badge -->
             <span
               class="px-2.5 py-1 rounded-md text-xs font-semibold border"
