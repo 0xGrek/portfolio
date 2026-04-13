@@ -32,27 +32,45 @@
     var iconSun = document.getElementById('icon-sun');
     var iconMoon = document.getElementById('icon-moon');
 
-    function applyTheme(theme) {
+    function applyTheme(theme, instant) {
       var isDark = theme === 'dark';
-      document.documentElement.classList.toggle('dark', isDark);
+      var html = document.documentElement;
+
+      if (instant) {
+        // Block all transitions for one frame so the switch is instant
+        html.classList.add('no-transition');
+      }
+
+      html.classList.toggle('dark', isDark);
+      html.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
+
       // Sun = switch to light (shown in dark mode)
       // Moon = switch to dark (shown in light mode)
       iconSun.style.display = isDark ? 'block' : 'none';
       iconMoon.style.display = isDark ? 'none' : 'block';
+
+      if (instant) {
+        // Force reflow so no-transition applies, then remove on next frame
+        html.offsetHeight; // eslint-disable-line no-unused-expressions
+        requestAnimationFrame(function () {
+          html.classList.remove('no-transition');
+        });
+      }
     }
 
-    // Init
+    // Init (no animation on page load)
     var stored = localStorage.getItem('theme') || 'dark';
-    applyTheme(stored);
+    applyTheme(stored, false);
 
     btn.addEventListener('click', function () {
       var current = localStorage.getItem('theme') || 'dark';
-      // Spin animation on toggle
+      // Spin animation on the button only (not the whole page)
       btn.style.animation = 'none';
       btn.offsetHeight; /* reflow */
       btn.style.animation = 'toggleRotate 0.35s ease forwards';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
+      // Switch theme instantly (no CSS transitions during switch)
+      applyTheme(current === 'dark' ? 'light' : 'dark', true);
     });
   })();
 </script>
