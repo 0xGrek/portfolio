@@ -242,11 +242,11 @@ export const es = {
   edu_law_location: 'Dnipro, Ucrania',
   edu_law_desc: 'Programa de grado presencial. Especialización en metodología policial e investigación de delitos financieros.',
 
-  edu_econ_title: 'Licenciatura — Economía y Seguridad Económica',
-  edu_econ_school: 'DDUVS',
-  edu_econ_period: '2020 – 2024',
+  edu_econ_title: 'Licenciatura — Analítica Económica',
+  edu_econ_school: 'DSUIA',
+  edu_econ_period: '2020',
   edu_econ_location: 'Dnipro, Ucrania',
-  edu_econ_desc: 'Modalidad semipresencial. Especialización en Analítica Económica y Protección de la Economía. Todos los cursos completados — examen de estado final pendiente.',
+  edu_econ_desc: 'Especialización: Seguridad Económica y Análisis de Datos.',
 
   edu_swat_title: 'Certificado de Entrenamiento Táctico Policial (SWAT)',
   edu_swat_school: 'Ministerio del Interior de Ucrania',
