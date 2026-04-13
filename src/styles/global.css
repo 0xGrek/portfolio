@@ -324,7 +324,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover), var(--purple));
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
   transform-origin: left;
   transform: scaleX(0);
   z-index: 9999;
