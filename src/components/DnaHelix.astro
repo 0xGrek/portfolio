@@ -194,10 +194,10 @@
     var nx = smoothNoise(idx * 0.15, noiseTime) * noiseAmt;
     var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * noiseAmt * 0.5;
 
-    /* World coordinates — shift Y by camera travel so viewport "scrolls" along helix */
+    /* World coordinates — helix painted on page, scrollY shifts viewport window */
     var wx = ux * HELIX_RADIUS + nx;
     var wz = uz * HELIX_RADIUS;
-    var wy = y - helixOffsetY + ny;
+    var wy = y - helixOffsetY + ny;  /* particle page Y minus scroll = viewport Y */
 
     /* Apply rotY (spin around vertical axis) */
     var cosY = Math.cos(rotY);
