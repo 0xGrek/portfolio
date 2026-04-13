@@ -61,4 +61,14 @@ export const education: Education[] = [
     type: 'certificate',
     status: 'completed',
   },
+  {
+    id: 'onchain-school',
+    titleKey: 'edu_onchain_title',
+    schoolKey: 'edu_onchain_institution',
+    periodKey: 'edu_onchain_period',
+    locationKey: 'edu_onchain_location',
+    descriptionKey: 'edu_onchain_desc',
+    type: 'certificate',
+    status: 'in-progress',
+  },
 ];
