@@ -82,15 +82,11 @@ const categoryIcons: Record<string, string> = {
               <!-- Project category icon -->
               <span class="select-none" style="color: var(--text); opacity: 0.12;" set:html={categoryIcons[project.category] || categoryIcons.web} />
 
-              <!-- "View Details" hover overlay -->
+              <!-- Subtle hover tint (no label) -->
               <div
-                class="expand-hint absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200"
+                class="expand-hint absolute inset-0 opacity-0 transition-opacity duration-200"
                 style="background-color: rgba(var(--accent-rgb), 0.08);"
-              >
-                <span class="text-sm font-semibold px-4 py-1.5 rounded-full expand-label" style="color: var(--accent); border: 1px solid var(--accent);">
-                  {t(lang, 'project_view')}
-                </span>
-              </div>
+              ></div>
             </div>
           </button>
 
