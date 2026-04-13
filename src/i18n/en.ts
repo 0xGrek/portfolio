@@ -34,7 +34,7 @@ export const en = {
   about_title: 'About Me',
   about_text_1: "My path into IT didn't start from school or university — it started from law enforcement. I worked in 3 different agencies, which taught me the essentials: seeing patterns in chaos, making quick decisions, and systematically fixing what doesn't work.",
   about_text_2: "After moving to Lisbon, I chose web development as my entry point into technology. But while building websites, I discovered crypto — a world with far more inefficiencies and limitless opportunities for automation.",
-  about_text_3: "I dove in completely: on-chain analytics, NFT minting bots, CEX/DEX arbitrage, vulnerability research. This quickly grew into my own business and serious client work.",
+  about_text_3: "I dove in completely: on-chain analytics, NFT minting bots, CEX/DEX arbitrage, vulnerability research. This quickly grew into something bigger — I started taking orders from friends and colleagues in the industry.",
   about_text_4: "Today I combine a software developer role at an IT company with building my own AI systems. The logic is the same as from the start: find where business loses time and money, and make technology deliver results.",
   about_stats_tools: '100+ Tools',
   about_stats_chains: '10+ Blockchains',
