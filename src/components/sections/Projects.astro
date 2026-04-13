@@ -518,6 +518,14 @@ const categoryIcons: Record<string, string> = {
       if (!card) return;
 
       var isExpanded = card.classList.contains('expanded');
+
+      // Accordion: close all other open cards first
+      document.querySelectorAll('.project-card.expanded').forEach(function (openCard) {
+        if (openCard !== card) {
+          collapseCard(openCard);
+        }
+      });
+
       if (isExpanded) {
         collapseCard(card);
       } else {
