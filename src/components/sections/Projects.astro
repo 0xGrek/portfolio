@@ -201,7 +201,7 @@ const categoryIcons: Record<string, string> = {
                     style="background-color: var(--accent); color: #fff;"
                     onclick="event.stopPropagation()"
                   >
-                    {lang === 'ua' ? 'Відвідати сайт' : lang === 'pt' ? 'Visitar site' : lang === 'es' ? 'Visitar sitio' : 'Visit Site'}
+                    {t(lang, 'proj_visit_site' as any)}
                     <span aria-hidden="true">→</span>
                   </a>
                 )}
