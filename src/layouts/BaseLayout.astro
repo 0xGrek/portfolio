@@ -70,6 +70,12 @@ const canonicalUrl = Astro.url.href;
     <!-- Wireframe sphere — fixed background, full-page atmospheric layer -->
     <WireframeSphere />
 
+    <!-- Available for Work pill — appears after scrolling past hero -->
+    <div id="available-pill" class="available-pill" aria-label="Available for work">
+      <span class="pulse-dot"></span>
+      <span>Available</span>
+    </div>
+
     <Header lang={lang} />
     <main style="position: relative; z-index: 1;">
       <slot />
