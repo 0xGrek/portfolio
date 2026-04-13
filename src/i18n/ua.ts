@@ -338,4 +338,5 @@ export const ua = {
   footer_built_with: 'Побудовано на Astro + Tailwind',
   footer_rights: '© 2026 Сергій Іваненко. Всі права захищені.',
   footer_privacy: 'Політика конфіденційності',
+  footer_compliance: 'Compliance & Confidentiality: Всі рішення розробляються з урахуванням стандартів безпеки даних та умов NDA.',
 } as const;
