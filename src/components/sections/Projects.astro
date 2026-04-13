@@ -440,55 +440,36 @@ const categoryColors: Record<string, string> = {
       els.forEach(function (el) { io.observe(el); });
     }
 
-    /* ── Accordion expand logic ────────────────────────── */
-    function getExpandHeight(panel) {
-      // Temporarily set to auto to measure natural height
-      panel.style.maxHeight = 'none';
-      var h = panel.scrollHeight;
-      panel.style.maxHeight = '0';
-      return h;
-    }
-
-    function expandCard(card, panel) {
+    /*
+     * ── Accordion expand logic ──────────────────────────
+     * Анимация теперь полностью в CSS (grid-template-rows transition).
+     * JS только переключает класс 'expanded' и обновляет aria-атрибуты.
+     * Это чище: нет манипуляций с maxHeight, нет reflow хаков.
+     */
+    function expandCard(card) {
       card.classList.add('expanded');
-      // Update all toggle buttons in this card
       card.querySelectorAll('.project-toggle').forEach(function (btn) {
         btn.setAttribute('aria-expanded', 'true');
       });
-      // Animate open
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      // After animation, set to 'none' so screenshots/video don't clip
-      panel.addEventListener('transitionend', function onEnd(e) {
-        if (e.propertyName === 'max-height' && card.classList.contains('expanded')) {
-          panel.style.maxHeight = 'none';
-        }
-        panel.removeEventListener('transitionend', onEnd);
-      });
     }
 
-    function collapseCard(card, panel) {
+    function collapseCard(card) {
       card.classList.remove('expanded');
       card.querySelectorAll('.project-toggle').forEach(function (btn) {
         btn.setAttribute('aria-expanded', 'false');
       });
-      // Need an explicit px value to transition FROM 'none'
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      // Force reflow
-      panel.getBoundingClientRect();
-      panel.style.maxHeight = '0';
     }
 
     function toggleProject(projectId) {
       var card = document.getElementById('card-' + projectId);
-      var panel = document.getElementById('expand-' + projectId);
-      if (!card || !panel) return;
+      if (!card) return;
 
       var isExpanded = card.classList.contains('expanded');
       if (isExpanded) {
-        collapseCard(card, panel);
+        collapseCard(card);
       } else {
-        expandCard(card, panel);
-        // Scroll card into view on mobile with a small delay
+        expandCard(card);
+        // Scroll into view on mobile after transition starts
         setTimeout(function () {
           card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 100);
