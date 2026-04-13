@@ -74,9 +74,9 @@ export const ua = {
 
   // Experience — Web Developer
   exp_webdev_title: 'Веб-розробник',
-  exp_webdev_company: 'Freelance',
+  exp_webdev_company: 'ФОП',
   exp_webdev_period: '2023 – дотепер',
-  exp_webdev_location: '',
+  exp_webdev_location: 'Португалія',
   exp_webdev_desc: 'Telegram-боти та міні-додатки. Побудував систему з 11 ботів для лайф-трекінгу та бізнес-автоматизації.',
   exp_webdev_b1: '15+ Telegram-ботів та міні-додатків у production',
   exp_webdev_b2: 'Система з 11 ботів для лайф-трекінгу, фітнесу, планування',
