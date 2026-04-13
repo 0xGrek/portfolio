@@ -241,6 +241,32 @@ const servicesIT = [
         });
       });
     }
+
+    /* Desktop hover-with-delay for card details — prevents flicker when moving between cards */
+    if (!isTouchDevice) {
+      document.querySelectorAll('#services .service-card').forEach(function (card) {
+        var details = card.querySelector('.card-details');
+        if (!details) return;
+        var enterTimer = null;
+        var leaveTimer = null;
+
+        card.addEventListener('mouseenter', function () {
+          clearTimeout(leaveTimer);
+          leaveTimer = null;
+          enterTimer = setTimeout(function () {
+            details.classList.add('expanded');
+          }, 200);
+        });
+
+        card.addEventListener('mouseleave', function () {
+          clearTimeout(enterTimer);
+          enterTimer = null;
+          leaveTimer = setTimeout(function () {
+            details.classList.remove('expanded');
+          }, 350);
+        });
+      });
+    }
   })();
 </script>
 
