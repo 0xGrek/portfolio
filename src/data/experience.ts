@@ -61,6 +61,5 @@ export const experience: Experience[] = [
     descriptionKey: 'exp_ai_desc',
     bullets: ['exp_ai_b1', 'exp_ai_b2', 'exp_ai_b3'],
     tags: ['Claude', 'MCP', 'Multi-Agent', 'Gemini API', 'Automation'],
-    icon: 'bot',
   },
 ];

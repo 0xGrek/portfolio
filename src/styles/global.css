@@ -579,6 +579,13 @@ html.lenis body {
   border-radius: 16px;
 }
 
+/* ─── Service card text rendering stabilization ────────────── */
+.service-card {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+}
+
 /* ─── Monolithic Live Background ──────────────────────────── */
 /* All sections transparent — void lives on body/html level */
 section {
