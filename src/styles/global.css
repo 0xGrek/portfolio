@@ -344,6 +344,8 @@ html.lenis body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
 }
 /* Shimmer sweep on hover */
 .card-hover::before {
