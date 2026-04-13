@@ -34,7 +34,7 @@ export const pt = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
-  about_text_1: "O meu background combina métodos de análise sistemática da experiência em forças de segurança com profunda expertise técnica em AI e Web3. Especializo-me em encontrar ineficiências e construir sistemas autónomos que convertem caos em resultados empresariais claros.",
+  about_text_1: "A minha abordagem ao desenvolvimento baseia-se na lógica de investigação: encontro ineficiências nos processos empresariais e elimino-as com código. Hoje combino trabalho numa empresa de IT com a construção dos meus próprios sistemas AI multi-agente.",
   about_text_2: 'Mergulhei completamente: análise on-chain, bots de minting NFT, arbitragem CEX/DEX, pesquisa de vulnerabilidades. Isto rapidamente cresceu para algo maior — comecei a aceitar encomendas de amigos e colegas da indústria.',
   about_text_3: 'Hoje combino o papel de desenvolvedor de software numa empresa de IT com a construção dos meus próprios sistemas de AI. A lógica é a mesma desde o início: encontrar onde o negócio perde tempo e dinheiro, e fazer a tecnologia entregar resultados.',
   about_text_4: '',
