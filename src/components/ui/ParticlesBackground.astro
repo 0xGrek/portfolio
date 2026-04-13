@@ -34,92 +34,222 @@
 (function () {
   'use strict';
 
-  /* Respect prefers-reduced-motion */
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
   var canvas = document.getElementById('particle-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
 
-  /* Lang → accent color map */
+  /* ─── Reduced motion: show only static nodes, no animation ─── */
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ─── Lang → accent RGB map ─── */
   var LANG_COLORS = {
-    ua: '0, 122, 255',    // #007AFF
-    en: '99, 102, 241',   // #6366F1
-    pt: '20, 184, 166',   // #14B8A6
-    es: '245, 158, 11',   // #F59E0B
+    ua: '0, 122, 255',
+    en: '99, 102, 241',
+    pt: '20, 184, 166',
+    es: '245, 158, 11',
   };
 
   function getAccentRgb() {
-    var lang = document.documentElement.lang || 'en';
+    var raw = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
+    if (raw) return raw;
+    var lang = (document.documentElement.getAttribute('data-lang') || document.documentElement.lang || 'en').toLowerCase();
     return LANG_COLORS[lang] || LANG_COLORS['en'];
   }
 
-  /* Config */
-  var isMobile = window.innerWidth < 768;
-  var COUNT = isMobile ? 30 : 60;
-  var MAX_DIST = 150;
-  var MAX_DIST_GRAB = 220;
-  var mouse = { x: -9999, y: -9999, active: false };
-  var particles = [];
-  var raf = null;
   var accentRgb = getAccentRgb();
 
+  /* Watch data-lang changes */
+  var langObserver = new MutationObserver(function () {
+    accentRgb = getAccentRgb();
+  });
+  langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
+
+  /* ─── Helpers ─── */
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+  /* ─── Canvas sizing (devicePixelRatio capped at 2) ─── */
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+
   function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width  = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
   }
 
-  function randomBetween(a, b) {
-    return a + Math.random() * (b - a);
+  var isMobile = window.innerWidth < 768;
+
+  /* ═══════════════════════════════════════════════
+     LAYER 1 — Binary Rain (Data Streams)
+  ═══════════════════════════════════════════════ */
+  var RAIN_CHARS = '01010110001ABCDEFabcdef0110';
+  var rainColumns = [];
+
+  function initRain() {
+    rainColumns = [];
+    var colCount = isMobile ? 10 : 18;
+    var step = W / colCount;
+    for (var i = 0; i < colCount; i++) {
+      rainColumns.push({
+        x:      step * i + step * 0.5 + rand(-step * 0.3, step * 0.3),
+        y:      rand(-H, 0),            // start above viewport (staggered)
+        speed:  rand(0.3, 0.9),         // px per frame — very slow
+        chars:  [],                     // active characters in this column
+        length: Math.floor(rand(6, 16)),// how many chars tall
+        timer:  0,
+        interval: rand(80, 160),        // ms between new char drop
+      });
+    }
   }
 
-  function createParticle() {
+  function updateRain(dt) {
+    for (var i = 0; i < rainColumns.length; i++) {
+      var col = rainColumns[i];
+      col.timer += dt;
+
+      /* Spawn new char at top of column */
+      if (col.timer >= col.interval) {
+        col.timer = 0;
+        col.chars.push({
+          ch: RAIN_CHARS[Math.floor(Math.random() * RAIN_CHARS.length)],
+          y: col.y,
+          age: 0,
+          maxAge: rand(1200, 2800),
+        });
+        col.y += rand(10, 18); // spacing between chars
+        if (col.y > H + 80) {
+          /* Reset column from top */
+          col.y = rand(-100, -20);
+          col.chars = [];
+          col.speed = rand(0.3, 0.9);
+          col.length = Math.floor(rand(6, 16));
+          col.interval = rand(80, 160);
+        }
+      }
+
+      /* Age chars */
+      for (var j = col.chars.length - 1; j >= 0; j--) {
+        col.chars[j].age += dt;
+        if (col.chars[j].age > col.chars[j].maxAge) {
+          col.chars.splice(j, 1);
+        }
+      }
+    }
+  }
+
+  function drawRain() {
+    ctx.font = '11px "Courier New", monospace';
+    ctx.textAlign = 'center';
+    for (var i = 0; i < rainColumns.length; i++) {
+      var col = rainColumns[i];
+      for (var j = 0; j < col.chars.length; j++) {
+        var c = col.chars[j];
+        /* Fade: bright at birth, dims over lifetime */
+        var lifeFrac = c.age / c.maxAge;           // 0→1
+        /* Position-based fade: top chars brighter */
+        var posFrac  = clamp((c.y / H), 0, 1);     // 0=top 1=bottom
+        var alpha = (1 - lifeFrac) * (1 - posFrac * 0.7);
+        alpha = clamp(alpha * 0.12, 0.01, 0.13);
+        ctx.fillStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
+        ctx.fillText(c.ch, col.x, c.y);
+      }
+    }
+  }
+
+  /* ═══════════════════════════════════════════════
+     LAYER 2 — Network Nodes with Digital Pulse
+  ═══════════════════════════════════════════════ */
+  var NODE_COUNT   = isMobile ? 20 : 40;
+  var MAX_DIST     = 160;
+  var MAX_DIST_GRAB = 200;
+  var mouse = { x: -9999, y: -9999, active: false };
+  var nodes = [];
+
+  function createNode() {
     return {
-      x: randomBetween(0, canvas.width),
-      y: randomBetween(0, canvas.height),
-      vx: randomBetween(-0.4, 0.4),
-      vy: randomBetween(-0.4, 0.4),
-      radius: randomBetween(1, 2.5),
-      opacity: randomBetween(0.1, 0.4),
+      x:       rand(0, W),
+      y:       rand(0, H),
+      vx:      rand(-0.25, 0.25),
+      vy:      rand(-0.25, 0.25),
+      radius:  rand(1.2, 2.4),
+      opacity: rand(0.15, 0.35),
+      /* Pulse state */
+      pulse:       0,    // 0 = idle, > 0 = active (value = remaining ms)
+      pulsePhase:  0,    // 'rise' or 'fall'
+      pulseVal:    0,    // current glow intensity 0-1
     };
   }
 
-  function initParticles() {
-    particles = [];
-    for (var i = 0; i < COUNT; i++) {
-      particles.push(createParticle());
+  function initNodes() {
+    nodes = [];
+    for (var i = 0; i < NODE_COUNT; i++) nodes.push(createNode());
+  }
+
+  /* Trigger a random pulse every 2-5 seconds */
+  var nextPulseIn = rand(2000, 5000);
+  var pulseTimer  = 0;
+
+  function updateNodes(dt) {
+    /* Random pulse trigger */
+    pulseTimer += dt;
+    if (pulseTimer >= nextPulseIn) {
+      pulseTimer = 0;
+      nextPulseIn = rand(2000, 5000);
+      var idx = Math.floor(Math.random() * nodes.length);
+      var n = nodes[idx];
+      if (n.pulse === 0) {
+        n.pulse = 1000;   // total lifetime ms
+        n.pulsePhase = 'rise';
+        n.pulseVal = 0;
+      }
+    }
+
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+
+      /* Update pulse animation */
+      if (n.pulse > 0) {
+        n.pulse -= dt;
+        if (n.pulsePhase === 'rise') {
+          n.pulseVal += dt / 200;   // rises over 200ms
+          if (n.pulseVal >= 1) { n.pulseVal = 1; n.pulsePhase = 'fall'; }
+        } else {
+          n.pulseVal -= dt / 800;   // falls over 800ms
+          if (n.pulseVal <= 0) { n.pulseVal = 0; n.pulse = 0; }
+        }
+      }
     }
   }
 
-  function dist(a, b) {
-    var dx = a.x - b.x;
-    var dy = a.y - b.y;
-    return Math.sqrt(dx * dx + dy * dy);
+  function distSq(ax, ay, bx, by) {
+    var dx = ax - bx, dy = ay - by;
+    return dx * dx + dy * dy;
   }
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    accentRgb = getAccentRgb();
-
-    /* Move */
-    for (var i = 0; i < particles.length; i++) {
-      var p = particles[i];
-      p.x += p.vx;
-      p.y += p.vy;
-      /* Bounce */
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-    }
-
-    /* Draw connections */
-    for (var i = 0; i < particles.length; i++) {
-      for (var j = i + 1; j < particles.length; j++) {
-        var d = dist(particles[i], particles[j]);
-        if (d < MAX_DIST) {
-          var alpha = (1 - d / MAX_DIST) * 0.15;
+  function drawNodes() {
+    /* Connections */
+    var maxDistSq = MAX_DIST * MAX_DIST;
+    for (var i = 0; i < nodes.length; i++) {
+      for (var j = i + 1; j < nodes.length; j++) {
+        var dsq = distSq(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+        if (dsq < maxDistSq) {
+          var d = Math.sqrt(dsq);
+          var base  = (1 - d / MAX_DIST) * 0.12;
+          /* If either node is pulsing, boost line */
+          var boost = Math.max(nodes[i].pulseVal, nodes[j].pulseVal) * 0.25;
+          var alpha = clamp(base + boost, 0, 0.4);
           ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
           ctx.strokeStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
           ctx.lineWidth = 1;
           ctx.stroke();
@@ -127,15 +257,16 @@
       }
     }
 
-    /* Draw grab lines to mouse */
+    /* Mouse grab lines */
     if (mouse.active) {
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        var dm = dist(p, mouse);
-        if (dm < MAX_DIST_GRAB) {
-          var alpha = (1 - dm / MAX_DIST_GRAB) * 0.4;
+      var grabSq = MAX_DIST_GRAB * MAX_DIST_GRAB;
+      for (var i = 0; i < nodes.length; i++) {
+        var dsq = distSq(nodes[i].x, nodes[i].y, mouse.x, mouse.y);
+        if (dsq < grabSq) {
+          var d = Math.sqrt(dsq);
+          var alpha = (1 - d / MAX_DIST_GRAB) * 0.35;
           ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
+          ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(mouse.x, mouse.y);
           ctx.strokeStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
           ctx.lineWidth = 1;
@@ -144,38 +275,118 @@
       }
     }
 
-    /* Draw dots */
-    for (var i = 0; i < particles.length; i++) {
-      var p = particles[i];
+    /* Dots */
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var glowOpacity = n.opacity + n.pulseVal * 0.45;
+      glowOpacity = clamp(glowOpacity, 0, 0.8);
+
+      /* Pulse glow halo */
+      if (n.pulseVal > 0.05) {
+        var haloR = n.radius + n.pulseVal * 5;
+        var grad = ctx.createRadialGradient(n.x, n.y, n.radius * 0.5, n.x, n.y, haloR);
+        grad.addColorStop(0, 'rgba(' + accentRgb + ', ' + (n.pulseVal * 0.3) + ')');
+        grad.addColorStop(1, 'rgba(' + accentRgb + ', 0)');
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, haloR, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+      }
+
+      /* Core dot */
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + p.opacity + ')';
+      ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + glowOpacity + ')';
       ctx.fill();
     }
-
-    raf = requestAnimationFrame(draw);
   }
 
-  /* Click: push new particles */
-  canvas.parentElement && document.addEventListener('click', function (e) {
-    /* Only in hero area roughly */
-    if (e.clientY > window.innerHeight * 1.5) return;
-    for (var i = 0; i < 3; i++) {
-      var p = {
-        x: e.clientX + randomBetween(-20, 20),
-        y: e.clientY + randomBetween(-20, 20),
-        vx: randomBetween(-0.6, 0.6),
-        vy: randomBetween(-0.6, 0.6),
-        radius: randomBetween(1, 2),
-        opacity: randomBetween(0.2, 0.45),
-      };
-      particles.push(p);
-      /* Keep max */
-      if (particles.length > COUNT + 20) particles.shift();
-    }
-  });
+  /* ═══════════════════════════════════════════════
+     LAYER 3 — Scan Line
+  ═══════════════════════════════════════════════ */
+  var SCAN_DURATION = 8000; // ms for one full sweep
+  var scanY = 0;
 
-  /* Mouse move — grab effect */
+  function updateScan(dt) {
+    scanY += (H / SCAN_DURATION) * dt;
+    if (scanY > H) scanY = 0;
+  }
+
+  function drawScan() {
+    var grad = ctx.createLinearGradient(0, scanY - 18, 0, scanY + 18);
+    grad.addColorStop(0,   'rgba(' + accentRgb + ', 0)');
+    grad.addColorStop(0.4, 'rgba(' + accentRgb + ', 0.02)');
+    grad.addColorStop(0.5, 'rgba(' + accentRgb + ', 0.04)');
+    grad.addColorStop(0.6, 'rgba(' + accentRgb + ', 0.02)');
+    grad.addColorStop(1,   'rgba(' + accentRgb + ', 0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, scanY - 18, W, 36);
+  }
+
+  /* ═══════════════════════════════════════════════
+     REDUCED MOTION — static nodes only
+  ═══════════════════════════════════════════════ */
+  function drawStaticOnly() {
+    ctx.clearRect(0, 0, W, H);
+    accentRgb = getAccentRgb();
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + n.opacity + ')';
+      ctx.fill();
+    }
+  }
+
+  /* ═══════════════════════════════════════════════
+     MAIN LOOP
+  ═══════════════════════════════════════════════ */
+  var lastTime = 0;
+  var raf = null;
+
+  function loop(ts) {
+    var dt = ts - lastTime;
+    lastTime = ts;
+
+    /* Skip frame if too slow (< ~30fps) */
+    if (dt > 50) dt = 50;
+
+    accentRgb = getAccentRgb();
+    ctx.clearRect(0, 0, W, H);
+
+    /* Layer 1: Rain */
+    updateRain(dt);
+    drawRain();
+
+    /* Layer 2: Nodes */
+    updateNodes(dt);
+    drawNodes();
+
+    /* Layer 3: Scan */
+    updateScan(dt);
+    drawScan();
+
+    raf = requestAnimationFrame(loop);
+  }
+
+  /* ─── Init ─── */
+  resize();
+  initRain();
+  initNodes();
+
+  if (reducedMotion) {
+    drawStaticOnly();
+  } else {
+    lastTime = performance.now();
+    raf = requestAnimationFrame(loop);
+  }
+
+  /* Fade in */
+  setTimeout(function () {
+    canvas.style.opacity = '1';
+  }, 100);
+
+  /* ─── Mouse ─── */
   if (!isMobile) {
     document.addEventListener('mousemove', function (e) {
       mouse.x = e.clientX;
@@ -187,26 +398,17 @@
     });
   }
 
-  /* Init */
-  resize();
-  initParticles();
-  draw();
-
-  /* Fade in */
-  requestAnimationFrame(function () {
-    canvas.style.opacity = '1';
-  });
-
-  /* Resize */
+  /* ─── Resize (debounced 250ms) ─── */
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
-      isMobile = window.innerWidth < 768;
-      COUNT = isMobile ? 30 : 60;
+      isMobile   = window.innerWidth < 768;
+      NODE_COUNT = isMobile ? 20 : 40;
       resize();
-      initParticles();
-    }, 200);
+      initRain();
+      initNodes();
+    }, 250);
   }, { passive: true });
 
 })();
