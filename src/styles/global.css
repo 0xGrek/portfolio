@@ -131,8 +131,15 @@ html.lenis body {
   }
 
   /* ─── Theme transitions (smooth dark/light switch) ─────── */
+  /* Transitions are applied normally for hover/interactions, but suppressed during theme switch */
   *, *::before, *::after {
-    transition: background-color 500ms ease, border-color 500ms ease, color 300ms ease;
+    transition: background-color 200ms ease, border-color 200ms ease, color 150ms ease;
+  }
+
+  /* Applied to <html> for one frame during theme switch — kills all transitions instantly */
+  .no-transition, .no-transition *, .no-transition *::before, .no-transition *::after {
+    transition: none !important;
+    animation-duration: 0.01ms !important;
   }
 
   /* Exclude animations from theme transition to prevent jank */
