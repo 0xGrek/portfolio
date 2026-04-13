@@ -57,36 +57,7 @@ const stats = [
   </div>
 </section>
 
-<script is:inline>
-  (function () {
-    if (!('IntersectionObserver' in window)) return;
-    /* Section reveal */
-    document.querySelectorAll('#about .reveal').forEach(function (el) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      io.observe(el);
-    });
-    /* Stagger stats */
-    var statsGrid = document.querySelector('#about .stagger-children');
-    if (statsGrid) {
-      var staggerIo = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            staggerIo.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      staggerIo.observe(statsGrid);
-    }
-  })();
-</script>
+<!-- Scroll-reveal handled by global IntersectionObserver in BaseLayout.astro -->
 
 <style>
   /* Flexible stat text — adapts to card size, never overflows */
