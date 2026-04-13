@@ -102,13 +102,13 @@
      DNA HELIX PARAMETERS
   ════════════════════════════════════════════════ */
 
-  /* Particle counts */
-  var STRAND_COUNT  = isMobile ? 60 : 120;   /* particles per strand */
+  /* Particle counts — scaled up for full-page helix */
+  var STRAND_COUNT  = isMobile ? 200 : 450;  /* particles per strand */
   var BRIDGE_EVERY  = isMobile ? 5  : 4;     /* bridge every N particles */
 
   /* Geometry */
   var HELIX_RADIUS  = isMobile ? 55 : 80;    /* radius of each strand from axis */
-  var HELIX_HEIGHT  = isMobile ? H * 0.85 : H * 0.9;  /* total height of helix */
+  var HELIX_HEIGHT  = isMobile ? H * 4 : H * 4;  /* total length — 4× viewport for scroll travel */
   var TWIST_TURNS   = 3.5;                   /* how many full rotations */
   var TWIST_RATE    = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
 
