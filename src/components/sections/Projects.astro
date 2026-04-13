@@ -32,7 +32,7 @@ const categoryColors: Record<string, string> = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
       {projects.map((project, index) => (
         <article
-          class={`project-card relative flex flex-col rounded-xl overflow-hidden${project.featured ? ' project-featured' : ''}`}
+          class={`project-card relative flex flex-col rounded-xl overflow-hidden${project.featured ? ' project-featured' : ''}${(project.category === 'crypto' || project.category === 'trading') ? ' crypto-card' : ''}`}
           style={`background-color: var(--card-bg); border: 1px solid var(--card-border);`}
           id={`card-${project.id}`}
         >
