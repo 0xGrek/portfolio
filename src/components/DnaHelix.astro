@@ -407,8 +407,18 @@
 
   /* ─── Init ─── */
   resize();
-  buildHelix();
-  updateScroll();  /* read initial scroll position */
+  /* Defer buildHelix until after page is fully loaded so scrollHeight is accurate */
+  window.addEventListener('load', function () {
+    resize();
+    buildHelix();
+    updateScroll();
+  });
+
+  /* Safety net: rebuild after 2s for lazy-loaded content that extends the page */
+  setTimeout(function () {
+    buildHelix();
+    updateScroll();
+  }, 2000);
 
   requestAnimationFrame(loop);
 
