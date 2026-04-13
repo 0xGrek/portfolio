@@ -1,5 +1,6 @@
 ---
 // WireframeSphere — pure Canvas 2D wireframe globe, no Three.js
+// Fixed full-page background layer, always visible while scrolling
 // Uses fibonacci sphere distribution + matrix rotation + perspective projection
 ---
 
@@ -29,8 +30,8 @@
   var NUM_POINTS = isMobile ? 120 : 200;
   var CONNECT_THRESH = 0.62;   // unit-sphere distance to draw an edge
   var MAX_EDGES = 700;         // cap for performance
-  var RADIUS = isMobile ? 90 : 130; // canvas px radius
-  var SIZE = RADIUS * 2 + 40;       // canvas logical size
+  var RADIUS = isMobile ? 100 : 170; // canvas px radius — slightly larger for full-page feel
+  var SIZE = RADIUS * 2 + 40;        // canvas logical size
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
 
   var FOV = SIZE * 1.4;
@@ -99,8 +100,6 @@
   var angleX = 0;
   var mouseOffsetX = 0;
   var mouseOffsetY = 0;
-  var scrollScale = 1;
-  var scrollOpacity = 1;
   var lastTime = 0;
   var rafId = null;
 
@@ -152,11 +151,8 @@
     var rgb = getAccentRGB();
 
     ctx.save();
-    // apply scroll scale from center
-    ctx.translate(cx, cy);
-    ctx.scale(scrollScale, scrollScale);
-    ctx.translate(-cx, -cy);
-    ctx.globalAlpha = scrollOpacity;
+    // no scroll scale/opacity — sphere stays consistent across all sections
+    ctx.globalAlpha = 1;
 
     // ── draw edges ────────────────────────────────────────────────────────────
     for (var e = 0; e < edges.length; e++) {
@@ -196,32 +192,13 @@
     }
   }
 
-  // ─── mouse parallax ──────────────────────────────────────────────────────────
-  var heroSection = document.getElementById('hero');
-  if (heroSection) {
-    heroSection.addEventListener('mousemove', function (e) {
-      var rect = heroSection.getBoundingClientRect();
-      var nx = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 → +0.5
-      var ny = (e.clientY - rect.top) / rect.height - 0.5;
-      // lerp toward target (smooth)
-      mouseOffsetX = nx * 0.35;
-      mouseOffsetY = ny * 0.25;
-    });
-    heroSection.addEventListener('mouseleave', function () {
-      mouseOffsetX = 0;
-      mouseOffsetY = 0;
-    });
-  }
-
-  // ─── scroll parallax ─────────────────────────────────────────────────────────
-  function onScroll() {
-    var vh = window.innerHeight || 800;
-    var progress = Math.min(window.scrollY / vh, 1); // 0 → 1
-    scrollScale = 1 - progress * 0.22;               // 1.0 → 0.78
-    scrollOpacity = 1 - progress * 0.75;             // 1.0 → 0.25
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  // ─── mouse parallax — listens on whole document ──────────────────────────────
+  document.addEventListener('mousemove', function (e) {
+    var nx = e.clientX / window.innerWidth - 0.5;  // -0.5 → +0.5
+    var ny = e.clientY / window.innerHeight - 0.5;
+    mouseOffsetX = nx * 0.35;
+    mouseOffsetY = ny * 0.25;
+  });
 
   // ─── start ───────────────────────────────────────────────────────────────────
   if (reducedMotion) {
@@ -236,21 +213,30 @@
   // cleanup on page navigation (Astro view transitions)
   document.addEventListener('astro:before-swap', function () {
     if (rafId) cancelAnimationFrame(rafId);
-    window.removeEventListener('scroll', onScroll);
   });
 })();
 </script>
 
 <style>
+  /* ── Fixed full-page positioning — same layer as particles ── */
   #wireframe-container {
+    position: fixed;
+    /* 70% from left, 50% from top — right side, vertically centered */
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+    /* Atmospheric opacity — subtle so it doesn't distract from content */
     opacity: 0;
     animation: sphereFadeIn 2s ease 0.6s forwards;
   }
 
   @keyframes sphereFadeIn {
-    to { opacity: 1; }
+    to { opacity: 0.45; }
   }
 
+  /* Hide on small mobile screens */
   @media (max-width: 480px) {
     #wireframe-container {
       display: none;
