@@ -320,16 +320,7 @@
       var alpha  = clamp(dFade * 0.75, 0.08, 0.9) * oMult;
       var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.7, 4.5) * dFade;
 
-      /* Glow — desktop only for performance */
-      if (pt.depth > 0.45 && !isMobile) {
-        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3.5);
-        grd.addColorStop(0, 'rgba(' + accentRgb + ',' + clamp(alpha * 0.55, 0, 0.5) + ')');
-        grd.addColorStop(1, 'rgba(' + accentRgb + ',0)');
-        ctx.beginPath();
-        ctx.arc(px, py, radius * 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = grd;
-        ctx.fill();
-      }
+      /* Glow removed — too bright, interferes with text readability */
 
       ctx.beginPath();
       ctx.arc(px, py, Math.max(0.5, radius), 0, Math.PI * 2);
@@ -349,15 +340,7 @@
       var alpha  = clamp(dFade * 0.75, 0.08, 0.9) * oMult;
       var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.7, 4.5) * dFade;
 
-      if (pt.depth > 0.45 && !isMobile) {
-        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3.5);
-        grd.addColorStop(0, 'rgba(' + purpleRgb + ',' + clamp(alpha * 0.55, 0, 0.5) + ')');
-        grd.addColorStop(1, 'rgba(' + purpleRgb + ',0)');
-        ctx.beginPath();
-        ctx.arc(px, py, radius * 3.5, 0, Math.PI * 2);
-        ctx.fillStyle = grd;
-        ctx.fill();
-      }
+      /* Glow removed — too bright, interferes with text readability */
 
       ctx.beginPath();
       ctx.arc(px, py, Math.max(0.5, radius), 0, Math.PI * 2);
