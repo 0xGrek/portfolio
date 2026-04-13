@@ -438,6 +438,8 @@ const categoryIcons: Record<string, string> = {
   .private-card {
     transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     cursor: default;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   .private-card:hover {
     transform: translateY(-2px);
