@@ -734,12 +734,10 @@ h1:hover, h2:hover {
 }
 
 /* ─── Glassmorphism on cards ────────────────────────────── */
-.card-hover,
-[class*="card"],
-[class*="Card"] {
+/* Applies blur so the planet canvas shows through semi-transparent card-bg */
+.card-hover {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  background: rgba(var(--card-bg-rgb, 15, 23, 42), 0.75);
 }
 
 /* ─── Fluid Typography ──────────────────────────────────── */
