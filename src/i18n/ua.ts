@@ -109,7 +109,7 @@ export const ua = {
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
   exp_police_desc: 'Виявлення аномалій у складних інформаційних потоках та проведення OSINT-досліджень. Побудова архітектури логічних зв\'язків для аналізу ризиків.',
-  exp_police_highlights: 'Спеціаліст з аналізу даних та системних розслідувань (2019–2022)',
+  exp_police_highlights: '',
 
   // Experience — Founder/Specialist (legacy, kept for compat)
   exp_founder_title: 'Засновник & Технічний Спеціаліст (Автоматизація та Web3)',
