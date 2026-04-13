@@ -31,11 +31,11 @@ const statusLabels: Record<string, string> = {
     </div>
 
     <!-- Education cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 stagger-children">
       {education.map((edu, index) => (
         <div
-          class={`edu-card relative p-5 rounded-xl flex flex-col card-hover reveal ${edu.noteKey ? 'swat-card' : ''}`}
-          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.08}s; box-shadow: var(--shadow-sm);`}
+          class={`edu-card relative p-5 rounded-xl flex flex-col card-hover ${edu.noteKey ? 'swat-card' : ''}`}
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: var(--shadow-sm);`}
         >
           <!-- Icon + status -->
           <div class="flex items-start justify-between mb-4">
