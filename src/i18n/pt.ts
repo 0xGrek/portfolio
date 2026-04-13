@@ -170,7 +170,7 @@ export const pt = {
   // ── Education ─────────────────────────────────────────
   education_title: 'Formação & Certificações',
 
-  edu_law_title: 'Licenciatura — Forças de Segurança (Investigação Criminal)',
+  edu_law_title: 'Licenciatura — Análise de Dados e Investigação de Sistemas',
   edu_law_school: 'Universidade Estadual de Assuntos Internos de Dnipropetrovsk (DDUVS)',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ucrânia',
