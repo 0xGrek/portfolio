@@ -32,24 +32,29 @@ export const pt = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
-  about_p1:
-    'Nascido em 1999. Programador autodidata. Começou a programar em 2022 — primeiros cursos Udemy, depois automação Web3 desde março de 2023. Sem bootcamps, sem licenciatura em informática. Construiu tudo do zero: minting, parsing, rastreio on-chain, infraestrutura multi-conta em todas as principais blockchains — L1, L2.',
-  about_p2:
-    '100+ ferramentas de automação para DeFi, airdrops, NFTs e operações on-chain. Maior projeto: TON Gift Flipper — sistema de trading assíncrono multi-agente. Funciona em todas as principais chains. Antes de existir programação assistida por IA — tudo era manual.',
-  about_p3:
-    'Foco atual: análise on-chain, sistemas multi-agente com IA, ecossistemas Telegram. A investigar vetores de exploit em protocolos. Disponível para relocalização.',
-  about_unique:
-    '3 anos nas forças de segurança antes de transitar para a tecnologia.',
+  about_text_1: 'O meu percurso em IT não começou na escola ou universidade — começou nas forças de segurança. Três anos na patrulha policial e investigação criminal ensinaram-me o essencial: ver padrões no caos, tomar decisões rápidas e corrigir sistematicamente o que não funciona.',
+  about_text_2: 'Depois de me mudar para Lisboa, escolhi o desenvolvimento web como ponto de entrada na tecnologia. Mas ao criar sites, descobri o crypto — um mundo com muito mais ineficiências e oportunidades infinitas para automação.',
+  about_text_3: 'Mergulhei completamente: análise on-chain, bots de minting NFT, arbitragem CEX/DEX, pesquisa de vulnerabilidades. Isto rapidamente cresceu para o meu próprio negócio e trabalhos sérios para clientes.',
+  about_text_4: 'Hoje combino o papel de desenvolvedor de software numa empresa de IT com a construção dos meus próprios sistemas de AI. A lógica é a mesma desde o início: encontrar onde o negócio perde tempo e dinheiro, e fazer a tecnologia entregar resultados.',
+  about_stats_tools: '100+ Ferramentas',
+  about_stats_chains: '10+ Blockchains',
+  about_stats_web3: '3+ Anos em Web3',
+  about_stats_police: '3 Anos na Polícia',
+  // legacy keys
+  about_p1: 'O meu percurso em IT não começou na escola ou universidade — começou nas forças de segurança. Três anos na patrulha policial e investigação criminal ensinaram-me o essencial: ver padrões no caos, tomar decisões rápidas e corrigir sistematicamente o que não funciona.',
+  about_p2: 'Depois de me mudar para Lisboa, escolhi o desenvolvimento web como ponto de entrada na tecnologia. Mas ao criar sites, descobri o crypto — um mundo com muito mais ineficiências e oportunidades infinitas para automação.',
+  about_p3: 'Mergulhei completamente: análise on-chain, bots de minting NFT, arbitragem CEX/DEX, pesquisa de vulnerabilidades. Isto rapidamente cresceu para o meu próprio negócio e trabalhos sérios para clientes.',
+  about_unique: 'Hoje combino o papel de desenvolvedor de software numa empresa de IT com a construção dos meus próprios sistemas de AI. A lógica é a mesma desde o início: encontrar onde o negócio perde tempo e dinheiro, e fazer a tecnologia entregar resultados.',
 
   // ── Stats ─────────────────────────────────────────────
-  stat_tools: '101',
+  stat_tools: '100+',
   stat_tools_label: 'Ferramentas',
   stat_chains: '10+',
   stat_chains_label: 'Blockchains',
-  stat_years: '115K',
-  stat_years_label: 'Linhas de código',
-  stat_exchanges: '6',
-  stat_exchanges_label: 'Projetos em produção',
+  stat_years: '3+',
+  stat_years_label: 'Anos em Web3',
+  stat_exchanges: '3',
+  stat_exchanges_label: 'Anos na Polícia',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiência',
