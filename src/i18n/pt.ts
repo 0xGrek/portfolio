@@ -32,7 +32,7 @@ export const pt = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
-  about_text_1: 'O meu percurso em IT não começou na escola ou universidade — começou nas forças de segurança. Três anos na patrulha policial e investigação criminal ensinaram-me o essencial: ver padrões no caos, tomar decisões rápidas e corrigir sistematicamente o que não funciona.',
+  about_text_1: "O meu percurso em IT não começou na escola ou universidade — começou nas forças de segurança. Trabalhei em 3 estruturas diferentes, que me ensinaram o essencial: ver padrões no caos, tomar decisões rápidas e corrigir sistematicamente o que não funciona.",
   about_text_2: 'Depois de me mudar para Lisboa, escolhi o desenvolvimento web como ponto de entrada na tecnologia. Mas ao criar sites, descobri o crypto — um mundo com muito mais ineficiências e oportunidades infinitas para automação.',
   about_text_3: 'Mergulhei completamente: análise on-chain, bots de minting NFT, arbitragem CEX/DEX, pesquisa de vulnerabilidades. Isto rapidamente cresceu para o meu próprio negócio e trabalhos sérios para clientes.',
   about_text_4: 'Hoje combino o papel de desenvolvedor de software numa empresa de IT com a construção dos meus próprios sistemas de AI. A lógica é a mesma desde o início: encontrar onde o negócio perde tempo e dinheiro, e fazer a tecnologia entregar resultados.',
