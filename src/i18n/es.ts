@@ -44,7 +44,7 @@ export const es = {
   // Experience — AI Developer (newest)
   exp_ai_title: 'Desarrollador IA',
   exp_ai_company: 'Autónomo',
-  exp_ai_period: '2026 – Presente',
+  exp_ai_period: '2024 – Presente',
   exp_ai_location: 'Portugal',
   exp_ai_desc: 'Sistemas IA multi-agente, automatización de contenido y redes sociales, integración Claude/Gemini.',
   exp_ai_b1: 'Orquestación de 11 agentes IA para procesamiento de datos',
