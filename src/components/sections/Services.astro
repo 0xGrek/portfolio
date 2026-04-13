@@ -228,45 +228,6 @@ const servicesIT = [
       });
     }, { threshold: 0.06 });
     staggerGrids.forEach(function (el) { staggerIo.observe(el); });
-
-    /* Mobile tap-to-expand for card details */
-    var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-    if (isTouchDevice) {
-      document.querySelectorAll('#services .service-card').forEach(function (card) {
-        card.addEventListener('click', function () {
-          var details = card.querySelector('.card-details');
-          if (details) {
-            details.classList.toggle('expanded');
-          }
-        });
-      });
-    }
-
-    /* Desktop hover-with-delay for card details — prevents flicker when moving between cards */
-    if (!isTouchDevice) {
-      document.querySelectorAll('#services .service-card').forEach(function (card) {
-        var details = card.querySelector('.card-details');
-        if (!details) return;
-        var enterTimer = null;
-        var leaveTimer = null;
-
-        card.addEventListener('mouseenter', function () {
-          clearTimeout(leaveTimer);
-          leaveTimer = null;
-          enterTimer = setTimeout(function () {
-            details.classList.add('expanded');
-          }, 200);
-        });
-
-        card.addEventListener('mouseleave', function () {
-          clearTimeout(enterTimer);
-          enterTimer = null;
-          leaveTimer = setTimeout(function () {
-            details.classList.remove('expanded');
-          }, 350);
-        });
-      });
-    }
   })();
 </script>
 
