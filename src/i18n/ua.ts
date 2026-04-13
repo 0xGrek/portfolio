@@ -30,7 +30,7 @@ export const ua = {
   hero_cta_projects: 'Мої проєкти',
   hero_cta_contact: 'Написати мені',
   hero_available: 'Відкритий до пропозицій',
-  hero_location: '📍 Лісабон, Португалія — UTC+1 (WET)',
+  hero_location: '📍 Лісабон, Португалія — UTC+1',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Про мене',
