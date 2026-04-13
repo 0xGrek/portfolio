@@ -182,6 +182,10 @@ export const en = {
   proj_lucent_long:
     'Built a complete booking platform for a Dubai-based rental business. Features property listings with dynamic data from Supabase, integrated Hostaway booking system, currency toggle (AED/USD), and WhatsApp contact integration. Covers Downtown, Business Bay, Dubai Marina, and other premium areas.',
 
+  proj_private_title: '50+ Private Projects',
+  proj_private_desc:
+    'Custom software for clients under NDA — trading bots, analytics dashboards, automation systems, scrapers, and internal tools across crypto, real estate, and business sectors',
+
   proj_player_title: 'Football Player Profile',
   proj_player_desc: 'Digital recruitment card for young football players and scouts',
   proj_player_long:
