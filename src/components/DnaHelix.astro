@@ -369,25 +369,19 @@
   /* ════════════════════════════════════════════════
      MAIN LOOP
   ════════════════════════════════════════════════ */
-  var lastTime = 0;
+  var lastTime = 0;  /* Will be set on first frame */
   var noiseTime = 0;
-  var fpsSkipThreshold = 1000 / 25;  /* skip if dt > 40ms (< 25fps) */
 
   function loop(ts) {
-    var dt = ts - lastTime;
+    /* On very first frame lastTime=0 → dt will be huge; clamp to 16ms */
+    var dt = lastTime === 0 ? 16 : Math.min(ts - lastTime, 50);
     lastTime = ts;
-
-    if (dt > fpsSkipThreshold) {
-      requestAnimationFrame(loop);
-      return;
-    }
 
     /* RAF fallback — sync scroll position every frame (Lenis compat) */
     rafScrollCheck();
 
-    /* Auto-rotation + scroll-linked boost */
-    var scrollBoost = scrollExtra;
-    rotY += (ROT_Y_SPEED + scrollBoost * 0.02) * dt;
+    /* Auto-rotation — steady, no scroll boost to avoid jitter */
+    rotY += ROT_Y_SPEED * dt;
 
     /* Noise time for organic motion */
     noiseTime += NOISE_SPEED * dt;
@@ -403,8 +397,8 @@
   /* ─── Init ─── */
   resize();
   buildHelix();
+  updateScroll();  /* read initial scroll position */
 
-  lastTime = performance.now();
   requestAnimationFrame(loop);
 
   /* Fade in */
