@@ -128,10 +128,7 @@ export const skillCategories: SkillCategory[] = [
           'ethers.js',
           'ccxt (9 exchanges)',
           'Pyrogram & Telethon (400+ sessions)',
-          'Playwright',
-          'Puppeteer',
-          'ZennoPoster',
-          'BAS',
+          'Browser Automation (Playwright, Puppeteer, Zenno/BAS)',
         ],
       },
       {
