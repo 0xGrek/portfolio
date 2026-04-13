@@ -225,7 +225,7 @@ export const pt = {
 
   edu_pt_a2_title: 'Certificado de Língua Portuguesa — A2',
   edu_pt_a2_institution: 'IEFP / Escola de Língua Portuguesa',
-  edu_pt_a2_period: '2026',
+  edu_pt_a2_period: '2025',
   edu_pt_a2_location: 'Portugal',
   edu_pt_a2_desc: 'Certificado oficial de nível A2 em língua portuguesa. Demonstra capacidade de comunicação em situações quotidianas em Portugal.',
 
