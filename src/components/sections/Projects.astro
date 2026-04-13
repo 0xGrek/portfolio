@@ -181,43 +181,6 @@ const categoryColors: Record<string, string> = {
                 </div>
               )}
 
-              <!-- Screenshots — только если array непустой -->
-              {project.screenshots && project.screenshots.length > 0 && (
-                <div class="mb-5">
-                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
-                    Screenshots
-                  </p>
-                  <div class="flex gap-2 overflow-x-auto pb-1" style="-webkit-overflow-scrolling: touch;">
-                    {project.screenshots.map((src) => (
-                      <img
-                        src={src}
-                        alt={`${t(lang, project.titleKey as any)} screenshot`}
-                        loading="lazy"
-                        class="rounded-lg flex-shrink-0"
-                        style="height: 140px; width: auto; max-width: 220px; object-fit: cover; border: 1px solid var(--border);"
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <!-- Video — только если video field задан -->
-              {project.video && (
-                <div class="mb-5">
-                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
-                    Demo
-                  </p>
-                  <video
-                    src={project.video}
-                    controls
-                    playsinline
-                    muted
-                    class="rounded-lg w-full"
-                    style="max-height: 260px; border: 1px solid var(--border); background-color: var(--bg-secondary);"
-                  />
-                </div>
-              )}
-
               <!-- Links -->
               <div class="flex flex-wrap gap-2 mt-1">
                 {project.links.live && (
