@@ -217,11 +217,11 @@
     var scale = fov / (depth > 1 ? depth : 1);
 
     var cx = W * OFFSET_X;
-    var cy = H * OFFSET_Y;
+    /* cy intentionally 0: wy is already in viewport coords (page Y - scrollY) */
 
     return {
       x:      cx + rx * scale,
-      y:      cy + ry * scale,
+      y:      ry * scale,
       z:      rz2,               /* for depth sorting */
       scale:  scale,
       depth:  clamp((rz2 + fov) / (fov * 2), 0, 1),  /* 0=back 1=front */
