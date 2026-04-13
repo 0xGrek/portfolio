@@ -227,32 +227,6 @@ const canonicalUrl = Astro.url.href;
         }, { passive: true });
       }
 
-      /* ─── 6. Typewriter for hero name ─── */
-      (function () {
-        var nameEl = document.querySelector('.hero-typewriter');
-        if (!nameEl || prefersReducedMotion) return;
-        var fullText = nameEl.getAttribute('data-text') || nameEl.textContent;
-        nameEl.setAttribute('data-text', fullText);
-        nameEl.textContent = '';
-        nameEl.classList.add('typewriter-cursor');
-        var i = 0;
-        var speed = 55;
-        function type() {
-          if (i < fullText.length) {
-            nameEl.textContent += fullText.charAt(i);
-            i++;
-            setTimeout(type, speed + (Math.random() * 20));
-          } else {
-            /* Remove cursor after done */
-            setTimeout(function () {
-              nameEl.classList.remove('typewriter-cursor');
-            }, 1800);
-          }
-        }
-        /* Start after hero fade-in */
-        setTimeout(type, 400);
-      })();
-
       /* ─── 7. Service cards border glow on hover ─── */
       document.querySelectorAll('.service-card').forEach(function (card) {
         card.addEventListener('mouseenter', function () {
