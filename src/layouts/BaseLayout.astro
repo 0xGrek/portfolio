@@ -60,7 +60,7 @@ const canonicalUrl = Astro.url.href;
     <ParticlesBackground />
 
     <Header lang={lang} />
-    <main>
+    <main style="position: relative; z-index: 1;">
       <slot />
     </main>
     <Footer lang={lang} />
