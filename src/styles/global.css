@@ -626,7 +626,7 @@ body::after {
     rgba(0, 0, 0, 0.03) 2px,
     rgba(0, 0, 0, 0.03) 4px
   );
-  opacity: 0.4;
+  opacity: 0.15;
 }
 
 /* ─── RGB Shift on headings (hover only) ─────────────────── */
