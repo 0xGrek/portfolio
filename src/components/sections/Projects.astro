@@ -565,7 +565,7 @@ const categoryIcons: Record<string, string> = {
       // Determine collapse label from the current page language
       var htmlLang = document.documentElement.lang || '';
       var collapseLabel =
-        htmlLang === 'uk' ? 'Згорнути' :
+        (htmlLang === 'ua' || htmlLang === 'uk') ? 'Згорнути' :
         htmlLang === 'pt' ? 'Recolher' :
         htmlLang === 'es' ? 'Colapsar' : 'Collapse';
 
