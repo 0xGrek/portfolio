@@ -34,8 +34,8 @@ export const en = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
-  about_text_1: "My approach to development is based on investigative logic: I find inefficiencies in business processes and eliminate them with code. Today I combine work at an IT company with building my own multi-agent AI systems.",
-  about_text_2: "I dove in completely: on-chain analytics, NFT minting bots, CEX/DEX arbitrage, vulnerability research. This quickly grew into something bigger — I started taking orders from friends and colleagues in the industry.",
+  about_text_1: "My approach is engineering optimization: I find bottlenecks in business logic and eliminate them with code. Today I focus on building autonomous AI agents that replace routine work with intelligent algorithms.",
+  about_text_2: "My path into technology started with analytics in extreme conditions. Experience working with critical incidents and large volumes of unstructured data built analytical resilience: the ability to make precise decisions under high uncertainty and time pressure.",
   about_text_3: '',
   about_text_4: "",
   about_stats_tools: '100+ Tools',
