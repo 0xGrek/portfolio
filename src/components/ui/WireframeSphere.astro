@@ -27,25 +27,28 @@
 
   // ─── config ─────────────────────────────────────────────────────────────────
   var isMobile = window.innerWidth < 768;
-  var NUM_POINTS = isMobile ? 120 : 200;
-  var CONNECT_THRESH = 0.62;   // unit-sphere distance to draw an edge
-  var MAX_EDGES = 700;         // cap for performance
-  var RADIUS = isMobile ? 100 : 170; // canvas px radius — slightly larger for full-page feel
-  var SIZE = RADIUS * 2 + 40;        // canvas logical size
+  var NUM_POINTS = isMobile ? 150 : 280;
+  var CONNECT_THRESH = 0.58;   // unit-sphere distance to draw an edge
+  var MAX_EDGES = 1200;        // cap for performance
+  var VW = window.innerWidth;
+  var VH = window.innerHeight;
+  var RADIUS = Math.round(Math.min(VW, VH) * (isMobile ? 0.30 : 0.38)); // ~38% of viewport
+  var SIZE_W = VW;
+  var SIZE_H = VH;
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
 
-  var FOV = SIZE * 1.4;
+  var FOV = Math.min(SIZE_W, SIZE_H) * 1.4;
   var VIEW_DIST = 2.8;
 
   // ─── resize canvas ──────────────────────────────────────────────────────────
-  canvas.width = SIZE * DPR;
-  canvas.height = SIZE * DPR;
-  canvas.style.width = SIZE + 'px';
-  canvas.style.height = SIZE + 'px';
+  canvas.width = SIZE_W * DPR;
+  canvas.height = SIZE_H * DPR;
+  canvas.style.width = SIZE_W + 'px';
+  canvas.style.height = SIZE_H + 'px';
   ctx.scale(DPR, DPR);
 
-  container.style.width = SIZE + 'px';
-  container.style.height = SIZE + 'px';
+  container.style.width = SIZE_W + 'px';
+  container.style.height = SIZE_H + 'px';
 
   // ─── fibonacci sphere ────────────────────────────────────────────────────────
   function fibSphere(n) {
