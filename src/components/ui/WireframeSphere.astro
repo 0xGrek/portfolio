@@ -124,10 +124,10 @@
     if (dt > 50) dt = 16; // skip large frames (tab was hidden)
     lastTime = timestamp;
 
-    var cx = SIZE / 2;
-    var cy = SIZE / 2;
+    var cx = SIZE_W / 2;
+    var cy = SIZE_H / 2;
 
-    ctx.clearRect(0, 0, SIZE, SIZE);
+    ctx.clearRect(0, 0, SIZE_W, SIZE_H);
 
     if (!reducedMotion) {
       angleY += 0.003 * (dt / 16);
