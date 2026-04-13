@@ -143,9 +143,9 @@ export const es = {
   exp_ai_dev_b1: 'Orquestación de 11 agentes IA para procesamiento de datos',
   exp_ai_dev_b2: 'Automatización de contenido y análisis de redes sociales',
   exp_ai_dev_b3: 'Integración Claude, Gemini, servidores MCP',
-  exp_police_b1: 'Policía de Patrulla (2019) → Investigación Criminal (2020) → Unidad Especial (2021)',
-  exp_police_b2: '',
-  exp_police_b3: '',
+  exp_police_b1: 'Análisis de conjuntos de datos complejos y detección de patrones ocultos',
+  exp_police_b2: 'Construcción de arquitecturas de conexiones lógicas para resolver casos no estándar',
+  exp_police_b3: 'Aplicación de técnicas OSINT para recopilación y estructuración de información',
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Proyectos',
