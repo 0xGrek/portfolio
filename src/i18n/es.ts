@@ -31,7 +31,7 @@ export const es = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mí',
   about_text_1: "Mi enfoque es la optimización de ingeniería: encuentro cuellos de botella en la lógica de negocio y los elimino con código. Hoy me enfoco en construir agentes IA autónomos que reemplazan el trabajo rutinario con algoritmos inteligentes.",
-  about_text_2: 'Mi camino en tecnología comenzó con análisis en condiciones extremas. La experiencia trabajando con incidentes críticos y grandes volúmenes de datos no estructurados desarrolló resiliencia analítica: la capacidad de tomar decisiones precisas bajo alta incertidumbre y presión de tiempo.',
+  about_text_2: 'Mi experiencia se forjó en entornos de incidentes críticos y en el trabajo con grandes volúmenes de datos no estructurados. Esto desarrolló resiliencia analítica: la capacidad de tomar decisiones precisas bajo alta incertidumbre y presión de tiempo.',
   about_text_3: '',
   about_text_4: '',
   about_stats_tools: '100+ Herramientas',
