@@ -377,6 +377,34 @@ const categoryColors: Record<string, string> = {
     transform: translateY(-1px);
   }
 
+  /*
+   * ── Expand panel — CSS grid-template-rows approach ──────────
+   * grid: 0fr → 1fr даёт плавное раскрытие без "прыжка"
+   * который возникает при max-height: 0 → большое число
+   */
+  .project-expand {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .project-expand .expand-inner {
+    overflow: hidden;
+  }
+  .project-card.expanded .project-expand {
+    grid-template-rows: 1fr;
+  }
+
+  /*
+   * Compact footer (metric + first 3 tags) скрывается при expand
+   * чтобы не дублировать данные которые уже видны в панели
+   */
+  .card-compact-footer {
+    transition: opacity 0.2s ease;
+  }
+  .project-card.expanded .card-compact-footer {
+    display: none;
+  }
+
   /* Screenshots scroll on mobile */
   @media (max-width: 640px) {
     .project-expand video {
