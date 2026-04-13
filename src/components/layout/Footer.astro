@@ -49,8 +49,8 @@ const socials = [
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.name}
-            class={`social-hover social-hover--${social.name.toLowerCase().replace(/[^a-z]/g, '')}`}
-            style="color: var(--text-secondary);"
+            class={`magnetic social-hover social-hover--${social.name.toLowerCase().replace(/[^a-z]/g, '')}`}
+            style="color: var(--text-secondary); display: inline-flex;"
           >
             <Fragment set:html={social.icon} />
           </a>
