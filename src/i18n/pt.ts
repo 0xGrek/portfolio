@@ -31,7 +31,7 @@ export const pt = {
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
   about_text_1: "A minha abordagem é a otimização de engenharia: encontro pontos de estrangulamento na lógica de negócio e elimino-os com código. Hoje foco-me na construção de agentes AI autónomos que substituem o trabalho de rotina por algoritmos inteligentes.",
-  about_text_2: 'O meu percurso na tecnologia começou com análise em condições extremas. A experiência a trabalhar com incidentes críticos e grandes volumes de dados não estruturados desenvolveu resiliência analítica: a capacidade de tomar decisões precisas sob alta incerteza e pressão de tempo.',
+  about_text_2: 'A minha experiência foi forjada em ambientes de incidentes críticos e no trabalho com grandes volumes de dados não estruturados. Isto desenvolveu resiliência analítica: a capacidade de tomar decisões precisas sob alta incerteza e pressão de tempo.',
   about_text_3: '',
   about_text_4: '',
   about_stats_tools: '100+ Ferramentas',
