@@ -41,13 +41,13 @@ const stats = [
       </div>
 
       <!-- Right: Stats grid -->
-      <div class="grid grid-cols-2 gap-4 stagger-children justify-items-center mx-auto w-full max-w-md lg:max-w-none">
+      <div class="grid grid-cols-2 gap-4 stagger-children justify-items-center mx-auto w-full max-w-md lg:max-w-none" style="grid-auto-rows: 1fr;">
         {stats.map((stat, i) => (
           <div
-            class="stat-card p-5 sm:p-6 rounded-xl text-center card-hover glass-card w-full"
-            style={`border: 1px solid var(--card-border);`}
+            class="stat-card p-4 sm:p-5 rounded-xl text-center card-hover glass-card w-full flex items-center justify-center overflow-hidden"
+            style={`border: 1px solid var(--card-border); min-height: 90px;`}
           >
-            <div class="stat-value text-base sm:text-lg md:text-xl font-bold leading-tight" style="color: var(--accent);">
+            <div class="stat-value text-sm sm:text-base md:text-lg font-bold leading-snug break-words hyphens-auto w-full" style="color: var(--accent); word-break: break-word; overflow-wrap: break-word;">
               {t(lang, stat.value as any)}
             </div>
           </div>
