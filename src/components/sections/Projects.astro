@@ -330,9 +330,8 @@ const categoryIcons: Record<string, string> = {
   }
 
   /* Chevron rotation when expanded */
-  .project-card.expanded .expand-chevron {
-    transform: rotate(180deg);
-  }
+  .project-arrow { transition: transform 0.3s ease; }
+  .project-card.expanded .project-arrow { transform: rotate(180deg); }
 
   /* Hide view-details hint when expanded */
   .project-card.expanded .expand-hint {
