@@ -300,6 +300,7 @@ export const pt = {
   services_legal_desc: 'Bot de triagem com IA, modelos de documentos automáticos e seguimento de prazos para escritórios.',
   services_legal_examples: 'Por exemplo:|Bot de IA: "Descreva a sua situação" → qualificação → marcação com advogado — sem recepcionista|IA gera modelos de documentos: contratos, reclamações, procurações|Seguimento de prazos com lembretes de datas judiciais — nada se perde|Novas consultas classificadas automaticamente e encaminhadas ao especialista certo',
 
+  services_hotels_example: 'Construído: LucentStays — alugueres de luxo em Dubai',
   services_hotels_title: 'Hotéis e Airbnb',
   services_hotels_desc: 'Concierge de IA multilingue, monitorização de avaliações e notificações automáticas ao pessoal.',
   services_hotels_examples: 'Por exemplo:|Concierge de IA responde a hóspedes em vários idiomas 24/7 — sem recepção às 3 da manhã|Monitorização de avaliações em todas as plataformas com alerta imediato para negativas|Notificação automática à limpeza no checkout — zero chamadas de coordenação|Bot de upsell sugere late checkout ou upgrade de quarto no momento certo',
