@@ -104,11 +104,11 @@ export const ua = {
   exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
-  exp_police_title: 'Investigation & Data Analysis Specialist',
-  exp_police_company: 'Національна поліція України | Україна',
+  exp_police_title: 'Спеціаліст із розслідувань та аналізу даних',
+  exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: 'Фокус на аналізі неструктурованих даних та паттернів. Досвід, що розвинув аналітичні навички та вміння знаходити рішення в нестандартних ситуаціях.',
+  exp_police_desc: 'Робота з неструктурованими даними та виявлення прихованих патернів. Розвинув аналітичне мислення та вміння знаходити вихід у критичних ситуаціях.',
   exp_police_highlights: 'Investigation & Data Analysis Specialist (2019–2022)',
 
   // Experience — Founder/Specialist (legacy, kept for compat)
