@@ -102,13 +102,27 @@ const showLessText = t(lang, 'services_show_less' as any);
                     </>
                   )}
                   {service.example && (
-                    <div
-                      class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium mt-1"
-                      style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
-                    >
-                      <span>✓</span>
-                      {t(lang, `services_${service.id}_example` as any)}
-                    </div>
+                    (service as any).exampleUrl ? (
+                      <a
+                        href={(service as any).exampleUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="example-badge inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium mt-1"
+                        style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); text-decoration: none;"
+                      >
+                        <span>✓</span>
+                        {t(lang, `services_${service.id}_example` as any)}
+                        <span class="example-badge-arrow" aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      <div
+                        class="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full font-medium mt-1"
+                        style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
+                      >
+                        <span>✓</span>
+                        {t(lang, `services_${service.id}_example` as any)}
+                      </div>
+                    )
                   )}
                 </div>
               </div>
