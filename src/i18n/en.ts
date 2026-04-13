@@ -248,12 +248,17 @@ export const en = {
   edu_econ_location: 'Dnipro, Ukraine',
   edu_econ_desc: 'Specialization: Economic Security and Data Analysis.',
 
-  edu_swat_title: 'Police SWAT Training Certificate',
-  edu_swat_school: 'Ministry of Interior of Ukraine',
-  edu_swat_period: '2021',
-  edu_swat_location: 'Kyiv, Ukraine',
-  edu_swat_desc: 'Specialized tactical training program. Tactical training programme supported by the US Embassy in Ukraine.',
-  edu_swat_note: 'Tactical training programme supported by the US Embassy in Ukraine',
+  edu_lyceum_title: 'Military Lyceum',
+  edu_lyceum_school: 'Kryvyi Rih Lyceum with Enhanced Military & Physical Training',
+  edu_lyceum_period: '2015 – 2017',
+  edu_lyceum_location: 'Kryvyi Rih, Ukraine',
+  edu_lyceum_desc: '',
+
+  edu_cert_title: 'Tactical Training Certificate',
+  edu_cert_school: 'Ministry of Interior of Ukraine',
+  edu_cert_period: '2021',
+  edu_cert_location: 'Kyiv, Ukraine',
+  edu_cert_desc: 'Programme supported by the US Embassy in Ukraine.',
 
   edu_pt_a2_title: 'Portuguese Language Certificate — A2',
   edu_pt_a2_institution: 'IEFP / Portuguese Language School',
