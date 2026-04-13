@@ -1,8 +1,7 @@
 export const pt = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Serhii Ivanenko — Analista On-Chain & Desenvolvedor de Automação',
-  meta_description:
-    '0xGrek — Programador Web3 e especialista em investigação blockchain. 101 ferramentas, 115K linhas de código, experiência em 10+ redes. Background em análise de dados. Lisboa.',
+  meta_title: 'Serhii Ivanenko | Especialista em Automação AI e Web3',
+  meta_description: 'Especialista em automação de IA e segurança Web3. Projeta agentes autónomos, arquitetura de sistemas e análise on-chain. Soluções de otimização de negócios.',
   meta_keywords:
     'conformidade cripto Lisboa, forense blockchain Portugal, AML cripto Europa, engenheiro automação Web3, analista on-chain',
 
