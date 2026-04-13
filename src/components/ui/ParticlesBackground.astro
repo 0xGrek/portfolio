@@ -4,12 +4,31 @@
 // Reacts to lang via data-lang on <html>
 ---
 
+<!-- Mesh gradient layer — animated radial blobs, behind particles -->
+<div id="mesh-gradient" class="fixed inset-0 pointer-events-none" style="z-index: -1;" aria-hidden="true"></div>
+
 <canvas
   id="particle-canvas"
   class="fixed inset-0 pointer-events-none"
   style="z-index: 0; opacity: 0; transition: opacity 1.2s ease;"
   aria-hidden="true"
 ></canvas>
+
+<style>
+  #mesh-gradient {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(var(--accent-rgb), 0.07), transparent),
+      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(var(--accent-rgb), 0.05), transparent),
+      radial-gradient(ellipse 50% 60% at 50% 80%, rgba(var(--accent-rgb), 0.04), transparent);
+    animation: meshShift 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes meshShift {
+    0%   { opacity: 0.6; filter: hue-rotate(0deg); }
+    50%  { opacity: 1;   filter: hue-rotate(15deg); }
+    100% { opacity: 0.6; filter: hue-rotate(-15deg); }
+  }
+</style>
 
 <script is:inline>
 (function () {
