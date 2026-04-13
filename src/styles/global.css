@@ -426,12 +426,14 @@ html.lenis body {
   transition: transform 0.15s ease, box-shadow 0.25s ease !important;
 }
 
-/* Scroll-reveal via Intersection Observer */
+/* ─── Premium Scroll-reveal — easeOutExpo (0.16, 1, 0.3, 1) ─── */
+
+/* Base up-fade */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 .reveal.visible,
@@ -439,6 +441,7 @@ html.lenis body {
   opacity: 1;
   transform: translateY(0);
 }
+/* Sibling stagger for consecutive .reveal elements */
 .reveal:nth-child(2) { transition-delay: 0.1s; }
 .reveal:nth-child(3) { transition-delay: 0.2s; }
 .reveal:nth-child(4) { transition-delay: 0.3s; }
@@ -448,39 +451,39 @@ html.lenis body {
 /* Stagger children — grid контейнеры */
 .stagger-children > * {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
-.stagger-children.visible > *:nth-child(1)  { transition-delay: 0.05s; }
-.stagger-children.visible > *:nth-child(2)  { transition-delay: 0.12s; }
-.stagger-children.visible > *:nth-child(3)  { transition-delay: 0.19s; }
-.stagger-children.visible > *:nth-child(4)  { transition-delay: 0.26s; }
-.stagger-children.visible > *:nth-child(5)  { transition-delay: 0.33s; }
-.stagger-children.visible > *:nth-child(6)  { transition-delay: 0.40s; }
-.stagger-children.visible > *:nth-child(7)  { transition-delay: 0.47s; }
-.stagger-children.visible > *:nth-child(8)  { transition-delay: 0.54s; }
-.stagger-children.visible > *:nth-child(9)  { transition-delay: 0.61s; }
-.stagger-children.visible > *:nth-child(10) { transition-delay: 0.68s; }
 .stagger-children.visible > * {
   opacity: 1;
   transform: translateY(0);
 }
+.stagger-children.visible > *:nth-child(1)  { transition-delay: 0ms; }
+.stagger-children.visible > *:nth-child(2)  { transition-delay: 100ms; }
+.stagger-children.visible > *:nth-child(3)  { transition-delay: 200ms; }
+.stagger-children.visible > *:nth-child(4)  { transition-delay: 300ms; }
+.stagger-children.visible > *:nth-child(5)  { transition-delay: 400ms; }
+.stagger-children.visible > *:nth-child(6)  { transition-delay: 500ms; }
+.stagger-children.visible > *:nth-child(7)  { transition-delay: 600ms; }
+.stagger-children.visible > *:nth-child(8)  { transition-delay: 700ms; }
+.stagger-children.visible > *:nth-child(9)  { transition-delay: 800ms; }
+.stagger-children.visible > *:nth-child(10) { transition-delay: 900ms; }
 
-/* Reveal from left / right — timeline alternating */
+/* Reveal from left / right — directional slides */
 .reveal-left {
   opacity: 0;
-  transform: translateX(-36px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 .reveal-right {
   opacity: 0;
-  transform: translateX(36px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 .reveal-left.visible,
@@ -489,12 +492,12 @@ html.lenis body {
   transform: translateX(0);
 }
 
-/* Scale-in для маленьких элементов */
+/* Scale reveal — cards, badges */
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.88);
-  transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-              transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.95);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 .reveal-scale.visible {
