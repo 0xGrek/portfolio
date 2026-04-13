@@ -78,10 +78,8 @@ const categoryIcons: Record<string, string> = {
                 </span>
               )}
 
-              <!-- Project monogram -->
-              <span class="text-5xl font-bold font-mono select-none" style="color: var(--text); opacity: 0.12;">
-                {project.id.slice(0, 2).toUpperCase()}
-              </span>
+              <!-- Project category icon -->
+              <span class="select-none" style="color: var(--text); opacity: 0.12;" set:html={categoryIcons[project.category] || categoryIcons.web} />
 
               <!-- "View Details" hover overlay -->
               <div
