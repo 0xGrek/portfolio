@@ -732,6 +732,9 @@ body::after {
   .typewriter-cursor::after {
     display: none !important;
   }
+  #mesh-gradient {
+    animation: none !important;
+  }
 }
 
 /* ─── Print styles ─────────────────────────────────────────────── */
