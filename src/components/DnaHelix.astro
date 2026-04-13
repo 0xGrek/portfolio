@@ -201,6 +201,10 @@
   function draw(noiseTime) {
     ctx.clearRect(0, 0, W, H);
 
+    /* Light/dark mode opacity multiplier */
+    var isDark = document.documentElement.classList.contains('dark');
+    var opacityMult = isDark ? 1.0 : 0.3;
+
     /* Project all particles */
     var proj1 = [], proj2 = [];
     for (var i = 0; i < STRAND_COUNT; i++) {
