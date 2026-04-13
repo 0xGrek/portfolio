@@ -138,27 +138,16 @@ const servicesIT = [
                     {t(lang, `services_${service.id}_desc` as any)}
                   </p>
                   {examplesBullets.length > 0 && (
-                    <>
-                      <button
-                        class="show-more-btn text-xs font-medium mb-2"
-                        data-target={`details-${service.id}-${index + 100}`}
-                        data-show-more={showMoreText}
-                        data-show-less={showLessText}
-                        style="color: var(--accent); background: none; border: none; cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.25rem;"
-                      >
-                        {showMoreText}
-                      </button>
-                      <div class="card-details" id={`details-${service.id}-${index + 100}`}>
-                        {examplesHeader && (
-                          <p class="text-xs font-semibold mb-1" style="color: var(--text-secondary); opacity: 0.7;">{examplesHeader}</p>
-                        )}
-                        <ul>
-                          {examplesBullets.map((bullet) => (
-                            <li>{bullet}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </>
+                    <div class="card-details">
+                      {examplesHeader && (
+                        <p class="text-xs font-semibold mb-1" style="color: var(--text-secondary); opacity: 0.7;">{examplesHeader}</p>
+                      )}
+                      <ul>
+                        {examplesBullets.map((bullet) => (
+                          <li>{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                   {service.example && (
                     (service as any).exampleUrl ? (
