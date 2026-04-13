@@ -224,10 +224,7 @@
   /* ── Fixed full-page positioning — same layer as particles ── */
   #wireframe-container {
     position: fixed;
-    /* 70% from left, 50% from top — right side, vertically centered */
-    left: 70%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
     z-index: 0;
     pointer-events: none;
     /* Atmospheric opacity — subtle so it doesn't distract from content */
@@ -236,7 +233,7 @@
   }
 
   @keyframes sphereFadeIn {
-    to { opacity: 0.45; }
+    to { opacity: 0.35; }
   }
 
   /* Hide on small mobile screens */
