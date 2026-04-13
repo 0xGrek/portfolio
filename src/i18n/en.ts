@@ -89,7 +89,7 @@ export const en = {
   exp_police_company: 'National Police of Ukraine | Ukraine',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Ukraine',
-  exp_police_desc: 'Worked within specialized analytical groups on critical incident resolution. Specialized in rapid deployment of data collection tools in field conditions and real-time risk management.',
+  exp_police_desc: 'Development of methodologies for structuring unorganized data for strategic decision-making. Designing real-time risk monitoring and assessment systems.',
   exp_police_highlights: '',
 
   // ── Projects ──────────────────────────────────────────
