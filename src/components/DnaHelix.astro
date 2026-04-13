@@ -256,29 +256,38 @@
       proj2.push(project(s2.ux, s2.uz, s2.y, noiseTime, i + STRAND_COUNT));
     }
 
+    /* ─── Collect visible particles (Y within extended viewport bounds) ─── */
+    /* Only draw particles that project onto or near the canvas — skip distant ones */
+    var margin = H * 0.6;  /* generous margin so helix doesn't pop in/out abruptly */
+
     /* ─── Draw lines along strand 1 ─── */
     for (var i = 0; i < proj1.length - 1; i++) {
       var a = proj1[i], b = proj1[i + 1];
+      /* Skip segment if both endpoints are off-screen */
+      if (a.y < -margin && b.y < -margin) continue;
+      if (a.y > H + margin && b.y > H + margin) continue;
       var depthAvg = (a.depth + b.depth) * 0.5;
-      var alpha = clamp(depthAvg * 0.25 + 0.03, 0.02, 0.22);
+      var alpha = clamp(depthAvg * 0.45 + 0.05, 0.04, 0.38);
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
       ctx.strokeStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
-      ctx.lineWidth = 0.6;
+      ctx.lineWidth = 0.8;
       ctx.stroke();
     }
 
     /* ─── Draw lines along strand 2 ─── */
     for (var i = 0; i < proj2.length - 1; i++) {
       var a = proj2[i], b = proj2[i + 1];
+      if (a.y < -margin && b.y < -margin) continue;
+      if (a.y > H + margin && b.y > H + margin) continue;
       var depthAvg = (a.depth + b.depth) * 0.5;
-      var alpha = clamp(depthAvg * 0.25 + 0.03, 0.02, 0.22);
+      var alpha = clamp(depthAvg * 0.45 + 0.05, 0.04, 0.38);
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
       ctx.lineTo(b.x, b.y);
       ctx.strokeStyle = 'rgba(' + purpleRgb + ', ' + alpha + ')';
-      ctx.lineWidth = 0.6;
+      ctx.lineWidth = 0.8;
       ctx.stroke();
     }
 
@@ -287,8 +296,10 @@
       var i = bridges[bi];
       if (i >= proj1.length) continue;
       var a = proj1[i], b = proj2[i];
+      if (a.y < -margin && b.y < -margin) continue;
+      if (a.y > H + margin && b.y > H + margin) continue;
       var depthAvg = (a.depth + b.depth) * 0.5;
-      var alpha = clamp(depthAvg * 0.18 + 0.04, 0.03, 0.2);
+      var alpha = clamp(depthAvg * 0.35 + 0.06, 0.05, 0.32);
 
       ctx.beginPath();
       ctx.moveTo(a.x, a.y);
@@ -299,41 +310,42 @@
 
       /* Bridge endpoint dots */
       ctx.beginPath();
-      ctx.arc(a.x, a.y, 1.0, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 1.8, 0, 0.3) + ')';
+      ctx.arc(a.x, a.y, 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 2.0, 0, 0.45) + ')';
       ctx.fill();
 
       ctx.beginPath();
-      ctx.arc(b.x, b.y, 1.0, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 1.8, 0, 0.3) + ')';
+      ctx.arc(b.x, b.y, 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 2.0, 0, 0.45) + ')';
       ctx.fill();
     }
 
     /* ─── Draw strand 1 particles ─── */
     for (var i = 0; i < proj1.length; i++) {
       var pt = proj1[i];
+      if (pt.y < -margin || pt.y > H + margin) continue;
       var mf = applyMouseForce(0, 0, pt.x, pt.y);
       var px = pt.x + mf.dx;
       var py = pt.y + mf.dy;
 
       /* Bokeh: size and opacity fall off with depth */
-      var depthFade = 0.2 + pt.depth * 0.8;
-      var alpha = clamp(depthFade * 0.5, 0.04, 0.7);
-      var radius = clamp(pt.scale * HELIX_RADIUS * 0.025, 0.5, 3.5) * depthFade;
+      var depthFade = 0.3 + pt.depth * 0.7;
+      var alpha = clamp(depthFade * 0.7, 0.07, 0.85);
+      var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.6, 4.0) * depthFade;
 
       /* Glow */
-      if (pt.depth > 0.55 && !isMobile) {
-        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3);
-        grd.addColorStop(0, 'rgba(' + accentRgb + ', ' + clamp(alpha * 0.4, 0, 0.35) + ')');
+      if (pt.depth > 0.5 && !isMobile) {
+        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3.5);
+        grd.addColorStop(0, 'rgba(' + accentRgb + ', ' + clamp(alpha * 0.5, 0, 0.45) + ')');
         grd.addColorStop(1, 'rgba(' + accentRgb + ', 0)');
         ctx.beginPath();
-        ctx.arc(px, py, radius * 3, 0, Math.PI * 2);
+        ctx.arc(px, py, radius * 3.5, 0, Math.PI * 2);
         ctx.fillStyle = grd;
         ctx.fill();
       }
 
       ctx.beginPath();
-      ctx.arc(px, py, Math.max(0.4, radius), 0, Math.PI * 2);
+      ctx.arc(px, py, Math.max(0.5, radius), 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
       ctx.fill();
     }
@@ -341,26 +353,27 @@
     /* ─── Draw strand 2 particles ─── */
     for (var i = 0; i < proj2.length; i++) {
       var pt = proj2[i];
+      if (pt.y < -margin || pt.y > H + margin) continue;
       var mf = applyMouseForce(0, 0, pt.x, pt.y);
       var px = pt.x + mf.dx;
       var py = pt.y + mf.dy;
 
-      var depthFade = 0.2 + pt.depth * 0.8;
-      var alpha = clamp(depthFade * 0.5, 0.04, 0.7);
-      var radius = clamp(pt.scale * HELIX_RADIUS * 0.025, 0.5, 3.5) * depthFade;
+      var depthFade = 0.3 + pt.depth * 0.7;
+      var alpha = clamp(depthFade * 0.7, 0.07, 0.85);
+      var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.6, 4.0) * depthFade;
 
-      if (pt.depth > 0.55 && !isMobile) {
-        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3);
-        grd.addColorStop(0, 'rgba(' + purpleRgb + ', ' + clamp(alpha * 0.4, 0, 0.35) + ')');
+      if (pt.depth > 0.5 && !isMobile) {
+        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3.5);
+        grd.addColorStop(0, 'rgba(' + purpleRgb + ', ' + clamp(alpha * 0.5, 0, 0.45) + ')');
         grd.addColorStop(1, 'rgba(' + purpleRgb + ', 0)');
         ctx.beginPath();
-        ctx.arc(px, py, radius * 3, 0, Math.PI * 2);
+        ctx.arc(px, py, radius * 3.5, 0, Math.PI * 2);
         ctx.fillStyle = grd;
         ctx.fill();
       }
 
       ctx.beginPath();
-      ctx.arc(px, py, Math.max(0.4, radius), 0, Math.PI * 2);
+      ctx.arc(px, py, Math.max(0.5, radius), 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(' + purpleRgb + ', ' + alpha + ')';
       ctx.fill();
     }
