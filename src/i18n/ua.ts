@@ -162,12 +162,21 @@ export const ua = {
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Навички',
-  skills_forensics: 'Ончейн-форензика',
-  skills_blockchain: 'Блокчейн та DeFi',
-  skills_automation: 'Крипто-автоматизація',
-  skills_agents: 'AI та агентні системи',
-  skills_dev: 'Розробка',
-  skills_security: 'Безпека та комплаєнс',
+  skills_tech_core: 'Ключові технічні компетенції',
+  skills_tech_core_langs: 'Мови програмування',
+  skills_tech_core_dev: 'Розробка та DevOps',
+  skills_tech_core_ai: 'AI та агентні системи',
+  skills_blockchain: 'Експертиза в блокчейні та DeFi',
+  skills_blockchain_platforms: 'Платформи та екосистеми',
+  skills_blockchain_defi: 'DeFi та протоколи',
+  skills_blockchain_analysis: 'Аналіз блокчейну',
+  skills_security: 'Безпека, комплаєнс та ончейн-аналіз',
+  skills_security_core: 'Ключові навички',
+  skills_security_tools: 'Інструменти аналізу',
+  skills_security_compliance: 'Комплаєнс',
+  skills_automation: 'Автоматизація та інфраструктура',
+  skills_automation_tools: 'Інструменти та бібліотеки',
+  skills_automation_infra: 'Інфраструктура',
   skills_languages: 'Мови',
 
   // ── Education ─────────────────────────────────────────
