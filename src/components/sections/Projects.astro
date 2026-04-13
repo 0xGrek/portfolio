@@ -517,13 +517,8 @@ const categoryIcons: Record<string, string> = {
     if (toggleBtn && projectsGrid) {
       var labelEl = toggleBtn.querySelector('.btn-label');
       var showMoreLabel = labelEl ? labelEl.textContent.trim() : 'Show more';
-
-      // Determine collapse label from the current page language
-      var htmlLang = document.documentElement.lang || '';
-      var collapseLabel =
-        (htmlLang === 'ua' || htmlLang === 'uk') ? 'Згорнути' :
-        htmlLang === 'pt' ? 'Recolher' :
-        htmlLang === 'es' ? 'Colapsar' : 'Collapse';
+      // Collapse label read from data-attribute (set by SSR i18n)
+      var collapseLabel = toggleBtn.getAttribute('data-collapse-label') || 'Collapse';
 
       // Grab extra cards and hide them initially
       var extraCards = projectsGrid.querySelectorAll('.project-extra');
