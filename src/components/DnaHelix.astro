@@ -90,13 +90,13 @@
   var BRIDGE_EVERY  = isMobile ? 5  : 4;     /* bridge every N particles */
 
   /* Geometry */
-  var HELIX_RADIUS  = isMobile ? 55 : 80;    /* radius of each strand from axis */
+  var HELIX_RADIUS  = isMobile ? 80 : 120;   /* radius of each strand from axis */
   var HELIX_HEIGHT  = 0;                     /* set in buildHelix after resize */
   var TWIST_TURNS   = 10;                    /* full rotations */
   var TWIST_RATE    = 0;                     /* set in buildHelix */
 
   /* Positioning — off-center for depth */
-  var OFFSET_X = isMobile ? 0.5 : 0.65;     /* 0.5 = center, 0.65 = right side */
+  var OFFSET_X = isMobile ? 0.5 : 0.55;     /* 0.5 = center, 0.55 = slightly right */
 
   /* Animation */
   var ROT_Y_SPEED  = 0.00018;               /* auto-rotation radians/ms */
