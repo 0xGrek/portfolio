@@ -58,7 +58,7 @@ export const projects: Project[] = [
     ],
     video: '/media/projects/mafia-game/demo.mp4',
     featured: true,
-    links: {},
+    links: { live: 'https://app-gold-seven-83.vercel.app/' },
     metrics: [
       { key: 'roles', value: '17 roles' },
       { key: 'artifacts', value: '16 artifact cards' },
