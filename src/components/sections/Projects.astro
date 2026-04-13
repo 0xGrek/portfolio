@@ -32,55 +32,72 @@ const categoryColors: Record<string, string> = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project, index) => (
         <article
-          class={`project-card relative flex flex-col rounded-xl overflow-hidden group card-hover reveal${project.featured ? ' project-featured' : ''}`}
-          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s; cursor: pointer;`}
-          data-modal-open={`modal-${project.id}`}
-          role="button"
-          tabindex="0"
-          aria-label={`View details for ${t(lang, project.titleKey as any)}`}
+          class={`project-card relative flex flex-col rounded-xl overflow-hidden reveal${project.featured ? ' project-featured' : ''}`}
+          style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s;`}
+          id={`card-${project.id}`}
         >
-          <!-- Header area -->
-          <div
-            class="relative h-40 flex items-center justify-center overflow-hidden"
-            style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg)); border-bottom: 1px solid var(--border);"
+          <!-- Header area — clickable to toggle expand -->
+          <button
+            class="project-toggle w-full text-left"
+            data-project-id={project.id}
+            aria-expanded="false"
+            aria-controls={`expand-${project.id}`}
+            style="background: none; border: none; padding: 0; cursor: pointer; display: block; width: 100%;"
           >
-            <!-- Category dot -->
             <div
-              class="absolute top-3 left-3 w-2.5 h-2.5 rounded-full"
-              style={`background-color: ${categoryColors[project.category] || 'var(--accent)'};`}
-            ></div>
-
-            <!-- Featured badge — top-right -->
-            {project.featured && (
-              <span
-                class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-xs font-bold tracking-wide"
-                style="background-color: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.4);"
-              >
-                ★ Featured
-              </span>
-            )}
-
-            <!-- Project monogram -->
-            <span class="text-5xl font-bold font-mono select-none" style="color: var(--text); opacity: 0.12;">
-              {project.id.slice(0, 2).toUpperCase()}
-            </span>
-
-            <!-- "View Details" hover overlay -->
-            <div
-              class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-              style="background-color: rgba(var(--accent-rgb), 0.08);"
+              class="relative h-40 flex items-center justify-center overflow-hidden group"
+              style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg)); border-bottom: 1px solid var(--border);"
             >
-              <span class="text-sm font-semibold px-4 py-1.5 rounded-full" style="color: var(--accent); border: 1px solid var(--accent);">
-                {t(lang, 'project_view')}
-              </span>
-            </div>
-          </div>
+              <!-- Category dot -->
+              <div
+                class="absolute top-3 left-3 w-2.5 h-2.5 rounded-full"
+                style={`background-color: ${categoryColors[project.category] || 'var(--accent)'};`}
+              ></div>
 
-          <!-- Content -->
+              <!-- Featured badge — top-right -->
+              {project.featured && (
+                <span
+                  class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-xs font-bold tracking-wide"
+                  style="background-color: var(--accent); color: #fff; box-shadow: 0 2px 8px rgba(var(--accent-rgb), 0.4);"
+                >
+                  ★ Featured
+                </span>
+              )}
+
+              <!-- Project monogram -->
+              <span class="text-5xl font-bold font-mono select-none" style="color: var(--text); opacity: 0.12;">
+                {project.id.slice(0, 2).toUpperCase()}
+              </span>
+
+              <!-- "View Details" hover overlay -->
+              <div
+                class="expand-hint absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200"
+                style="background-color: rgba(var(--accent-rgb), 0.08);"
+              >
+                <span class="text-sm font-semibold px-4 py-1.5 rounded-full expand-label" style="color: var(--accent); border: 1px solid var(--accent);">
+                  {t(lang, 'project_view')}
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <!-- Card summary (always visible) -->
           <div class="flex flex-col flex-1 p-5">
-            <h3 class="text-base font-bold mb-2 leading-snug" style="color: var(--text);">
-              {t(lang, project.titleKey as any)}
-            </h3>
+            <!-- Title row — clickable -->
+            <button
+              class="project-toggle w-full text-left mb-2"
+              data-project-id={project.id}
+              aria-expanded="false"
+              aria-controls={`expand-${project.id}`}
+              style="background: none; border: none; padding: 0; cursor: pointer;"
+            >
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-base font-bold leading-snug" style="color: var(--text);">
+                  {t(lang, project.titleKey as any)}
+                </h3>
+                <span class="expand-chevron flex-shrink-0 text-sm transition-transform duration-300" style="color: var(--accent);">▼</span>
+              </div>
+            </button>
 
             <p class="text-sm leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
               {t(lang, project.descriptionKey as any)}
@@ -109,104 +126,151 @@ const categoryColors: Record<string, string> = {
                 </span>
               )}
             </div>
-
           </div>
+
+          <!-- ── Inline expand panel ───────────────────────────────── -->
+          <div
+            class="project-expand"
+            id={`expand-${project.id}`}
+            style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease;"
+          >
+            <div class="px-5 pb-5 pt-1" style="border-top: 1px solid var(--border);">
+
+              <!-- Long description -->
+              <p class="text-sm leading-relaxed mb-5 mt-3" style="color: var(--text-secondary);">
+                {t(lang, project.longDescriptionKey as any)}
+              </p>
+
+              <!-- All metrics -->
+              {project.metrics && project.metrics.length > 0 && (
+                <div class="mb-5">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
+                    Key Metrics
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    {project.metrics.map((m) => (
+                      <span
+                        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
+                        style="background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.25);"
+                      >
+                        <strong>{m.value}</strong>
+                        {m.label && <span style="opacity: 0.7; font-weight: 400;">{m.label}</span>}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <!-- Screenshots -->
+              {project.screenshots && project.screenshots.length > 0 && (
+                <div class="mb-5">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
+                    Screenshots
+                  </p>
+                  <div class="flex gap-2 overflow-x-auto pb-1" style="-webkit-overflow-scrolling: touch;">
+                    {project.screenshots.map((src) => (
+                      <img
+                        src={src}
+                        alt={`${t(lang, project.titleKey as any)} screenshot`}
+                        loading="lazy"
+                        class="rounded-lg flex-shrink-0"
+                        style="height: 140px; width: auto; max-width: 220px; object-fit: cover; border: 1px solid var(--border);"
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <!-- Video -->
+              {project.video && (
+                <div class="mb-5">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
+                    Demo
+                  </p>
+                  <video
+                    src={project.video}
+                    controls
+                    playsinline
+                    muted
+                    class="rounded-lg w-full"
+                    style="max-height: 260px; border: 1px solid var(--border); background-color: var(--bg-secondary);"
+                  />
+                </div>
+              )}
+
+              <!-- Full tech stack -->
+              <div class="mb-5">
+                <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
+                  Tech Stack
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                  {project.tech.map((tech) => (
+                    <TechTag label={tech} />
+                  ))}
+                </div>
+              </div>
+
+              <!-- Links -->
+              <div class="flex flex-wrap gap-2 mt-1">
+                {project.links.live && (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link-btn inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200"
+                    style="background-color: var(--accent); color: #fff;"
+                    onclick="event.stopPropagation()"
+                  >
+                    {lang === 'ua' ? 'Відвідати сайт' : lang === 'pt' ? 'Visitar site' : lang === 'es' ? 'Visitar sitio' : 'Visit Site'}
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
+                {project.links.demo && (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link-btn inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200"
+                    style="background-color: rgba(var(--accent-rgb), 0.12); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.3);"
+                    onclick="event.stopPropagation()"
+                  >
+                    Demo
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+                {project.links.github && (
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link-btn inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200"
+                    style="background-color: rgba(var(--accent-rgb), 0.08); color: var(--text-secondary); border: 1px solid var(--border);"
+                    onclick="event.stopPropagation()"
+                  >
+                    GitHub
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+
+                <!-- Close / collapse button -->
+                <button
+                  class="project-toggle ml-auto inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium transition-all duration-200"
+                  data-project-id={project.id}
+                  style="background-color: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border); cursor: pointer;"
+                  aria-expanded="true"
+                  aria-controls={`expand-${project.id}`}
+                >
+                  {lang === 'ua' ? 'Згорнути' : lang === 'pt' ? 'Recolher' : lang === 'es' ? 'Colapsar' : 'Collapse'} ▲
+                </button>
+              </div>
+            </div>
+          </div>
+
         </article>
       ))}
     </div>
   </div>
 </section>
-
-<!-- ── Modals (one per project, pre-rendered) ─────────────────────────────── -->
-{projects.map((project) => (
-  <div
-    class="project-modal"
-    id={`modal-${project.id}`}
-    role="dialog"
-    aria-modal="true"
-    aria-label={t(lang, project.titleKey as any)}
-    style="display: none; position: fixed; inset: 0; z-index: 9999; align-items: center; justify-content: center; padding: 1rem;"
-  >
-    <!-- Backdrop -->
-    <div
-      class="modal-backdrop"
-      style="position: absolute; inset: 0; background: rgba(0,0,0,0.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); touch-action: none;"
-      data-close
-    ></div>
-
-    <!-- Modal content — flex child, centered by parent -->
-    <div
-      class="modal-content"
-      style="position: relative; z-index: 1; width: 100%; max-width: 42rem; max-height: 90vh; overflow-y: auto; overflow-x: hidden; border-radius: 1rem; background-color: var(--card-bg); border: 1px solid var(--card-border); box-shadow: 0 25px 60px rgba(0,0,0,0.5); overscroll-behavior: contain; -webkit-overflow-scrolling: touch;"
-    >
-      <!-- Close button -->
-      <button
-        class="modal-close-btn"
-        data-close
-        aria-label="Close modal"
-        style="position: absolute; top: 1rem; right: 1rem; z-index: 10; width: 2.75rem; height: 2.75rem; min-width: 44px; min-height: 44px; border-radius: 50%; border: 1px solid var(--border); background-color: var(--bg-secondary); color: var(--text-secondary); font-size: 1.125rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color 0.15s, border-color 0.15s;"
-      >
-        &times;
-      </button>
-
-      <!-- Inner content with padding -->
-      <div style="padding: 1.5rem 1.75rem 1.75rem;">
-          <!-- Category dot + title row -->
-          <div style="display: flex; align-items: center; gap: 0.625rem; margin-bottom: 1rem;">
-            <div
-              style={`width: 0.625rem; height: 0.625rem; border-radius: 50%; background-color: ${categoryColors[project.category] || 'var(--accent)'}; flex-shrink: 0;`}
-            ></div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text); line-height: 1.3; margin: 0;">
-              {t(lang, project.titleKey as any)}
-            </h3>
-            {project.featured && (
-              <span
-                style="margin-left: auto; flex-shrink: 0; padding: 0.25rem 0.625rem; border-radius: 0.375rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; background-color: var(--accent); color: #fff;"
-              >
-                ★ Featured
-              </span>
-            )}
-          </div>
-
-          <!-- Long description -->
-          <p style="font-size: 0.9rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            {t(lang, project.longDescriptionKey as any)}
-          </p>
-
-          <!-- Metrics -->
-          {project.metrics && project.metrics.length > 0 && (
-            <div style="margin-bottom: 1.5rem;">
-              <p style="font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 0.625rem; opacity: 0.6;">
-                Key Metrics
-              </p>
-              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                {project.metrics.map((m) => (
-                  <span
-                    style="display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.25);"
-                  >
-                    <strong>{m.value}</strong>
-                    {m.label && <span style="opacity: 0.7; font-weight: 400;">{m.label}</span>}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <!-- Full tech stack -->
-          <div>
-            <p style="font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 0.625rem; opacity: 0.6;">
-              Tech Stack
-            </p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.375rem;">
-              {project.tech.map((tech) => (
-                <TechTag label={tech} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-))}
 
 <style>
   /* Featured projects get an accent border glow */
@@ -214,71 +278,57 @@ const categoryColors: Record<string, string> = {
     border-color: rgba(var(--accent-rgb), 0.3) !important;
     box-shadow: var(--shadow-sm), 0 0 0 1px rgba(var(--accent-rgb), 0.12);
   }
-  .project-featured:hover {
-    border-color: rgba(var(--accent-rgb), 0.6) !important;
-    box-shadow: var(--shadow-md), 0 0 20px rgba(var(--accent-rgb), 0.15) !important;
+
+  /* Card hover: show hint overlay, lift slightly */
+  .project-card:not(.expanded):hover .expand-hint {
+    opacity: 1;
+  }
+  .project-card {
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .project-card:not(.expanded):hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--accent-rgb), 0.4) !important;
+    box-shadow: var(--shadow-md) !important;
   }
 
-  /* Entrance / exit animation keyframes */
-  @keyframes modalFadeIn {
-    from { opacity: 0; transform: scale(0.97); }
-    to   { opacity: 1; transform: scale(1); }
+  /* When expanded — no hover lift, accent border */
+  .project-card.expanded {
+    border-color: rgba(var(--accent-rgb), 0.45) !important;
+    box-shadow: var(--shadow-md), 0 0 20px rgba(var(--accent-rgb), 0.1) !important;
   }
-  @keyframes modalFadeOut {
-    from { opacity: 1; transform: scale(1); }
-    to   { opacity: 0; transform: scale(0.97); }
-  }
-
-  .modal-content.modal-entering {
-    animation: modalFadeIn 0.2s ease forwards;
-  }
-  .modal-content.modal-exiting {
-    animation: modalFadeOut 0.18s ease forwards;
+  .project-featured.expanded {
+    border-color: rgba(var(--accent-rgb), 0.65) !important;
   }
 
-  /* dvh support for modal content (overrides inline 90vh) */
-  .modal-content {
-    max-height: 90vh;
-    max-height: 90dvh;
+  /* Chevron rotation when expanded */
+  .project-card.expanded .expand-chevron {
+    transform: rotate(180deg);
   }
 
-  /* Mobile-specific modal styles */
-  @media (max-width: 640px) {
-    .project-modal {
-      padding: 0.5rem !important;
-      align-items: flex-end !important;
-    }
-    .modal-content {
-      max-height: 95vh !important;
-      max-height: 95dvh !important;
-      margin: 0 0.25rem !important;
-      border-radius: 0.75rem !important;
-      width: 100% !important;
-    }
-    .modal-close-btn {
-      width: 2.75rem !important;
-      height: 2.75rem !important;
-      min-width: 44px !important;
-      min-height: 44px !important;
-    }
+  /* Hide view-details hint when expanded */
+  .project-card.expanded .expand-hint {
+    display: none;
   }
 
-  /* Prevent hover jitter on close btn */
-  .modal-close-btn:hover {
-    color: var(--accent) !important;
-    border-color: var(--accent) !important;
-  }
-
-  /* Scroll lock — applied to <html> so position:fixed children
-     (the modal) keep the viewport as their containing block */
-  html:has(body.modal-open) {
-    overflow: hidden;
-  }
-
-  /* Card keyboard focus ring */
-  .project-card:focus-visible {
+  /* Keyboard focus ring */
+  .project-toggle:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+
+  /* Link buttons hover */
+  .project-link-btn:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+  }
+
+  /* Screenshots scroll on mobile */
+  @media (max-width: 640px) {
+    .project-expand video {
+      max-height: 200px;
+    }
   }
 </style>
 
@@ -298,101 +348,82 @@ const categoryColors: Record<string, string> = {
       els.forEach(function (el) { io.observe(el); });
     }
 
-    /* ── Modal logic ───────────────────────────────────── */
-    var currentModal = null;
-
-    // iOS Safari: prevent background scroll via touchmove
-    function preventTouchMove(e) {
-      // Allow scrolling within .modal-content but nowhere else
-      if (!e.target.closest('.modal-content')) {
-        e.preventDefault();
-      }
+    /* ── Accordion expand logic ────────────────────────── */
+    function getExpandHeight(panel) {
+      // Temporarily set to auto to measure natural height
+      panel.style.maxHeight = 'none';
+      var h = panel.scrollHeight;
+      panel.style.maxHeight = '0';
+      return h;
     }
 
-    function openModal(modalId) {
-      var modal = document.getElementById(modalId);
-      if (!modal) return;
-      closeModal(true); // close any open one instantly
-      currentModal = modal;
-      // Lock scroll on <html> to avoid creating a new containing block for
-      // position:fixed children (setting body position:fixed would offset the
-      // modal off-screen when the page is scrolled).
-      modal._savedScrollY = window.scrollY;
-      document.documentElement.style.overflow = 'hidden';
-      document.body.classList.add('modal-open');
-      // iOS Safari fix: block touchmove on document to prevent background scroll
-      document.addEventListener('touchmove', preventTouchMove, { passive: false });
-      modal.style.display = 'flex';
-      var content = modal.querySelector('.modal-content');
-      if (content) {
-        content.classList.remove('modal-exiting');
-        content.classList.add('modal-entering');
-        content.addEventListener('animationend', function onEnd() {
-          content.classList.remove('modal-entering');
-          content.removeEventListener('animationend', onEnd);
-        });
-      }
-      // Trap focus: focus close button
-      var closeBtn = modal.querySelector('button[data-close]');
-      if (closeBtn) setTimeout(function () { closeBtn.focus(); }, 50);
-    }
-
-    function closeModal(instant) {
-      if (!currentModal) return;
-      var modal = currentModal;
-      var content = modal.querySelector('.modal-content');
-
-      function hide() {
-        modal.style.display = 'none';
-        // Restore scroll lock and position
-        document.documentElement.style.overflow = '';
-        document.body.classList.remove('modal-open');
-        // iOS Safari fix: remove touchmove blocker
-        document.removeEventListener('touchmove', preventTouchMove);
-        var savedY = modal._savedScrollY || 0;
-        modal._savedScrollY = 0;
-        window.scrollTo(0, savedY);
-        if (content) content.classList.remove('modal-exiting');
-        currentModal = null;
-      }
-
-      if (instant || !content) {
-        hide();
-        return;
-      }
-      content.classList.remove('modal-entering');
-      content.classList.add('modal-exiting');
-      content.addEventListener('animationend', function onEnd() {
-        content.removeEventListener('animationend', onEnd);
-        hide();
+    function expandCard(card, panel) {
+      card.classList.add('expanded');
+      // Update all toggle buttons in this card
+      card.querySelectorAll('.project-toggle').forEach(function (btn) {
+        btn.setAttribute('aria-expanded', 'true');
+      });
+      // Animate open
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      // After animation, set to 'none' so screenshots/video don't clip
+      panel.addEventListener('transitionend', function onEnd(e) {
+        if (e.propertyName === 'max-height' && card.classList.contains('expanded')) {
+          panel.style.maxHeight = 'none';
+        }
+        panel.removeEventListener('transitionend', onEnd);
       });
     }
 
-    /* Open on card click or Enter/Space */
-    document.querySelectorAll('[data-modal-open]').forEach(function (card) {
-      card.addEventListener('click', function () {
-        openModal(card.getAttribute('data-modal-open'));
+    function collapseCard(card, panel) {
+      card.classList.remove('expanded');
+      card.querySelectorAll('.project-toggle').forEach(function (btn) {
+        btn.setAttribute('aria-expanded', 'false');
       });
-      card.addEventListener('keydown', function (e) {
+      // Need an explicit px value to transition FROM 'none'
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      // Force reflow
+      panel.getBoundingClientRect();
+      panel.style.maxHeight = '0';
+    }
+
+    function toggleProject(projectId) {
+      var card = document.getElementById('card-' + projectId);
+      var panel = document.getElementById('expand-' + projectId);
+      if (!card || !panel) return;
+
+      var isExpanded = card.classList.contains('expanded');
+      if (isExpanded) {
+        collapseCard(card, panel);
+      } else {
+        expandCard(card, panel);
+        // Scroll card into view on mobile with a small delay
+        setTimeout(function () {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      }
+    }
+
+    // Attach click handlers to all toggle buttons
+    document.querySelectorAll('.project-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var id = btn.getAttribute('data-project-id');
+        if (id) toggleProject(id);
+      });
+      btn.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openModal(card.getAttribute('data-modal-open'));
+          var id = btn.getAttribute('data-project-id');
+          if (id) toggleProject(id);
         }
       });
     });
 
-    /* Close on backdrop / close button click */
-    document.querySelectorAll('.project-modal').forEach(function (modal) {
-      modal.addEventListener('click', function (e) {
-        if (e.target.hasAttribute('data-close') || e.target.closest('[data-close]')) {
-          closeModal(false);
-        }
+    // Prevent link clicks from bubbling and triggering toggle
+    document.querySelectorAll('.project-link-btn').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.stopPropagation();
       });
-    });
-
-    /* Close on Escape */
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal(false);
     });
   })();
 </script>
