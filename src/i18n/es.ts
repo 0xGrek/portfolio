@@ -174,7 +174,7 @@ export const es = {
   edu_law_school: 'Universidad Estatal de Asuntos Internos de Dnipropetrovsk',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ucrania',
-  edu_law_desc: 'Programa de grado presencial. Especialización en metodología policial e investigación de delitos financieros.',
+  edu_law_desc: 'Programa de grado presencial. Especialización en análisis de datos, investigación de sistemas y trabajo de inteligencia estructurado.',
 
   edu_econ_title: 'Licenciatura — Analítica Económica',
   edu_econ_school: 'DSUIA',
