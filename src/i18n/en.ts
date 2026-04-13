@@ -104,12 +104,12 @@ export const en = {
   exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
-  exp_police_title: 'Investigation & Data Analysis Specialist',
+  exp_police_title: 'Data Analysis & Systems Investigation Specialist',
   exp_police_company: 'National Police of Ukraine | Ukraine',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Ukraine',
-  exp_police_desc: 'Focus on unstructured data and pattern analysis. Experience that developed analytical skills and the ability to find solutions in non-standard situations.',
-  exp_police_highlights: 'Investigation & Data Analysis Specialist (2019–2022)',
+  exp_police_desc: 'Worked within specialized analytical groups on critical incident resolution. Specialized in rapid deployment of data collection tools in field conditions and real-time risk management.',
+  exp_police_highlights: '',
 
   // Experience — Founder/Specialist (legacy, kept for compat)
   exp_founder_title: 'Founder & Technical Specialist (Automation & Web3)',
