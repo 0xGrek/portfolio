@@ -225,7 +225,7 @@ export const en = {
 
   edu_pt_a2_title: 'Portuguese Language Certificate — A2',
   edu_pt_a2_institution: 'IEFP / Portuguese Language School',
-  edu_pt_a2_period: '2026',
+  edu_pt_a2_period: '2025',
   edu_pt_a2_location: 'Portugal',
   edu_pt_a2_desc: 'Official A2 level certificate in Portuguese language (CIPLE equivalent). Demonstrates ability to communicate in everyday situations in Portugal.',
 
