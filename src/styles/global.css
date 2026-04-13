@@ -131,9 +131,25 @@
     line-height: 1.7;
   }
 
+  /* Hide text caret on all non-editable elements */
+  * {
+    caret-color: transparent;
+  }
+
+  /* Default cursor for all elements (no text cursor on regular text) */
+  body {
+    cursor: default;
+  }
+
   /* Interactive elements cursor */
-  button, a, [role="button"], label[for] {
+  a, button, [role="button"], input, textarea, select, label {
     cursor: pointer;
+  }
+
+  /* Restore text cursor and caret only for actual input fields */
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    cursor: text;
+    caret-color: auto;
   }
 
   /* Remove underlines from all links globally */
