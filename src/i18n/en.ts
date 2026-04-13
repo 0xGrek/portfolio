@@ -343,4 +343,5 @@ export const en = {
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii Ivanenko. All rights reserved.',
   footer_privacy: 'Privacy Policy',
+  footer_compliance: 'Compliance & Confidentiality: All solutions are developed in accordance with data security standards and NDA terms.',
 } as const;
