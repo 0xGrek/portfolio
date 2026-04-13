@@ -335,8 +335,8 @@ export const es = {
   services_ai_desc: 'Sistemas multi-agente y generación de contenido',
   services_ai_examples: 'Lo que puedo construir:|Sistemas IA multi-agente para análisis de datos y generación de contenido|Sistema que convierte un video (webinar, podcast) en una semana de contenido: clips cortos, posts, artículos con auto-publicación|Integración de modelos IA (Claude, Gemini) en tus procesos empresariales',
 
-  services_cta_title: '¿No encontraste tu sector?',
-  services_cta_desc: 'Automatizamos todo lo que te causa dolor de cabeza. Informes, notificaciones, entrada de datos, monitoreo — cualquier rutina que consume tu tiempo. Cuéntanos qué haces manualmente y te mostramos cómo un bot o AI puede hacerlo por ti. 1 hora ahorrada al día = 7 horas a la semana = 2–4 días extra que puedes redirigir al crecimiento de tu negocio.',
+  services_cta_title: 'Auditoría y Automatización Inteligente.',
+  services_cta_desc: 'Identifico procesos que consumen recursos excesivos e implemento sistemas IA multi-agente. Resultado: reducción de hasta el 80% del tiempo en rutina y escalabilidad de las capacidades operativas de tu negocio.',
   services_cta_button: 'Contactar',
 
   // ── Footer ────────────────────────────────────────────
