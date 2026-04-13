@@ -13,12 +13,10 @@ const { lang } = Astro.props;
 
 // Category icons
 const categoryIcons: Record<string, string> = {
-  skills_forensics: '🔍',
+  skills_tech_core: '💻',
   skills_blockchain: '⛓️',
-  skills_automation: '⚡',
-  skills_agents: '🤖',
-  skills_dev: '💻',
   skills_security: '🛡️',
+  skills_automation: '⚡',
   skills_languages: '🌐',
 };
 ---
@@ -29,21 +27,46 @@ const categoryIcons: Record<string, string> = {
       <SectionTitle title={t(lang, 'skills_title')} />
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="flex flex-col gap-6">
       {skillCategories.map((category, index) => (
         <div
-          class="skill-card p-5 rounded-xl card-hover reveal"
+          class="skill-card p-6 rounded-xl card-hover reveal"
           style={`background-color: var(--card-bg); border: 1px solid var(--card-border); transition-delay: ${index * 0.06}s;`}
         >
-          <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-4" style="color: var(--accent);">
+          <!-- Category header -->
+          <h3 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider mb-5" style="color: var(--accent);">
             <span class="text-base" aria-hidden="true">
               {categoryIcons[category.titleKey] || '▸'}
             </span>
             {t(lang, category.titleKey as any)}
           </h3>
-          <div class="flex flex-wrap gap-2">
-            {category.skills.map((skill) => (
-              <TechTag label={skill} />
+
+          <!-- Sub-groups -->
+          <div class="flex flex-col gap-4">
+            {category.subGroups.map((group) => (
+              <div class="skill-subgroup">
+                {/* Languages category has a single flat group with no label */}
+                {group.nameKey ? (
+                  <div class="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                    <div class="sm:w-48 lg:w-56 shrink-0">
+                      <span class="text-xs font-semibold uppercase tracking-wide" style="color: var(--text-secondary);">
+                        {t(lang, group.nameKey as any)}
+                      </span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 flex-1">
+                      {group.skills.map((skill) => (
+                        <TechTag label={skill} />
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div class="flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <TechTag label={skill} />
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
