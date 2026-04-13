@@ -154,7 +154,11 @@
     strand2 = [];
     bridges = [];
 
-    HELIX_HEIGHT = H * 4;
+    var pageHeight = document.documentElement.scrollHeight;
+    HELIX_HEIGHT = pageHeight * 1.2;
+    STRAND_COUNT = isMobile ? Math.floor(pageHeight / H * 50) : Math.floor(pageHeight / H * 110);
+    TWIST_TURNS = Math.floor(pageHeight / H * 3.5);
+    TWIST_RATE = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
     HELIX_RADIUS = isMobile ? 55 : 80;
 
     for (var i = 0; i < STRAND_COUNT; i++) {
