@@ -59,25 +59,62 @@ export const pt = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiência',
 
+  // Experience — AI Developer (newest)
+  exp_ai_title: 'Desenvolvedor AI',
+  exp_ai_company: 'Empresário Individual',
+  exp_ai_period: '2026 – Presente',
+  exp_ai_location: 'Portugal',
+  exp_ai_desc: 'Sistemas AI multi-agente, automação de conteúdo e redes sociais, integração Claude/Gemini.',
+  exp_ai_b1: 'Orquestração de 11 agentes AI para processamento de dados',
+  exp_ai_b2: 'Automação de conteúdo e análise de redes sociais',
+  exp_ai_b3: 'Integração Claude, Gemini, servidores MCP',
+
   // Experience — Software Dev (current)
   exp_dev_title: 'Desenvolvedor de Software',
   exp_dev_company: 'Empresa de IT, Lda | Lisboa, Portugal',
   exp_dev_period: 'Junho 2025 – Presente',
+  exp_dev_location: 'Lisboa, Portugal',
   exp_dev_desc: 'Desenvolvimento e manutenção de sistemas em produção, automação de processos empresariais, administração de servidores e bases de dados.',
+  exp_dev_b1: 'Desenvolvimento e manutenção de sistemas em produção',
+  exp_dev_b2: 'Automação de relatórios, métricas e análise empresarial',
+  exp_dev_b3: 'Administração de servidores, bases de dados e infraestrutura IT',
   exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
 
-  // Experience — Founder/Specialist (current)
-  exp_founder_title: 'Fundador & Especialista Técnico (Automação & Web3)',
-  exp_founder_company: 'Empresário Individual / Freelance | Portugal',
-  exp_founder_period: '2023 – Presente',
-  exp_founder_desc: 'Construção de soluções personalizadas em Web3, AI e automação empresarial.\n\n• Automação & Crypto: Bots de trading, estratégias DeFi, scanners e sistemas de monitorização de carteiras.\n• Sistemas AI: Sistemas multi-agente para processamento de dados, automação de conteúdo e integração com Claude/Gemini.\n• Desenvolvimento Web: Bots Telegram (15+ em produção), mini-apps e aplicações web.',
-  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
+  // Experience — Crypto & Automation
+  exp_crypto_title: 'Crypto e Automação',
+  exp_crypto_company: 'Empresário Individual',
+  exp_crypto_period: '2023 – Presente',
+  exp_crypto_location: 'Portugal',
+  exp_crypto_desc: 'Construção de soluções complexas em Web3, AI e automação empresarial.',
+  exp_crypto_b1: 'Construiu scanners crypto e monitorização de carteiras',
+  exp_crypto_b2: 'Automatizou estratégias DeFi e operações de trading',
+  exp_crypto_b3: 'Análise on-chain e rastreamento de transações',
+
+  // Experience — Web Developer
+  exp_webdev_title: 'Desenvolvedor Web',
+  exp_webdev_company: 'Freelance',
+  exp_webdev_period: '2023 – Presente',
+  exp_webdev_location: '',
+  exp_webdev_desc: 'Bots Telegram e mini-apps. Construiu um sistema de 11 bots para life-tracking e automação empresarial.',
+  exp_webdev_b1: '15+ bots Telegram e mini-apps em produção',
+  exp_webdev_b2: 'Sistema de 11 bots para life-tracking, fitness, planeamento',
+  exp_webdev_b3: 'Aplicações web, landing pages e sites de portfólio',
+  exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
   exp_police_title: 'Agente da Lei',
   exp_police_company: 'Polícia Nacional da Ucrânia | Ucrânia',
   exp_police_period: '2019 – 2022',
+  exp_police_location: 'Ucrânia',
   exp_police_desc: 'Progrediu da polícia de patrulha para a investigação criminal. Experiência que desenvolveu capacidades analíticas, resiliência ao stress e capacidade de encontrar soluções em situações não padronizadas.',
+  exp_police_highlights: 'Polícia de Patrulha (2019) → Investigação Criminal (2020) → Unidade Especial (2021)',
+
+  // Experience — Founder/Specialist (legacy, kept for compat)
+  exp_founder_title: 'Fundador & Especialista Técnico (Automação & Web3)',
+  exp_founder_company: 'Empresário Individual / Freelance | Portugal',
+  exp_founder_period: '2023 – Presente',
+  exp_founder_desc: 'Construção de soluções personalizadas em Web3, AI e automação empresarial.\n\n• Automação & Crypto: Bots de trading, estratégias DeFi, scanners e sistemas de monitorização de carteiras.\n• Sistemas AI: Sistemas multi-agente para processamento de dados, automação de conteúdo e integração com Claude/Gemini.\n• Desenvolvimento Web: Bots Telegram (15+ em produção), mini-apps e aplicações web.',
+  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
 
   // legacy keys
   exp_official_title: 'Programador de Software',
