@@ -177,6 +177,16 @@ export const en = {
   proj_toolkit_long:
     'Built between 2023-2024, before AI-assisted coding went mainstream. These tools gave us a competitive edge: we farmed airdrops at scale (LayerZero, Arbitrum, zkSync), minted NFTs faster than competitors with gas war sniping scripts, and automated DeFi protocol interactions across 10+ blockchains. The toolkit includes multi-chain wallet generators (6 chains), token collectors (15+ EVM networks), CEX withdrawal automation (9 exchanges via ccxt), Solana phone farming via ADB, and browser automation through ZennoPoster and BAS. When others were clicking buttons manually, we had software doing it at scale.',
 
+  proj_lucent_title: 'LucentStays — Dubai Rentals',
+  proj_lucent_desc: 'Booking platform for short-term luxury apartment rentals in Dubai',
+  proj_lucent_long:
+    'Built a complete booking platform for a Dubai-based rental business. Features property listings with dynamic data from Supabase, integrated Hostaway booking system, currency toggle (AED/USD), and WhatsApp contact integration. Covers Downtown, Business Bay, Dubai Marina, and other premium areas.',
+
+  proj_player_title: 'Football Player Profile',
+  proj_player_desc: 'Digital recruitment card for young football players and scouts',
+  proj_player_long:
+    'Sports recruitment showcase for a young Ukrainian football player. Displays personal stats, physical metrics, match history, achievements, and academic performance. Dark theme design optimized for sharing with football clubs and scouts.',
+
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Skills',
   skills_forensics: 'On-Chain Forensics',
