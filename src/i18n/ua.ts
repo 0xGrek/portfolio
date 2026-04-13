@@ -334,6 +334,12 @@ export const ua = {
   services_cta_desc: 'Впроваджую AI-агентів для автоматизації рутини. 1 година автоматизації сьогодні = 1 вільний місяць на рік.',
   services_cta_button: "Зв'язатись",
 
+  // ── Projects UI ───────────────────────────────────────
+  proj_visit_site: 'Відвідати сайт',
+  proj_collapse: 'Згорнути ▲',
+  proj_show_more: 'Показати ще',
+  proj_show_less: 'Згорнути',
+
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Побудовано на Astro + Tailwind',
   footer_rights: '© 2026 Сергій Іваненко. Всі права захищені.',
