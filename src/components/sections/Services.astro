@@ -130,7 +130,7 @@ const showLessText = t(lang, 'services_show_less' as any);
         {t(lang, 'services_cat_it' as any)}
         <span class="category-line"></span>
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
         {servicesIT.map((service, index) => {
           const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
           const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
@@ -138,8 +138,8 @@ const showLessText = t(lang, 'services_show_less' as any);
           const examplesBullets = examplesParts.slice(1);
           return (
             <div
-              class={`service-card p-6 rounded-xl reveal${(service as any).featured ? ' featured-card' : ''}`}
-              style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm); transition-delay: ${index * 0.05}s;`}
+              class={`service-card p-6 rounded-xl${(service as any).featured ? ' featured-card' : ''}`}
+              style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm);`}
             >
               <div class="flex items-start gap-4">
                 <span class="text-3xl flex-shrink-0" aria-hidden="true">{service.icon}</span>
