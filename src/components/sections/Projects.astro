@@ -290,7 +290,7 @@ const categoryIcons: Record<string, string> = {
           aria-expanded="false"
           aria-controls="projects-grid"
         >
-          <span class="btn-label">{lang === 'ua' ? 'Показати ще' : lang === 'pt' ? 'Mostrar mais' : lang === 'es' ? 'Mostrar más' : 'Show more'}</span>
+          <span class="btn-label">{t(lang, 'proj_show_more' as any)}</span>
           <svg class="btn-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
