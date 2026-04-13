@@ -142,4 +142,36 @@ export const projects: Project[] = [
   },
 ];
 
+  {
+    id: 'lucent-stays',
+    slug: 'lucent-stays',
+    titleKey: 'proj_lucent_title',
+    descriptionKey: 'proj_lucent_desc',
+    longDescriptionKey: 'proj_lucent_long',
+    tech: ['HTML/CSS', 'JavaScript', 'Supabase', 'Hostaway API'],
+    category: 'web',
+    rating: 7,
+    screenshots: [],
+    featured: false,
+    links: { live: 'https://lucentstays.com' },
+    metrics: [
+      { key: 'listings', value: '5+' },
+      { key: 'type', value: 'Client Work' },
+    ],
+  },
+  {
+    id: 'player-profile',
+    slug: 'player-profile',
+    titleKey: 'proj_player_title',
+    descriptionKey: 'proj_player_desc',
+    longDescriptionKey: 'proj_player_long',
+    tech: ['HTML/CSS', 'JavaScript', 'Responsive Design'],
+    category: 'web',
+    rating: 6,
+    screenshots: [],
+    featured: false,
+    links: { live: 'https://rainbow-jelly-29e7d1.netlify.app/player' },
+  },
+];
+
 export const featuredProjects = projects.filter((p) => p.featured);
