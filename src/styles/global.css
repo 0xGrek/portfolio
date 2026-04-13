@@ -238,7 +238,26 @@
 /* ─── Utility classes ─────────────────────────────────────────── */
 
 .gradient-text {
-  color: var(--accent);
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--purple) 40%,
+    var(--accent-hover) 70%,
+    var(--accent) 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hero-gradient-shift 5s ease infinite;
+}
+
+/* Статичный fallback если prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none !important;
+    background-position: 0% 50% !important;
+  }
 }
 
 .animate-fade-in-up {
