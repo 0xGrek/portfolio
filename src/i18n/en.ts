@@ -175,7 +175,7 @@ export const en = {
   edu_law_school: 'Dnipropetrovsk State University of Internal Affairs (DDUVS)',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ukraine',
-  edu_law_desc: 'Full-time degree program. Specialized in criminal investigation and surveillance (operative work).',
+  edu_law_desc: 'Full-time degree program. Specialized in data analysis, systems investigation, and structured intelligence work.',
 
   edu_econ_title: "Bachelor's — Economic Analytics",
   edu_econ_school: 'DSUIA',
