@@ -44,7 +44,7 @@ export const ua = {
   // Experience — AI Developer (newest)
   exp_ai_title: 'AI-розробник',
   exp_ai_company: 'ФОП',
-  exp_ai_period: '2026 – дотепер',
+  exp_ai_period: '2024 – дотепер',
   exp_ai_location: 'Португалія',
   exp_ai_desc: 'Розробка мультиагентних AI-систем, автоматизація створення контенту та впровадження Claude/Gemini.',
   exp_ai_b1: 'Оркестрація системи з 11 AI-агентів для глибокої обробки даних.',
