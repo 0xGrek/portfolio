@@ -39,7 +39,7 @@ export const education: Education[] = [
     locationKey: 'edu_econ_location',
     descriptionKey: 'edu_econ_desc',
     type: 'degree',
-    status: 'in-progress',
+    status: 'completed',
   },
   {
     id: 'cert',
