@@ -242,11 +242,11 @@ export const pt = {
   edu_law_location: 'Dnipro, Ucrânia',
   edu_law_desc: 'Curso presencial. Especialização em investigação criminal e vigilância operativa.',
 
-  edu_econ_title: 'Licenciatura — Economia (Análise Económica & Segurança Económica)',
-  edu_econ_school: 'DDUVS',
-  edu_econ_period: '2020 – 2024',
+  edu_econ_title: 'Bacharelato — Análise Económica',
+  edu_econ_school: 'DSUIA',
+  edu_econ_period: '2020',
   edu_econ_location: 'Dnipro, Ucrânia',
-  edu_econ_desc: 'Curso pós-laboral. Especialização: Análise Económica e Proteção da Economia.',
+  edu_econ_desc: 'Especialização: Segurança Económica e Análise de Dados.',
 
   edu_swat_title: 'Certificado de Formação Tática SWAT',
   edu_swat_school: 'Ministério do Interior da Ucrânia',
