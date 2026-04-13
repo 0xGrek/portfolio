@@ -313,6 +313,8 @@ const categoryIcons: Record<string, string> = {
   }
   .project-card {
     transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
   .project-card:not(.expanded):hover {
     transform: translateY(-3px);
