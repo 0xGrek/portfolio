@@ -34,8 +34,8 @@ export const es = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mí',
-  about_text_1: "Mi enfoque del desarrollo se basa en la lógica de investigación: encuentro ineficiencias en los procesos empresariales y las elimino con código. Hoy combino trabajo en una empresa de IT con la construcción de mis propios sistemas IA multi-agente.",
-  about_text_2: 'Me sumergí por completo: análisis on-chain, bots de minting NFT, arbitraje CEX/DEX, investigación de vulnerabilidades. Esto rápidamente creció en algo más grande — empecé a aceptar pedidos de amigos y colegas de la industria.',
+  about_text_1: "Mi enfoque es la optimización de ingeniería: encuentro cuellos de botella en la lógica de negocio y los elimino con código. Hoy me enfoco en construir agentes IA autónomos que reemplazan el trabajo rutinario con algoritmos inteligentes.",
+  about_text_2: 'Mi camino en tecnología comenzó con análisis en condiciones extremas. La experiencia trabajando con incidentes críticos y grandes volúmenes de datos no estructurados desarrolló resiliencia analítica: la capacidad de tomar decisiones precisas bajo alta incertidumbre y presión de tiempo.',
   about_text_3: '',
   about_text_4: '',
   about_stats_tools: '100+ Herramientas',
