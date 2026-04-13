@@ -50,6 +50,12 @@
       iconSun.style.display = isDark ? 'block' : 'none';
       iconMoon.style.display = isDark ? 'none' : 'block';
 
+      // Sync DNA helix container opacity to new theme
+      var dnaContainer = document.getElementById('dna-helix-container');
+      if (dnaContainer) {
+        dnaContainer.style.opacity = isDark ? '0.45' : '0.15';
+      }
+
       if (instant) {
         // Force reflow so no-transition applies, then remove on next frame
         html.offsetHeight; // eslint-disable-line no-unused-expressions
