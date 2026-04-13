@@ -625,11 +625,37 @@
 
 /* Glass card utility */
 .glass-card {
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
+}
+
+/* ─── Monolithic Live Background ──────────────────────────── */
+/* All sections transparent — void lives on body/html level */
+section {
+  background-color: transparent !important;
+}
+
+/* Vignette edges for depth/infinity effect */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 1;
+  pointer-events: none;
+}
+body::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+body::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg), transparent);
 }
 
 /* ─── Fluid Typography ──────────────────────────────────── */
