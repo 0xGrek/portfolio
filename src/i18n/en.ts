@@ -335,8 +335,8 @@ export const en = {
   services_ai_desc: 'Multi-agent systems and content generation',
   services_ai_examples: 'What I can build:|Multi-agent AI systems for data analysis and content generation|System that turns one video (webinar, podcast) into a week of content: short clips, posts, articles with auto-posting|Integration of AI models (Claude, Gemini) into your business processes',
 
-  services_cta_title: "Don't see your industry?",
-  services_cta_desc: 'We automate everything that causes you headaches. Reports, notifications, data entry, monitoring — any routine that eats your time. Tell us what you do manually, and we\'ll show you exactly how a bot or AI can do it for you. 1 hour saved per day = 7 hours per week = 2–4 extra days you can redirect to growing your business.',
+  services_cta_title: 'Audit & Intelligent Automation.',
+  services_cta_desc: 'I identify processes that consume excess resources and implement multi-agent AI systems. Result: up to 80% reduction in routine time costs and scaling your business operational capabilities.',
   services_cta_button: 'Contact me',
 
   // ── Footer ────────────────────────────────────────────
