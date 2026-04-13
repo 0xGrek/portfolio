@@ -59,25 +59,62 @@ export const ua = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
 
+  // Experience — AI Developer (newest)
+  exp_ai_title: 'AI-розробник',
+  exp_ai_company: 'ФОП',
+  exp_ai_period: '2026 – дотепер',
+  exp_ai_location: 'Португалія',
+  exp_ai_desc: 'Multi-agent AI системи, автоматизація контенту та соцмереж, інтеграція Claude/Gemini.',
+  exp_ai_b1: 'Оркестрація 11 AI-агентів для обробки даних',
+  exp_ai_b2: 'Автоматизація контенту та аналітики соцмереж',
+  exp_ai_b3: 'Інтеграція Claude, Gemini, MCP серверів',
+
   // Experience — Software Dev (current)
   exp_dev_title: 'Розробник ПЗ',
   exp_dev_company: 'IT Компанія, Lda | Лісабон, Португалія',
   exp_dev_period: 'Червень 2025 – дотепер',
+  exp_dev_location: 'Лісабон, Португалія',
   exp_dev_desc: 'Розробка та підтримка production-систем, автоматизація бізнес-процесів, адміністрування серверів та баз даних.',
+  exp_dev_b1: 'Розробка та підтримка production-систем',
+  exp_dev_b2: 'Автоматизація звітності, метрик та бізнес-аналітики',
+  exp_dev_b3: 'Адміністрування серверів, баз даних та IT-інфраструктури',
   exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
 
-  // Experience — Founder/Specialist (current)
-  exp_founder_title: 'Засновник & Технічний Спеціаліст (Автоматизація та Web3)',
-  exp_founder_company: 'ФОП / Freelance | Португалія',
-  exp_founder_period: '2023 – дотепер',
-  exp_founder_desc: 'Побудова комплексних рішень на замовлення у сферах Web3, AI та автоматизації бізнесу.\n\n• Автоматизація та крипто: Створення торгових ботів, DeFi-стратегій, сканерів та систем моніторингу гаманців.\n• AI-системи: Розробка мультиагентних систем для обробки даних, автоматизації контенту та інтеграції з Claude/Gemini.\n• Веб-розробка: Створення Telegram-ботів (15+ у production), міні-додатків та веб-застосунків.',
-  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
+  // Experience — Crypto & Automation
+  exp_crypto_title: 'Крипто та автоматизація',
+  exp_crypto_company: 'ФОП',
+  exp_crypto_period: '2023 – дотепер',
+  exp_crypto_location: 'Португалія',
+  exp_crypto_desc: 'Побудова комплексних рішень у сферах Web3, AI та автоматизації бізнесу.',
+  exp_crypto_b1: 'Побудував крипто-сканери та моніторинг гаманців',
+  exp_crypto_b2: 'Автоматизував DeFi стратегії та торгові операції',
+  exp_crypto_b3: 'On-chain аналітика та відстеження транзакцій',
+
+  // Experience — Web Developer
+  exp_webdev_title: 'Веб-розробник',
+  exp_webdev_company: 'Freelance',
+  exp_webdev_period: '2023 – дотепер',
+  exp_webdev_location: '',
+  exp_webdev_desc: 'Telegram-боти та міні-додатки. Побудував систему з 11 ботів для лайф-трекінгу та бізнес-автоматизації.',
+  exp_webdev_b1: '15+ Telegram-ботів та міні-додатків у production',
+  exp_webdev_b2: 'Система з 11 ботів для лайф-трекінгу, фітнесу, планування',
+  exp_webdev_b3: 'Веб-додатки, лендінги та портфоліо-сайти',
+  exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
   exp_police_title: 'Правоохоронець',
   exp_police_company: 'Національна поліція України | Україна',
   exp_police_period: '2019 – 2022',
+  exp_police_location: 'Україна',
   exp_police_desc: 'Пройшов шлях від патрульної поліції до карного розшуку. Досвід, що розвинув аналітичні навички, стресостійкість та вміння знаходити рішення в нестандартних ситуаціях.',
+  exp_police_highlights: 'Патрульна поліція (2019) → Карний розшук (2020) → Спецпідрозділ (2021)',
+
+  // Experience — Founder/Specialist (legacy, kept for compat)
+  exp_founder_title: 'Засновник & Технічний Спеціаліст (Автоматизація та Web3)',
+  exp_founder_company: 'ФОП / Freelance | Португалія',
+  exp_founder_period: '2023 – дотепер',
+  exp_founder_desc: 'Побудова комплексних рішень на замовлення у сферах Web3, AI та автоматизації бізнесу.\n\n• Автоматизація та крипто: Створення торгових ботів, DeFi-стратегій, сканерів та систем моніторингу гаманців.\n• AI-системи: Розробка мультиагентних систем для обробки даних, автоматизації контенту та інтеграції з Claude/Gemini.\n• Веб-розробка: Створення Telegram-ботів (15+ у production), міні-додатків та веб-застосунків.',
+  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
 
   // legacy keys (keep for backward compat)
   exp_official_title: 'Розробник ПЗ',
@@ -96,14 +133,6 @@ export const ua = {
   exp_crypto_auto_b1: 'Побудував крипто-сканери та моніторинг гаманців',
   exp_crypto_auto_b2: 'Автоматизував DeFi стратегії та торгові операції',
   exp_crypto_auto_b3: 'On-chain аналітика та відстеження транзакцій',
-  exp_webdev_title: 'Веб-розробник',
-  exp_webdev_company: 'Freelance',
-  exp_webdev_period: '2023 – дотепер',
-  exp_webdev_location: '',
-  exp_webdev_desc: 'Telegram-боти та міні-додатки. Побудував систему з 11 ботів для лайф-трекінгу та бізнес-автоматизації.',
-  exp_webdev_b1: '15+ Telegram-ботів та міні-додатків у production',
-  exp_webdev_b2: 'Система з 11 ботів для лайф-трекінгу, фітнесу, планування',
-  exp_webdev_b3: 'Веб-додатки, лендінги та портфоліо-сайти',
   exp_ai_dev_title: 'AI-розробник',
   exp_ai_dev_company: 'ФОП',
   exp_ai_dev_period: '2026 – дотепер',
@@ -112,7 +141,6 @@ export const ua = {
   exp_ai_dev_b1: 'Оркестрація 11 AI-агентів для обробки даних',
   exp_ai_dev_b2: 'Автоматизація контенту та аналітики соцмереж',
   exp_ai_dev_b3: 'Інтеграція Claude, Gemini, MCP серверів',
-  exp_police_location: 'Україна',
   exp_police_b1: 'Патрульна поліція (2019) → Карний розшук (2020) → Спецпідрозділ (2021)',
   exp_police_b2: '',
   exp_police_b3: '',
