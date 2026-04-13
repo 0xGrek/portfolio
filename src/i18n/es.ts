@@ -59,41 +59,52 @@ export const es = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiencia',
 
-  exp_official_title: 'Programador de Software',
-  exp_official_company: 'OLEKSANDR ANDRIANOV UNIPESSOAL LDA',
+  // Experience — Software Dev (current)
+  exp_dev_title: 'Desarrollador de Software',
+  exp_dev_company: 'Empresa de IT, Lda | Lisboa, Portugal',
+  exp_dev_period: 'Junio 2025 – Presente',
+  exp_dev_desc: 'Desarrollo y mantenimiento de sistemas en producción, automatización de procesos empresariales, administración de servidores y bases de datos.',
+  exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
+
+  // Experience — Founder/Specialist (current)
+  exp_founder_title: 'Fundador & Especialista Técnico (Automatización & Web3)',
+  exp_founder_company: 'Autónomo / Freelance | Portugal',
+  exp_founder_period: '2023 – Presente',
+  exp_founder_desc: 'Construcción de soluciones personalizadas en Web3, IA y automatización empresarial.\n\n• Automatización & Crypto: Bots de trading, estrategias DeFi, escáneres y sistemas de monitoreo de billeteras.\n• Sistemas IA: Sistemas multi-agente para procesamiento de datos, automatización de contenido e integración con Claude/Gemini.\n• Desarrollo Web: Bots de Telegram (15+ en producción), mini-apps y aplicaciones web.',
+  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
+
+  // Experience — Police (past)
+  exp_police_title: 'Agente de la Ley',
+  exp_police_company: 'Policía Nacional de Ucrania | Ucrania',
+  exp_police_period: '2019 – 2022',
+  exp_police_desc: 'Progresó de la policía de patrulla a la investigación criminal. Experiencia que desarrolló habilidades analíticas, resiliencia al estrés y capacidad de encontrar soluciones en situaciones no estándar.',
+
+  // legacy keys
+  exp_official_title: 'Desarrollador de Software',
+  exp_official_company: 'Empresa de IT, Lda | Lisboa, Portugal',
   exp_official_period: 'Junio 2025 – Presente',
   exp_official_location: 'Lisboa, Portugal',
-  exp_official_desc:
-    'Contrato indefinido (Sem Termo). Desarrollo de software, mantenimiento de código, administración de servidores y bases de datos, soporte de infraestructura IT. Modalidad híbrida/remota.',
+  exp_official_desc: 'Desarrollo y mantenimiento de sistemas en producción, automatización de procesos empresariales, administración de servidores y bases de datos.',
   exp_official_b1: 'Desarrollo de software y mantenimiento de código en sistemas de producción',
   exp_official_b2: 'Administración de servidores y bases de datos — Linux, PostgreSQL, Docker',
   exp_official_b3: 'Soporte de infraestructura IT y desarrollo de herramientas internas',
-
   exp_crypto_eng_title: 'Ingeniero de Automatización Cripto',
   exp_crypto_eng_company: 'Freelance / Independiente',
   exp_crypto_eng_period: '2023 – Presente',
   exp_crypto_eng_location: 'Remoto',
-  exp_crypto_eng_desc:
-    'Construcción de bots de trading, herramientas de análisis on-chain, automatización DeFi y bots de Telegram para comunidades cripto. Sistemas multi-agente de IA para procesamiento de datos y automatización de contenido.',
+  exp_crypto_eng_desc: 'Construcción de soluciones personalizadas en Web3, IA y automatización empresarial.',
   exp_crypto_eng_b1: 'Construí bots de trading y herramientas de automatización DeFi en EVM, Solana, TON y Bitcoin',
   exp_crypto_eng_b2: 'Desarrollé pipelines de análisis on-chain y sistemas de monitoreo de wallets',
   exp_crypto_eng_b3: 'Implementé sistemas de orquestación multi-agente de IA para procesamiento automatizado de datos',
-
   exp_webdev_title: 'Desarrollador Web',
   exp_webdev_company: 'Freelance / Independiente',
   exp_webdev_period: '2023 – Presente',
   exp_webdev_location: 'Lisboa, Portugal',
-  exp_webdev_desc:
-    'Desarrollo web full-stack, automatización con IA y desarrollo de bots de Telegram. 15+ bots en producción, sitios de portafolio, landing pages y aplicaciones web.',
+  exp_webdev_desc: 'Desarrollo web full-stack, automatización con IA y desarrollo de bots de Telegram.',
   exp_webdev_b1: 'Construí 15+ bots de Telegram en producción para pedidos, seguimiento, pagos y resúmenes de IA',
   exp_webdev_b2: 'Desarrollé aplicaciones web full-stack: React, TypeScript, Supabase, Astro, despliegues en Vercel',
   exp_webdev_b3: 'Entregué sitios de portafolio y landing pages para clientes vía Freelancer.com',
-
-  exp_police_title: 'Oficial de Policía',
-  exp_police_company: 'Policía Nacional de Ucrania',
-  exp_police_period: '2019 – 2022',
   exp_police_location: 'Ucrania',
-  exp_police_desc: 'Aplicación de la ley (2019) → Investigación Criminal (2020) → Unidad Especial (2021).',
 
   exp_onchain_title: 'Desarrollador de Automatización',
   exp_onchain_company: 'Independiente',
