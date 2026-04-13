@@ -226,7 +226,7 @@ const categoryIcons: Record<string, string> = {
                   aria-expanded="true"
                   aria-controls={`expand-${project.id}`}
                 >
-                  {lang === 'ua' ? 'Згорнути' : lang === 'pt' ? 'Recolher' : lang === 'es' ? 'Colapsar' : 'Collapse'} ▲
+                  {t(lang, 'proj_collapse' as any)}
                 </button>
               </div>
             </div>
