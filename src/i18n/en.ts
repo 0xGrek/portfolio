@@ -224,7 +224,7 @@ export const en = {
   contact_form_submit: 'Send Message',
   contact_form_success: "Message sent! I'll reply within 24 hours.",
   contact_form_error: 'Something went wrong. Please email me directly.',
-  contact_available: 'Currently available for new opportunities',
+  contact_available: 'Open for collaboration in AI automation, Web3 security and compliance',
   contact_response_time: 'Response time: < 24 hours',
 
   // ── Services ──────────────────────────────────────────
