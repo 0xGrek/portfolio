@@ -212,8 +212,6 @@ const canonicalUrl = Astro.url.href;
       /* ─── 5. Parallax for hero background ─── */
       if (!prefersReducedMotion && !isMobile) {
         var heroDots = document.querySelector('.hero-dots');
-        var heroGlow = document.querySelector('#hero .absolute.inset-0:nth-child(3)');
-        var lastScrollY = window.scrollY;
         var heroSection = document.getElementById('hero');
 
         window.addEventListener('scroll', function () {
@@ -223,7 +221,6 @@ const canonicalUrl = Astro.url.href;
           if (heroDots) {
             heroDots.style.transform = 'translateY(' + (scrollY * 0.25) + 'px)';
           }
-          lastScrollY = scrollY;
         }, { passive: true });
       }
 
