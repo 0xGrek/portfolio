@@ -1,0 +1,259 @@
+---
+// WireframeSphere — pure Canvas 2D wireframe globe, no Three.js
+// Uses fibonacci sphere distribution + matrix rotation + perspective projection
+---
+
+<div
+  id="wireframe-container"
+  aria-hidden="true"
+  class="pointer-events-none select-none"
+>
+  <canvas id="wireframe-canvas"></canvas>
+</div>
+
+<script is:inline>
+(function () {
+  // ─── prefers-reduced-motion check ───────────────────────────────────────────
+  var reducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var container = document.getElementById('wireframe-container');
+  var canvas = document.getElementById('wireframe-canvas');
+  if (!container || !canvas) return;
+
+  var ctx = canvas.getContext('2d');
+
+  // ─── config ─────────────────────────────────────────────────────────────────
+  var isMobile = window.innerWidth < 768;
+  var NUM_POINTS = isMobile ? 120 : 200;
+  var CONNECT_THRESH = 0.62;   // unit-sphere distance to draw an edge
+  var MAX_EDGES = 700;         // cap for performance
+  var RADIUS = isMobile ? 90 : 130; // canvas px radius
+  var SIZE = RADIUS * 2 + 40;       // canvas logical size
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+  var FOV = SIZE * 1.4;
+  var VIEW_DIST = 2.8;
+
+  // ─── resize canvas ──────────────────────────────────────────────────────────
+  canvas.width = SIZE * DPR;
+  canvas.height = SIZE * DPR;
+  canvas.style.width = SIZE + 'px';
+  canvas.style.height = SIZE + 'px';
+  ctx.scale(DPR, DPR);
+
+  container.style.width = SIZE + 'px';
+  container.style.height = SIZE + 'px';
+
+  // ─── fibonacci sphere ────────────────────────────────────────────────────────
+  function fibSphere(n) {
+    var pts = [];
+    var phi = Math.PI * (3 - Math.sqrt(5));
+    for (var i = 0; i < n; i++) {
+      var y = 1 - (i / (n - 1)) * 2;
+      var r = Math.sqrt(1 - y * y);
+      var theta = phi * i;
+      pts.push({ x: Math.cos(theta) * r, y: y, z: Math.sin(theta) * r });
+    }
+    return pts;
+  }
+
+  // ─── precompute edges (on unit sphere, before any rotation) ─────────────────
+  function buildEdges(pts) {
+    var edges = [];
+    var n = pts.length;
+    for (var i = 0; i < n && edges.length < MAX_EDGES; i++) {
+      for (var j = i + 1; j < n && edges.length < MAX_EDGES; j++) {
+        var dx = pts[i].x - pts[j].x;
+        var dy = pts[i].y - pts[j].y;
+        var dz = pts[i].z - pts[j].z;
+        var dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        if (dist < CONNECT_THRESH) {
+          edges.push([i, j]);
+        }
+      }
+    }
+    return edges;
+  }
+
+  var basePoints = fibSphere(NUM_POINTS);
+  var edges = buildEdges(basePoints);
+
+  // ─── rotation helpers ────────────────────────────────────────────────────────
+  function rotateY(p, c, s) {
+    return { x: p.x * c - p.z * s, y: p.y, z: p.x * s + p.z * c };
+  }
+  function rotateX(p, c, s) {
+    return { x: p.x, y: p.y * c - p.z * s, z: p.y * s + p.z * c };
+  }
+
+  // ─── perspective projection ──────────────────────────────────────────────────
+  function project(p) {
+    var factor = FOV / (VIEW_DIST + p.z);
+    return { sx: p.x * factor, sy: p.y * factor, z: p.z };
+  }
+
+  // ─── state ───────────────────────────────────────────────────────────────────
+  var angleY = 0;
+  var angleX = 0;
+  var mouseOffsetX = 0;
+  var mouseOffsetY = 0;
+  var scrollScale = 1;
+  var scrollOpacity = 1;
+  var lastTime = 0;
+  var rafId = null;
+
+  // ─── accent color ─────────────────────────────────────────────────────────────
+  function getAccentRGB() {
+    try {
+      var v = getComputedStyle(document.documentElement)
+        .getPropertyValue('--accent-rgb')
+        .trim();
+      return v || '100, 160, 255';
+    } catch (e) {
+      return '100, 160, 255';
+    }
+  }
+
+  // ─── draw ────────────────────────────────────────────────────────────────────
+  function draw(timestamp) {
+    var dt = timestamp - lastTime;
+    if (dt > 50) dt = 16; // skip large frames (tab was hidden)
+    lastTime = timestamp;
+
+    var cx = SIZE / 2;
+    var cy = SIZE / 2;
+
+    ctx.clearRect(0, 0, SIZE, SIZE);
+
+    if (!reducedMotion) {
+      angleY += 0.003 * (dt / 16);
+    }
+
+    var totalY = angleY + mouseOffsetX;
+    var totalX = angleX + mouseOffsetY;
+
+    var cosY = Math.cos(totalY), sinY = Math.sin(totalY);
+    var cosX = Math.cos(totalX), sinX = Math.sin(totalX);
+
+    // transform all points
+    var transformed = basePoints.map(function (p) {
+      var q = rotateY(p, cosY, sinY);
+      q = rotateX(q, cosX, sinX);
+      var proj = project(q);
+      return {
+        sx: proj.sx * RADIUS + cx,
+        sy: proj.sy * RADIUS + cy,
+        z: q.z,
+      };
+    });
+
+    var rgb = getAccentRGB();
+
+    ctx.save();
+    // apply scroll scale from center
+    ctx.translate(cx, cy);
+    ctx.scale(scrollScale, scrollScale);
+    ctx.translate(-cx, -cy);
+    ctx.globalAlpha = scrollOpacity;
+
+    // ── draw edges ────────────────────────────────────────────────────────────
+    for (var e = 0; e < edges.length; e++) {
+      var ia = edges[e][0], ib = edges[e][1];
+      var pa = transformed[ia], pb = transformed[ib];
+
+      // depth-based opacity: front z≈1 → bright, back z≈-1 → dim
+      var avgZ = (pa.z + pb.z) * 0.5;
+      var depthAlpha = (avgZ + 1) * 0.5; // 0..1
+      var lineAlpha = 0.08 + depthAlpha * 0.32; // 0.08 → 0.40
+
+      ctx.beginPath();
+      ctx.moveTo(pa.sx, pa.sy);
+      ctx.lineTo(pb.sx, pb.sy);
+      ctx.strokeStyle = 'rgba(' + rgb + ',' + lineAlpha + ')';
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+    }
+
+    // ── draw points ───────────────────────────────────────────────────────────
+    for (var i = 0; i < transformed.length; i++) {
+      var pt = transformed[i];
+      var depthA = (pt.z + 1) * 0.5;
+      var ptAlpha = 0.1 + depthA * 0.55;
+      var ptRadius = 0.8 + depthA * 1.0;
+
+      ctx.beginPath();
+      ctx.arc(pt.sx, pt.sy, ptRadius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + rgb + ',' + ptAlpha + ')';
+      ctx.fill();
+    }
+
+    ctx.restore();
+
+    if (!reducedMotion) {
+      rafId = requestAnimationFrame(draw);
+    }
+  }
+
+  // ─── mouse parallax ──────────────────────────────────────────────────────────
+  var heroSection = document.getElementById('hero');
+  if (heroSection) {
+    heroSection.addEventListener('mousemove', function (e) {
+      var rect = heroSection.getBoundingClientRect();
+      var nx = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 → +0.5
+      var ny = (e.clientY - rect.top) / rect.height - 0.5;
+      // lerp toward target (smooth)
+      mouseOffsetX = nx * 0.35;
+      mouseOffsetY = ny * 0.25;
+    });
+    heroSection.addEventListener('mouseleave', function () {
+      mouseOffsetX = 0;
+      mouseOffsetY = 0;
+    });
+  }
+
+  // ─── scroll parallax ─────────────────────────────────────────────────────────
+  function onScroll() {
+    var vh = window.innerHeight || 800;
+    var progress = Math.min(window.scrollY / vh, 1); // 0 → 1
+    scrollScale = 1 - progress * 0.22;               // 1.0 → 0.78
+    scrollOpacity = 1 - progress * 0.75;             // 1.0 → 0.25
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ─── start ───────────────────────────────────────────────────────────────────
+  if (reducedMotion) {
+    // draw once, static
+    lastTime = performance.now();
+    draw(lastTime);
+  } else {
+    lastTime = performance.now();
+    rafId = requestAnimationFrame(draw);
+  }
+
+  // cleanup on page navigation (Astro view transitions)
+  document.addEventListener('astro:before-swap', function () {
+    if (rafId) cancelAnimationFrame(rafId);
+    window.removeEventListener('scroll', onScroll);
+  });
+})();
+</script>
+
+<style>
+  #wireframe-container {
+    opacity: 0;
+    animation: sphereFadeIn 2s ease 0.6s forwards;
+  }
+
+  @keyframes sphereFadeIn {
+    to { opacity: 1; }
+  }
+
+  @media (max-width: 480px) {
+    #wireframe-container {
+      display: none;
+    }
+  }
+</style>
