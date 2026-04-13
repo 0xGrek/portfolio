@@ -223,6 +223,12 @@ export const es = {
   edu_swat_desc: 'Programa de entrenamiento táctico especializado. Programa de formación táctica apoyado por la Embajada de EE.UU. en Ucrania.',
   edu_swat_note: 'Programa de formación táctica apoyado por la Embajada de EE.UU. en Ucrania',
 
+  edu_pt_a2_title: 'Certificado de Lengua Portuguesa — A2',
+  edu_pt_a2_institution: 'IEFP / Escuela de Lengua Portuguesa',
+  edu_pt_a2_period: '2026',
+  edu_pt_a2_location: 'Portugal',
+  edu_pt_a2_desc: 'Certificado oficial de nivel A2 en lengua portuguesa. Demuestra capacidad de comunicación en situaciones cotidianas en Portugal.',
+
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
   blog_subtitle: 'Escribiendo sobre crypto compliance, forense on-chain y automatización con IA.',
