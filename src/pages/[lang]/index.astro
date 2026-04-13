@@ -9,6 +9,7 @@ import Projects from '../../components/sections/Projects.astro';
 import Skills from '../../components/sections/Skills.astro';
 import Services from '../../components/sections/Services.astro';
 import Education from '../../components/sections/Education.astro';
+import Contact from '../../components/sections/Contact.astro';
 import SchemaOrg from '../../components/seo/SchemaOrg.astro';
 
 export function getStaticPaths() {
@@ -33,10 +34,18 @@ const { lang } = Astro.params as { lang: Lang };
   </Fragment>
 
   <Hero lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
   <About lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
   <Experience lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
   <Projects lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
   <Services lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
   <Education lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
   <Skills lang={lang} />
+  <div class="section-bridge" aria-hidden="true"></div>
+  <Contact lang={lang} />
 </BaseLayout>
