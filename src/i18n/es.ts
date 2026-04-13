@@ -193,12 +193,21 @@ export const es = {
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Habilidades',
-  skills_forensics: 'Forense On-Chain',
-  skills_blockchain: 'Blockchain y DeFi',
-  skills_automation: 'Automatización Cripto',
-  skills_agents: 'IA y Sistemas de Agentes',
-  skills_dev: 'Desarrollo',
-  skills_security: 'Seguridad y Cumplimiento',
+  skills_tech_core: 'Competencias Técnicas Principales',
+  skills_tech_core_langs: 'Lenguajes de Programación',
+  skills_tech_core_dev: 'Desarrollo y DevOps',
+  skills_tech_core_ai: 'AI y Sistemas de Agentes',
+  skills_blockchain: 'Experiencia en Blockchain y DeFi',
+  skills_blockchain_platforms: 'Plataformas y Ecosistemas',
+  skills_blockchain_defi: 'DeFi y Protocolos',
+  skills_blockchain_analysis: 'Análisis de Blockchain',
+  skills_security: 'Seguridad, Compliance y Análisis On-Chain',
+  skills_security_core: 'Habilidades Principales',
+  skills_security_tools: 'Herramientas de Análisis',
+  skills_security_compliance: 'Compliance',
+  skills_automation: 'Automatización e Infraestructura',
+  skills_automation_tools: 'Herramientas y Bibliotecas',
+  skills_automation_infra: 'Infraestructura',
   skills_languages: 'Idiomas',
 
   // ── Education ─────────────────────────────────────────
