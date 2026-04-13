@@ -1,132 +1,159 @@
+export interface SkillSubGroup {
+  nameKey: string;
+  skills: string[];
+}
+
 export interface SkillCategory {
   id: string;
   titleKey: string;
-  skills: string[];
+  subGroups: SkillSubGroup[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'forensics',
-    titleKey: 'skills_forensics',
-    skills: [
-      'Arkham (Visualizer, Alerter, Insights)',
-      'Nansen (Smart Money, Token God Mode)',
-      'MetaSleuth (BlockSec)',
-      'Bubblemaps V2',
-      'Chainalysis Reactor',
-      'Elliptic',
-      'TRM Labs',
-      'DeBank',
-      'Dune Analytics',
-      'GMGN.ai',
-      'Dexscreener',
-      'HolderScan',
-      'Breadcrumbs',
-      'Phalcon Explorer',
-      'Wallet Clustering & Attribution',
-      'Mixer Flow Analysis',
-      'Cross-chain Tracking',
+    id: 'tech-core',
+    titleKey: 'skills_tech_core',
+    subGroups: [
+      {
+        nameKey: 'skills_tech_core_langs',
+        skills: ['Python', 'TypeScript / JavaScript'],
+      },
+      {
+        nameKey: 'skills_tech_core_dev',
+        skills: [
+          'FastAPI',
+          'Astro',
+          'PostgreSQL & Supabase',
+          'Redis',
+          'Docker',
+          'Git & GitHub Actions',
+          'Vercel',
+          'REST APIs',
+          'Pydantic',
+        ],
+      },
+      {
+        nameKey: 'skills_tech_core_ai',
+        skills: [
+          'Multi-agent Orchestration (CrewAI, LangGraph)',
+          'LLM Routing & Classification',
+          'RAG Pipelines',
+          'Prompt Engineering',
+          'Claude Code',
+          'OpenClaw',
+          'Telegram Bot + LLM Integration',
+        ],
+      },
     ],
   },
   {
     id: 'blockchain',
     titleKey: 'skills_blockchain',
-    skills: [
-      'EVM (Ethereum, Polygon, Arbitrum, Base, Optimism)',
-      'Solana',
-      'TON',
-      'Bitcoin (Ordinals, BRC-20)',
-      'SUI',
-      'Aptos',
-      'StarkNet',
-      'DeFi Protocols (50+)',
-      'DEX Aggregation (1inch, Jupiter, CowSwap)',
-      'Bridge Protocols (LayerZero, Wormhole, Stargate)',
-      'MEV Analysis (EigenPhi, Flashbots)',
-      'Smart Contract Reading (Solidity, ABI)',
-    ],
-  },
-  {
-    id: 'automation',
-    titleKey: 'skills_automation',
-    skills: [
-      'Python (asyncio, httpx, aiohttp)',
-      'Pyrogram & Telethon (400+ sessions)',
-      'ccxt (9 exchanges)',
-      'web3.py & ethers.js',
-      'Playwright & Puppeteer',
-      'ZennoPoster & BAS',
-      'Dolphin Anty & AdsPower',
-      'ADB / Mobile Automation',
-      'Multi-account Infrastructure (1000+)',
-      'Anti-fingerprint Management',
-      'Residential Proxy Rotation',
-      'RPC Management (Alchemy, QuickNode)',
-      'Transaction Simulation (Tenderly)',
-    ],
-  },
-  {
-    id: 'agents',
-    titleKey: 'skills_agents',
-    skills: [
-      'Claude Code (daily, 13+ agents)',
-      'MCP Protocol (5 active servers)',
-      'Multi-agent Orchestration',
-      'Custom Agent Dispatcher (Python)',
-      'LLM Routing & Classification',
-      'Groq Whisper (speech-to-text)',
-      'RAG Pipelines',
-      'Prompt Engineering',
-      'RTK Token Optimization',
-      'CrewAI',
-      'LangGraph',
-      'OpenClaw (self-hosted)',
-      'Telegram Bot + LLM Integration',
-    ],
-  },
-  {
-    id: 'dev',
-    titleKey: 'skills_dev',
-    skills: [
-      'Python',
-      'TypeScript / JavaScript',
-      'Astro',
-      'FastAPI',
-      'PostgreSQL & Supabase',
-      'Redis',
-      'Docker',
-      'Git & GitHub Actions',
-      'Vercel',
-      'REST APIs',
-      'Pydantic',
+    subGroups: [
+      {
+        nameKey: 'skills_blockchain_platforms',
+        skills: [
+          'EVM (Ethereum, Polygon, Arbitrum, Base, Optimism)',
+          'Solana',
+          'TON',
+          'Bitcoin (Ordinals, BRC-20)',
+          'SUI',
+          'Aptos',
+          'StarkNet',
+        ],
+      },
+      {
+        nameKey: 'skills_blockchain_defi',
+        skills: [
+          'Deep knowledge of 50+ DeFi Protocols',
+          'DEX Aggregation (1inch, Jupiter)',
+          'Bridge Protocols (LayerZero, Wormhole)',
+        ],
+      },
+      {
+        nameKey: 'skills_blockchain_analysis',
+        skills: [
+          'MEV Analysis (EigenPhi, Flashbots)',
+          'Smart Contract Reading (Solidity, ABI)',
+        ],
+      },
     ],
   },
   {
     id: 'security',
     titleKey: 'skills_security',
-    skills: [
-      'On-chain Forensics',
-      'Wallet Clustering & Attribution',
-      'Smart Contract Vulnerability Research',
-      'Exploit Analysis (DeFi, Casino)',
-      'Suspicious Flow Detection',
-      'OSINT (on-chain → off-chain pivot)',
-      'AML / KYC Awareness',
-      'FATF Travel Rule',
-      'SAR Writing (law enforcement background)',
-      'Sanctions Screening',
-      'Airdrop Sybil Detection',
-      'Financial Crime Investigation',
+    subGroups: [
+      {
+        nameKey: 'skills_security_core',
+        skills: [
+          'On-chain Forensics',
+          'Wallet Clustering & Attribution',
+          'Smart Contract Vulnerability Analysis',
+          'Exploit Analysis',
+          'OSINT (on-chain → off-chain)',
+          'Sybil Attack Detection',
+          'Financial Crime Investigation (SAR Writing)',
+        ],
+      },
+      {
+        nameKey: 'skills_security_tools',
+        skills: [
+          'Arkham',
+          'Nansen',
+          'Dune Analytics',
+          'DeBank',
+          'Bubblemaps',
+          'Chainalysis',
+          'Elliptic',
+          'TRM Labs',
+          'MetaSleuth',
+          'Phalcon Explorer',
+          'Dexscreener',
+        ],
+      },
+      {
+        nameKey: 'skills_security_compliance',
+        skills: ['AML / KYC Awareness', 'FATF Travel Rule', 'Sanctions Screening'],
+      },
+    ],
+  },
+  {
+    id: 'automation',
+    titleKey: 'skills_automation',
+    subGroups: [
+      {
+        nameKey: 'skills_automation_tools',
+        skills: [
+          'web3.py',
+          'ethers.js',
+          'ccxt (9 exchanges)',
+          'Pyrogram & Telethon (400+ sessions)',
+          'Playwright',
+          'Puppeteer',
+          'ZennoPoster',
+          'BAS',
+        ],
+      },
+      {
+        nameKey: 'skills_automation_infra',
+        skills: [
+          'Multi-account Infrastructure (1000+)',
+          'Anti-fingerprint Management (Dolphin Anty)',
+          'Residential Proxy Rotation',
+          'RPC Management (Alchemy, QuickNode)',
+          'Transaction Simulation (Tenderly)',
+        ],
+      },
     ],
   },
   {
     id: 'languages',
     titleKey: 'skills_languages',
-    skills: [
-      'Ukrainian (Native)',
-      'Russian (Native)',
-      'English (A2)',
-      'Portuguese (A2)',
+    subGroups: [
+      {
+        nameKey: '',
+        skills: ['Ukrainian (Native)', 'Russian (Native)', 'English (A2)', 'Portuguese (A2)'],
+      },
     ],
   },
 ];
