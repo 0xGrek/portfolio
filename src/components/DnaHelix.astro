@@ -1,0 +1,398 @@
+---
+// DnaHelix — generative double-helix from particles
+// Pure Canvas2D, no external libraries, scroll-linked rotation
+---
+
+<canvas
+  id="dna-helix-canvas"
+  class="fixed inset-0 pointer-events-none"
+  style="z-index: -10; opacity: 0; transition: opacity 2s ease;"
+  aria-hidden="true"
+></canvas>
+
+<script is:inline>
+(function () {
+  'use strict';
+
+  /* ─── WebGL / Canvas support check ─── */
+  var canvas = document.getElementById('dna-helix-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+
+  /* ─── DPR & sizing ─── */
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var isMobile = window.innerWidth < 768;
+
+  function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width  = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  /* ─── Accent color (mirrors DataPlanet logic) ─── */
+  var LANG_COLORS = {
+    ua: '0, 122, 255',
+    en: '99, 102, 241',
+    pt: '20, 184, 166',
+    es: '245, 158, 11',
+  };
+  function getAccentRgb() {
+    var raw = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
+    if (raw) return raw;
+    var lang = (document.documentElement.getAttribute('data-lang') || 'en').toLowerCase();
+    return LANG_COLORS[lang] || LANG_COLORS['en'];
+  }
+  var accentRgb = getAccentRgb();
+  var langObserver = new MutationObserver(function () { accentRgb = getAccentRgb(); });
+  langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
+
+  /* ─── Purple secondary color ─── */
+  var purpleRgb = '163, 113, 247'; /* --purple: #a371f7 */
+
+  /* ─── Helpers ─── */
+  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+  /* ─── Pseudo-noise (no external lib) — value noise via sin ─── */
+  function pseudoNoise(x, y, t) {
+    var s = Math.sin(x * 12.9898 + y * 78.233 + t * 5.0) * 43758.5453;
+    return (s - Math.floor(s)) * 2.0 - 1.0; /* -1 to 1 */
+  }
+  function smoothNoise(x, t) {
+    /* Smooth organic motion using overlapping sine waves */
+    return (
+      Math.sin(x * 0.8 + t * 0.7) * 0.4 +
+      Math.sin(x * 1.3 - t * 0.5) * 0.3 +
+      Math.sin(x * 2.1 + t * 1.1) * 0.2 +
+      Math.sin(x * 3.7 - t * 0.3) * 0.1
+    );
+  }
+
+  /* ─── Mouse ─── */
+  var mouse = { x: W * 0.5, y: H * 0.5 };
+  if (!isMobile) {
+    document.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }, { passive: true });
+  }
+
+  /* ─── Scroll state ─── */
+  var scrollY = 0;
+  var scrollExtra = 0;
+  window.addEventListener('scroll', function () {
+    scrollY = window.scrollY || document.documentElement.scrollTop;
+    scrollExtra = scrollY * 0.001; /* radians added to rotY per px scrolled */
+  }, { passive: true });
+
+  /* ════════════════════════════════════════════════
+     DNA HELIX PARAMETERS
+  ════════════════════════════════════════════════ */
+
+  /* Particle counts */
+  var STRAND_COUNT  = isMobile ? 60 : 120;   /* particles per strand */
+  var BRIDGE_EVERY  = isMobile ? 5  : 4;     /* bridge every N particles */
+
+  /* Geometry */
+  var HELIX_RADIUS  = isMobile ? 55 : 80;    /* radius of each strand from axis */
+  var HELIX_HEIGHT  = isMobile ? H * 0.85 : H * 0.9;  /* total height of helix */
+  var TWIST_TURNS   = 3.5;                   /* how many full rotations */
+  var TWIST_RATE    = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
+
+  /* Positioning — off-center for depth */
+  var OFFSET_X = isMobile ? 0.5 : 0.72;     /* 0.5 = center, 0.72 = right side */
+  var OFFSET_Y = 0.5;
+
+  /* Animation */
+  var ROT_Y_SPEED  = 0.00018;               /* auto-rotation radians/ms */
+  var NOISE_SPEED  = 0.00025;               /* organic noise time rate */
+
+  /* ─── Build helix particles ─── */
+  var strand1 = [];
+  var strand2 = [];
+  var bridges = [];
+
+  function buildHelix() {
+    strand1 = [];
+    strand2 = [];
+    bridges = [];
+
+    HELIX_HEIGHT = isMobile ? H * 0.85 : H * 0.9;
+    HELIX_RADIUS = isMobile ? 55 : 80;
+
+    for (var i = 0; i < STRAND_COUNT; i++) {
+      var t = i / (STRAND_COUNT - 1);      /* 0..1 along the helix */
+      var angle = t * Math.PI * 2 * TWIST_TURNS;
+
+      /* Unit-sphere-ish coords — we'll apply rotation later */
+      var ux = Math.cos(angle);             /* strand 1 X unit */
+      var uz = Math.sin(angle);             /* strand 1 Z unit */
+      var y  = t * HELIX_HEIGHT - HELIX_HEIGHT * 0.5;  /* Y: centered */
+
+      /* Strand 1 */
+      strand1.push({ ux: ux, uz: uz, y: y, idx: i, baseAngle: angle });
+
+      /* Strand 2 — offset π */
+      var ux2 = Math.cos(angle + Math.PI);
+      var uz2 = Math.sin(angle + Math.PI);
+      strand2.push({ ux: ux2, uz: uz2, y: y, idx: i, baseAngle: angle + Math.PI });
+
+      /* Bridge */
+      if (i % BRIDGE_EVERY === 0) {
+        bridges.push(i);
+      }
+    }
+  }
+
+  /* ─── 3D rotation state ─── */
+  var rotY = 0;       /* auto-rotation + scroll */
+  var rotX = 0.12;    /* slight tilt to show depth */
+
+  /* ─── Project 3D point to 2D screen ─── */
+  function project(ux, uz, y, noiseTime, idx) {
+    /* Apply organic noise displacement */
+    var noiseAmt = 3.5;
+    var nx = smoothNoise(idx * 0.15, noiseTime) * noiseAmt;
+    var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * noiseAmt * 0.5;
+
+    /* World coordinates */
+    var wx = ux * HELIX_RADIUS + nx;
+    var wz = uz * HELIX_RADIUS;
+    var wy = y + ny;
+
+    /* Apply rotY (spin around vertical axis) */
+    var cosY = Math.cos(rotY);
+    var sinY = Math.sin(rotY);
+    var rx = wx * cosY + wz * sinY;
+    var rz = -wx * sinY + wz * cosY;
+
+    /* Apply rotX (tilt) */
+    var cosX = Math.cos(rotX);
+    var sinX = Math.sin(rotX);
+    var ry = wy * cosX - rz * sinX;
+    var rz2 = wy * sinX + rz * cosX;
+
+    /* Perspective projection */
+    var fov = 900;
+    var depth = rz2 + fov;
+    var scale = fov / (depth > 1 ? depth : 1);
+
+    var cx = W * OFFSET_X;
+    var cy = H * OFFSET_Y;
+
+    return {
+      x:      cx + rx * scale,
+      y:      cy + ry * scale,
+      z:      rz2,               /* for depth sorting */
+      scale:  scale,
+      depth:  clamp((rz2 + fov) / (fov * 2), 0, 1),  /* 0=back 1=front */
+    };
+  }
+
+  /* ─── Mouse proximity repulsion ─── */
+  function applyMouseForce(px, py, projX, projY) {
+    if (isMobile) return { dx: 0, dy: 0 };
+    var dx = projX - mouse.x;
+    var dy = projY - mouse.y;
+    var dist = Math.sqrt(dx * dx + dy * dy);
+    var repelRadius = 120;
+    if (dist < repelRadius && dist > 0.1) {
+      var force = (1 - dist / repelRadius) * 8;
+      return { dx: (dx / dist) * force, dy: (dy / dist) * force };
+    }
+    return { dx: 0, dy: 0 };
+  }
+
+  /* ════════════════════════════════════════════════
+     DRAW FRAME
+  ════════════════════════════════════════════════ */
+
+  function draw(noiseTime) {
+    ctx.clearRect(0, 0, W, H);
+
+    /* Project all particles */
+    var proj1 = [], proj2 = [];
+    for (var i = 0; i < STRAND_COUNT; i++) {
+      var s1 = strand1[i];
+      var s2 = strand2[i];
+      proj1.push(project(s1.ux, s1.uz, s1.y, noiseTime, i));
+      proj2.push(project(s2.ux, s2.uz, s2.y, noiseTime, i + STRAND_COUNT));
+    }
+
+    /* ─── Draw lines along strand 1 ─── */
+    for (var i = 0; i < proj1.length - 1; i++) {
+      var a = proj1[i], b = proj1[i + 1];
+      var depthAvg = (a.depth + b.depth) * 0.5;
+      var alpha = clamp(depthAvg * 0.25 + 0.03, 0.02, 0.22);
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+    }
+
+    /* ─── Draw lines along strand 2 ─── */
+    for (var i = 0; i < proj2.length - 1; i++) {
+      var a = proj2[i], b = proj2[i + 1];
+      var depthAvg = (a.depth + b.depth) * 0.5;
+      var alpha = clamp(depthAvg * 0.25 + 0.03, 0.02, 0.22);
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(' + purpleRgb + ', ' + alpha + ')';
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+    }
+
+    /* ─── Draw bridges (rungs of the ladder) ─── */
+    for (var bi = 0; bi < bridges.length; bi++) {
+      var i = bridges[bi];
+      if (i >= proj1.length) continue;
+      var a = proj1[i], b = proj2[i];
+      var depthAvg = (a.depth + b.depth) * 0.5;
+      var alpha = clamp(depthAvg * 0.18 + 0.04, 0.03, 0.2);
+
+      ctx.beginPath();
+      ctx.moveTo(a.x, a.y);
+      ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = 'rgba(255, 255, 255, ' + alpha + ')';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+
+      /* Bridge endpoint dots */
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, 1.0, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 1.8, 0, 0.3) + ')';
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, 1.0, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + clamp(alpha * 1.8, 0, 0.3) + ')';
+      ctx.fill();
+    }
+
+    /* ─── Draw strand 1 particles ─── */
+    for (var i = 0; i < proj1.length; i++) {
+      var pt = proj1[i];
+      var mf = applyMouseForce(0, 0, pt.x, pt.y);
+      var px = pt.x + mf.dx;
+      var py = pt.y + mf.dy;
+
+      /* Bokeh: size and opacity fall off with depth */
+      var depthFade = 0.2 + pt.depth * 0.8;
+      var alpha = clamp(depthFade * 0.5, 0.04, 0.7);
+      var radius = clamp(pt.scale * HELIX_RADIUS * 0.025, 0.5, 3.5) * depthFade;
+
+      /* Glow */
+      if (pt.depth > 0.55 && !isMobile) {
+        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3);
+        grd.addColorStop(0, 'rgba(' + accentRgb + ', ' + clamp(alpha * 0.4, 0, 0.35) + ')');
+        grd.addColorStop(1, 'rgba(' + accentRgb + ', 0)');
+        ctx.beginPath();
+        ctx.arc(px, py, radius * 3, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(px, py, Math.max(0.4, radius), 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
+      ctx.fill();
+    }
+
+    /* ─── Draw strand 2 particles ─── */
+    for (var i = 0; i < proj2.length; i++) {
+      var pt = proj2[i];
+      var mf = applyMouseForce(0, 0, pt.x, pt.y);
+      var px = pt.x + mf.dx;
+      var py = pt.y + mf.dy;
+
+      var depthFade = 0.2 + pt.depth * 0.8;
+      var alpha = clamp(depthFade * 0.5, 0.04, 0.7);
+      var radius = clamp(pt.scale * HELIX_RADIUS * 0.025, 0.5, 3.5) * depthFade;
+
+      if (pt.depth > 0.55 && !isMobile) {
+        var grd = ctx.createRadialGradient(px, py, 0, px, py, radius * 3);
+        grd.addColorStop(0, 'rgba(' + purpleRgb + ', ' + clamp(alpha * 0.4, 0, 0.35) + ')');
+        grd.addColorStop(1, 'rgba(' + purpleRgb + ', 0)');
+        ctx.beginPath();
+        ctx.arc(px, py, radius * 3, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+      }
+
+      ctx.beginPath();
+      ctx.arc(px, py, Math.max(0.4, radius), 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + purpleRgb + ', ' + alpha + ')';
+      ctx.fill();
+    }
+  }
+
+  /* ════════════════════════════════════════════════
+     MAIN LOOP
+  ════════════════════════════════════════════════ */
+  var lastTime = 0;
+  var noiseTime = 0;
+  var fpsSkipThreshold = 1000 / 25;  /* skip if dt > 40ms (< 25fps) */
+
+  function loop(ts) {
+    var dt = ts - lastTime;
+    lastTime = ts;
+
+    if (dt > fpsSkipThreshold) {
+      requestAnimationFrame(loop);
+      return;
+    }
+
+    /* Auto-rotation + scroll-linked boost */
+    var scrollBoost = scrollExtra;
+    rotY += (ROT_Y_SPEED + scrollBoost * 0.02) * dt;
+
+    /* Noise time for organic motion */
+    noiseTime += NOISE_SPEED * dt;
+
+    /* Refresh accent in case lang changed */
+    accentRgb = getAccentRgb();
+
+    draw(noiseTime);
+
+    requestAnimationFrame(loop);
+  }
+
+  /* ─── Init ─── */
+  resize();
+  buildHelix();
+
+  lastTime = performance.now();
+  requestAnimationFrame(loop);
+
+  /* Fade in */
+  setTimeout(function () {
+    canvas.style.opacity = '1';
+  }, 800);
+
+  /* ─── Resize ─── */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      isMobile = window.innerWidth < 768;
+      STRAND_COUNT = isMobile ? 60 : 120;
+      BRIDGE_EVERY = isMobile ? 5 : 4;
+      OFFSET_X = isMobile ? 0.5 : 0.72;
+      resize();
+      buildHelix();
+    }, 250);
+  }, { passive: true });
+
+})();
+</script>
