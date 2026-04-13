@@ -563,5 +563,44 @@ const categoryIcons: Record<string, string> = {
         e.stopPropagation();
       });
     });
+
+    /*
+     * ── Pagination: show more / collapse ───────────────────
+     */
+    var toggleBtn = document.getElementById('projects-toggle-btn');
+    var projectsGrid = document.getElementById('projects-grid');
+
+    if (toggleBtn && projectsGrid) {
+      var labelEl = toggleBtn.querySelector('.btn-label');
+      var showMoreLabel = toggleBtn.getAttribute('data-show') || labelEl.textContent.trim();
+      var collapseLabel = toggleBtn.getAttribute('data-collapse') ||
+        (document.documentElement.lang === 'uk' ? 'Згорнути' :
+         document.documentElement.lang === 'pt' ? 'Recolher' :
+         document.documentElement.lang === 'es' ? 'Colapsar' : 'Collapse');
+
+      toggleBtn.addEventListener('click', function () {
+        var isExpanded = projectsGrid.classList.contains('projects-expanded');
+
+        if (isExpanded) {
+          // Collapse: hide extra cards, update button
+          projectsGrid.classList.remove('projects-expanded');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          if (labelEl) labelEl.textContent = showMoreLabel;
+
+          // Scroll back up to the projects section smoothly
+          var section = document.getElementById('projects');
+          if (section) {
+            setTimeout(function () {
+              section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 60);
+          }
+        } else {
+          // Expand: show extra cards, update button
+          projectsGrid.classList.add('projects-expanded');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          if (labelEl) labelEl.textContent = collapseLabel;
+        }
+      });
+    }
   })();
 </script>
