@@ -59,27 +59,43 @@ export const ua = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
 
-  // Experience — Official
+  // Experience — Software Dev (current)
+  exp_dev_title: 'Розробник ПЗ',
+  exp_dev_company: 'IT Компанія, Lda | Лісабон, Португалія',
+  exp_dev_period: 'Червень 2025 – дотепер',
+  exp_dev_desc: 'Розробка та підтримка production-систем, автоматизація бізнес-процесів, адміністрування серверів та баз даних.',
+  exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
+
+  // Experience — Founder/Specialist (current)
+  exp_founder_title: 'Засновник & Технічний Спеціаліст (Автоматизація та Web3)',
+  exp_founder_company: 'ФОП / Freelance | Португалія',
+  exp_founder_period: '2023 – дотепер',
+  exp_founder_desc: 'Побудова комплексних рішень на замовлення у сферах Web3, AI та автоматизації бізнесу.\n\n• Автоматизація та крипто: Створення торгових ботів, DeFi-стратегій, сканерів та систем моніторингу гаманців.\n• AI-системи: Розробка мультиагентних систем для обробки даних, автоматизації контенту та інтеграції з Claude/Gemini.\n• Веб-розробка: Створення Telegram-ботів (15+ у production), міні-додатків та веб-застосунків.',
+  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
+
+  // Experience — Police (past)
+  exp_police_title: 'Правоохоронець',
+  exp_police_company: 'Національна поліція України | Україна',
+  exp_police_period: '2019 – 2022',
+  exp_police_desc: 'Пройшов шлях від патрульної поліції до карного розшуку. Досвід, що розвинув аналітичні навички, стресостійкість та вміння знаходити рішення в нестандартних ситуаціях.',
+
+  // legacy keys (keep for backward compat)
   exp_official_title: 'Розробник ПЗ',
-  exp_official_company: 'IT Компанія, Lda ✱✱✱',
+  exp_official_company: 'IT Компанія, Lda | Лісабон, Португалія',
   exp_official_period: 'Червень 2025 – дотепер',
   exp_official_location: 'Лісабон, Португалія',
-  exp_official_desc: 'Розробка ПЗ, автоматизація бізнес-процесів, адміністрування серверів та баз даних.',
+  exp_official_desc: 'Розробка та підтримка production-систем, автоматизація бізнес-процесів, адміністрування серверів та баз даних.',
   exp_official_b1: 'Розробка та підтримка production-систем',
   exp_official_b2: 'Автоматизація звітності, метрик та бізнес-аналітики',
   exp_official_b3: 'Адміністрування серверів, баз даних та IT-інфраструктури',
-
-  // Experience — Crypto & Automation
   exp_crypto_auto_title: 'Крипто та автоматизація',
   exp_crypto_auto_company: 'ФОП',
   exp_crypto_auto_period: '2023 – дотепер',
   exp_crypto_auto_location: 'Португалія',
-  exp_crypto_auto_desc: 'Крипто-сканери, моніторинг гаманців, DeFi автоматизація, торгові боти та on-chain аналітика.',
+  exp_crypto_auto_desc: 'Побудова комплексних рішень у сферах Web3, AI та автоматизації бізнесу.',
   exp_crypto_auto_b1: 'Побудував крипто-сканери та моніторинг гаманців',
   exp_crypto_auto_b2: 'Автоматизував DeFi стратегії та торгові операції',
   exp_crypto_auto_b3: 'On-chain аналітика та відстеження транзакцій',
-
-  // Experience — Web Development
   exp_webdev_title: 'Веб-розробник',
   exp_webdev_company: 'Freelance',
   exp_webdev_period: '2023 – дотепер',
@@ -88,8 +104,6 @@ export const ua = {
   exp_webdev_b1: '15+ Telegram-ботів та міні-додатків у production',
   exp_webdev_b2: 'Система з 11 ботів для лайф-трекінгу, фітнесу, планування',
   exp_webdev_b3: 'Веб-додатки, лендінги та портфоліо-сайти',
-
-  // Experience — AI Development
   exp_ai_dev_title: 'AI-розробник',
   exp_ai_dev_company: 'ФОП',
   exp_ai_dev_period: '2026 – дотепер',
@@ -98,13 +112,7 @@ export const ua = {
   exp_ai_dev_b1: 'Оркестрація 11 AI-агентів для обробки даних',
   exp_ai_dev_b2: 'Автоматизація контенту та аналітики соцмереж',
   exp_ai_dev_b3: 'Інтеграція Claude, Gemini, MCP серверів',
-
-  // Experience — Police
-  exp_police_title: 'Правоохоронець',
-  exp_police_company: 'Національна поліція України',
-  exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: '',
   exp_police_b1: 'Патрульна поліція (2019) → Карний розшук (2020) → Спецпідрозділ (2021)',
   exp_police_b2: '',
   exp_police_b3: '',
