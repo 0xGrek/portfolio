@@ -59,41 +59,52 @@ export const en = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
 
+  // Experience — Software Dev (current)
+  exp_dev_title: 'Software Developer',
+  exp_dev_company: 'IT Company, Lda | Lisbon, Portugal',
+  exp_dev_period: 'June 2025 – Present',
+  exp_dev_desc: 'Development and maintenance of production systems, business process automation, server and database administration.',
+  exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
+
+  // Experience — Founder/Specialist (current)
+  exp_founder_title: 'Founder & Technical Specialist (Automation & Web3)',
+  exp_founder_company: 'Sole Proprietor / Freelance | Portugal',
+  exp_founder_period: '2023 – Present',
+  exp_founder_desc: "Building custom solutions in Web3, AI and business automation.\n\n• Automation & Crypto: Trading bots, DeFi strategies, scanners and wallet monitoring systems.\n• AI Systems: Multi-agent systems for data processing, content automation and Claude/Gemini integration.\n• Web Development: Telegram bots (15+ in production), mini-apps and web applications.",
+  exp_founder_tech: 'Python, Web3, DeFi, AI Agents, Telegram API, Astro, React',
+
+  // Experience — Police (past)
+  exp_police_title: 'Law Enforcement Officer',
+  exp_police_company: 'National Police of Ukraine | Ukraine',
+  exp_police_period: '2019 – 2022',
+  exp_police_desc: 'Progressed from patrol police to criminal investigation. Experience that developed analytical skills, stress resilience and the ability to find solutions in non-standard situations.',
+
+  // legacy keys
   exp_official_title: 'Software Developer',
-  exp_official_company: 'OLEKSANDR ANDRIANOV UNIPESSOAL LDA',
+  exp_official_company: 'IT Company, Lda | Lisbon, Portugal',
   exp_official_period: 'June 2025 – Present',
   exp_official_location: 'Lisbon, Portugal',
-  exp_official_desc:
-    'Full-time permanent contract (Sem Termo). Software development, code maintenance, server and database administration, IT infrastructure support. Hybrid/remote.',
+  exp_official_desc: 'Development and maintenance of production systems, business process automation, server and database administration.',
   exp_official_b1: 'Software development and codebase maintenance across production systems',
   exp_official_b2: 'Server and database administration — Linux, PostgreSQL, Docker',
   exp_official_b3: 'IT infrastructure support and internal tooling development',
-
   exp_crypto_eng_title: 'Crypto Automation Engineer',
   exp_crypto_eng_company: 'Freelance / Independent',
   exp_crypto_eng_period: '2023 – Present',
   exp_crypto_eng_location: 'Remote',
-  exp_crypto_eng_desc:
-    'Building trading bots, on-chain analytics tools, DeFi automation, and Telegram bots for crypto communities. Multi-agent AI systems for data processing and content automation.',
+  exp_crypto_eng_desc: 'Building custom solutions in Web3, AI and business automation.',
   exp_crypto_eng_b1: 'Built trading bots and DeFi automation tools across EVM, Solana, TON, and Bitcoin',
   exp_crypto_eng_b2: 'Developed on-chain analytics pipelines and wallet monitoring systems',
   exp_crypto_eng_b3: 'Deployed multi-agent AI orchestration systems for automated data processing',
-
   exp_webdev_title: 'Web Developer',
   exp_webdev_company: 'Freelance / Independent',
   exp_webdev_period: '2023 – Present',
   exp_webdev_location: 'Lisbon, Portugal',
-  exp_webdev_desc:
-    'Full-stack web development, AI-powered automation, and Telegram bot development. 15+ production bots, portfolio sites, landing pages, and web applications.',
+  exp_webdev_desc: 'Full-stack web development, AI-powered automation, and Telegram bot development.',
   exp_webdev_b1: 'Built 15+ production Telegram bots handling orders, tracking, payments, and AI summaries',
   exp_webdev_b2: 'Developed full-stack web apps: React, TypeScript, Supabase, Astro, Vercel deployments',
   exp_webdev_b3: 'Delivered portfolio sites and landing pages for clients via Freelancer.com',
-
-  exp_police_title: 'Law Enforcement Officer',
-  exp_police_company: 'National Police of Ukraine',
-  exp_police_period: '2019 – 2022',
   exp_police_location: 'Ukraine',
-  exp_police_desc: 'Law enforcement (2019) → Criminal Investigation (2020) → Special Unit (2021).',
 
   exp_onchain_title: 'Automation Developer',
   exp_onchain_company: 'Independent',
