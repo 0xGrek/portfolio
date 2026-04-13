@@ -51,4 +51,14 @@ export const education: Education[] = [
     type: 'certificate',
     status: 'completed',
   },
+  {
+    id: 'portuguese-a2',
+    titleKey: 'edu_pt_a2_title',
+    schoolKey: 'edu_pt_a2_institution',
+    periodKey: 'edu_pt_a2_period',
+    locationKey: 'edu_pt_a2_location',
+    descriptionKey: 'edu_pt_a2_desc',
+    type: 'certificate',
+    status: 'completed',
+  },
 ];
