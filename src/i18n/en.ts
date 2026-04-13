@@ -217,7 +217,7 @@ export const en = {
   // ── Contact ───────────────────────────────────────────
   contact_title: 'Get in Touch',
   contact_subtitle:
-    "I'm open to full-time roles in Web3 security, compliance, or AI automation — and freelance projects. Let's talk.",
+    "I'll help transform chaos in your data into a structured profitable system. Let's talk.",
   contact_form_name: 'Your Name',
   contact_form_email: 'Your Email',
   contact_form_message: 'Message',
