@@ -219,11 +219,6 @@ html.lenis body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes typewriter-cursor {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
 @keyframes draw-line {
   from { transform: scaleY(0); transform-origin: top; }
   to   { transform: scaleY(1); transform-origin: top; }
