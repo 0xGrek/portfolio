@@ -214,15 +214,25 @@ const socials = [
 
   /* Staggered fade-in for hero content */
   .hero-content > * {
-    animation: fade-in-up 0.6s ease both;
+    animation: fade-in-up 0.65s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
   .hero-content > *:nth-child(1) { animation-delay: 0.05s; }
-  .hero-content > *:nth-child(2) { animation-delay: 0.15s; }
-  .hero-content > *:nth-child(3) { animation-delay: 0.25s; }
-  .hero-content > *:nth-child(4) { animation-delay: 0.32s; }
-  .hero-content > *:nth-child(5) { animation-delay: 0.4s; }
-  .hero-content > *:nth-child(6) { animation-delay: 0.48s; }
-  .hero-content > *:nth-child(7) { animation-delay: 0.55s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.18s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+  .hero-content > *:nth-child(7) { animation-delay: 0.7s; }
+
+  /* Subtitle lines — extra slight blur-to-sharp effect */
+  .hero-subtitle-lead {
+    animation: fade-in-up 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both,
+               hero-blur-in 0.8s ease 0.3s both;
+  }
+  .hero-subtitle-body {
+    animation: fade-in-up 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.42s both,
+               hero-blur-in 0.8s ease 0.42s both;
+  }
 
   .avatar-ring {
     transition: box-shadow 0.35s ease, border-color 0.35s ease;
