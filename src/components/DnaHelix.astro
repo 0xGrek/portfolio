@@ -91,9 +91,7 @@
 
   function updateScroll(sy) {
     scrollY = (typeof sy === 'number') ? sy : (window.scrollY || document.documentElement.scrollTop);
-    var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    var progress = Math.min(scrollY / maxScroll, 1);
-    helixOffsetY = progress * HELIX_HEIGHT;
+    helixOffsetY = scrollY;  /* 1:1 mapping — helix is "painted on the page" */
   }
 
   /* Native scroll fallback */
