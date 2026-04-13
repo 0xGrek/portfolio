@@ -41,7 +41,7 @@ export const es = {
   about_stats_tools: '100+ Herramientas',
   about_stats_chains: '10+ Blockchains',
   about_stats_web3: '3+ Años en Web3',
-  about_stats_police: '3 Años en Policía',
+  about_stats_police: '3+ Años en Analytics & Security',
   // legacy keys
   about_p1: 'Mi camino en IT no empezó en la escuela o universidad — empezó en las fuerzas del orden. Tres años en la policía de patrulla e investigación criminal me enseñaron lo esencial: ver patrones en el caos, tomar decisiones rápidas y arreglar sistemáticamente lo que no funciona.',
   about_p2: 'Tras mudarme a Lisboa, elegí el desarrollo web como punto de entrada en la tecnología. Pero al crear sitios web, descubrí el crypto — un mundo con muchas más ineficiencias y oportunidades infinitas para la automatización.',
