@@ -39,22 +39,6 @@ export const es = {
   about_stats_chains: '10+ Blockchains',
   about_stats_web3: '3+ Años en Web3',
   about_stats_police: '3+ Años en Analytics & Security',
-  // legacy keys
-  about_p1: 'Mi camino en IT no empezó en la escuela o universidad — empezó en las fuerzas del orden. Tres años en la policía de patrulla e investigación criminal me enseñaron lo esencial: ver patrones en el caos, tomar decisiones rápidas y arreglar sistemáticamente lo que no funciona.',
-  about_p2: 'Tras mudarme a Lisboa, elegí el desarrollo web como punto de entrada en la tecnología. Pero al crear sitios web, descubrí el crypto — un mundo con muchas más ineficiencias y oportunidades infinitas para la automatización.',
-  about_p3: 'Me sumergí por completo: análisis on-chain, bots de minting NFT, arbitraje CEX/DEX, investigación de vulnerabilidades. Esto rápidamente creció hasta convertirse en mi propio negocio y trabajos serios para clientes.',
-  about_unique: 'Hoy combino el rol de desarrollador de software en una empresa de IT con la construcción de mis propios sistemas de IA. La lógica es la misma desde el principio: encontrar dónde el negocio pierde tiempo y dinero, y hacer que la tecnología entregue resultados.',
-
-  // ── Stats ─────────────────────────────────────────────
-  stat_tools: '100+',
-  stat_tools_label: 'Herramientas',
-  stat_chains: '10+',
-  stat_chains_label: 'Blockchains',
-  stat_years: '3+',
-  stat_years_label: 'Años en Web3',
-  stat_exchanges: '3',
-  stat_exchanges_label: 'Años en Policía',
-
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiencia',
 
