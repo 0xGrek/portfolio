@@ -173,6 +173,11 @@
   to   { transform: scaleX(1); transform-origin: left; }
 }
 
+@keyframes hero-blur-in {
+  from { filter: blur(6px); }
+  to   { filter: blur(0px); }
+}
+
 @keyframes shine-sweep {
   0%   { transform: translateX(-100%) skewX(-12deg); }
   100% { transform: translateX(250%) skewX(-12deg); }
