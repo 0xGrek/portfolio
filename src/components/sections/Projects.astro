@@ -103,28 +103,34 @@ const categoryColors: Record<string, string> = {
               {t(lang, project.descriptionKey as any)}
             </p>
 
-            <!-- Key metric (first only) -->
-            {project.metrics && project.metrics[0] && (
-              <div class="mb-3">
-                <span
-                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold"
-                  style="background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.2);"
-                >
-                  <strong>{project.metrics[0].value}</strong>
-                </span>
-              </div>
-            )}
-
-            <!-- Tech tags (max 3) -->
-            <div class="flex flex-wrap gap-1.5 pt-3 border-t" style="border-color: var(--border);">
-              {project.tech.slice(0, 3).map((tech) => (
-                <TechTag label={tech} />
-              ))}
-              {project.tech.length > 3 && (
-                <span class="text-xs px-2 py-0.5 rounded" style="color: var(--text-secondary); background-color: var(--bg-secondary);">
-                  +{project.tech.length - 3}
-                </span>
+            <!-- Compact view: metric + tech — hidden when expanded -->
+            <div class="card-compact-footer">
+              <!-- Key metric (first only) -->
+              {project.metrics && project.metrics[0] && (
+                <div class="mb-3">
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold"
+                    style="background-color: rgba(var(--accent-rgb), 0.1); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.2);"
+                  >
+                    <strong>{project.metrics[0].value}</strong>
+                    {project.metrics[0].label && (
+                      <span style="font-weight: 400; opacity: 0.75;">{project.metrics[0].label}</span>
+                    )}
+                  </span>
+                </div>
               )}
+
+              <!-- Tech tags (max 3) -->
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t" style="border-color: var(--border);">
+                {project.tech.slice(0, 3).map((tech) => (
+                  <TechTag label={tech} />
+                ))}
+                {project.tech.length > 3 && (
+                  <span class="text-xs px-2 py-0.5 rounded" style="color: var(--text-secondary); background-color: var(--bg-secondary);">
+                    +{project.tech.length - 3}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
 
