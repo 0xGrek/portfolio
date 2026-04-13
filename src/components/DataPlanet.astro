@@ -1,0 +1,428 @@
+---
+// DataPlanet — holographic sphere with code satellites
+// Pure Canvas2D, no external libraries
+---
+
+<canvas
+  id="data-planet-canvas"
+  class="fixed inset-0 pointer-events-none"
+  style="z-index: -10; opacity: 0; transition: opacity 2s ease;"
+  aria-hidden="true"
+></canvas>
+
+<script is:inline>
+(function () {
+  'use strict';
+
+  var canvas = document.getElementById('data-planet-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+
+  /* ─── DPR & sizing ─── */
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var isMobile = window.innerWidth < 768;
+
+  function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width  = W * DPR;
+    canvas.height = H * DPR;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+
+  /* ─── Accent color (mirrors ParticlesBackground logic) ─── */
+  var LANG_COLORS = {
+    ua: '0, 122, 255',
+    en: '99, 102, 241',
+    pt: '20, 184, 166',
+    es: '245, 158, 11',
+  };
+  function getAccentRgb() {
+    var raw = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim();
+    if (raw) return raw;
+    var lang = (document.documentElement.getAttribute('data-lang') || 'en').toLowerCase();
+    return LANG_COLORS[lang] || LANG_COLORS['en'];
+  }
+  var accentRgb = getAccentRgb();
+  var langObserver = new MutationObserver(function () { accentRgb = getAccentRgb(); });
+  langObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang', 'lang'] });
+
+  /* ─── Helpers ─── */
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+  /* ─── Mouse ─── */
+  var mouse = { x: 0, y: 0 };
+  if (!isMobile) {
+    document.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }, { passive: true });
+  }
+
+  /* ════════════════════════════════════════════════
+     SPHERE — 3D dot cloud projected to 2D
+  ════════════════════════════════════════════════ */
+
+  var PARTICLE_COUNT = isMobile ? 150 : 280;
+  var SPHERE_RADIUS  = isMobile ? Math.min(W, H) * 0.16 : Math.min(W, H) * 0.2;
+  var ROT_SPEED_BASE = isMobile ? 0.00015 : 0.00028;  // radians per ms
+
+  /* Rotation angles */
+  var rotX = 0.3;   // tilt so we see some depth
+  var rotY = 0;
+
+  /* Target angles (for mouse tilt) */
+  var targetRotX = 0.3;
+  var targetRotY = 0;
+
+  /* Sphere particles — unit sphere coords */
+  var particles = [];
+
+  function initSphere() {
+    particles = [];
+    SPHERE_RADIUS = isMobile
+      ? Math.min(W, H) * 0.16
+      : Math.min(W, H) * 0.2;
+
+    /* Fibonacci sphere distribution — evenly spread dots */
+    var count = isMobile ? 150 : 280;
+    var golden = Math.PI * (3 - Math.sqrt(5));
+    for (var i = 0; i < count; i++) {
+      var y  = 1 - (i / (count - 1)) * 2;       // -1 to 1
+      var r  = Math.sqrt(1 - y * y);
+      var phi = i * golden;
+      particles.push({
+        ux: Math.cos(phi) * r,   // unit sphere x
+        uy: y,
+        uz: Math.sin(phi) * r,
+        size: rand(0.8, 2.0),
+        baseOpacity: rand(0.12, 0.28),
+      });
+    }
+  }
+
+  /* 3D → 2D projection with current rotation */
+  function project(ux, uy, uz) {
+    /* Apply rotX (tilt) around X axis */
+    var cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+    var y1 = uy * cosX - uz * sinX;
+    var z1 = uy * sinX + uz * cosX;
+
+    /* Apply rotY around Y axis */
+    var cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+    var x2 = ux * cosY + z1 * sinY;
+    var z2 = -ux * sinY + z1 * cosY;
+
+    /* Perspective-ish depth factor */
+    var perspective = 1.4;
+    var depth = (z2 + 1) / 2;  // 0 (back) to 1 (front)
+    var fov = perspective / (perspective - z2 * 0.6);
+
+    var cx = W * 0.5;
+    var cy = H * 0.5;
+
+    return {
+      x: cx + x2 * SPHERE_RADIUS * fov,
+      y: cy + y1 * SPHERE_RADIUS * fov,
+      depth: depth,
+      fov: fov,
+    };
+  }
+
+  function drawSphere() {
+    /* Sort back to front for painter's algo */
+    var projected = [];
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      var pt = project(p.ux, p.uy, p.uz);
+      projected.push({ x: pt.x, y: pt.y, depth: pt.depth, fov: pt.fov, size: p.size, baseOpacity: p.baseOpacity });
+    }
+    projected.sort(function (a, b) { return a.depth - b.depth; });
+
+    for (var i = 0; i < projected.length; i++) {
+      var pt = projected[i];
+      /* Depth-based opacity: back dots are more transparent */
+      var depthFade = 0.2 + pt.depth * 0.8;
+      var alpha = clamp(pt.baseOpacity * depthFade, 0.02, 0.32);
+      var r = pt.size * (0.5 + pt.depth * 0.8) * pt.fov;
+
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, Math.max(0.3, r), 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
+      ctx.fill();
+    }
+  }
+
+  /* ════════════════════════════════════════════════
+     SATELLITES — code strings on elliptical orbits
+  ════════════════════════════════════════════════ */
+
+  var SATELLITE_LABELS = [
+    '0x4F2a…', 'Python', 'Solidity', 'AI', 'async',
+    'def', 'web3', 'DeFi', '0xFF', 'uint256',
+    'await', 'Rust', 'pragma', '.eth', 'IPFS',
+    'zk-SNARKs', 'calldata', '0x00',
+  ];
+
+  var satellites = [];
+
+  function initSatellites() {
+    satellites = [];
+    var count = isMobile ? 8 : 18;
+    for (var i = 0; i < count; i++) {
+      var label = SATELLITE_LABELS[i % SATELLITE_LABELS.length];
+      /* Orbit plane tilt — random angle so orbits look 3D */
+      var tilt = rand(-Math.PI * 0.5, Math.PI * 0.5);
+      var incline = rand(-Math.PI * 0.4, Math.PI * 0.4);
+      /* Orbit size: slightly larger than the sphere */
+      var orbitA = SPHERE_RADIUS * rand(1.35, 2.1);  // semi-major (horizontal)
+      var orbitB = orbitA * rand(0.3, 0.7);          // semi-minor (vertical) → ellipse
+
+      satellites.push({
+        label:   label,
+        angle:   rand(0, Math.PI * 2),
+        speed:   rand(0.00012, 0.00035) * (Math.random() < 0.5 ? 1 : -1),
+        orbitA:  orbitA,
+        orbitB:  orbitB,
+        tilt:    tilt,
+        incline: incline,
+        opacity: rand(0.08, 0.18),
+        fontSize: isMobile ? rand(7, 9) : rand(8, 11),
+      });
+    }
+  }
+
+  function drawSatellites(dt) {
+    var cx = W * 0.5;
+    var cy = H * 0.5;
+
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    for (var i = 0; i < satellites.length; i++) {
+      var s = satellites[i];
+      s.angle += s.speed * dt;
+
+      /* Ellipse position in orbit plane */
+      var ex = Math.cos(s.angle) * s.orbitA;
+      var ey = Math.sin(s.angle) * s.orbitB;
+
+      /* Apply tilt (rotate orbit plane around Y axis) */
+      var cosT = Math.cos(s.tilt);
+      var sinT = Math.sin(s.tilt);
+      var x3 = ex * cosT;
+      var z3 = ex * sinT;
+      var y3 = ey;
+
+      /* Apply incline (rotate orbit plane around X axis) */
+      var cosI = Math.cos(s.incline);
+      var sinI = Math.sin(s.incline);
+      var y4 = y3 * cosI - z3 * sinI;
+      var z4 = y3 * sinI + z3 * cosI;
+
+      /* Apply global sphere rotation so satellites spin with the sphere */
+      var cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+      var y5 = y4 * cosX - z4 * sinX;
+      var z5 = y4 * sinX + z4 * cosX;
+
+      var cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+      var x6 = x3 * cosY + z5 * sinY;
+      var z6 = -x3 * sinY + z5 * cosY;
+
+      /* Depth factor */
+      var depth = (z6 / SPHERE_RADIUS + 1) / 2;  // 0-1
+      /* Don't render if behind sphere and too close (occlusion approximation) */
+      var distFromCenter = Math.sqrt(x6 * x6 + y5 * y5 + z6 * z6);
+      var isBehind = z6 < -SPHERE_RADIUS * 0.1;
+      var tooClose = distFromCenter < SPHERE_RADIUS * 1.15;
+
+      var screenX = cx + x6;
+      var screenY = cy + y5;
+
+      /* Depth-based alpha */
+      var alpha = s.opacity * (0.25 + depth * 0.75);
+      if (isBehind && tooClose) alpha *= 0.15;  // dim when behind sphere
+      alpha = clamp(alpha, 0.01, 0.22);
+
+      ctx.font = 'bold ' + s.fontSize + 'px "Courier New", monospace';
+      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + alpha + ')';
+      ctx.fillText(s.label, screenX, screenY);
+
+      /* Small dot at satellite position */
+      ctx.beginPath();
+      ctx.arc(screenX, screenY - s.fontSize * 0.8, 1.2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + accentRgb + ', ' + clamp(alpha * 1.5, 0, 0.3) + ')';
+      ctx.fill();
+    }
+
+    ctx.restore();
+  }
+
+  /* ════════════════════════════════════════════════
+     EQUATOR RING — subtle ellipse outline
+  ════════════════════════════════════════════════ */
+  function drawRings() {
+    var cx = W * 0.5;
+    var cy = H * 0.5;
+
+    /* Tilted ring — project a circle in 3D */
+    var steps = 80;
+    var ringA = SPHERE_RADIUS * 1.2;
+    var ringB = ringA * Math.abs(Math.sin(rotX + 0.5));  // flatten based on tilt
+
+    ctx.save();
+    ctx.beginPath();
+
+    var cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+    var cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+
+    for (var i = 0; i <= steps; i++) {
+      var a = (i / steps) * Math.PI * 2;
+      var ux = Math.cos(a);
+      var uz = Math.sin(a);
+      var uy = 0;
+
+      /* Apply rotation */
+      var y1 = uy * cosX - uz * sinX;
+      var z1 = uy * sinX + uz * cosX;
+      var x2 = ux * cosY + z1 * sinY;
+      var z2 = -ux * sinY + z1 * cosY;
+
+      var depth = (z2 + 1) / 2;
+      var alpha = clamp(0.03 + depth * 0.05, 0, 0.08);
+
+      var sx = cx + x2 * ringA;
+      var sy = cy + y1 * ringA;
+
+      if (i === 0) {
+        ctx.moveTo(sx, sy);
+      } else {
+        ctx.lineTo(sx, sy);
+      }
+    }
+
+    ctx.closePath();
+    ctx.strokeStyle = 'rgba(' + accentRgb + ', 0.06)';
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+
+    /* Second ring — tilted 90° */
+    ctx.beginPath();
+    for (var i = 0; i <= steps; i++) {
+      var a = (i / steps) * Math.PI * 2;
+      var ux = 0;
+      var uz = Math.cos(a);
+      var uy = Math.sin(a);
+
+      var y1 = uy * cosX - uz * sinX;
+      var z1 = uy * sinX + uz * cosX;
+      var x2 = ux * cosY + z1 * sinY;
+      var z2 = -ux * sinY + z1 * cosY;
+
+      var sx = cx + x2 * ringA;
+      var sy = cy + y1 * ringA;
+
+      if (i === 0) ctx.moveTo(sx, sy);
+      else ctx.lineTo(sx, sy);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = 'rgba(' + accentRgb + ', 0.04)';
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  /* ════════════════════════════════════════════════
+     CORE GLOW — subtle radial gradient at center
+  ════════════════════════════════════════════════ */
+  function drawCoreGlow() {
+    var cx = W * 0.5;
+    var cy = H * 0.5;
+    var gr = ctx.createRadialGradient(cx, cy, 0, cx, cy, SPHERE_RADIUS * 1.1);
+    gr.addColorStop(0,   'rgba(' + accentRgb + ', 0.04)');
+    gr.addColorStop(0.5, 'rgba(' + accentRgb + ', 0.02)');
+    gr.addColorStop(1,   'rgba(' + accentRgb + ', 0)');
+    ctx.fillStyle = gr;
+    ctx.beginPath();
+    ctx.arc(cx, cy, SPHERE_RADIUS * 1.1, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  /* ════════════════════════════════════════════════
+     MAIN LOOP
+  ════════════════════════════════════════════════ */
+  var lastTime = 0;
+  var fpsSkipThreshold = 1000 / 30;  // skip if dt > 33ms (< 30fps)
+
+  function loop(ts) {
+    var dt = ts - lastTime;
+    lastTime = ts;
+
+    /* Skip frame if lagging */
+    if (dt > fpsSkipThreshold) {
+      requestAnimationFrame(loop);
+      return;
+    }
+
+    /* Update rotation */
+    rotY += ROT_SPEED_BASE * dt;
+
+    /* Mouse tilt on desktop: subtle lean toward cursor */
+    if (!isMobile) {
+      var normX = (mouse.x / W - 0.5) * 2;  // -1 to 1
+      var normY = (mouse.y / H - 0.5) * 2;
+      targetRotX = 0.3 + normY * 0.18;
+      targetRotY += ROT_SPEED_BASE * dt;
+      /* Lerp rotX toward target */
+      rotX += (targetRotX - rotX) * 0.03;
+    }
+
+    accentRgb = getAccentRgb();
+
+    ctx.clearRect(0, 0, W, H);
+
+    drawCoreGlow();
+    drawRings();
+    drawSphere();
+    drawSatellites(dt);
+
+    requestAnimationFrame(loop);
+  }
+
+  /* ─── Init ─── */
+  resize();
+  initSphere();
+  initSatellites();
+
+  lastTime = performance.now();
+  requestAnimationFrame(loop);
+
+  /* Fade in after short delay */
+  setTimeout(function () {
+    canvas.style.opacity = '1';
+  }, 800);
+
+  /* ─── Resize ─── */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      isMobile = window.innerWidth < 768;
+      ROT_SPEED_BASE = isMobile ? 0.00015 : 0.00028;
+      resize();
+      initSphere();
+      initSatellites();
+    }, 250);
+  }, { passive: true });
+
+})();
+</script>
