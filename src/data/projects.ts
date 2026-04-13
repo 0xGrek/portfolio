@@ -79,7 +79,7 @@ export const projects: Project[] = [
       '/media/projects/portugal-realty/screenshot-2.webp',
     ],
     featured: true,
-    links: {},
+    links: { github: 'https://github.com/0xGrek/portugal-realty-dashboard' },
     metrics: [
       { key: 'listings', value: '12,000+' },
       { key: 'portals', value: '4 portals scraped' },
