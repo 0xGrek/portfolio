@@ -355,6 +355,21 @@ const canonicalUrl = Astro.url.href;
     })();
     </script>
 
+    <!-- Available pill scroll behavior -->
+    <script is:inline>
+    (function () {
+      var pill = document.getElementById('available-pill');
+      if (!pill) return;
+      window.addEventListener('scroll', function () {
+        pill.classList.toggle('visible', window.scrollY > window.innerHeight * 0.8);
+      }, { passive: true });
+      pill.addEventListener('click', function () {
+        var contactEl = document.getElementById('contact');
+        if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
+      });
+    })();
+    </script>
+
     <!-- Lenis smooth scroll — bundled by Astro (not is:inline) -->
     <script>
       import Lenis from 'lenis';
