@@ -118,18 +118,4 @@ const { lang } = Astro.props;
   }
 </style>
 
-<script is:inline>
-  (function () {
-    if (!('IntersectionObserver' in window)) return;
-    var els = document.querySelectorAll('#experience .reveal, #experience .reveal-left, #experience .reveal-right, #experience .timeline-line-animated');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.06 });
-    els.forEach(function (el) { io.observe(el); });
-  })();
-</script>
+<!-- Scroll-reveal handled by global IntersectionObserver in BaseLayout.astro -->
