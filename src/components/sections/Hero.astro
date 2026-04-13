@@ -96,10 +96,10 @@ const socials = [
 
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-4">
-          <Button href="#projects" variant="primary" size="lg">
+          <Button href="#projects" variant="primary" size="lg" class="magnetic">
             {t(lang, 'hero_cta_projects')}
           </Button>
-          <Button href="#footer" variant="secondary" size="lg">
+          <Button href="#footer" variant="secondary" size="lg" class="magnetic">
             {t(lang, 'hero_cta_contact')}
           </Button>
         </div>
@@ -112,8 +112,8 @@ const socials = [
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.name}
-              class={`social-hover social-hero--${s.name.toLowerCase().replace(/[^a-z]/g, '')}`}
-              style="color: var(--text-secondary);"
+              class={`magnetic social-hover social-hero--${s.name.toLowerCase().replace(/[^a-z]/g, '')}`}
+              style="color: var(--text-secondary); display: inline-flex;"
             >
               <Fragment set:html={s.icon} />
             </a>
