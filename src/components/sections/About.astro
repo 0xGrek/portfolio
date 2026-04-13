@@ -44,8 +44,8 @@ const stats = [
       <div class="grid grid-cols-2 gap-4 stagger-children justify-items-center mx-auto w-full max-w-md lg:max-w-none" style="grid-auto-rows: 1fr;">
         {stats.map((stat, i) => (
           <div
-            class="stat-card p-4 sm:p-5 rounded-xl text-center card-hover glass-card w-full flex items-center justify-center overflow-hidden"
-            style={`border: 1px solid var(--card-border); min-height: 90px;`}
+            class="stat-card p-4 sm:p-5 rounded-xl text-center card-hover glass-card w-full flex items-center justify-center"
+            style={`border: 1px solid var(--card-border); min-height: 80px;`}
           >
             <div class="stat-value font-bold w-full">
               {t(lang, stat.value as any)}
