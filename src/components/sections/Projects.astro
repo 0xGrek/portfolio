@@ -405,37 +405,25 @@ const categoryIcons: Record<string, string> = {
 
   /*
    * ── Pagination: extra cards (index >= 3) ─────────────────
-   * Use opacity + transform for smooth fade-slide animation.
-   * We can't use display:none in a transition, so we use
-   * a grid wrapper with grid-template-rows: 0fr trick.
-   * Cards themselves: clip via overflow:hidden wrapper on the grid.
+   * Hidden by default via JS (display:none set in script).
+   * When shown, cards animate in with opacity + translateY.
+   * .project-extra-animating is the "entering" state.
    */
-  .project-extra {
-    opacity: 0;
-    transform: translateY(12px);
-    pointer-events: none;
-    position: absolute;
-    visibility: hidden;
-    /* We override these once the grid is expanded */
-    transition: opacity 0.35s ease, transform 0.35s ease;
+  .project-extra-animating {
+    animation: cardFadeIn 0.38s ease forwards;
   }
 
-  /* When grid is expanded, extra cards become visible */
-  #projects-grid.projects-expanded .project-extra {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    position: relative;
-    visibility: visible;
+  /* Stagger via animation-delay — set on the element by JS */
+  @keyframes cardFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-
-  /* Stagger the extra cards for a nice cascade effect */
-  #projects-grid.projects-expanded .project-extra:nth-of-type(4) { transition-delay: 0.04s; }
-  #projects-grid.projects-expanded .project-extra:nth-of-type(5) { transition-delay: 0.1s; }
-  #projects-grid.projects-expanded .project-extra:nth-of-type(6) { transition-delay: 0.16s; }
-  #projects-grid.projects-expanded .project-extra:nth-of-type(7) { transition-delay: 0.22s; }
-  #projects-grid.projects-expanded .project-extra:nth-of-type(8) { transition-delay: 0.28s; }
-  #projects-grid.projects-expanded .project-extra:nth-of-type(9) { transition-delay: 0.34s; }
 
   /* "Show more" button styling */
   .projects-show-more-btn {
