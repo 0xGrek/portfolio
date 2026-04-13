@@ -216,7 +216,7 @@ export const es = {
   // ── Contact ───────────────────────────────────────────
   contact_title: 'Contactar',
   contact_subtitle:
-    'Estoy abierto a roles a tiempo completo en seguridad Web3, compliance o automatización con IA — y proyectos freelance. Hablemos.',
+    'Te ayudo a transformar el caos en tus datos en un sistema estructurado y rentable. Hablemos.',
   contact_form_name: 'Tu nombre',
   contact_form_email: 'Tu email',
   contact_form_message: 'Mensaje',
