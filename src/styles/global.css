@@ -137,11 +137,12 @@
   }
 
   /* Remove underlines from all links globally */
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
+  a,
+  a:hover,
+  a:focus,
+  a:visited,
+  a:active {
+    text-decoration: none !important;
   }
 
   /* Themed text selection */
