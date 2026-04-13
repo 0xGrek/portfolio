@@ -23,6 +23,8 @@ export const es = {
   hero_handle: '@0xGrek',
   hero_title: 'Especialista en Automatización e IA',
   hero_subtitle: 'Especialista en Automatización e IA. Creo sistemas que trabajan por ti. Mi camino: de la investigación criminal al desarrollo de agentes IA. Hambriento de aprender, siguiendo la tendencia, abierto a desafíos.',
+  hero_subtitle_lead: 'Especialista en Automatización e IA. Creo sistemas que trabajan por ti.',
+  hero_subtitle_body: 'Mi camino: de la investigación criminal al desarrollo de agentes IA. Hambriento de aprender, siguiendo la tendencia, abierto a desafíos.',
   hero_bio: '',
   hero_status: 'Abierto a propuestas',
   hero_cta_projects: 'Mis Proyectos',

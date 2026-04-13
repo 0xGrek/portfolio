@@ -23,6 +23,8 @@ export const en = {
   hero_handle: '@0xGrek',
   hero_title: 'Automation & AI Specialist',
   hero_subtitle: "Automation & AI Specialist. I build systems that work for you. My path: from criminal investigation to AI agent development. Hungry for learning, riding the trend, open to challenges.",
+  hero_subtitle_lead: "Automation & AI Specialist. I build systems that work for you.",
+  hero_subtitle_body: "My path: from criminal investigation to AI agent development. Hungry for learning, riding the trend, open to challenges.",
   hero_bio: '',
   hero_status: 'Open to opportunities',
   hero_cta_projects: 'My Projects',

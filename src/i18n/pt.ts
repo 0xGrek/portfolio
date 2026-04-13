@@ -23,6 +23,8 @@ export const pt = {
   hero_handle: '@0xGrek',
   hero_title: 'Especialista em Automação e AI',
   hero_subtitle: 'Especialista em Automação e AI. Crio sistemas que trabalham por si. O meu percurso: da investigação criminal ao desenvolvimento de agentes AI. Com fome de aprender, a seguir a tendência, aberto a desafios.',
+  hero_subtitle_lead: 'Especialista em Automação e AI. Crio sistemas que trabalham por si.',
+  hero_subtitle_body: 'O meu percurso: da investigação criminal ao desenvolvimento de agentes AI. Com fome de aprender, a seguir a tendência, aberto a desafios.',
   hero_bio: '',
   hero_status: 'Aberto a propostas',
   hero_cta_projects: 'Os Meus Projetos',

@@ -51,9 +51,14 @@ const socials = [
         </div>
 
         <!-- Title / Subtitle -->
-        <h2 class="text-xl sm:text-2xl font-semibold" style="color: var(--text);">
-          {t(lang, 'hero_subtitle')}
-        </h2>
+        <div class="space-y-1">
+          <p class="text-lg sm:text-xl font-bold leading-snug" style="color: var(--text);">
+            {t(lang, 'hero_subtitle_lead')}
+          </p>
+          <p class="text-base sm:text-lg font-normal leading-relaxed" style="color: var(--text-secondary);">
+            {t(lang, 'hero_subtitle_body')}
+          </p>
+        </div>
 
         <!-- Status badges -->
         <div class="flex flex-wrap gap-3">
