@@ -223,6 +223,12 @@ export const en = {
   edu_swat_desc: 'Specialized tactical training program. Tactical training programme supported by the US Embassy in Ukraine.',
   edu_swat_note: 'Tactical training programme supported by the US Embassy in Ukraine',
 
+  edu_pt_a2_title: 'Portuguese Language Certificate — A2',
+  edu_pt_a2_institution: 'IEFP / Portuguese Language School',
+  edu_pt_a2_period: '2026',
+  edu_pt_a2_location: 'Portugal',
+  edu_pt_a2_desc: 'Official A2 level certificate in Portuguese language (CIPLE equivalent). Demonstrates ability to communicate in everyday situations in Portugal.',
+
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
   blog_subtitle: 'Writing on crypto compliance, on-chain forensics, and AI automation.',
