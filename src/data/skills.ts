@@ -152,7 +152,7 @@ export const skillCategories: SkillCategory[] = [
     subGroups: [
       {
         nameKey: '',
-        skills: ['Ukrainian (Native)', 'Russian (Native)', 'English (A2)', 'Portuguese (A2)'],
+        skills: ['Ukrainian (Native)', 'Russian (Native)', 'English (Technical Working Proficiency)', 'Portuguese (A2)'],
       },
     ],
   },
