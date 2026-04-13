@@ -45,7 +45,7 @@ export const en = {
   // Experience — AI Developer (newest)
   exp_ai_title: 'AI Developer',
   exp_ai_company: 'Sole Proprietor',
-  exp_ai_period: '2026 – Present',
+  exp_ai_period: '2024 – Present',
   exp_ai_location: 'Portugal',
   exp_ai_desc: 'Multi-agent AI systems, content and social media automation, Claude/Gemini integration.',
   exp_ai_b1: 'Orchestrating 11 AI agents for data processing',
