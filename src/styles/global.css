@@ -133,6 +133,11 @@ html.lenis body {
     transition: none !important;
     animation-duration: 0.01ms !important;
   }
+  /* Protect canvas background layers from theme-switch animation kill */
+  .no-transition #dna-helix-container,
+  .no-transition #wireframe-container {
+    animation-duration: 2s !important;
+  }
 
   /* Exclude animations from theme transition to prevent jank */
   .no-theme-transition, .no-theme-transition * {
