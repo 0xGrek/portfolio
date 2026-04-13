@@ -170,7 +170,7 @@ export const es = {
   // ── Education ─────────────────────────────────────────
   education_title: 'Educación y Certificaciones',
 
-  edu_law_title: 'Licenciatura — Ciencias Policiales',
+  edu_law_title: 'Licenciatura — Análisis de Datos e Investigación de Sistemas',
   edu_law_school: 'Universidad Estatal de Asuntos Internos de Dnipropetrovsk',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ucrania',
