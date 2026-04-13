@@ -140,8 +140,6 @@ export const projects: Project[] = [
       { key: 'accounts', value: '1000+ account infra' },
     ],
   },
-];
-
   {
     id: 'lucent-stays',
     slug: 'lucent-stays',
