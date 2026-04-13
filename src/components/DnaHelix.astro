@@ -384,6 +384,9 @@
       return;
     }
 
+    /* RAF fallback — sync scroll position every frame (Lenis compat) */
+    rafScrollCheck();
+
     /* Auto-rotation + scroll-linked boost */
     var scrollBoost = scrollExtra;
     rotY += (ROT_Y_SPEED + scrollBoost * 0.02) * dt;
