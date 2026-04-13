@@ -20,14 +20,15 @@ export const en = {
   // ── Hero ──────────────────────────────────────────────
   hero_greeting: "Hi, I'm",
   hero_name: 'Serhii Ivanenko',
-  hero_handle: '0xGrek',
-  hero_title: 'On-Chain Analyst & Automation Developer',
-  hero_subtitle:
-    '101 tools built. 115K LOC shipped. Web3 builder since 2023.',
-  hero_cta_projects: 'View Projects',
-  hero_cta_contact: 'Get in Touch',
+  hero_handle: '@0xGrek',
+  hero_title: 'Automation & AI Specialist',
+  hero_subtitle: 'Automation & AI Specialist. I build systems that work for you.',
+  hero_bio: "My path: from criminal investigation to AI agent development. I'm always where complex processes can be simplified and automated. Hungry for learning, riding the trend, open to challenges.",
+  hero_status: 'Open to opportunities',
+  hero_cta_projects: 'My Projects',
+  hero_cta_contact: 'Contact Me',
   hero_available: 'Open to opportunities',
-  hero_location: 'Lisbon, Portugal',
+  hero_location: 'UTC+1 [Lisbon, Portugal]',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
