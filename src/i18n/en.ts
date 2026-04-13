@@ -32,24 +32,29 @@ export const en = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
-  about_p1:
-    'Born 1999. Self-taught developer. Started coding in 2022 — first Udemy courses, then Web3 automation from March 2023. No bootcamp, no CS degree. Built everything from scratch: minting, parsing, on-chain tracking, multi-account infrastructure across every major blockchain — L1, L2.',
-  about_p2:
-    '100+ automation tools for DeFi, airdrops, NFTs, and on-chain operations. Biggest project: TON Gift Flipper — multi-agent async trading system. Works across all major chains. Back when there was no AI coding — everything was manual.',
-  about_p3:
-    'Current focus: on-chain analytics, multi-agent AI systems, Telegram ecosystems. Investigating protocol exploit vectors. Open to relocation.',
-  about_unique:
-    '3 years in law enforcement before switching to tech.',
+  about_text_1: "My path into IT didn't start from school or university — it started from law enforcement. Three years in patrol police and criminal investigation taught me the essentials: seeing patterns in chaos, making quick decisions, and systematically fixing what doesn't work.",
+  about_text_2: "After moving to Lisbon, I chose web development as my entry point into technology. But while building websites, I discovered crypto — a world with far more inefficiencies and limitless opportunities for automation.",
+  about_text_3: "I dove in completely: on-chain analytics, NFT minting bots, CEX/DEX arbitrage, vulnerability research. This quickly grew into my own business and serious client work.",
+  about_text_4: "Today I combine a software developer role at an IT company with building my own AI systems. The logic is the same as from the start: find where business loses time and money, and make technology deliver results.",
+  about_stats_tools: '100+ Tools',
+  about_stats_chains: '10+ Blockchains',
+  about_stats_web3: '3+ Years in Web3',
+  about_stats_police: '3 Years in Police',
+  // legacy keys
+  about_p1: "My path into IT didn't start from school or university — it started from law enforcement. Three years in patrol police and criminal investigation taught me the essentials: seeing patterns in chaos, making quick decisions, and systematically fixing what doesn't work.",
+  about_p2: "After moving to Lisbon, I chose web development as my entry point into technology. But while building websites, I discovered crypto — a world with far more inefficiencies and limitless opportunities for automation.",
+  about_p3: "I dove in completely: on-chain analytics, NFT minting bots, CEX/DEX arbitrage, vulnerability research. This quickly grew into my own business and serious client work.",
+  about_unique: "Today I combine a software developer role at an IT company with building my own AI systems. The logic is the same as from the start: find where business loses time and money, and make technology deliver results.",
 
   // ── Stats ─────────────────────────────────────────────
-  stat_tools: '101',
-  stat_tools_label: 'Tools Built',
+  stat_tools: '100+',
+  stat_tools_label: 'Tools',
   stat_chains: '10+',
   stat_chains_label: 'Blockchains',
-  stat_years: '115K',
-  stat_years_label: 'Lines of Code',
-  stat_exchanges: '6',
-  stat_exchanges_label: 'Production Projects',
+  stat_years: '3+',
+  stat_years_label: 'Years in Web3',
+  stat_exchanges: '3',
+  stat_exchanges_label: 'Years in Police',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
