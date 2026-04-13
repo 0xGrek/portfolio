@@ -18,16 +18,17 @@ export const pt = {
   nav_cv: 'Descarregar CV',
 
   // ── Hero ──────────────────────────────────────────────
-  hero_greeting: 'Olá, sou',
+  hero_greeting: 'Olá, eu sou',
   hero_name: 'Serhii Ivanenko',
-  hero_handle: '0xGrek',
-  hero_title: 'Analista On-Chain & Desenvolvedor de Automação',
-  hero_subtitle:
-    '101 ferramentas criadas. 115K linhas de código em produção. Web3 builder desde 2023.',
-  hero_cta_projects: 'Ver Projetos',
-  hero_cta_contact: 'Contactar',
-  hero_available: 'Disponível para oportunidades',
-  hero_location: 'Lisboa, Portugal',
+  hero_handle: '@0xGrek',
+  hero_title: 'Especialista em Automação e AI',
+  hero_subtitle: 'Especialista em Automação e AI. Crio sistemas que trabalham por si.',
+  hero_bio: 'O meu percurso: da investigação criminal ao desenvolvimento de agentes AI. Estou sempre onde processos complexos podem ser simplificados e automatizados. Com fome de aprender, a seguir a tendência, aberto a desafios.',
+  hero_status: 'Aberto a propostas',
+  hero_cta_projects: 'Os Meus Projetos',
+  hero_cta_contact: 'Contacte-me',
+  hero_available: 'Aberto a propostas',
+  hero_location: 'UTC+1 [Lisboa, Portugal]',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
