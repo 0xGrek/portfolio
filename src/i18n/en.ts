@@ -229,6 +229,12 @@ export const en = {
   edu_pt_a2_location: 'Portugal',
   edu_pt_a2_desc: 'Official A2 level certificate in Portuguese language (CIPLE equivalent). Demonstrates ability to communicate in everyday situations in Portugal.',
 
+  edu_onchain_title: 'On-Chain Analysis School',
+  edu_onchain_institution: 'On-Chain School',
+  edu_onchain_period: '2026 — Present',
+  edu_onchain_location: 'Online',
+  edu_onchain_desc: 'Ongoing training in blockchain forensics, wallet clustering, transaction flow analysis, and on-chain investigation techniques.',
+
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
   blog_subtitle: 'Writing on crypto compliance, on-chain forensics, and AI automation.',
