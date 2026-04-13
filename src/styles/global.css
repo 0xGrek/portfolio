@@ -1,71 +1,118 @@
-@import '@fontsource-variable/inter/index.css';
+@import '@fontsource/geist-sans/index.css';
+@import '@fontsource/geist-mono/index.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --bg: #ffffff;
-    --bg-secondary: #f6f8fa;
-    --text: #1f2328;
-    --text-secondary: #656d76;
-    --accent: #2f81f7;
-    --accent-hover: #58a6ff;
-    --accent-rgb: 47, 129, 247;
-    --border: #d0d7de;
-    --card-bg: #ffffff;
-    --card-border: #d0d7de;
+  /* ─── Dark Mode (Primary) ──────────────────────────────── */
+  :root, [data-theme="dark"] {
+    --bg: #050505;
+    --bg-secondary: #0D0D0D;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text: #EDEDED;
+    --text-secondary: #737373;
+    --card-border: rgba(255, 255, 255, 0.1);
+    --accent: #007AFF;
+    --accent-hover: #0062CC;
+    --accent-rgb: 0, 122, 255;
+    --border: rgba(255, 255, 255, 0.1);
     --green-glow: rgba(63, 185, 80, 0.4);
     /* Extended palette */
     --green: #3fb950;
     --amber: #d29922;
     --purple: #a371f7;
-    --accent-subtle: rgba(47, 129, 247, 0.05);
-    --accent-muted: rgba(47, 129, 247, 0.15);
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.08);
-    --shadow-md: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
-    --shadow-accent: 0 4px 12px rgba(47,129,247,0.2), 0 12px 32px rgba(47,129,247,0.12);
+    --accent-subtle: rgba(0, 122, 255, 0.05);
+    --accent-muted: rgba(0, 122, 255, 0.15);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.16), 0 12px 24px rgba(0,0,0,0.2);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 8px 16px rgba(0,0,0,0.2), 0 24px 48px rgba(0,122,255,0.08);
+    --shadow-accent: 0 4px 12px rgba(0,122,255,0.2), 0 12px 32px rgba(0,122,255,0.12);
   }
-  .dark {
-    --bg: #0d1117;
-    --bg-secondary: #161b22;
-    --text: #e6edf3;
-    --text-secondary: #8b949e;
-    --accent: #58a6ff;
-    --accent-hover: #79c0ff;
-    --accent-rgb: 88, 166, 255;
-    --border: #30363d;
-    --card-bg: #161b22;
-    --card-border: #30363d;
-    --green-glow: rgba(63, 185, 80, 0.3);
+
+  /* ─── Light Mode ───────────────────────────────────────── */
+  [data-theme="light"] {
+    --bg: #F5F5F7;
+    --bg-secondary: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --text: #171717;
+    --text-secondary: #525252;
+    --card-border: rgba(0, 0, 0, 0.05);
+    --accent: #007AFF;
+    --accent-hover: #0062CC;
+    --accent-rgb: 0, 122, 255;
+    --border: rgba(0, 0, 0, 0.08);
+    --green-glow: rgba(63, 185, 80, 0.4);
     /* Extended palette */
     --green: #3fb950;
     --amber: #d29922;
     --purple: #a371f7;
-    --accent-subtle: rgba(88, 166, 255, 0.05);
-    --accent-muted: rgba(88, 166, 255, 0.15);
+    --accent-subtle: rgba(0, 122, 255, 0.05);
+    --accent-muted: rgba(0, 122, 255, 0.15);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(0,0,0,0.06), 0 12px 24px rgba(0,0,0,0.08);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.08), 0 24px 48px rgba(0,0,0,0.12);
+    --shadow-accent: 0 4px 12px rgba(0,122,255,0.2), 0 12px 32px rgba(0,122,255,0.12);
+  }
+
+  /* ─── Language-specific accent colors ─────────────────── */
+  [data-lang="ua"] { --accent: #007AFF; --accent-rgb: 0, 122, 255; --accent-hover: #0062CC; }
+  [data-lang="en"] { --accent: #6366F1; --accent-rgb: 99, 102, 241; --accent-hover: #4F46E5; }
+  [data-lang="pt"] { --accent: #14B8A6; --accent-rgb: 20, 184, 166; --accent-hover: #0D9488; }
+  [data-lang="es"] { --accent: #F59E0B; --accent-rgb: 245, 158, 11; --accent-hover: #D97706; }
+
+  /* Legacy .dark class support */
+  .dark {
+    --bg: #050505;
+    --bg-secondary: #0D0D0D;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text: #EDEDED;
+    --text-secondary: #737373;
+    --card-border: rgba(255, 255, 255, 0.1);
+    --accent: #007AFF;
+    --accent-hover: #0062CC;
+    --accent-rgb: 0, 122, 255;
+    --border: rgba(255, 255, 255, 0.1);
+    --green-glow: rgba(63, 185, 80, 0.3);
+    --green: #3fb950;
+    --amber: #d29922;
+    --purple: #a371f7;
+    --accent-subtle: rgba(0, 122, 255, 0.05);
+    --accent-muted: rgba(0, 122, 255, 0.15);
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.16), 0 12px 24px rgba(0,0,0,0.2);
-    --shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 8px 16px rgba(0,0,0,0.2), 0 24px 48px rgba(88,166,255,0.08);
-    --shadow-accent: 0 4px 12px rgba(88,166,255,0.2), 0 12px 32px rgba(88,166,255,0.12);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 8px 16px rgba(0,0,0,0.2), 0 24px 48px rgba(0,122,255,0.08);
+    --shadow-accent: 0 4px 12px rgba(0,122,255,0.2), 0 12px 32px rgba(0,122,255,0.12);
   }
 
   html {
-    font-family: 'InterVariable', 'Inter', sans-serif;
+    font-family: 'Geist Sans', system-ui, sans-serif;
     background-color: var(--bg);
     color: var(--text);
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     min-height: 100vh;
-    /* Smooth theme transitions */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Geist Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+    /* Safe area for mobile notch/home bar */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
     /* Subtle dot-grid noise texture */
     background-image: radial-gradient(circle, rgba(128,128,128,0.04) 1px, transparent 1px);
     background-size: 24px 24px;
     /* Page load fade-in */
     opacity: 0;
     animation: page-fade-in 0.4s ease 0.05s forwards;
+  }
+
+  /* ─── Theme transitions (smooth dark/light switch) ─────── */
+  *, *::before, *::after {
+    transition: background-color 500ms ease, border-color 500ms ease, color 300ms ease;
+  }
+
+  /* Exclude animations from theme transition to prevent jank */
+  .no-theme-transition, .no-theme-transition * {
+    transition: none !important;
   }
 
   /* Typography polish */
