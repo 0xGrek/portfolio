@@ -473,50 +473,6 @@ html.lenis body {
   animation: shimmer 3s infinite;
 }
 
-/* Button fill animation — left to right on hover */
-.btn-fill {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-.btn-fill::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.12);
-  transform: translateX(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 0;
-}
-.btn-fill:hover::after {
-  transform: translateX(0);
-}
-.btn-fill > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Animated underline for nav links */
-.link-underline {
-  position: relative;
-  text-decoration: none;
-}
-.link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.link-underline:hover::after {
-  transform: scaleX(1);
-}
-
 /* Timeline line draw animation */
 .timeline-line-animated {
   transform: scaleY(0);
