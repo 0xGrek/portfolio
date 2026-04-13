@@ -229,19 +229,6 @@ const servicesIT = [
     }, { threshold: 0.06 });
     staggerGrids.forEach(function (el) { staggerIo.observe(el); });
   })();
-
-  document.querySelectorAll('.show-more-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var targetId = btn.getAttribute('data-target');
-      var showMore = btn.getAttribute('data-show-more');
-      var showLess = btn.getAttribute('data-show-less');
-      var details = document.getElementById(targetId);
-      if (!details) return;
-      var isExpanded = details.classList.contains('expanded');
-      details.classList.toggle('expanded');
-      btn.textContent = isExpanded ? showMore : showLess;
-    });
-  });
 </script>
 
 <style>
