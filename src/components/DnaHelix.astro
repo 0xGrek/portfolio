@@ -88,9 +88,14 @@
   /* ─── Scroll state ─── */
   var scrollY = 0;
   var scrollExtra = 0;
+  var helixOffsetY = 0;   /* camera travel along Y axis */
   window.addEventListener('scroll', function () {
     scrollY = window.scrollY || document.documentElement.scrollTop;
     scrollExtra = scrollY * 0.001; /* radians added to rotY per px scrolled */
+    /* Scroll progress 0→1 mapped to helix camera travel */
+    var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var progress = Math.min(scrollY / maxScroll, 1);
+    helixOffsetY = progress * HELIX_HEIGHT;
   }, { passive: true });
 
   /* ════════════════════════════════════════════════
