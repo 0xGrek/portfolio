@@ -1,6 +1,6 @@
 ---
 // DnaHelix — generative double-helix from particles
-// Pure Canvas2D, no external libraries, scroll-linked rotation
+// Pure Canvas2D, no external libraries, fixed viewport decoration
 ---
 
 <canvas
@@ -14,7 +14,7 @@
 (function () {
   'use strict';
 
-  /* ─── WebGL / Canvas support check ─── */
+  /* ─── Canvas support check ─── */
   var canvas = document.getElementById('dna-helix-canvas');
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
@@ -61,11 +61,7 @@
   /* ─── Helpers ─── */
   function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
 
-  /* ─── Pseudo-noise (no external lib) — value noise via sin ─── */
-  function pseudoNoise(x, y, t) {
-    var s = Math.sin(x * 12.9898 + y * 78.233 + t * 5.0) * 43758.5453;
-    return (s - Math.floor(s)) * 2.0 - 1.0; /* -1 to 1 */
-  }
+  /* ─── Pseudo-noise — value noise via sin ─── */
   function smoothNoise(x, t) {
     /* Smooth organic motion using overlapping sine waves */
     return (
@@ -85,58 +81,22 @@
     }, { passive: true });
   }
 
-  /* ─── Scroll state ─── */
-  var scrollY = 0;
-  var helixOffsetY = 0;   /* camera travel along Y axis */
-
-  function updateScroll(sy) {
-    scrollY = (typeof sy === 'number') ? sy : (window.scrollY || document.documentElement.scrollTop);
-    helixOffsetY = scrollY;  /* 1:1 mapping — helix is "painted on the page" */
-  }
-
-  /* Native scroll fallback */
-  window.addEventListener('scroll', function () { updateScroll(); }, { passive: true });
-
-  /* Lenis integration — subscribe after DOM ready, with retry for late init */
-  function tryBindLenis() {
-    var lenis = window.__lenis;
-    if (lenis && lenis.on) {
-      lenis.on('scroll', function (e) {
-        updateScroll(e.scroll);
-      });
-    }
-  }
-  /* Try immediately (lenis may already be set) then retry at 500ms */
-  tryBindLenis();
-  setTimeout(tryBindLenis, 500);
-
-  /* RAF fallback — re-read scrollY every frame (works even without Lenis callback) */
-  var _lastScrollY = -1;
-  function rafScrollCheck() {
-    var sy = window.scrollY || document.documentElement.scrollTop;
-    if (sy !== _lastScrollY) {
-      _lastScrollY = sy;
-      updateScroll(sy);
-    }
-  }
-
   /* ════════════════════════════════════════════════
      DNA HELIX PARAMETERS
   ════════════════════════════════════════════════ */
 
-  /* Particle counts — scaled up for full-page helix */
-  var STRAND_COUNT  = isMobile ? 200 : 450;  /* particles per strand */
+  /* Particle counts — fixed for viewport fill */
+  var STRAND_COUNT  = isMobile ? 150 : 350;  /* particles per strand */
   var BRIDGE_EVERY  = isMobile ? 5  : 4;     /* bridge every N particles */
 
   /* Geometry */
   var HELIX_RADIUS  = isMobile ? 55 : 80;    /* radius of each strand from axis */
-  var HELIX_HEIGHT  = isMobile ? H * 4 : H * 4;  /* total length — 4× viewport for scroll travel */
-  var TWIST_TURNS   = 14;                    /* full rotations — scaled 4× for full-page helix */
-  var TWIST_RATE    = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
+  var HELIX_HEIGHT  = 0;                     /* set in buildHelix after resize */
+  var TWIST_TURNS   = 10;                    /* full rotations */
+  var TWIST_RATE    = 0;                     /* set in buildHelix */
 
   /* Positioning — off-center for depth */
   var OFFSET_X = isMobile ? 0.5 : 0.65;     /* 0.5 = center, 0.65 = right side */
-  var OFFSET_Y = 0.5;
 
   /* Animation */
   var ROT_Y_SPEED  = 0.00018;               /* auto-rotation radians/ms */
@@ -152,22 +112,20 @@
     strand2 = [];
     bridges = [];
 
-    var pageHeight = document.documentElement.scrollHeight;
-    HELIX_HEIGHT = pageHeight * 1.2;
-    console.log('DNA buildHelix: pageHeight=' + pageHeight + ', HELIX_HEIGHT=' + HELIX_HEIGHT + ', STRAND_COUNT=' + STRAND_COUNT + ', viewportH=' + H);
-    STRAND_COUNT = isMobile ? Math.floor(pageHeight / H * 50) : Math.floor(pageHeight / H * 110);
-    TWIST_TURNS = Math.floor(pageHeight / H * 3.5);
+    /* Fill viewport with slight overflow so edges don't look empty */
+    HELIX_HEIGHT = H * 2;
     TWIST_RATE = (Math.PI * 2 * TWIST_TURNS) / STRAND_COUNT;
-    HELIX_RADIUS = isMobile ? 55 : 80;
 
     for (var i = 0; i < STRAND_COUNT; i++) {
       var t = i / (STRAND_COUNT - 1);      /* 0..1 along the helix */
       var angle = t * Math.PI * 2 * TWIST_TURNS;
 
-      /* Unit-sphere-ish coords — we'll apply rotation later */
-      var ux = Math.cos(angle);             /* strand 1 X unit */
-      var uz = Math.sin(angle);             /* strand 1 Z unit */
-      var y  = t * HELIX_HEIGHT;  /* Y: page coords 0..HELIX_HEIGHT */
+      /* Unit-circle coords for XZ plane */
+      var ux = Math.cos(angle);
+      var uz = Math.sin(angle);
+
+      /* Y centered on screen: -HELIX_HEIGHT/2 to +HELIX_HEIGHT/2 */
+      var y = (t - 0.5) * HELIX_HEIGHT;
 
       /* Strand 1 */
       strand1.push({ ux: ux, uz: uz, y: y, idx: i, baseAngle: angle });
@@ -185,47 +143,45 @@
   }
 
   /* ─── 3D rotation state ─── */
-  var rotY = 0;       /* auto-rotation + scroll */
+  var rotY = 0;       /* auto-rotation */
   var rotX = 0.12;    /* slight tilt to show depth */
 
   /* ─── Project 3D point to 2D screen ─── */
   function project(ux, uz, y, noiseTime, idx) {
-    var noiseAmt = 3.5;
-    var nx = smoothNoise(idx * 0.15, noiseTime) * noiseAmt;
-    var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * noiseAmt * 0.5;
+    var nx = smoothNoise(idx * 0.15, noiseTime) * 3.5;
+    var ny = smoothNoise(idx * 0.13 + 100, noiseTime) * 1.5;
 
-    /* World X/Z from helix radius */
     var wx = ux * HELIX_RADIUS + nx;
     var wz = uz * HELIX_RADIUS;
+    var wy = y + ny;  /* direct screen-space Y, no scroll offset */
 
-    /* Screen Y = particle page position - scroll position (direct, no perspective on Y!) */
-    var screenY = y - helixOffsetY + ny;
-
-    /* Rotate only X/Z around Y axis (spin) */
+    /* Rotate around Y axis (spin) */
     var cosY = Math.cos(rotY);
     var sinY = Math.sin(rotY);
     var rx = wx * cosY + wz * sinY;
     var rz = -wx * sinY + wz * cosY;
 
-    /* Simple depth for opacity (no perspective on Y!) */
-    var fov = 600;
-    var depth = rz + fov;
+    /* Apply slight tilt */
+    var cosX = Math.cos(rotX);
+    var sinX = Math.sin(rotX);
+    var ry = wy * cosX - rz * sinX;
+    var rz2 = wy * sinX + rz * cosX;
+
+    var fov = 800;
+    var depth = rz2 + fov;
     var scale = fov / (depth > 1 ? depth : 1);
 
-    /* Screen position */
-    var cx = W * OFFSET_X;
-
     return {
-      x:     cx + rx * scale,
-      y:     screenY,           /* DIRECT screen Y — no perspective transform on vertical axis */
-      z:     rz,
+      x: W * OFFSET_X + rx * scale,
+      y: H * 0.5 + ry * scale,  /* centered on screen */
+      z: rz2,
       scale: scale,
-      depth: clamp((rz + fov) / (fov * 2), 0, 1),
+      depth: clamp((rz2 + fov) / (fov * 2), 0, 1),
     };
   }
 
   /* ─── Mouse proximity repulsion ─── */
-  function applyMouseForce(px, py, projX, projY) {
+  function applyMouseForce(projX, projY) {
     if (isMobile) return { dx: 0, dy: 0 };
     var dx = projX - mouse.x;
     var dy = projY - mouse.y;
@@ -254,14 +210,12 @@
       proj2.push(project(s2.ux, s2.uz, s2.y, noiseTime, i + STRAND_COUNT));
     }
 
-    /* ─── Collect visible particles (Y within extended viewport bounds) ─── */
-    /* Only draw particles that project onto or near the canvas — skip distant ones */
-    var margin = H * 0.6;  /* generous margin so helix doesn't pop in/out abruptly */
+    /* Margin for edge fade — generous so helix doesn't pop */
+    var margin = H * 0.6;
 
     /* ─── Draw lines along strand 1 ─── */
     for (var i = 0; i < proj1.length - 1; i++) {
       var a = proj1[i], b = proj1[i + 1];
-      /* Skip segment if both endpoints are off-screen */
       if (a.y < -margin && b.y < -margin) continue;
       if (a.y > H + margin && b.y > H + margin) continue;
       var depthAvg = (a.depth + b.depth) * 0.5;
@@ -322,11 +276,10 @@
     for (var i = 0; i < proj1.length; i++) {
       var pt = proj1[i];
       if (pt.y < -margin || pt.y > H + margin) continue;
-      var mf = applyMouseForce(0, 0, pt.x, pt.y);
+      var mf = applyMouseForce(pt.x, pt.y);
       var px = pt.x + mf.dx;
       var py = pt.y + mf.dy;
 
-      /* Bokeh: size and opacity fall off with depth */
       var depthFade = 0.3 + pt.depth * 0.7;
       var alpha = clamp(depthFade * 0.7, 0.07, 0.85);
       var radius = clamp(pt.scale * HELIX_RADIUS * 0.03, 0.6, 4.0) * depthFade;
@@ -352,7 +305,7 @@
     for (var i = 0; i < proj2.length; i++) {
       var pt = proj2[i];
       if (pt.y < -margin || pt.y > H + margin) continue;
-      var mf = applyMouseForce(0, 0, pt.x, pt.y);
+      var mf = applyMouseForce(pt.x, pt.y);
       var px = pt.x + mf.dx;
       var py = pt.y + mf.dy;
 
@@ -380,18 +333,14 @@
   /* ════════════════════════════════════════════════
      MAIN LOOP
   ════════════════════════════════════════════════ */
-  var lastTime = 0;  /* Will be set on first frame */
+  var lastTime = 0;
   var noiseTime = 0;
 
   function loop(ts) {
-    /* On very first frame lastTime=0 → dt will be huge; clamp to 16ms */
     var dt = lastTime === 0 ? 16 : Math.min(ts - lastTime, 50);
     lastTime = ts;
 
-    /* RAF fallback — sync scroll position every frame (Lenis compat) */
-    rafScrollCheck();
-
-    /* Auto-rotation — steady, no scroll boost to avoid jitter */
+    /* Auto-rotation — steady slow spin */
     rotY += ROT_Y_SPEED * dt;
 
     /* Noise time for organic motion */
@@ -407,19 +356,7 @@
 
   /* ─── Init ─── */
   resize();
-  /* Defer buildHelix until after page is fully loaded so scrollHeight is accurate */
-  window.addEventListener('load', function () {
-    resize();
-    buildHelix();
-    updateScroll();
-  });
-
-  /* Safety net: rebuild after 2s for lazy-loaded content that extends the page */
-  setTimeout(function () {
-    buildHelix();
-    updateScroll();
-  }, 2000);
-
+  buildHelix();
   requestAnimationFrame(loop);
 
   /* Fade in */
@@ -433,24 +370,14 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
       isMobile = window.innerWidth < 768;
+      STRAND_COUNT = isMobile ? 150 : 350;
       BRIDGE_EVERY = isMobile ? 5 : 4;
+      HELIX_RADIUS = isMobile ? 55 : 80;
       OFFSET_X = isMobile ? 0.5 : 0.65;
       resize();
       buildHelix();
-      updateScroll();
     }, 250);
   }, { passive: true });
-
-  /* ─── ResizeObserver on body — rebuild when document height changes ─── */
-  var roTimer;
-  var ro = new ResizeObserver(function () {
-    clearTimeout(roTimer);
-    roTimer = setTimeout(function () {
-      buildHelix();
-      updateScroll();
-    }, 300);
-  });
-  ro.observe(document.body);
 
 })();
 </script>
