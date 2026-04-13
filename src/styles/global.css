@@ -813,6 +813,16 @@ h1:hover, h2:hover {
   .particle {
     display: none !important;
   }
+  /* Disable RGB shift and scanlines for reduced-motion */
+  h1, h2 {
+    transition: none !important;
+  }
+  h1:hover, h2:hover {
+    text-shadow: none !important;
+  }
+  body::after {
+    display: none !important;
+  }
   .typewriter-cursor::after {
     display: none !important;
   }
