@@ -20,18 +20,18 @@ const { lang } = Astro.props;
 
     <!-- Timeline -->
     <div class="relative">
-      <!-- Vertical gradient line with subtle pulse -->
+      <!-- Vertical gradient line with animated draw -->
       <div
-        class="timeline-line absolute left-4 sm:left-6 top-0 bottom-0 w-px"
+        class="timeline-line timeline-line-animated absolute left-4 sm:left-6 top-0 bottom-0 w-px"
         style="background: linear-gradient(to bottom, var(--accent) 0%, rgba(var(--accent-rgb), 0.3) 60%, transparent 100%);"
       ></div>
 
       <div class="space-y-10">
         {experience.map((exp, index) => (
-          <div class="relative pl-12 sm:pl-16 reveal" style={`transition-delay: ${index * 0.08}s;`}>
-            <!-- Timeline dot -->
+          <div class={`relative pl-12 sm:pl-16 ${index % 2 === 0 ? 'reveal-left' : 'reveal-right'}`} style={`transition-delay: ${index * 0.1}s;`}>
+            <!-- Timeline dot with pulse -->
             <div
-              class="timeline-dot absolute left-2 sm:left-4 top-1.5 w-5 h-5 rounded-full border-2 flex items-center justify-center cursor-pointer"
+              class="timeline-dot timeline-dot-pulse absolute left-2 sm:left-4 top-1.5 w-5 h-5 rounded-full border-2 flex items-center justify-center cursor-pointer"
               style="background-color: var(--bg-secondary); border-color: var(--accent);"
             >
               <div class="w-2 h-2 rounded-full" style="background-color: var(--accent);"></div>
