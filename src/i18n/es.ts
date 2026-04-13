@@ -229,6 +229,12 @@ export const es = {
   edu_pt_a2_location: 'Portugal',
   edu_pt_a2_desc: 'Certificado oficial de nivel A2 en lengua portuguesa. Demuestra capacidad de comunicación en situaciones cotidianas en Portugal.',
 
+  edu_onchain_title: 'Escuela de Análisis On-Chain',
+  edu_onchain_institution: 'On-Chain School',
+  edu_onchain_period: '2026 — Presente',
+  edu_onchain_location: 'Online',
+  edu_onchain_desc: 'Formación continua en forense blockchain, clusterización de billeteras, análisis de flujos de transacciones y técnicas de investigación on-chain.',
+
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
   blog_subtitle: 'Escribiendo sobre crypto compliance, forense on-chain y automatización con IA.',
