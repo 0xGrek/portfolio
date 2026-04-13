@@ -108,7 +108,7 @@ export const ua = {
   exp_police_company: 'Національна поліція України',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Україна',
-  exp_police_desc: 'Робота з неструктурованими даними та виявлення прихованих патернів. Розвинув аналітичне мислення та вміння знаходити рішення в критичних ситуаціях.',
+  exp_police_desc: 'Виявлення аномалій у складних інформаційних потоках та проведення OSINT-досліджень. Створення алгоритмів для структурування хаотичних даних та побудова логічних ланцюжків для аналізу ризиків.',
   exp_police_highlights: 'Investigation & Data Analysis Specialist (2019–2022)',
 
   // Experience — Founder/Specialist (legacy, kept for compat)
