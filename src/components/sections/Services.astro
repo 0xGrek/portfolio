@@ -229,6 +229,7 @@ const showLessText = t(lang, 'services_show_less' as any);
 <script is:inline>
   (function () {
     if (!('IntersectionObserver' in window)) return;
+    /* Section reveal elements */
     var els = document.querySelectorAll('#services .reveal');
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -239,6 +240,18 @@ const showLessText = t(lang, 'services_show_less' as any);
       });
     }, { threshold: 0.08 });
     els.forEach(function (el) { io.observe(el); });
+
+    /* Stagger grids */
+    var staggerGrids = document.querySelectorAll('#services .stagger-children');
+    var staggerIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          staggerIo.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06 });
+    staggerGrids.forEach(function (el) { staggerIo.observe(el); });
   })();
 
   document.querySelectorAll('.show-more-btn').forEach(function (btn) {
