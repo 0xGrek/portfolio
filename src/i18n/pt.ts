@@ -223,7 +223,7 @@ export const pt = {
   contact_form_submit: 'Enviar Mensagem',
   contact_form_success: 'Mensagem enviada! Responderei em menos de 24 horas.',
   contact_form_error: 'Algo correu mal. Por favor, envie-me um email diretamente.',
-  contact_available: 'Disponível para novas oportunidades',
+  contact_available: 'Aberto para colaboração em automação de IA, segurança Web3 e compliance',
   contact_response_time: 'Tempo de resposta: < 24 horas',
 
   // ── Services ──────────────────────────────────────────
