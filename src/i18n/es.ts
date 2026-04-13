@@ -104,12 +104,12 @@ export const es = {
   exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
 
   // Experience — Police (past)
-  exp_police_title: 'Agente de la Ley',
+  exp_police_title: 'Especialista en Investigación y Análisis de Datos',
   exp_police_company: 'Policía Nacional de Ucrania | Ucrania',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Ucrania',
-  exp_police_desc: 'Progresó de la policía de patrulla a la investigación criminal. Experiencia que desarrolló habilidades analíticas, resiliencia al estrés y capacidad de encontrar soluciones en situaciones no estándar.',
-  exp_police_highlights: 'Policía de Patrulla (2019) → Investigación Criminal (2020) → Unidad Especial (2021)',
+  exp_police_desc: 'Enfoque en análisis de datos no estructurados y patrones. Experiencia que desarrolló habilidades analíticas y capacidad de encontrar soluciones en situaciones no estándar.',
+  exp_police_highlights: 'Investigation & Data Analysis Specialist (2019–2022)',
 
   // Experience — Founder/Specialist (legacy, kept for compat)
   exp_founder_title: 'Fundador & Especialista Técnico (Automatización & Web3)',
