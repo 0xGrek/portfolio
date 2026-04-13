@@ -502,22 +502,46 @@ const categoryIcons: Record<string, string> = {
       });
     }
 
+    function collapseCardInstant(card) {
+      // Force the expand panel to 0 height immediately, bypassing CSS transition,
+      // then remove .expanded so future opens animate normally.
+      var panel = card.querySelector('.project-expand');
+      if (panel) {
+        // Override grid-template-rows inline — bypasses the CSS transition
+        panel.style.transition = 'none';
+        panel.style.gridTemplateRows = '0fr';
+      }
+      // Also hide compact footer instantly and reset arrow without transition
+      var footer = card.querySelector('.card-compact-footer');
+      var arrow = card.querySelector('.project-arrow');
+      if (footer) footer.style.transition = 'none';
+      if (arrow) arrow.style.transition = 'none';
+
+      collapseCard(card);
+
+      // Restore transitions after browser has painted the collapsed state
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (panel) {
+            panel.style.transition = '';
+            panel.style.gridTemplateRows = '';
+          }
+          if (footer) footer.style.transition = '';
+          if (arrow) arrow.style.transition = '';
+        });
+      });
+    }
+
     function toggleProject(projectId) {
       var card = document.getElementById('card-' + projectId);
       if (!card) return;
 
       var isExpanded = card.classList.contains('expanded');
 
-      // Accordion: close all other open cards INSTANTLY (no animation stutter)
+      // Accordion: close all other open cards INSTANTLY (no closing animation)
       document.querySelectorAll('.project-card.expanded').forEach(function (openCard) {
         if (openCard !== card) {
-          // Disable transitions, collapse immediately, then re-enable
-          openCard.classList.add('no-transition');
-          collapseCard(openCard);
-          // Restore transitions on next frame so future opens animate normally
-          requestAnimationFrame(function () {
-            openCard.classList.remove('no-transition');
-          });
+          collapseCardInstant(openCard);
         }
       });
 
