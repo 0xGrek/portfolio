@@ -468,13 +468,6 @@ html.lenis body {
   transform: scale(1);
 }
 
-/* Shimmer overlay for buttons */
-.btn-shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s infinite;
-}
-
 /* Timeline line draw animation */
 .timeline-line-animated {
   transform: scaleY(0);
