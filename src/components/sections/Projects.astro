@@ -560,22 +560,35 @@ const categoryIcons: Record<string, string> = {
 
     if (toggleBtn && projectsGrid) {
       var labelEl = toggleBtn.querySelector('.btn-label');
-      var showMoreLabel = toggleBtn.getAttribute('data-show') || labelEl.textContent.trim();
-      var collapseLabel = toggleBtn.getAttribute('data-collapse') ||
-        (document.documentElement.lang === 'uk' ? 'Згорнути' :
-         document.documentElement.lang === 'pt' ? 'Recolher' :
-         document.documentElement.lang === 'es' ? 'Colapsar' : 'Collapse');
+      var showMoreLabel = labelEl ? labelEl.textContent.trim() : 'Show more';
+
+      // Determine collapse label from the current page language
+      var htmlLang = document.documentElement.lang || '';
+      var collapseLabel =
+        htmlLang === 'uk' ? 'Згорнути' :
+        htmlLang === 'pt' ? 'Recolher' :
+        htmlLang === 'es' ? 'Colapsar' : 'Collapse';
+
+      // Grab extra cards and hide them initially
+      var extraCards = projectsGrid.querySelectorAll('.project-extra');
+      extraCards.forEach(function (card) {
+        card.style.display = 'none';
+      });
+
+      var isExpanded = false;
 
       toggleBtn.addEventListener('click', function () {
-        var isExpanded = projectsGrid.classList.contains('projects-expanded');
-
         if (isExpanded) {
-          // Collapse: hide extra cards, update button
-          projectsGrid.classList.remove('projects-expanded');
+          // Collapse: hide extra cards instantly, update button
+          extraCards.forEach(function (card) {
+            card.classList.remove('project-extra-animating');
+            card.style.display = 'none';
+          });
+          isExpanded = false;
           toggleBtn.setAttribute('aria-expanded', 'false');
           if (labelEl) labelEl.textContent = showMoreLabel;
 
-          // Scroll back up to the projects section smoothly
+          // Scroll back to the section top smoothly
           var section = document.getElementById('projects');
           if (section) {
             setTimeout(function () {
@@ -583,8 +596,16 @@ const categoryIcons: Record<string, string> = {
             }, 60);
           }
         } else {
-          // Expand: show extra cards, update button
-          projectsGrid.classList.add('projects-expanded');
+          // Expand: show extra cards with staggered animation
+          extraCards.forEach(function (card, i) {
+            card.style.display = '';
+            card.classList.remove('project-extra-animating');
+            // Force reflow so animation restarts cleanly
+            void card.offsetWidth;
+            card.style.animationDelay = (i * 0.07) + 's';
+            card.classList.add('project-extra-animating');
+          });
+          isExpanded = true;
           toggleBtn.setAttribute('aria-expanded', 'true');
           if (labelEl) labelEl.textContent = collapseLabel;
         }
