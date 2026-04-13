@@ -15,7 +15,8 @@ export default {
         'card-border': 'var(--card-border)',
       },
       fontFamily: {
-        sans: ['InterVariable', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Geist Sans"', 'system-ui', 'sans-serif'],
+        mono: ['"Geist Mono"', 'monospace'],
       },
     },
   },
