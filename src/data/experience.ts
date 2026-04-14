@@ -43,16 +43,6 @@ export const experience: Experience[] = [
     tags: ['Python', 'Telegram API', 'DeFi', 'On-chain', 'AI Agents', 'Web3'],
   },
   {
-    id: 'software-dev',
-    titleKey: 'exp_dev_title',
-    companyKey: 'exp_dev_company',
-    periodKey: 'exp_dev_period',
-    locationKey: 'exp_dev_location',
-    descriptionKey: 'exp_dev_desc',
-    bullets: ['exp_dev_b1', 'exp_dev_b2', 'exp_dev_b3'],
-    tags: ['TypeScript', 'Python', 'PostgreSQL', 'Linux', 'Docker', 'Git'],
-  },
-  {
     id: 'ai-dev',
     titleKey: 'exp_ai_title',
     companyKey: 'exp_ai_company',
@@ -61,5 +51,15 @@ export const experience: Experience[] = [
     descriptionKey: 'exp_ai_desc',
     bullets: ['exp_ai_b1', 'exp_ai_b2', 'exp_ai_b3'],
     tags: ['Claude', 'MCP', 'Multi-Agent', 'Gemini API', 'Automation'],
+  },
+  {
+    id: 'software-dev',
+    titleKey: 'exp_dev_title',
+    companyKey: 'exp_dev_company',
+    periodKey: 'exp_dev_period',
+    locationKey: 'exp_dev_location',
+    descriptionKey: 'exp_dev_desc',
+    bullets: ['exp_dev_b1', 'exp_dev_b2', 'exp_dev_b3'],
+    tags: ['TypeScript', 'Python', 'PostgreSQL', 'Linux', 'Docker', 'Git'],
   },
 ];
