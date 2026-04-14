@@ -20,6 +20,19 @@ const canonicalUrl = Astro.url.href;
 <html lang={lang} class="dark" data-theme="dark" data-lang={lang}>
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Theme detection — MUST be first script in <head> to run before any paint.
+         Reads localStorage and applies the correct class/attribute immediately,
+         preventing a flash of wrong theme on full-page navigation (lang switch). -->
+    <script is:inline>
+      (function () {
+        var theme = localStorage.getItem('theme') || 'dark';
+        var html = document.documentElement;
+        html.classList.toggle('dark', theme === 'dark');
+        html.setAttribute('data-theme', theme);
+      })();
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -40,14 +53,6 @@ const canonicalUrl = Astro.url.href;
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-
-    <!-- Theme detection — runs before paint to avoid flash -->
-    <script is:inline>
-      const theme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.classList.toggle('dark', theme === 'dark');
-      document.documentElement.setAttribute('data-theme', theme);
-    </script>
 
     <!-- Extra head content (SEO schema, etc.) -->
     <slot name="head" />
