@@ -26,7 +26,7 @@ export const pt = {
   hero_cta_projects: 'Os Meus Projetos',
   hero_cta_contact: 'Contacte-me',
   hero_available: 'Aberto a propostas',
-  hero_location: '📍 Lisboa, Portugal — UTC+1 (WET)',
+  hero_location: '📍 Lisboa, Portugal — UTC+1',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
