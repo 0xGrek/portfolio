@@ -18,7 +18,7 @@ export const es = {
 
   // ── Hero ──────────────────────────────────────────────
   hero_greeting: 'Hola, soy',
-  hero_name: 'Serhii Ivanenko',
+  hero_name: 'Serhii',
   hero_handle: '0xGrek',
   hero_title: 'Ingeniero Web3 Security & Automation',
   hero_subtitle:
