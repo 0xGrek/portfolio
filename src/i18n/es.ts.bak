@@ -194,6 +194,6 @@ export const es = {
 
   // ── Footer ────────────────────────────────────────────
   footer_built_with: 'Construido con Astro + Tailwind',
-  footer_rights: '© 2026 Serhii Ivanenko. Todos los derechos reservados.',
+  footer_rights: '© 2026 Serhii. Todos los derechos reservados.',
   footer_privacy: 'Política de Privacidad',
 } as const;
