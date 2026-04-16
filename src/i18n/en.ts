@@ -18,7 +18,7 @@ export const en = {
 
   // ── Hero ──────────────────────────────────────────────
   hero_greeting: "Hi, I'm",
-  hero_name: 'Serhii Ivanenko',
+  hero_name: 'Serhii',
   hero_handle: '@0xGrek',
   hero_title: 'Automation & AI Specialist',
   hero_subtitle_lead: "Automation & AI Systems Expert. I build autonomous solutions at the intersection of Web3 and artificial intelligence. I specialize in system architecture design and automation of complex business processes.",
