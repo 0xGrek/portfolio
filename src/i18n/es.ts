@@ -1,6 +1,6 @@
 export const es = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Serhii Ivanenko | Experto en Automatización de IA y Web3',
+  meta_title: 'Serhii | Experto en Automatización de IA y Web3',
   meta_description: 'Experto en automatización de IA y seguridad Web3. Diseño de agentes autónomos, arquitectura de sistemas y analítica on-chain. Soluciones de optimización.',
   meta_keywords:
     'crypto compliance Lisboa, blockchain forensics Portugal, AML crypto Europa, ingeniero automatización Web3, analista on-chain',
