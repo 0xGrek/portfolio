@@ -1,18 +1,14 @@
 ---
-// Static page — no server headers available, using client-side redirect
+// Server-side redirect handled by vercel.json.
+// This page is a static fallback (e.g. local dev / non-Vercel hosts).
 ---
 <html>
 <head>
   <meta charset="UTF-8" />
-  <script is:inline>
-    const lang = navigator.language || navigator.userLanguage || 'en';
-    const code = lang.toLowerCase().split('-')[0];
-    const map = { uk: '/ua/', ua: '/ua/', pt: '/pt/', es: '/es/', en: '/en/' };
-    const target = map[code] || '/en/';
-    window.location.replace(target);
-  </script>
-  <meta http-equiv="refresh" content="0;url=/en/" />
-  <title>Redirecting...</title>
+  <meta http-equiv="refresh" content="0;url=/ua/" />
+  <title></title>
+  <style>body{display:none}</style>
+  <script is:inline>window.location.replace('/ua/');</script>
 </head>
 <body></body>
 </html>
