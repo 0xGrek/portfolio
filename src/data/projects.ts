@@ -44,7 +44,7 @@ export const projects: Project[] = [
     tech: ['React 19', 'TypeScript', 'Zustand', 'Supabase', 'Tailwind CSS', 'PWA'],
     category: 'web',
     featured: true,
-    links: { live: 'https://app-gold-seven-83.vercel.app/' },
+    links: { live: 'https://shadow-council.vercel.app/' },
     metrics: [
       { value: '17 roles' },
       { value: '16 artifact cards' },
