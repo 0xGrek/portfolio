@@ -59,7 +59,7 @@ export const projects: Project[] = [
     tech: ['Python', 'httpx', 'Pydantic', 'Flask', 'PostgreSQL', 'Render.com'],
     category: 'web',
     featured: true,
-    links: { live: 'https://portugal-realty-server.onrender.com/' },
+    links: {},
     metrics: [
       { value: '12,000+' },
       { value: '4 portals scraped' },
