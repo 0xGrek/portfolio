@@ -133,7 +133,7 @@ export const projects: Project[] = [
     tech: ['HTML/CSS', 'JavaScript', 'Responsive Design'],
     category: 'web',
     featured: false,
-    links: { live: 'https://rainbow-jelly-29e7d1.netlify.app/player' },
+    links: {},
   },
 ];
 
