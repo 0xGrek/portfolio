@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/", "destination": "/ua/", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",
