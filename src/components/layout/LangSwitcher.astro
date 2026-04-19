@@ -45,7 +45,8 @@ function getTargetUrl(targetLang: Lang): string {
     {langs.map((l) => (
       <a
         href={getTargetUrl(l.code)}
-        class={`block px-3 py-2 text-xs font-mono font-medium transition-colors hover:opacity-80 ${l.code === lang ? 'font-bold' : ''}`}
+        data-lang={l.code}
+        class={`lang-option block px-3 py-2 text-xs font-mono font-medium transition-colors hover:opacity-80 ${l.code === lang ? 'font-bold' : ''}`}
         style={l.code === lang ? 'color: var(--accent);' : 'color: var(--text-secondary);'}
       >
         {l.label}
