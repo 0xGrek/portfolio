@@ -1,14 +1,46 @@
 ---
-// Server-side redirect handled by vercel.json.
-// This page is a static fallback (e.g. local dev / non-Vercel hosts).
+// Language detection via JS — reads browser language + localStorage preference.
+// No server-side redirect so the JS can run first.
 ---
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0;url=/ua/" />
-  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading...</title>
   <style>body{display:none}</style>
-  <script is:inline>window.location.replace('/ua/');</script>
+  <script is:inline>
+    (function() {
+      var valid = ['/ua/', '/en/', '/pt/', '/es/'];
+
+      // 1. Saved preference wins
+      var saved = localStorage.getItem('preferred-lang');
+      if (saved && valid.indexOf(saved) !== -1) {
+        window.location.replace(saved);
+        return;
+      }
+
+      // 2. Detect browser language
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var path = '/en/'; // default
+
+      if (lang.startsWith('uk') || lang.startsWith('ua')) {
+        path = '/ua/';
+      } else if (lang.startsWith('ru')) {
+        path = '/ua/'; // Russian speakers → Ukrainian version
+      } else if (lang.startsWith('pt')) {
+        path = '/pt/';
+      } else if (lang.startsWith('es')) {
+        path = '/es/';
+      } else if (lang.startsWith('en')) {
+        path = '/en/';
+      }
+
+      window.location.replace(path);
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/ua/">
+  </noscript>
 </head>
 <body></body>
 </html>
