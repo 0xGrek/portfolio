@@ -147,6 +147,8 @@ const categoryIcons: Record<string, string> = {
           <div
             class="project-expand"
             id={`expand-${project.id}`}
+            aria-hidden="true"
+            inert
           >
             <div class="expand-inner">
             <div class="px-5 pb-5 pt-4" style="border-top: 1px solid var(--border);">
@@ -461,6 +463,11 @@ const categoryIcons: Record<string, string> = {
      */
     function expandCard(card) {
       card.classList.add('expanded');
+      var panel = card.querySelector('.project-expand');
+      if (panel) {
+        panel.setAttribute('aria-hidden', 'false');
+        panel.removeAttribute('inert');
+      }
       card.querySelectorAll('.project-toggle').forEach(function (btn) {
         btn.setAttribute('aria-expanded', 'true');
       });
@@ -468,6 +475,11 @@ const categoryIcons: Record<string, string> = {
 
     function collapseCard(card) {
       card.classList.remove('expanded');
+      var panel = card.querySelector('.project-expand');
+      if (panel) {
+        panel.setAttribute('aria-hidden', 'true');
+        panel.setAttribute('inert', '');
+      }
       card.querySelectorAll('.project-toggle').forEach(function (btn) {
         btn.setAttribute('aria-expanded', 'false');
       });
