@@ -1,9 +1,9 @@
 export const ua = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Сергій | AI & Web3 Automation Developer',
-  meta_description: 'Експерт з AI-автоматизації та Web3-безпеки. Проєктування автономних агентів, системна архітектура та ончейн-аналітика. Рішення для оптимізації бізнесу.',
+  meta_title: 'Сергій | AI Engineer & Software Developer',
+  meta_description: 'AI/software engineer, який будує агентні процеси, data pipelines, dashboards, internal tools та продуктову автоматизацію.',
   meta_keywords:
-    'крипто комплаєнс Лісабон, ончейн-форензика Португалія, AML крипто Європа, Web3 інженер автоматизації, ончейн-аналітик',
+    'AI engineer Lisbon, software developer Portugal, Python automation engineer, data pipelines, multi-agent systems',
 
   // ── Nav ───────────────────────────────────────────────
   nav_about: 'Про мене',
@@ -20,8 +20,8 @@ export const ua = {
   hero_greeting: 'Привіт, я',
   hero_name: 'Сергій',
   hero_handle: '@0xGrek',
-  hero_title: 'Спеціаліст з автоматизації та AI',
-  hero_subtitle_lead: 'Експерт з автоматизації та AI-систем. Створюю автономні рішення на перетині Web3 та штучного інтелекту. Спеціалізуюсь на проєктуванні системної архітектури та автоматизації складних бізнес-процесів.',
+  hero_title: 'AI Engineer & Software Developer',
+  hero_subtitle_lead: 'Будую прикладні AI/software системи: агентні процеси, збір даних, dashboards, internal tools та автоматизацію для реальних операцій.',
   hero_subtitle_body: '',
   hero_cta_projects: 'Мої проєкти',
   hero_cta_contact: 'Написати мені',
@@ -30,14 +30,14 @@ export const ua = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Про мене',
-  about_text_1: "Мій підхід — це інженерна оптимізація: я знаходжу вузькі місця в бізнес-логіці та усуваю їх за допомогою коду. Сьогодні я фокусуюсь на розробці автономних AI-агентів, які замінюють рутинну роботу інтелектуальними алгоритмами.",
-  about_text_2: 'Експертиза сформувалась в умовах критичних інцидентів та роботи з великими масивами неструктурованих даних. Це виховало аналітичну стійкість: здатність приймати точні рішення в умовах високої невизначеності та дефіциту часу.',
+  about_text_1: 'Я будую практичні системи, де хаотичні вхідні дані стають надійними процесами: AI agents, data pipelines, internal dashboards, Telegram intake та backend automation.',
+  about_text_2: 'Мій досвід поєднує software delivery з аналітичним мисленням: структурування даних, risk signals, monitoring та рішення в умовах невизначеності.',
   about_text_3: '',
   about_text_4: '',
-  about_stats_tools: '100+ Інструментів',
-  about_stats_chains: '10+ Блокчейнів',
-  about_stats_web3: '3+ Роки у Web3',
-  about_stats_police: '3+ Роки в Analytics & Security',
+  about_stats_tools: 'Production Systems',
+  about_stats_chains: 'Data Pipelines',
+  about_stats_web3: 'AI Agents',
+  about_stats_police: 'Analytics Background',
   // ── Experience ────────────────────────────────────────
   experience_title: 'Досвід',
 
@@ -63,14 +63,14 @@ export const ua = {
   exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
 
   // Experience — Crypto & Automation
-  exp_crypto_title: 'Крипто та автоматизація',
+  exp_crypto_title: 'On-Chain Data Automation',
   exp_crypto_company: 'ФОП',
   exp_crypto_period: '2023 – дотепер',
   exp_crypto_location: 'Португалія',
-  exp_crypto_desc: 'Побудова комплексних рішень у сферах Web3, AI та автоматизації бізнесу.',
-  exp_crypto_b1: 'Побудував крипто-сканери та моніторинг гаманців',
-  exp_crypto_b2: 'Автоматизував DeFi-стратегії та торгові операції',
-  exp_crypto_b3: 'Ончейн-аналітика та відстеження транзакцій',
+  exp_crypto_desc: 'Побудова monitoring, alerting та analytics tools для фрагментованих публічних даних і transaction flows.',
+  exp_crypto_b1: 'Створював утиліти для wallet і transaction monitoring',
+  exp_crypto_b2: 'Реалізовував alerts, dashboards та structured review outputs',
+  exp_crypto_b3: 'Працював з public-chain data як додатковим analytics domain',
 
   // Experience — Web Developer
   exp_webdev_title: 'Веб-розробник',
@@ -100,6 +100,12 @@ export const ua = {
   project_screenshots: 'Скріншоти',
   project_video: 'Демо відео',
 
+  proj_ai_orch_title: 'AI Knowledge Orchestrator — Multi-Agent Content Router',
+  proj_ai_orch_desc:
+    'Локальна multi-agent knowledge system, яка маршрутизує Telegram-контент у спеціалізовані memory domains та digest workflows.',
+  proj_ai_orch_long:
+    'Локальна AI operations система, яка класифікує вхідний контент, маршрутизує його у спеціалізовані memory domains і перетворює шумні щоденні дані на структуровані digests. Головний proof: dispatcher routing, specialist agents, local knowledge organization, reviewable outputs та operational dashboarding.',
+
   proj_mafia_title: 'Гра «Мафія» — Контролер для ведучого',
   proj_mafia_desc:
     'Повнофункціональний PWA для проведення живих ігор «Мафія». 17 ролей, 3 фракції, 16 карт артефактів, синхронізація в реальному часі через хмару. Включає симулятор Монте-Карло для балансування гри.',
@@ -112,11 +118,11 @@ export const ua = {
   proj_realty_long:
     'Побудований з реальної потреби — знайти житло в Лісабоні непросто. Агрегатор одночасно сканує Idealista, Imovirtual, Remax та Era, дедублікує оголошення по порталах за допомогою відбитків адрес та виявляє підозрілі патерни — наприклад, одну і ту ж нерухомість, що виставляється кілька разів за різними цінами. Калькулятор іпотеки застосовує поточні португальські фіскальні правила (IMT, IS, банківські ставки). 12 000+ активних оголошень у базі даних. Працює на Render.com з PostgreSQL.',
 
-  proj_tgbots_title: 'Екосистема Telegram-ботів',
+  proj_tgbots_title: 'Universal Telegram Collector Platform',
   proj_tgbots_desc:
-    '11 продакшн Telegram-ботів для відстеження життя, фітнесу, планування, транскрипції YouTube та збору знань — всі керуються через Flask-дашборд.',
+    'Reusable multi-bot intake infrastructure для Telegram: durable queues, YouTube ingestion, transcription, dedupe, metadata-first storage та optional ClamAV/OCR hooks.',
   proj_tgbots_long:
-    '11 Telegram-ботів, що працюють паралельно, кожен з конкретною роллю: відстеження щоденних звичок, журнал тренувань, планування харчування, управління завданнями, транскрипція YouTube з обробкою в асинхронній черзі (Groq Whisper) та захоплення знань з AI-підсумовуванням (Gemini). Центральний Flask-дашборд забезпечує адмін-контроль, перегляд логів та моніторинг здоров\'я ботів.',
+    'Reusable collector platform, яка перетворює Telegram на structured intake infrastructure. Domain bots стають тонкими configuration wrappers поверх shared collector core. Система обробляє Telegram links, YouTube normalization, durable SQLite queues, Groq Whisper transcription, dedupe, metadata-first recovery, retryable failures та optional security hooks.',
 
   proj_wallet_title: 'Моніторинг ончейн-гаманців',
   proj_wallet_desc:
@@ -124,15 +130,15 @@ export const ua = {
   proj_wallet_long:
     'Асинхронна система моніторингу для ончейн-розвідки. Відстежує 35 гаманців у мережах ETH, Polygon та Solana. Система неодноразово фіксувала рухи «Smart Money» за лічені хвилини після транзакції.',
 
-  proj_ton_title: 'TON Gift Flipper',
-  proj_ton_desc: 'Мультиагентна NFT торгова система — автоматизація повного циклу трейдингу, виключення людського фактора. 115K рядків продакшн-бот з 4 паралельними інстансами',
-  proj_ton_long: 'Промислова мультиагентна асинхронна торгова система для NFT-маркетплейсу TON. Масштабна архітектура: 115,000+ рядків коду. Включає ризик-менеджмент, бектестинг та високопродуктивні інструменти для "газових воєн".',
+  proj_ton_title: 'TON Marketplace Automation Case Study',
+  proj_ton_desc: 'Private architecture case study для event-driven marketplace monitoring, API integration, operator dashboards, simulation modes та risk controls.',
+  proj_ton_long: 'Приватний історичний проєкт, який використовується лише як architecture reference. Публічне формулювання фокусується на async Python, data ingestion, API integration, operator dashboarding, balance guards, logging та simulation modes. Це не позиціонується як поточний financial product.',
 
-  proj_toolkit_title: 'Крипто-тулкіт — 101 інструмент',
+  proj_toolkit_title: 'Automation Toolkit Archive',
   proj_toolkit_desc:
-    '101 інструмент автоматизації для DeFi, аірдропів та NFT — створені, коли у більшості софту не було',
+    'Private archive Python automation research: API clients, browser automation, monitoring utilities та reusable data workflows.',
   proj_toolkit_long:
-    'Побудовані у 2023–2024 роках, до ери AI-кодингу. Ці інструменти давали конкурентну перевагу: ми фармили аірдропи в масштабі (LayerZero, Arbitrum, zkSync), мінтили NFT швидше за конкурентів скриптами для газових воєн, автоматизували взаємодію з DeFi-протоколами на 10+ блокчейнах. Тулкіт включає генератори гаманців (6 мереж), автоматизовані модулі для збору токенів (15+ мереж EVM) та виведення активів з бірж (9 майданчиків через ccxt), фармінг Solana через ADB та браузерну автоматизацію через ZennoPoster і BAS. Коли інші натискали кнопки вручну, у нас працював софт.',
+    'Історична automation work 2023–2024 років для відпрацювання engineering patterns: API wrappers, queueable jobs, browser automation, monitoring, data normalization, retry handling та operational scripts. Залишається нижче main portfolio, бо сильніша поточна історія — AI systems та product automation.',
 
   proj_lucent_title: 'LucentStays — Оренда в Дубаї',
   proj_lucent_desc: 'Платформа бронювання короткострокової оренди апартаментів у Дубаї',
@@ -141,7 +147,7 @@ export const ua = {
 
   proj_private_title: '50+ Приватних Проєктів',
   proj_private_desc:
-    'Індивідуальне ПЗ для клієнтів під NDA — торгові боти, аналітичні дашборди, системи автоматизації, скрапери та внутрішні інструменти для крипто, нерухомості та бізнесу',
+    'Custom software under NDA: AI workflow tools, data pipelines, dashboards, scrapers, internal automations, Telegram bots, real estate та business systems',
 
   proj_player_title: 'Профіль Футболіста',
   proj_player_desc: 'Цифрова картка рекрутингу для молодих футболістів та скаутів',
@@ -154,11 +160,11 @@ export const ua = {
   skills_tech_core_langs: 'Мови програмування',
   skills_tech_core_dev: 'Розробка та DevOps',
   skills_tech_core_ai: 'AI та агентні системи',
-  skills_blockchain: 'Експертиза в блокчейні та DeFi',
-  skills_blockchain_platforms: 'Платформи та екосистеми',
-  skills_blockchain_defi: 'DeFi та протоколи',
-  skills_blockchain_analysis: 'Аналіз блокчейну',
-  skills_security: 'Безпека, комплаєнс та ончейн-аналіз',
+  skills_blockchain: 'Data & Backend Systems',
+  skills_blockchain_platforms: 'Data Workflows',
+  skills_blockchain_defi: 'Storage & APIs',
+  skills_blockchain_analysis: 'Product Analytics',
+  skills_security: 'Analysis & Monitoring',
   skills_security_core: 'Ключові навички',
   skills_security_tools: 'Інструменти аналізу',
   skills_security_compliance: 'Комплаєнс',
@@ -208,7 +214,7 @@ export const ua = {
 
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Блог',
-  blog_subtitle: 'Пишу про крипто-комплаєнс, ончейн-форензику та AI-автоматизацію.',
+  blog_subtitle: 'Пишу про AI systems, data automation, backend workflows та product engineering.',
   blog_read_more: 'Читати далі',
   blog_all_posts: 'Всі статті',
   blog_empty: 'Статті незабаром.',
@@ -223,7 +229,7 @@ export const ua = {
   contact_form_submit: 'Надіслати',
   contact_form_success: 'Повідомлення надіслано! Відповім протягом 24 годин.',
   contact_form_error: 'Щось пішло не так. Будь ласка, напишіть мені безпосередньо на email.',
-  contact_available: 'Відкритий до співпраці у сфері AI-автоматизації, Web3-безпеки та комплаєнсу',
+  contact_available: 'Відкритий до співпраці у сфері AI automation, data systems та software engineering',
   contact_response_time: 'Час відповіді: < 24 години',
 
   // ── Services ──────────────────────────────────────────
@@ -266,9 +272,9 @@ export const ua = {
   services_research_desc: 'Збір та аналіз даних з будь-яких джерел',
   services_research_examples: 'Що я можу зробити:|Пошук вразливостей у системах безпеки|Аналіз конкурентів та автоматичний збір даних з будь-яких публічних джерел|Створення дашбордів, які простою мовою пояснюють, ЩО і ЧОМУ відбувається',
 
-  services_crypto_title: 'Крипто та Web3',
-  services_crypto_desc: 'Автоматизація та аналітика для блокчейну',
-  services_crypto_examples: 'Що я можу зробити:|Моніторинг гаманців чи смарт-контрактів з миттєвими сповіщеннями|Автоматизація рутинних дій для аірдропів, мінтингу NFT та DeFi-стратегій|Інструменти для ончейн-розслідувань та відстеження транзакцій',
+  services_crypto_title: 'Monitoring & Risk Data',
+  services_crypto_desc: 'Alerting, transaction analytics та infrastructure observability',
+  services_crypto_examples: 'Що я можу зробити:|Monitoring wallets або public data з миттєвими notifications|Dashboards для unusual activity, relists або operational signals|Review tools, які перетворюють шумні events на structured decisions',
 
   services_ai_title: 'AI та автоматизація контенту',
   services_ai_desc: 'Мультиагентні системи та генерація контенту',

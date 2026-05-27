@@ -9,7 +9,7 @@ export interface Project {
   descriptionKey: string;
   longDescriptionKey: string;
   tech: string[];
-  category: 'web' | 'crypto' | 'ai' | 'analytics' | 'trading';
+  category: 'web' | 'ai' | 'analytics' | 'case-study';
   featured: boolean;
   links: {
     demo?: string;
@@ -21,34 +21,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'ton-gift-flipper',
-    titleKey: 'proj_ton_title',
-    descriptionKey: 'proj_ton_desc',
-    longDescriptionKey: 'proj_ton_long',
-    tech: ['Python', 'aiogram', 'Pyrogram', 'SQLAlchemy', 'FastAPI', 'Redis', 'PostgreSQL', 'Docker'],
-    category: 'trading',
+    id: 'ai-knowledge-orchestrator',
+    titleKey: 'proj_ai_orch_title',
+    descriptionKey: 'proj_ai_orch_desc',
+    longDescriptionKey: 'proj_ai_orch_long',
+    tech: ['Python', 'LLM routing', 'MCP', 'SQLite', 'Telegram API'],
+    category: 'ai',
     featured: true,
     links: {},
     metrics: [
-      { value: '115,000 LOC' },
-      { value: '4 parallel bots' },
-      { value: '400+ Pyrogram sessions' },
-      { value: '6 marketplace APIs' },
-    ],
-  },
-  {
-    id: 'mafia-game',
-    titleKey: 'proj_mafia_title',
-    descriptionKey: 'proj_mafia_desc',
-    longDescriptionKey: 'proj_mafia_long',
-    tech: ['React 19', 'TypeScript', 'Zustand', 'Supabase', 'Tailwind CSS', 'PWA'],
-    category: 'web',
-    featured: true,
-    links: { live: 'https://shadow-council.vercel.app/' },
-    metrics: [
-      { value: '17 roles' },
-      { value: '16 artifact cards' },
-      { value: 'Monte Carlo 1K games' },
+      { value: 'Multi-agent routing' },
+      { value: 'Specialist memory' },
+      { value: 'Digest flows' },
     ],
   },
   {
@@ -59,7 +43,10 @@ export const projects: Project[] = [
     tech: ['Python', 'httpx', 'Pydantic', 'Flask', 'PostgreSQL', 'Render.com'],
     category: 'web',
     featured: true,
-    links: {},
+    links: {
+      live: 'https://portugal-realty-server.onrender.com',
+      github: 'https://github.com/0xGrek/portugal-realty-server',
+    },
     metrics: [
       { value: '12,000+' },
       { value: '4 portals scraped' },
@@ -67,17 +54,51 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'mafia-game',
+    titleKey: 'proj_mafia_title',
+    descriptionKey: 'proj_mafia_desc',
+    longDescriptionKey: 'proj_mafia_long',
+    tech: ['React 19', 'TypeScript', 'Zustand', 'Supabase', 'Tailwind CSS', 'PWA'],
+    category: 'web',
+    featured: true,
+    links: {
+      live: 'https://shadow-council.vercel.app/',
+      github: 'https://github.com/0xGrek/mafia-game-pwa',
+    },
+    metrics: [
+      { value: '17 roles' },
+      { value: '16 artifact cards' },
+      { value: 'Monte Carlo 1K games' },
+    ],
+  },
+  {
     id: 'tg-bot-ecosystem',
     titleKey: 'proj_tgbots_title',
     descriptionKey: 'proj_tgbots_desc',
     longDescriptionKey: 'proj_tgbots_long',
-    tech: ['Python', 'python-telegram-bot', 'Gemini', 'Groq Whisper', 'Flask'],
+    tech: ['Python', 'python-telegram-bot', 'SQLite', 'Groq Whisper', 'yt-dlp', 'ClamAV', 'OCR'],
     category: 'ai',
-    featured: false,
+    featured: true,
     links: {},
     metrics: [
-      { value: '11 bots' },
-      { value: 'Life tracking + YouTube pipeline' },
+      { value: '8+ collector bots' },
+      { value: 'Durable queues' },
+      { value: 'Dedupe + retry' },
+      { value: 'Security hooks' },
+    ],
+  },
+  {
+    id: 'lucent-stays',
+    titleKey: 'proj_lucent_title',
+    descriptionKey: 'proj_lucent_desc',
+    longDescriptionKey: 'proj_lucent_long',
+    tech: ['HTML/CSS', 'JavaScript', 'Supabase', 'Hostaway API'],
+    category: 'web',
+    featured: true,
+    links: { live: 'https://lucentstays.com' },
+    metrics: [
+      { value: 'Client site' },
+      { value: 'Booking flow' },
     ],
   },
   {
@@ -96,33 +117,33 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'crypto-toolkit',
-    titleKey: 'proj_toolkit_title',
-    descriptionKey: 'proj_toolkit_desc',
-    longDescriptionKey: 'proj_toolkit_long',
-    tech: ['Python', 'ccxt', 'web3.py', 'Playwright', 'ADB', 'TypeScript'],
-    category: 'crypto',
-    featured: true,
+    id: 'ton-marketplace-case-study',
+    titleKey: 'proj_ton_title',
+    descriptionKey: 'proj_ton_desc',
+    longDescriptionKey: 'proj_ton_long',
+    tech: ['Python', 'asyncio', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
+    category: 'case-study',
+    featured: false,
     links: {},
     metrics: [
-      { value: '101 tools' },
-      { value: '10+ blockchains' },
-      { value: '9 CEX exchanges' },
-      { value: '1000+ account infra' },
+      { value: 'Private case study' },
+      { value: 'Async architecture' },
+      { value: 'Risk controls' },
     ],
   },
   {
-    id: 'lucent-stays',
-    titleKey: 'proj_lucent_title',
-    descriptionKey: 'proj_lucent_desc',
-    longDescriptionKey: 'proj_lucent_long',
-    tech: ['HTML/CSS', 'JavaScript', 'Supabase', 'Hostaway API'],
-    category: 'web',
+    id: 'automation-toolkit-archive',
+    titleKey: 'proj_toolkit_title',
+    descriptionKey: 'proj_toolkit_desc',
+    longDescriptionKey: 'proj_toolkit_long',
+    tech: ['Python', 'API clients', 'Playwright', 'SQLite', 'TypeScript'],
+    category: 'case-study',
     featured: false,
-    links: { live: 'https://lucentstays.com' },
+    links: {},
     metrics: [
-      { value: '5+' },
-      { value: 'Client Work' },
+      { value: 'Private archive' },
+      { value: 'API automation' },
+      { value: 'Monitoring utilities' },
     ],
   },
   {

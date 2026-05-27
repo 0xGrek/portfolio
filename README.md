@@ -1,43 +1,91 @@
-# Astro Starter Kit: Minimal
+# Serhii Ivanenko Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Personal portfolio for AI/software systems, data automation, and product engineering work.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Live site: https://0xgrek.com
 
-## 🚀 Project Structure
+## Overview
 
-Inside of your Astro project, you'll see the following folders and files:
+This repository contains the public portfolio site for Serhii Ivanenko
+(`0xGrek`). It presents selected projects, technical experience, services,
+education, and contact links in a multilingual static site.
+
+The portfolio is built as a fast static Astro site and deployed as the central
+hub for GitHub, live demos, and case studies.
+
+## Featured Projects
+
+- Shadow Council / Mafia Game: React and TypeScript PWA for hosting live social deduction games.
+- Portugal Realty: Python and Flask real estate data platform for Portuguese listings.
+- AI Knowledge Orchestrator: architecture case study for multi-agent knowledge routing.
+- LucentStays: client booking website for short-term rentals.
+
+## Stack
+
+- Astro 5
+- TypeScript
+- Tailwind CSS
+- Astro i18n routing
+- Astro sitemap
+- Geist Sans / Geist Mono
+- Lenis smooth scrolling
+
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+  components/     UI, layout, sections, SEO schema
+  data/           projects, experience, skills
+  i18n/           English, Ukrainian, Portuguese, Spanish copy
+  layouts/        base page layout and metadata
+  pages/          localized routes
+  styles/         global styling
+public/           static assets, robots.txt, social preview image
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Local Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Requirements:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Node.js 22.12+
+- npm
 
-## 🧞 Commands
+Install dependencies:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm ci
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Run locally:
 
-## 👀 Want to learn more?
+```bash
+npm run dev
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Build:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Deployment Notes
+
+The site is configured with:
+
+- canonical site URL: `https://0xgrek.com`
+- localized routes: `/en`, `/ua`, `/pt`, `/es`
+- sitemap generation
+- Open Graph default image: `/og-default.png`
+- robots.txt in `public/robots.txt`
+
+## Repository Status
+
+Public portfolio hub. Some linked projects are open-source repositories, while
+private historical automation work is represented only as sanitized case studies
+without operational source code.

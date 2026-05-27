@@ -1,9 +1,9 @@
 export const en = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Serhii | AI & Web3 Automation Developer',
-  meta_description: 'Expert in AI automation & Web3 security. Designing autonomous agents, system architecture, and on-chain analytics. Business optimization solutions.',
+  meta_title: 'Serhii | AI Engineer & Software Developer',
+  meta_description: 'AI/software engineer building agent workflows, data pipelines, dashboards, internal tools, and product-facing automation.',
   meta_keywords:
-    'crypto compliance Lisbon, blockchain forensics Portugal, AML crypto Europe, Web3 automation engineer, on-chain analyst',
+    'AI engineer Lisbon, software developer Portugal, Python automation engineer, data pipeline developer, multi-agent systems',
 
   // ── Nav ───────────────────────────────────────────────
   nav_about: 'About',
@@ -20,8 +20,8 @@ export const en = {
   hero_greeting: "Hi, I'm",
   hero_name: 'Serhii',
   hero_handle: '@0xGrek',
-  hero_title: 'Automation & AI Specialist',
-  hero_subtitle_lead: "Automation & AI Systems Expert. I build autonomous solutions at the intersection of Web3 and artificial intelligence. I specialize in system architecture design and automation of complex business processes.",
+  hero_title: 'AI Engineer & Software Developer',
+  hero_subtitle_lead: 'I build applied AI/software systems: agent workflows, data ingestion, dashboards, internal tools, and product-facing automation for real operations.',
   hero_subtitle_body: "",
   hero_cta_projects: 'My Projects',
   hero_cta_contact: 'Contact Me',
@@ -30,14 +30,14 @@ export const en = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
-  about_text_1: "My approach is engineering optimization: I find bottlenecks in business logic and eliminate them with code. Today I focus on building autonomous AI agents that replace routine work with intelligent algorithms.",
-  about_text_2: "My expertise was forged in critical incident environments and work with large volumes of unstructured data. This built analytical resilience: the ability to make precise decisions under high uncertainty and time pressure.",
+  about_text_1: 'I build practical systems where messy inputs become reliable workflows: AI agents, data pipelines, internal dashboards, Telegram intake, and backend automation.',
+  about_text_2: 'My background combines software delivery with investigation-style thinking: structured analysis, risk signals, monitoring, and decisions under uncertainty.',
   about_text_3: '',
   about_text_4: "",
-  about_stats_tools: '100+ Tools',
-  about_stats_chains: '10+ Blockchains',
-  about_stats_web3: '3+ Years in Web3',
-  about_stats_police: '3+ Years in Analytics & Security',
+  about_stats_tools: 'Production Systems',
+  about_stats_chains: 'Data Pipelines',
+  about_stats_web3: 'AI Agents',
+  about_stats_police: 'Analytics Background',
 
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experience',
@@ -64,14 +64,14 @@ export const en = {
   exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
 
   // Experience — Crypto & Automation
-  exp_crypto_title: 'Crypto & Automation',
+  exp_crypto_title: 'On-Chain Data Automation',
   exp_crypto_company: 'Sole Proprietor',
   exp_crypto_period: '2023 – Present',
   exp_crypto_location: 'Portugal',
-  exp_crypto_desc: 'Building complex solutions in Web3, AI and business automation.',
-  exp_crypto_b1: 'Built crypto scanners and wallet monitoring',
-  exp_crypto_b2: 'Automated DeFi strategies and trading operations',
-  exp_crypto_b3: 'On-chain analytics and transaction tracking',
+  exp_crypto_desc: 'Building monitoring, alerting, and analytics tools for fragmented public data and transaction flows.',
+  exp_crypto_b1: 'Built wallet and transaction monitoring utilities',
+  exp_crypto_b2: 'Created alerting flows, dashboards, and structured review outputs',
+  exp_crypto_b3: 'Worked with public-chain data as a secondary analytics domain',
 
   // Experience — Web Developer
   exp_webdev_title: 'Web Developer',
@@ -101,6 +101,12 @@ export const en = {
   project_screenshots: 'Screenshots',
   project_video: 'Demo Video',
 
+  proj_ai_orch_title: 'AI Knowledge Orchestrator - Multi-Agent Content Router',
+  proj_ai_orch_desc:
+    'Local multi-agent knowledge system for routing Telegram content into specialist memory domains and digest workflows.',
+  proj_ai_orch_long:
+    'A local AI operations system that classifies incoming content, routes it to specialist memory domains, and turns noisy daily inputs into structured digests. The core proof is system design: dispatcher routing, specialist agents, local knowledge organization, reviewable outputs, and operational dashboarding.',
+
   proj_mafia_title: 'Mafia Game — Multiplayer Host Controller',
   proj_mafia_desc:
     'Full-featured PWA for hosting live Mafia games. 17 roles, 3 factions, 16 artifact cards, real-time cloud sync. Includes a Monte Carlo simulator for game balance tuning.',
@@ -113,11 +119,11 @@ export const en = {
   proj_realty_long:
     'Built out of genuine need — finding housing in Lisbon is painful. The aggregator scrapes Idealista, Imovirtual, Remax, and Era simultaneously, deduplicates listings across portals using address fingerprinting, and flags suspicious patterns like the same property being relisted multiple times at different prices. The mortgage calculator applies current Portuguese fiscal rules (IMT, IS, bank rates) for accurate monthly payment estimates. 12,000+ active listings in the database. Runs on Render.com with PostgreSQL backend.',
 
-  proj_tgbots_title: 'Telegram Bot Ecosystem',
+  proj_tgbots_title: 'Universal Telegram Collector Platform',
   proj_tgbots_desc:
-    '11 production Telegram bots for life tracking, fitness logging, planning, YouTube transcription, and knowledge capture — all managed via a Flask dashboard.',
+    'Reusable multi-bot intake infrastructure for Telegram: durable queues, YouTube ingestion, audio/video transcription, dedupe, metadata-first storage, and optional ClamAV/OCR hooks.',
   proj_tgbots_long:
-    '11 Telegram bots running in parallel, each with a specific life-management role: daily habit tracking, workout logging, meal planning, task management, YouTube transcription with async queue processing (Groq Whisper), and knowledge capture with AI summarization (Gemini). A central Flask dashboard provides admin controls, log viewing, and bot health monitoring. Built with python-telegram-bot and hosted on a personal VPS.',
+    'A reusable collector platform that turns Telegram into structured intake infrastructure. Instead of duplicating bot code, each domain bot is now a thin configuration wrapper over a shared collector core. The system handles visible and hidden Telegram links, YouTube video normalization, durable SQLite queues, Groq Whisper transcription for voice/audio/video, dedupe by Telegram file_unique_id and normalized URL, metadata-first recovery, retryable failures, and optional security hooks such as ClamAV quarantine, OCR, large-file policy, /health, /queue, and /retry commands. Built as a product foundation for client-specific automation bots.',
 
   proj_wallet_title: 'On-Chain Wallet Monitor',
   proj_wallet_desc:
@@ -125,15 +131,15 @@ export const en = {
   proj_wallet_long:
     'A production monitoring system I run daily for on-chain intelligence. Tracks 35 wallets across three chains using both active polling and passive webhook receivers. Significant movements — large transfers, new token positions, protocol interactions — trigger immediate Telegram alerts with transaction links and context. Built with asyncio for concurrent chain polling, httpx for API calls, and SQLite for historical state. The system has caught multiple "smart money" moves minutes after they happened.',
 
-  proj_ton_title: 'TON Gift Flipper',
-  proj_ton_desc: 'Multi-agent NFT trading system — full trading cycle automation, eliminating the human factor. 115K LOC production bot with 4 parallel instances',
-  proj_ton_long: 'Production-grade multi-agent async trading system for the TON NFT marketplace. Scalable architecture: 115,000+ LOC. Built with Python 3.11, it runs 4 parallel bot instances (from High-tier (50+ TON) to Entry-level segments), each managing a pair of Telegram trading accounts. The system uses 400+ Pyrogram sessions for parallel marketplace scanning, integrates 6 external APIs (MRKT, Portal, Gift Satellite, Peek.tg, xGift oracle, Snipes channel), and implements sophisticated trading strategies: nano-TON precision outbidding, 4-stage dynamic repricing, cross-rebuy mechanics to reset platform fee counters, and A/B strategy testing. Includes risk management (balance guards, inventory caps, emergency shutdown), backtesting engine, paper trading mode, FastAPI web dashboard, and aiogram Telegram admin bot. High-performance tools for Gas Wars and DeFi automation.',
+  proj_ton_title: 'TON Marketplace Automation Case Study',
+  proj_ton_desc: 'Private architecture case study for event-driven marketplace monitoring, API integration, operator dashboards, simulation modes, and risk controls.',
+  proj_ton_long: 'A private historical project used only as an architecture reference. The public wording focuses on async Python, marketplace data ingestion, API integration, operator dashboarding, balance guards, logging, and simulation modes. It is not presented as a current financial product.',
 
-  proj_toolkit_title: 'Crypto Automation Toolkit — 101 Tools',
+  proj_toolkit_title: 'Automation Toolkit Archive',
   proj_toolkit_desc:
-    '101 automation tools for DeFi, airdrops, and NFTs — built when most people had no software',
+    'Private archive of Python automation research covering API clients, browser automation, monitoring utilities, and reusable data workflows.',
   proj_toolkit_long:
-    'Built between 2023-2024, before AI-assisted coding went mainstream. These tools gave us a competitive edge: we farmed airdrops at scale (LayerZero, Arbitrum, zkSync), minted NFTs faster than competitors with gas war sniping scripts, and automated DeFi protocol interactions across 10+ blockchains. The toolkit includes multi-chain wallet generators (6 chains), token collectors (15+ EVM networks), CEX withdrawal automation (9 exchanges via ccxt), Solana phone farming via ADB, and browser automation through ZennoPoster and BAS. When others were clicking buttons manually, we had software doing it at scale.',
+    'Historical automation work from 2023-2024 used to practice robust engineering patterns: API wrappers, queueable jobs, browser automation, monitoring, data normalization, retry handling, and operational scripts. It stays below the main portfolio because the stronger current story is AI systems and product automation.',
 
   proj_lucent_title: 'LucentStays — Dubai Rentals',
   proj_lucent_desc: 'Booking platform for short-term luxury apartment rentals in Dubai',
@@ -142,7 +148,7 @@ export const en = {
 
   proj_private_title: '50+ Private Projects',
   proj_private_desc:
-    'Custom software for clients under NDA — trading bots, analytics dashboards, automation systems, scrapers, and internal tools across crypto, real estate, and business sectors',
+    'Custom software under NDA: AI workflow tools, data pipelines, dashboards, scrapers, internal automations, Telegram bots, real estate and business systems',
 
   proj_player_title: 'Football Player Profile',
   proj_player_desc: 'Digital recruitment card for young football players and scouts',
@@ -155,11 +161,11 @@ export const en = {
   skills_tech_core_langs: 'Programming Languages',
   skills_tech_core_dev: 'Development & DevOps',
   skills_tech_core_ai: 'AI & Agent Systems',
-  skills_blockchain: 'Blockchain & DeFi Expertise',
-  skills_blockchain_platforms: 'Platforms & Ecosystems',
-  skills_blockchain_defi: 'DeFi & Protocols',
-  skills_blockchain_analysis: 'Blockchain Analysis',
-  skills_security: 'Security, Compliance & On-Chain Analysis',
+  skills_blockchain: 'Data & Backend Systems',
+  skills_blockchain_platforms: 'Data Workflows',
+  skills_blockchain_defi: 'Storage & APIs',
+  skills_blockchain_analysis: 'Product Analytics',
+  skills_security: 'Analysis & Monitoring',
   skills_security_core: 'Core Skills',
   skills_security_tools: 'Analysis Tools',
   skills_security_compliance: 'Compliance',
@@ -209,7 +215,7 @@ export const en = {
 
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
-  blog_subtitle: 'Writing on crypto compliance, on-chain forensics, and AI automation.',
+  blog_subtitle: 'Writing on AI systems, data automation, backend workflows, and product engineering.',
   blog_read_more: 'Read More',
   blog_all_posts: 'All Posts',
   blog_empty: 'Articles coming soon.',
@@ -224,7 +230,7 @@ export const en = {
   contact_form_submit: 'Send Message',
   contact_form_success: "Message sent! I'll reply within 24 hours.",
   contact_form_error: 'Something went wrong. Please email me directly.',
-  contact_available: 'Open for collaboration in AI automation, Web3 security and compliance',
+  contact_available: 'Open for collaboration in AI automation, data systems, and software engineering',
   contact_response_time: 'Response time: < 24 hours',
 
   // ── Services ──────────────────────────────────────────
@@ -267,9 +273,9 @@ export const en = {
   services_research_desc: 'Data collection and analysis from any source',
   services_research_examples: 'What I can build:|Security vulnerability research|Competitor analysis and automatic data collection from any public sources|Dashboards that explain in plain language WHAT is happening and WHY',
 
-  services_crypto_title: 'Crypto & Web3',
-  services_crypto_desc: 'Blockchain automation and analytics',
-  services_crypto_examples: 'What I can build:|Wallet and smart contract monitoring with instant notifications|Routine automation for airdrops, NFT minting and DeFi strategies|Tools for on-chain investigations and transaction tracking',
+  services_crypto_title: 'Monitoring & Risk Data',
+  services_crypto_desc: 'Alerting, transaction analytics, and infrastructure observability',
+  services_crypto_examples: 'What I can build:|Wallet or public-data monitoring with instant notifications|Dashboards for unusual activity, relists, or operational signals|Review tools that turn noisy events into structured decisions',
 
   services_ai_title: 'AI & Content Automation',
   services_ai_desc: 'Multi-agent systems and content generation',
