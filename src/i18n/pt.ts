@@ -48,8 +48,8 @@ export const pt = {
   exp_ai_location: 'Portugal',
   exp_ai_desc: 'Sistemas AI multi-agente, automação de conteúdo e redes sociais, integração Claude/Gemini.',
   exp_ai_b1: 'Orquestração de 11 agentes AI para processamento de dados',
-  exp_ai_b2: 'Automação de conteúdo e análise de redes sociais',
-  exp_ai_b3: 'Automação de conteúdo e processos analíticos',
+  exp_ai_b2: 'Projetou roteamento LLM entre domínios de memória especializada',
+  exp_ai_b3: 'Automatizou geração de digest a partir de 500+ mensagens diárias no Telegram',
 
   // Experience — Software Dev (current)
   exp_dev_title: 'Desenvolvedor de Software',

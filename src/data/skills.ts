@@ -35,12 +35,12 @@ export const skillCategories: SkillCategory[] = [
       {
         nameKey: 'skills_tech_core_ai',
         skills: [
-          'Multi-agent System Orchestration (CrewAI, LangGraph)',
+          'Multi-agent System Orchestration (Claude Agent SDK, MCP, custom routing)',
           'Routing & Classification of LLM Requests',
           'RAG Pipeline Development (Knowledge Bases for AI)',
           'Prompt Engineering',
           'Claude Code',
-          'OpenClaw',
+          'MCP (Model Context Protocol)',
           'Telegram Bot + LLM Integration',
         ],
       },
