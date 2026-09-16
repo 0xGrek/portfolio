@@ -1,5 +1,5 @@
 ---
-import { t } from '../../i18n/index';
+import { t, td } from '../../i18n/index';
 import type { Lang } from '../../i18n/index';
 import { projects } from '../../data/projects';
 import SectionTitle from '../ui/SectionTitle.astro';
@@ -114,7 +114,7 @@ const categoryIcons: Record<string, string> = {
             >
               <div class="flex items-center justify-between gap-2">
                 <h3 class="text-base font-bold leading-snug" style="color: var(--text);">
-                  {t(lang, project.titleKey as any)}
+                  {td(lang, project.titleKey)}
                 </h3>
                 <svg class="project-arrow flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color: rgba(var(--accent-rgb), 0.7);"><path d="M3 5.5L8 10.5L13 5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
@@ -129,7 +129,7 @@ const categoryIcons: Record<string, string> = {
                 class="inline-block px-2 py-0.5 rounded text-[0.65rem] font-semibold uppercase tracking-wide"
                 style={tierBadgeStyle[project.tier]}
               >
-                {t(lang, tierLabelKeys[project.tier] as any)}
+                {td(lang, tierLabelKeys[project.tier])}
               </span>
             </div>
 
@@ -148,11 +148,11 @@ const categoryIcons: Record<string, string> = {
             )}
 
             <p class="text-sm leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
-              {t(lang, project.descriptionKey as any)}
+              {td(lang, project.descriptionKey)}
             </p>
 
             <!-- Compact view: metric + tech — hidden when expanded -->
-            <div class="card-compact-footer">
+            <div class="compact-footer">
               <!-- Key metric (first only) -->
               {project.metrics && project.metrics[0] && (
                 <div class="mb-3">
@@ -194,7 +194,7 @@ const categoryIcons: Record<string, string> = {
 
               <!-- Long description -->
               <p class="text-sm leading-relaxed mb-5" style="color: var(--text-secondary);">
-                {t(lang, project.longDescriptionKey as any)}
+                {td(lang, project.longDescriptionKey)}
               </p>
 
               <!-- Full tech stack — только если tech > 3, иначе уже показано в карточке -->
@@ -235,7 +235,7 @@ const categoryIcons: Record<string, string> = {
               {project.showcase === 'screenshots' && project.screenshots && project.screenshots.length > 0 && (
                 <div class="mb-5">
                   <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
-                    {t(lang, 'project_screenshots' as any)}
+                    {td(lang, 'project_screenshots')}
                   </p>
                   <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {project.screenshots.slice(0, 3).map((shot) => (
@@ -256,7 +256,7 @@ const categoryIcons: Record<string, string> = {
                   {project.screenshots.length > 3 && (
                     <details class="mt-2">
                       <summary class="text-xs cursor-pointer select-none" style="color: var(--accent);">
-                        +{project.screenshots.length - 3} {t(lang, 'proj_screenshots_more' as any)}
+                        +{project.screenshots.length - 3} {td(lang, 'proj_screenshots_more')}
                       </summary>
                       <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
                         {project.screenshots.slice(3).map((shot) => (
@@ -286,7 +286,7 @@ const categoryIcons: Record<string, string> = {
                   style="background-color: rgba(var(--accent-rgb), 0.07); color: var(--text-secondary); border: 1px dashed rgba(var(--accent-rgb), 0.25);"
                 >
                   <span aria-hidden="true">🔒</span>
-                  {t(lang, 'proj_source_private_note' as any)}
+                  {td(lang, 'proj_source_private_note')}
                 </div>
               )}
               <div class="flex flex-wrap gap-2 mt-1">
@@ -299,7 +299,7 @@ const categoryIcons: Record<string, string> = {
                     style="background-color: var(--accent); color: #fff;"
                     onclick="event.stopPropagation()"
                   >
-                    {t(lang, 'proj_visit_site' as any)}
+                    {td(lang, 'proj_visit_site')}
                     <span aria-hidden="true">→</span>
                   </a>
                 )}
@@ -312,7 +312,7 @@ const categoryIcons: Record<string, string> = {
                     style="background-color: rgba(var(--accent-rgb), 0.12); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.3);"
                     onclick="event.stopPropagation()"
                   >
-                    Demo
+                    {td(lang, 'proj_view_demo')}
                     <span aria-hidden="true">↗</span>
                   </a>
                 )}
@@ -325,8 +325,8 @@ const categoryIcons: Record<string, string> = {
                     style="background-color: rgba(var(--accent-rgb), 0.12); color: var(--accent); border: 1px solid rgba(var(--accent-rgb), 0.3);"
                     onclick="event.stopPropagation()"
                   >
-                    GitHub
-                    <span aria-hidden="true">-&gt;</span>
+                    {td(lang, 'proj_view_github')}
+                    <span aria-hidden="true">→</span>
                   </a>
                 )}
                 <!-- Close / collapse button -->
@@ -337,7 +337,7 @@ const categoryIcons: Record<string, string> = {
                   aria-expanded="true"
                   aria-controls={`expand-${project.id}`}
                 >
-                  {t(lang, 'proj_collapse' as any)}
+                  {td(lang, 'proj_collapse')}
                 </button>
               </div>
             </div>
@@ -357,9 +357,9 @@ const categoryIcons: Record<string, string> = {
           class="projects-show-more-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
           aria-expanded="false"
           aria-controls="projects-grid"
-          data-collapse-label={t(lang, 'proj_show_less' as any)}
+          data-collapse-label={td(lang, 'proj_show_less')}
         >
-          <span class="btn-label">{t(lang, 'proj_show_more' as any)}</span>
+          <span class="btn-label">{td(lang, 'proj_show_more')}</span>
           <svg class="btn-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
@@ -442,10 +442,10 @@ const categoryIcons: Record<string, string> = {
    * Compact footer (metric + first 3 tags) скрывается при expand
    * чтобы не дублировать данные которые уже видны в панели
    */
-  .card-compact-footer {
+  .compact-footer {
     transition: opacity 0.2s ease;
   }
-  .project-card.expanded .card-compact-footer {
+  .project-card.expanded .compact-footer {
     display: none;
   }
 

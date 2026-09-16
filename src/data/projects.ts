@@ -1,3 +1,5 @@
+import { CLIENT_PROJECT_URLS } from './site';
+
 export interface ProjectMetric {
   value: string;
   label?: string;
@@ -138,7 +140,7 @@ export const projects: Project[] = [
     privateSource: false,
     showcase: 'live-demo',
     links: {
-      live: 'https://lucentstays.com',
+      live: CLIENT_PROJECT_URLS.lucentStays,
     },
     metrics: [
       { value: 'Client project' },

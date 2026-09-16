@@ -6,7 +6,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Loading...</title>
+  <!-- No <title> text here on purpose: this page exists only to detect
+       the visitor's language and redirect before anything is visible
+       (body{display:none} below), so there's no language to put a
+       translated title in yet. -->
+  <title></title>
   <style>body{display:none}</style>
   <script is:inline>
     (function() {

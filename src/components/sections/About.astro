@@ -1,5 +1,5 @@
 ---
-import { t } from '../../i18n/index';
+import { t, td } from '../../i18n/index';
 import type { Lang } from '../../i18n/index';
 import SectionTitle from '../ui/SectionTitle.astro';
 
@@ -48,7 +48,7 @@ const stats = [
             style={`border: 1px solid var(--card-border); min-height: 80px;`}
           >
             <div class="stat-value font-bold w-full">
-              {t(lang, stat.value as any)}
+              {td(lang, stat.value)}
             </div>
           </div>
         ))}

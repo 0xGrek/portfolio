@@ -15,14 +15,14 @@ const { lang } = Astro.props;
     <div class="flex justify-end mb-6">
       <button
         id="back-to-top"
-        aria-label="Back to top"
+        aria-label={t(lang, 'footer_back_to_top')}
         class="back-to-top-btn flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg border transition-all hover:opacity-80"
         style="color: var(--text-secondary); border-color: var(--border); background-color: var(--card-bg);"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="18 15 12 9 6 15"></polyline>
         </svg>
-        Top
+        {t(lang, 'footer_back_to_top')}
       </button>
     </div>
 
@@ -32,10 +32,10 @@ const { lang } = Astro.props;
       <div class="flex items-center justify-center gap-3 flex-wrap">
         <span class="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full border" style="color: var(--accent); border-color: var(--accent); background-color: color-mix(in srgb, var(--accent) 10%, transparent);">
           <span class="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></span>
-          Open to opportunities
+          {t(lang, 'hero_available')}
         </span>
         <span class="text-xs" style="color: var(--text-secondary); opacity: 0.7;">
-          Lisbon, Portugal
+          {t(lang, 'hero_location')}
         </span>
       </div>
       <p class="text-xs" style="color: var(--text-secondary); opacity: 0.6;">

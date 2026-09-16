@@ -27,6 +27,7 @@ export const en = {
   hero_available: 'Open to opportunities',
   hero_location: 'Lisbon, Portugal',
   hero_location_fallback: 'Lisbon time',
+  hero_scroll_hint: 'scroll',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
@@ -43,35 +44,56 @@ export const en = {
   experience_title: 'Experience',
 
   // Experience — Software Engineer (current)
-  exp_dev_title: 'Software Engineer (Programador) — AI / Python Automation',
+  exp_dev_title: 'Software Developer',
   exp_dev_company: 'Lisbon-based software company',
-  exp_dev_period: 'Jun 2025 – Present',
+  exp_dev_period: 'June 2025 – Present',
   exp_dev_location: 'Lisbon, Portugal',
-  exp_dev_desc: 'Full-time (40h), hybrid / mostly remote — AI agent pipelines, Telegram bots with CRM integrations, and Web3 automation for clients under NDA.',
-  exp_dev_b1: 'Full-time software engineer at a Lisbon product/services company: application code, servers, databases, and infrastructure support',
-  exp_dev_b2: 'Client work under NDA: Web3 automation — on-chain data parsers, scrapers and wallet/market monitoring',
-  exp_dev_b3: 'Design and ship AI agent pipelines with Claude and OpenAI APIs for client business-process automation',
-  exp_dev_b4: 'Deliver Telegram bots with CRM integrations and multi-provider LLM routing',
-  exp_dev_b5: 'Own the full lifecycle, requirements → architecture → production (Render, Vercel), plus CI/CD and PostgreSQL/SQLite',
+  exp_dev_desc: 'Full lifecycle: from requirements and architecture to production and support.',
+  exp_dev_b1: 'Develop and maintain production systems: application code, servers, databases, infrastructure',
+  exp_dev_b2: 'Build AI pipelines on Claude and OpenAI for client business-process automation',
+  exp_dev_b3: 'Telegram bots with CRM integration and routing across multiple LLM providers',
+  exp_dev_b4: 'Web3 automation under NDA: on-chain data parsers, scrapers, wallet and market monitoring',
+  exp_dev_b5: 'Deploy to Render/Vercel, CI/CD, PostgreSQL/SQLite',
 
-  // Experience — Web3 & Data Automation Consultant (ongoing, part-time)
-  exp_freelance_title: 'Web3 & Data Automation Consultant',
-  exp_freelance_company: 'Self-employed (Ukrainian sole proprietor)',
-  exp_freelance_period: '2023 – Present',
-  exp_freelance_location: 'Remote, part-time',
-  exp_freelance_desc: 'Part-time consulting alongside full-time employment: Web3 markets, on-chain analytics, monitoring, and Python/LLM-agent automation.',
-  exp_freelance_b1: 'Advise Web3 teams and traders on market structure, token and wallet-flow analysis, and what to monitor — from question to data-backed recommendation',
-  exp_freelance_b2: 'Build data parsers and monitoring/alerting pipelines (Telegram) for clients',
-  exp_freelance_b3: 'Automate research and reporting workflows with Python and LLM agents',
-  exp_freelance_b4: 'Built Telegram bots and mini-apps for life-tracking, fitness, and business automation',
+  // Experience — AI Developer, sole proprietor (ongoing)
+  exp_ai_title: 'AI Developer',
+  exp_ai_company: 'Self-employed (Ukrainian sole proprietor)',
+  exp_ai_period: '2024 – Present',
+  exp_ai_location: 'Portugal',
+  exp_ai_desc: 'Multi-agent AI systems running daily on real data.',
+  exp_ai_b1: 'Own multi-agent system with 20+ specialized agents: cost-aware model routing per task, a shared skill library, and persistent memory across sessions',
+  exp_ai_b2: 'Daily pipeline that classifies a stream of Telegram sources with an LLM and compiles a short digest; new classifiers first run in shadow mode, failures self-heal automatically',
+  exp_ai_b3: 'AI assistant for a client business: drafts replies to customers from conversation history, learns from operator edits, syncs with the CRM',
+
+  // Experience — On-Chain Data Automation, sole proprietor (ongoing)
+  exp_crypto_title: 'On-Chain Data Automation',
+  exp_crypto_company: 'Self-employed (Ukrainian sole proprietor)',
+  exp_crypto_period: '2023 – Present',
+  exp_crypto_location: 'Portugal',
+  exp_crypto_desc: 'Monitoring and analytics tools for fragmented public data and transaction flows.',
+  exp_crypto_b1: 'Wallet and transaction monitoring utilities with Telegram alerts',
+  exp_crypto_b2: 'Dashboards and structured reports for activity review',
+  exp_crypto_b3: 'Since 2025 — advising Web3 teams and traders: market structure, token and wallet flows, what to monitor',
+
+  // Experience — Web Developer, sole proprietor (ongoing)
+  exp_webdev_title: 'Web Developer',
+  exp_webdev_company: 'Self-employed (Ukrainian sole proprietor)',
+  exp_webdev_period: '2023 – Present',
+  exp_webdev_location: 'Portugal',
+  exp_webdev_desc: 'Websites and Telegram apps for clients and personal projects.',
+  exp_webdev_b1: 'Client site for a Dubai apartment-rental business (LucentStays): property catalog, booking-platform integration, currency toggle, WhatsApp contact',
+  exp_webdev_b2: 'Telegram bots and mini-apps for life-tracking, fitness, and business automation',
+  exp_webdev_b3: 'Landing pages and portfolio sites on Astro/React',
 
   // Experience — Police (past)
-  exp_police_title: 'Data Analyst',
+  exp_police_title: 'Data Analyst / Financial Investigations',
   exp_police_company: 'National Police of Ukraine',
   exp_police_period: '2019 – 2022',
   exp_police_location: 'Dnipro, Ukraine',
   exp_police_desc: 'Regional data analysis and criminal pattern detection.',
-  exp_police_highlights: 'Led regional data analysis and criminal pattern detection; built risk-scoring systems used in law enforcement reporting.',
+  exp_police_b1: 'Financial-crime analysis: transaction graphs, account clustering',
+  exp_police_b2: 'Risk-scoring models for law-enforcement reporting',
+  exp_police_b3: 'Methodology for structuring fragmented data for operational decisions',
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Projects',
@@ -238,6 +260,7 @@ export const en = {
   contact_form_success: "Message sent! I'll reply within 24 hours.",
   contact_form_error: 'Something went wrong. Please email me directly.',
   contact_available: 'Open for collaboration in AI automation, data systems, and software engineering',
+  contact_remote_note: 'Remote-ready worldwide',
   contact_response_time: 'Response time: < 24 hours',
 
   // ── Services ──────────────────────────────────────────
@@ -294,6 +317,8 @@ export const en = {
 
   // ── Projects UI ───────────────────────────────────────
   proj_visit_site: 'Visit Site',
+  proj_view_demo: 'Demo',
+  proj_view_github: 'GitHub',
   proj_collapse: 'Collapse ▲',
   proj_show_more: 'Show more',
   proj_show_less: 'Collapse',
@@ -302,5 +327,6 @@ export const en = {
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii. All rights reserved.',
   footer_privacy: 'Privacy Policy',
+  footer_back_to_top: 'Top',
   footer_compliance: 'Compliance & Confidentiality: All solutions are developed in accordance with data security standards and NDA terms.',
 } as const;
