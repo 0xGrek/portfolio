@@ -33,6 +33,7 @@ const SUBSTRING_TERMS = [
   '913371298',
   'casa-app',
   'vila-facaia',
+  'hostaway',
 ];
 
 // Word-boundary matches — avoids false positives on substrings that occur

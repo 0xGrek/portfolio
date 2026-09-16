@@ -109,7 +109,7 @@ export const en = {
   proj_lucent_title: 'LucentStays — Dubai Rentals',
   proj_lucent_desc: 'Client project: booking platform for short-term luxury apartment rentals in Dubai.',
   proj_lucent_long:
-    'A client project: a complete booking platform for a Dubai-based rental business. Property listings with dynamic data from Supabase, an integrated Hostaway booking system, a currency toggle (AED/USD), and WhatsApp contact integration. Covers Downtown, Business Bay, Dubai Marina, and other premium areas.',
+    'A client project: a complete booking platform for a Dubai-based rental business. Property listings with dynamic data from Supabase, an integrated booking-platform API, a currency toggle (AED/USD), and WhatsApp contact integration. Covers Downtown, Business Bay, Dubai Marina, and other premium areas.',
 
   proj_viola_title: 'AI Assistant & Operator Dashboard',
   proj_viola_desc:

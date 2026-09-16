@@ -108,7 +108,7 @@ export const ua = {
   proj_lucent_title: 'LucentStays — Оренда в Дубаї',
   proj_lucent_desc: 'Клієнтський проєкт: платформа бронювання короткострокової оренди апартаментів у Дубаї.',
   proj_lucent_long:
-    'Клієнтський проєкт: повноцінна платформа бронювання для бізнесу з оренди нерухомості в Дубаї. Динамічні лістинги через Supabase, інтегрована система бронювання Hostaway, перемикач валют (AED/USD), інтеграція з WhatsApp. Покриває Downtown, Business Bay, Dubai Marina та інші преміум-райони.',
+    'Клієнтський проєкт: повноцінна платформа бронювання для бізнесу з оренди нерухомості в Дубаї. Динамічні лістинги через Supabase, інтегрований booking-platform API, перемикач валют (AED/USD), інтеграція з WhatsApp. Покриває Downtown, Business Bay, Dubai Marina та інші преміум-райони.',
 
   proj_viola_title: 'AI Assistant & Operator Dashboard',
   proj_viola_desc:

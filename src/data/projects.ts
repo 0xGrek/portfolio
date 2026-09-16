@@ -130,7 +130,7 @@ export const projects: Project[] = [
     titleKey: 'proj_lucent_title',
     descriptionKey: 'proj_lucent_desc',
     longDescriptionKey: 'proj_lucent_long',
-    tech: ['HTML/CSS', 'JavaScript', 'Supabase', 'Hostaway API'],
+    tech: ['HTML/CSS', 'JavaScript', 'Supabase', 'Booking platform API'],
     category: 'web',
     featured: false,
     areas: ['Web', 'Client work'],

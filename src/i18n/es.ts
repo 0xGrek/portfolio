@@ -108,7 +108,7 @@ export const es = {
   proj_lucent_title: 'LucentStays — Alquiler en Dubái',
   proj_lucent_desc: 'Proyecto de cliente: plataforma de reservas para alquiler de apartamentos de lujo en Dubái.',
   proj_lucent_long:
-    'Un proyecto de cliente: una plataforma completa de reservas para un negocio de alquiler en Dubái. Listados dinámicos vía Supabase, sistema de reservas Hostaway integrado, selector de monedas (AED/USD) e integración con WhatsApp. Cubre Downtown, Business Bay, Dubai Marina y otras áreas premium.',
+    'Un proyecto de cliente: una plataforma completa de reservas para un negocio de alquiler en Dubái. Listados dinámicos vía Supabase, API de plataforma de reservas integrada, selector de monedas (AED/USD) e integración con WhatsApp. Cubre Downtown, Business Bay, Dubai Marina y otras áreas premium.',
 
   proj_viola_title: 'AI Assistant & Operator Dashboard',
   proj_viola_desc:
