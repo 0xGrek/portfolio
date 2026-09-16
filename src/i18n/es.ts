@@ -41,55 +41,36 @@ export const es = {
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiencia',
 
-  // Experience — AI Developer (newest)
-  exp_ai_title: 'Desarrollador IA',
-  exp_ai_company: 'Autónomo',
-  exp_ai_period: '2024 – Presente',
-  exp_ai_location: 'Portugal',
-  exp_ai_desc: 'Sistemas IA multi-agente, automatización de contenido y redes sociales, integración Claude/Gemini.',
-  exp_ai_b1: 'Orquestación de 11 agentes IA para procesamiento de datos',
-  exp_ai_b2: 'Diseñó enrutamiento LLM entre dominios de memoria especializada',
-  exp_ai_b3: 'Automatizó la generación de digest a partir de 500+ mensajes diarios en Telegram',
-
-  // Experience — Software Dev (current)
-  exp_dev_title: 'Desarrollador de Software',
-  exp_dev_company: 'Empresa de IT, Lda | Lisboa, Portugal',
-  exp_dev_period: 'Junio 2025 – Presente',
+  // Experience — Software Engineer (current)
+  exp_dev_title: 'Software Engineer (Programador) — AI / Python Automation',
+  exp_dev_company: 'Oleksandr Andrianov Unipessoal LDA · Lisboa',
+  exp_dev_period: 'Jun 2025 – Presente',
   exp_dev_location: 'Lisboa, Portugal',
-  exp_dev_desc: 'Desarrollo y mantenimiento de sistemas en producción, automatización de procesos empresariales, administración de servidores y bases de datos.',
-  exp_dev_b1: 'Desarrollo y mantenimiento de sistemas en producción',
-  exp_dev_b2: 'Automatización de reportes, métricas y análisis empresarial',
-  exp_dev_b3: 'Administración de servidores, bases de datos e infraestructura IT',
-  exp_dev_tech: 'TypeScript, Python, PostgreSQL, Linux, Docker, Git',
+  exp_dev_desc: 'Tiempo completo (40h), híbrido / mayormente remoto — pipelines de agentes IA, bots de Telegram con integraciones CRM y automatización Web3 para clientes bajo NDA.',
+  exp_dev_b1: 'Software engineer a tiempo completo en una empresa de producto/servicios en Lisboa: código de aplicaciones, servidores, bases de datos y soporte de infraestructura',
+  exp_dev_b2: 'Trabajo para clientes bajo NDA (sin nombres de clientes): automatización Web3 — parsers on-chain, mint bots, scrapers, monitoreo de wallets',
+  exp_dev_b3: 'Diseño y despliego pipelines de agentes IA con Claude y OpenAI APIs para automatización de procesos de negocio de clientes',
+  exp_dev_b4: 'Entrego bots de Telegram con integraciones CRM y multi-provider LLM routing',
+  exp_dev_b5: 'Responsable del ciclo completo, requisitos → arquitectura → producción (Render, Vercel), más CI/CD y PostgreSQL/SQLite',
 
-  // Experience — Crypto & Automation
-  exp_crypto_title: 'On-Chain Data Automation',
-  exp_crypto_company: 'Autónomo',
-  exp_crypto_period: '2023 – Presente',
-  exp_crypto_location: 'Portugal',
-  exp_crypto_desc: 'Construcción de herramientas de monitoring, alerting y analytics para datos públicos fragmentados y transaction flows.',
-  exp_crypto_b1: 'Creó utilities para wallet y transaction monitoring',
-  exp_crypto_b2: 'Desarrolló alerting flows, dashboards y structured review outputs',
-  exp_crypto_b3: 'Trabajó con public-chain data como dominio secundario de analytics',
-
-  // Experience — Web Developer
-  exp_webdev_title: 'Desarrollador Web',
-  exp_webdev_company: 'Freelance',
-  exp_webdev_period: '2023 – Presente',
-  exp_webdev_location: '',
-  exp_webdev_desc: 'Bots de Telegram y mini-apps. Construyó un sistema de 11 bots para life-tracking y automatización empresarial.',
-  exp_webdev_b1: '15+ bots de Telegram y mini-apps en producción',
-  exp_webdev_b2: 'Sistema de 11 bots para life-tracking, fitness, planificación',
-  exp_webdev_b3: 'Aplicaciones web, landing pages y sitios de portafolio',
-  exp_webdev_tech: 'Astro, React, Tailwind, Node.js, Python, Telegram Bots',
+  // Experience — Web3 & Data Automation Consultant (ongoing, part-time)
+  exp_freelance_title: 'Consultor de Web3 y Automatización de Datos',
+  exp_freelance_company: 'Autónomo (empresario individual ucraniano)',
+  exp_freelance_period: '2023 – Presente',
+  exp_freelance_location: 'Remoto, part-time',
+  exp_freelance_desc: 'Consultoría a tiempo parcial junto a empleo a tiempo completo: mercados Web3, análisis on-chain, monitoreo y automatización en Python/agentes LLM.',
+  exp_freelance_b1: 'Consultoría en Web3 y datos on-chain: monitoreo de wallets y transacciones, señales de mercado y análisis de riesgo DeFi en EVM y Solana',
+  exp_freelance_b2: 'Construyó herramientas Python de scraping y analítica para inteligencia de mercado y monitoreo de datos públicos',
+  exp_freelance_b3: 'Orquestó agentes IA para procesamiento de datos, automatización de contenido y generación de digest diario a partir de 500+ mensajes',
+  exp_freelance_b4: 'Diseñó la arquitectura de enrutamiento LLM entre dominios de memoria especializada usando la Anthropic Claude API',
 
   // Experience — Police (past)
-  exp_police_title: 'Especialista en Análisis de Datos e Investigación de Sistemas',
-  exp_police_company: 'Policía Nacional de Ucrania | Ucrania',
+  exp_police_title: 'Analista de Datos',
+  exp_police_company: 'Policía Nacional de Ucrania',
   exp_police_period: '2019 – 2022',
-  exp_police_location: 'Ucrania',
-  exp_police_desc: 'Desarrollo de metodologías para estructuración de datos desorganizados para toma de decisiones estratégicas. Diseño de sistemas de monitoreo y evaluación de riesgos en tiempo real.',
-  exp_police_highlights: '',
+  exp_police_location: 'Dnipro, Ucrania',
+  exp_police_desc: 'Análisis de datos regional y detección de patrones criminales.',
+  exp_police_highlights: 'Lideró el análisis de datos regional y la detección de patrones criminales; construyó sistemas de risk-scoring usados en informes policiales.',
 
   // ── Projects ──────────────────────────────────────────
   projects_title: 'Proyectos',
@@ -100,90 +81,116 @@ export const es = {
   project_screenshots: 'Capturas de pantalla',
   project_video: 'Video Demo',
 
-  proj_ai_orch_title: 'AI Knowledge Orchestrator — Multi-Agent Content Router',
-  proj_ai_orch_desc:
-    'Sistema local multi-agent knowledge para enrutar contenido de Telegram hacia specialist memory domains y digest workflows.',
-  proj_ai_orch_long:
-    'Sistema local de AI operations que clasifica contenido entrante, lo enruta hacia specialist memory domains y convierte inputs diarios ruidosos en digests estructurados. La prueba principal es system design: dispatcher routing, specialist agents, local knowledge organization, reviewable outputs y operational dashboarding.',
+  tier_live_demo: 'Demo en vivo',
+  tier_case_study: 'Caso de estudio',
+  tier_source_private: 'Código privado',
+  proj_source_private_note: 'Código privado — disponible bajo petición',
 
-  proj_mafia_title: 'Juego Mafia — Controlador para el Moderador',
+  proj_ai_orch_title: 'Multi-Agent LLM Orchestration System',
+  proj_ai_orch_desc:
+    'Sistema multi-agente que ejecuto a diario: model routing sensible al costo entre 20+ agentes especializados, biblioteca de skills compartida y un pipeline de digest para Telegram.',
+  proj_ai_orch_long:
+    'Un sistema multi-agente que ejecuto a diario: model routing sensible al costo entre 20+ agentes especializados por rol, una biblioteca de skills compartida y memoria persistente entre sesiones. Un pipeline de clasificación LLM + digest diario corre sobre fuentes de Telegram curadas, con un clasificador en shadow-mode y ejecuciones programadas con auto-recuperación. El repositorio público documenta una versión anterior de la arquitectura (~11 agentes).',
+
+  proj_mafia_title: 'Shadow Council — Consola de Moderador para Juegos de Deducción Social',
   proj_mafia_desc:
-    'PWA completa para moderar partidas de Mafia en vivo. 17 roles, 3 facciones, 16 cartas de artefacto, sincronización en la nube en tiempo real. Incluye simulador Monte Carlo para balanceo del juego.',
+    'PWA instalable que gestiona todo el flujo del moderador de un juego de deducción social en vivo: configuración, roles, acciones nocturnas, votación e historial de rondas con deshacer.',
   proj_mafia_long:
-    'Una PWA en producción para moderar sesiones en vivo del juego Mafia con amigos. El motor de juego es determinista: 17 roles únicos, 3 facciones y 16 cartas de artefacto que modifican el estado de la partida de formas complejas. El estado en tiempo real se sincroniza vía Supabase para que múltiples dispositivos puedan participar simultáneamente. El simulador Monte Carlo ejecuta 1.000 partidas simuladas para validar el balance de roles. Desplegado en Vercel con soporte offline completo.',
+    'Una PWA en producción creada para moderar sesiones en vivo de juegos de deducción social ("Mafia") con amigos. El motor de juego es determinista: 17 roles únicos en 3 facciones, más 16 cartas de artefacto que modifican el estado de la partida de formas complejas. El estado en tiempo real se sincroniza vía Supabase para que múltiples dispositivos puedan participar simultáneamente. Un simulador Monte Carlo ejecuta 500+ partidas simuladas para validar el balance de roles antes de publicar cambios de reglas. Desplegado en Vercel con soporte PWA offline completo.',
 
   proj_realty_title: 'Portugal Realty — Agregador Inmobiliario',
   proj_realty_desc:
-    'Extrae datos de 4 portales inmobiliarios portugueses, deduplica 12.000+ listados entre portales, detecta republicaciones fraudulentas y ofrece una calculadora hipotecaria con las normas fiscales portuguesas de 2026.',
+    'Agrega 4 portales inmobiliarios portugueses en una vista de mercado deduplicada y señalizada por fraude, más una calculadora del impuesto de transmisión.',
   proj_realty_long:
-    'Construido por necesidad real — encontrar vivienda en Lisboa es complicado. El agregador extrae datos de Idealista, Imovirtual, Remax y Era simultáneamente, deduplica listados entre portales usando huella digital de direcciones, y detecta patrones sospechosos como la misma propiedad publicada varias veces a diferentes precios. La calculadora hipotecaria aplica las normas fiscales portuguesas vigentes (IMT, IS, tasas bancarias) para estimaciones precisas de cuota mensual. 12.000+ listados activos en la base de datos. Funciona en Render.com con backend PostgreSQL.',
+    'Construido por necesidad real — encontrar vivienda en Lisboa está fragmentado entre portales. Agrega listados de 4 portales inmobiliarios portugueses en una vista deduplicada usando emparejamiento geográfico de Haversine y huella digital de direcciones, señala patrones sospechosos de republicación (554 casos señalados) y aplica las normas fiscales portuguesas vigentes (IMT) para estimaciones de costo precisas. SQLAlchemy sobre PostgreSQL, desplegado en Render.',
 
-  proj_tgbots_title: 'Universal Telegram Collector Platform',
-  proj_tgbots_desc:
-    'Reusable multi-bot intake infrastructure para Telegram: durable queues, YouTube ingestion, transcription, dedupe, metadata-first storage y optional ClamAV/OCR hooks.',
-  proj_tgbots_long:
-    'Reusable collector platform que convierte Telegram en structured intake infrastructure. Domain bots pasan a ser thin configuration wrappers sobre un shared collector core. El sistema maneja Telegram links, YouTube normalization, durable SQLite queues, Groq Whisper transcription, dedupe, metadata-first recovery, retryable failures y optional security hooks.',
+  proj_viola_title: 'AI Assistant & Operator Dashboard',
+  proj_viola_desc:
+    'Asistente IA en producción para un negocio de servicios: redacta respuestas a clientes a partir del historial de mensajes y aprende de las correcciones del operador.',
+  proj_viola_long:
+    'Un proyecto de cliente: un asistente en producción para un negocio de servicios que redacta respuestas a clientes a partir del historial de mensajes y aprende de las correcciones reales del operador (pares few-shot). Incluye un dashboard de operador (bandeja de entrada, cola de prioridad, alertas de reservas), sincronización con CRM, un bot de Telegram para el operador y un watchdog que reinicia procesos fallidos. Multi-provider LLM routing (Claude + OpenAI) para resiliencia.',
 
-  proj_wallet_title: 'Monitor de Wallets On-Chain',
-  proj_wallet_desc:
-    'Sistema Python asíncrono que rastrea 35 wallets en ETH, Polygon y Solana con alertas en tiempo real vía Telegram para movimientos significativos.',
-  proj_wallet_long:
-    'Un sistema de monitoreo en producción que ejecuto a diario para inteligencia on-chain. Rastrea 35 wallets en tres cadenas usando tanto polling activo como receptores de webhooks pasivos. Los movimientos significativos — grandes transferencias, nuevas posiciones en tokens, interacciones con protocolos — disparan alertas inmediatas en Telegram con enlaces a transacciones y contexto. Construido con asyncio para polling concurrente de cadenas, httpx para llamadas API y SQLite para estado histórico. El sistema ha detectado múltiples movimientos de "smart money" minutos después de producirse.',
+  proj_radar_title: 'Radar — EU Car-Market Intelligence',
+  proj_radar_desc:
+    'Agrega anuncios de coches a través de 14 scrapers de marketplaces en 12 países de la UE, los normaliza y deduplica, y puntúa oportunidades con calculadoras de costo total.',
+  proj_radar_long:
+    'Agrega anuncios de coches a través de 14 scrapers de marketplaces que cubren 12 países de la UE (9 verificados en vivo), los normaliza y deduplica (VIN / URL / hash de fotos), y puntúa oportunidades en una escala de 0–12. Las calculadoras de costo total manejan el impuesto de importación ISV de Portugal y la aduana ucraniana para decisiones de compra transfronteriza, con alertas de Telegram para buenas oportunidades y un programador con protección contra solapamiento. 1.195 pruebas automatizadas — el número más fuerte de cobertura de pruebas en todo el portafolio.',
 
-  proj_ton_title: 'TON Marketplace Automation Case Study',
-  proj_ton_desc: 'Private architecture case study para event-driven marketplace monitoring, API integration, operator dashboards, simulation modes y risk controls.',
-  proj_ton_long: 'Proyecto histórico privado usado solo como architecture reference. La redacción pública se centra en async Python, marketplace data ingestion, API integration, operator dashboarding, balance guards, logging y simulation modes. No se presenta como producto financiero actual.',
+  proj_gitguardian_title: 'Git Guardian — Pre-Push Security Gate',
+  proj_gitguardian_desc:
+    'Hook de git pre-push / aplicación de escritorio que analiza repositorios en busca de secretos, PII y basura de build antes de que el código salga de la máquina, puntuando la preparación de 0 a 10.',
+  proj_gitguardian_long:
+    'Un hook de git pre-push y aplicación de escritorio (Tauri + Python) que analiza un repositorio en busca de secretos, PII, rutas fijas y basura de build antes de que el código salga de la máquina. Combina scanners heurísticos/regex, detección de secretos verificados vía TruffleHog y verificaciones de metadatos vía ExifTool en una única puntuación compuesta de preparación de 0 a 10 que bloquea el push. Ejecuta su propia CI en cada push (dogfooding).',
 
-  proj_toolkit_title: 'Automation Toolkit Archive',
-  proj_toolkit_desc:
-    'Private archive de Python automation research sobre API clients, browser automation, monitoring utilities y reusable data workflows.',
-  proj_toolkit_long:
-    'Trabajo histórico de automation de 2023-2024 usado para practicar engineering patterns: API wrappers, queueable jobs, browser automation, monitoring, data normalization, retry handling y operational scripts. Queda por debajo del main portfolio porque la historia actual más fuerte es AI systems y product automation.',
+  proj_controlcenter_title: 'Control Center — Panel de Flota de Escritorio',
+  proj_controlcenter_desc:
+    'Aplicación de escritorio multiplataforma con un único panel GUI para monitorear y controlar una flota de bots y agentes en segundo plano en tiempo real.',
+  proj_controlcenter_long:
+    'Una aplicación de escritorio multiplataforma (Tauri + React/TypeScript, sidecar en Python) que ofrece un único panel GUI en vivo para monitorear y controlar una flota de bots/agentes en segundo plano, sustituyendo la revisión manual de logs en muchos procesos separados. Construida sobre una biblioteca de runtime en Rust compartida para la gestión del ciclo de vida de procesos. El proyecto más activamente desarrollado del portafolio, con commits diarios.',
 
-  proj_lucent_title: 'LucentStays — Alquiler en Dubái',
-  proj_lucent_desc: 'Plataforma de reservas para alquiler de apartamentos de lujo en Dubái',
-  proj_lucent_long:
-    'Construí una plataforma completa de reservas para un negocio de alquiler en Dubái. Listados dinámicos vía Supabase, sistema de reservas Hostaway integrado, selector de monedas (AED/USD) e integración con WhatsApp. Cubre Downtown, Business Bay, Dubai Marina y otras áreas premium.',
+  proj_sidecar_title: 'tauri-sidecar-shell — Biblioteca de Runtime de Escritorio Compartida',
+  proj_sidecar_desc:
+    'Biblioteca de runtime en Rust compartida entre varias aplicaciones de escritorio para que cada una no reimplemente el mismo boilerplate de ciclo de vida de procesos.',
+  proj_sidecar_long:
+    'Una biblioteca de runtime en Rust compartida entre varias aplicaciones de escritorio Tauri: Windows Job Object kill-on-close (los procesos hijos realmente terminan al cerrar la app), health-check con backoff, reutilización de puertos y un guard de instancia única. Sustituye 60+ líneas de boilerplate por aplicación por unas 15 líneas de configuración. Pequeña, enfocada, y cubierta por su propio workflow de CI.',
 
-  proj_private_title: '50+ Proyectos Privados',
-  proj_private_desc:
-    'Software personalizado bajo NDA: AI workflow tools, data pipelines, dashboards, scrapers, internal automations, Telegram bots, real estate y business systems',
+  proj_connectionshub_title: 'Connections Hub — OAuth Service Launcher',
+  proj_connectionshub_desc:
+    'Dashboard de tiles de servicios con integración OAuth real de NextAuth (GitHub/Google), impulsado por configuración y sin necesidad de base de datos.',
+  proj_connectionshub_long:
+    'Un dashboard de tiles de servicios con integración OAuth real de NextAuth (GitHub, Google), impulsado por configuración — un nuevo proveedor es una entrada de configuración, no un cambio de código. Funciona sin base de datos backend, degradando con elegancia a un modo placeholder cuando OAuth no está configurado — diseñado para que una demo pública pueda ejecutarse de forma segura sin exponer credenciales reales.',
 
-  proj_player_title: 'Perfil de Jugador de Fútbol',
-  proj_player_desc: 'Tarjeta digital de reclutamiento para jóvenes jugadores y ojeadores',
-  proj_player_long:
-    'Showcase de reclutamiento deportivo para un joven jugador ucraniano. Muestra estadísticas personales, métricas físicas, historial de partidos, logros y rendimiento académico. Diseño dark theme optimizado para compartir con clubes y ojeadores.',
+  proj_datahub_title: 'Data Hub — Archivo de Búsqueda de Texto Completo',
+  proj_datahub_desc:
+    'Ingiere exportaciones de chats de múltiples plataformas en un archivo buscable único con búsqueda de texto completo SQLite FTS5, expuesto vía REST API.',
+  proj_datahub_long:
+    'Ingiere exportaciones de chats de múltiples plataformas en un archivo personal buscable único, usando búsqueda de texto completo SQLite FTS5 en lugar de levantar un motor de búsqueda más pesado — dimensionado correctamente para un corpus a escala personal. Expuesto vía REST API para que otras herramientas internas puedan consultarlo, no solo una UI.',
+
+  proj_notes_title: 'Note-Taking System — Pipeline Telegram-a-Kanban',
+  proj_notes_desc:
+    'Bot de Telegram que clasifica los mensajes entrantes con un LLM y los archiva automáticamente en un tablero Kanban.',
+  proj_notes_long:
+    'Un bot de Telegram que clasifica los mensajes entrantes con un paso de clasificación LLM y los archiva automáticamente en la columna correcta de un planificador estilo Kanban, en lugar de depender de triaje manual o reglas de palabras clave rígidas.',
+
+  proj_transcription_title: 'Transcription Bot — Pipeline Local de Voz a Texto',
+  proj_transcription_desc:
+    'Pipeline de transcripción totalmente local basado en Whisper, con diarización de hablantes y checkpointing ante fallos.',
+  proj_transcription_long:
+    'Un pipeline local de voz a texto: inferencia Whisper totalmente local (sin dependencia de API en la nube, por lo que es gratuito y mantiene el audio en el dispositivo), una capa de diarización de hablantes para grabaciones con varios interlocutores, y checkpointing para que trabajos largos de transcripción puedan reanudarse tras un fallo en lugar de reiniciar desde cero.',
+
+  proj_bridge_title: 'bridge_client — Biblioteca Adaptadora de Puentes Cross-Chain',
+  proj_bridge_desc:
+    'Biblioteca Python que unifica 3 proveedores de puentes cross-chain bajo una única interfaz adaptadora, documentada para su reutilización por otros ingenieros.',
+  proj_bridge_long:
+    'Una biblioteca Python que unifica 3 proveedores de puentes cross-chain (LI.FI, Mayan, CCTP) bajo una única interfaz adaptadora común, para que el código que la llama no necesite lógica específica del proveedor. Documentada con un documento de arquitectura y una guía de integración, diseñada para que otros ingenieros puedan adoptarla, no solo para uso interno.',
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Habilidades',
-  skills_tech_core: 'Competencias Técnicas Principales',
-  skills_tech_core_langs: 'Lenguajes de Programación',
-  skills_tech_core_dev: 'Desarrollo y DevOps',
-  skills_tech_core_ai: 'AI y Sistemas de Agentes',
-  skills_blockchain: 'Data & Backend Systems',
-  skills_blockchain_platforms: 'Data Workflows',
-  skills_blockchain_defi: 'Storage & APIs',
-  skills_blockchain_analysis: 'Product Analytics',
-  skills_security: 'Analysis & Monitoring',
-  skills_security_core: 'Habilidades Principales',
-  skills_security_tools: 'Herramientas de Análisis',
-  skills_security_compliance: 'Compliance',
-  skills_automation: 'Automatización e Infraestructura',
-  skills_automation_tools: 'Herramientas y Bibliotecas',
-  skills_automation_infra: 'Infraestructura',
+  skills_ai_automation: 'AI y Automatización',
+  skills_backend_data: 'Backend y Datos',
+  skills_frontend_desktop: 'Frontend y Desktop',
+  skills_web3: 'Web3',
+  skills_testing_devops: 'Testing, Seguridad y DevOps',
+  skills_core_languages: 'Lenguajes de Programación',
   skills_languages: 'Idiomas',
 
   // ── Education ─────────────────────────────────────────
   education_title: 'Educación y Certificaciones',
 
-  edu_law_title: 'Licenciatura — Análisis de Datos e Investigación de Sistemas',
-  edu_law_school: 'Universidad Estatal de Asuntos Internos de Dnipropetrovsk',
+  edu_rnu_title: 'Professional Bachelor, Business Administration',
+  edu_rnu_school: 'Riga Nordic University (antigua ISMA)',
+  edu_rnu_period: '2026 – 2028 (en curso)',
+  edu_rnu_location: 'Riga, Letonia · Online, en inglés',
+  edu_rnu_desc: 'Admisión por transferencia directamente al 3er año. Programa online, exámenes presenciales.',
+
+  edu_law_title: 'Licenciatura en Aplicación de la Ley',
+  edu_law_school: 'Universidad Estatal de Asuntos Internos de Dnipropetrovsk (DDUVS)',
   edu_law_period: '2016 – 2020',
   edu_law_location: 'Dnipro, Ucrania',
-  edu_law_desc: 'Programa de grado presencial. Especialización en análisis de datos, investigación de sistemas y trabajo de inteligencia estructurado.',
+  edu_law_desc: 'Programa presencial. Especialización: investigación criminal y actividad operativo-investigativa.',
 
-  edu_econ_title: 'Licenciatura — Analítica Económica',
-  edu_econ_school: 'DSUIA',
+  edu_econ_title: 'Licenciatura en Analítica Económica',
+  edu_econ_school: 'DDUVS',
   edu_econ_period: '2020',
   edu_econ_location: 'Dnipro, Ucrania',
   edu_econ_desc: 'Especialización: Seguridad Económica y Análisis de Datos.',
@@ -201,7 +208,7 @@ export const es = {
   edu_cert_desc: 'Programa apoyado por la Embajada de EE.UU. en Ucrania.',
 
   edu_pt_a2_title: 'Certificado de Lengua Portuguesa — A2',
-  edu_pt_a2_institution: 'IEFP / Escuela de Lengua Portuguesa',
+  edu_pt_a2_institution: 'IEFP',
   edu_pt_a2_period: '2025',
   edu_pt_a2_location: 'Portugal',
   edu_pt_a2_desc: 'Certificado oficial de nivel A2 en lengua portuguesa. Demuestra capacidad de comunicación en situaciones cotidianas en Portugal.',
@@ -258,7 +265,6 @@ export const es = {
   services_legal_desc: 'Automatización AI de procesos legales rutinarios',
   services_legal_examples: 'Lo que puedo construir:|Bot AI para consulta inicial que califica consultas|Generación automática de documentos (contratos, actas) desde tus plantillas|Rastreador interno de plazos de casos con notificaciones',
 
-  services_hotels_example: 'Construido: LucentStays — alquileres de lujo en Dubái',
   services_hotels_title: 'Hoteles y Alquiler Vacacional (Airbnb)',
   services_hotels_desc: 'Automatización de comunicación con huéspedes',
   services_hotels_examples: 'Lo que puedo construir:|Conserje AI multilingüe para responder preguntas de huéspedes 24/7|Sistema de monitoreo de reseñas con notificación instantánea|Automatización de comunicación con personal (notificaciones de limpieza)',
@@ -278,7 +284,7 @@ export const es = {
 
   services_ai_title: 'IA y Automatización de Contenido',
   services_ai_desc: 'Sistemas multi-agente y generación de contenido',
-  services_ai_examples: 'Lo que puedo construir:|Sistemas IA multi-agente para análisis de datos y generación de contenido|Sistema que convierte un video (webinar, podcast) en una semana de contenido: clips cortos, posts, artículos con auto-publicación|Integración de modelos IA (Claude, Gemini) en tus procesos empresariales',
+  services_ai_examples: 'Lo que puedo construir:|Sistemas IA multi-agente para análisis de datos y generación de contenido|Sistema que convierte un video (webinar, podcast) en una semana de contenido: clips cortos, posts, artículos con auto-publicación|Integración de modelos IA (Claude, OpenAI) en tus procesos empresariales',
 
   services_cta_title: 'Auditoría y Automatización Inteligente.',
   services_cta_desc: 'Implemento agentes IA para automatizar rutinas. 1 hora de automatización hoy = 1 mes libre por año.',
