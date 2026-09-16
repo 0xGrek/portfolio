@@ -1,6 +1,6 @@
 export const es = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Serhii | AI Engineer & Software Developer',
+  meta_title: 'Serhii Ivanenko — AI Agent Engineer · Web3 Data Consultant',
   meta_description: 'AI/software engineer que construye agent workflows, data pipelines, dashboards, internal tools y automatización orientada a producto.',
   meta_keywords:
     'AI engineer Lisboa, software developer Portugal, Python automation engineer, data pipelines, multi-agent systems',
@@ -17,16 +17,16 @@ export const es = {
   nav_cv: 'Descargar CV',
 
   // ── Hero ──────────────────────────────────────────────
-  hero_greeting: 'Hola, soy',
-  hero_name: 'Serhii',
+  hero_name: 'Serhii Ivanenko',
   hero_handle: '@0xGrek',
-  hero_title: 'AI Engineer & Software Developer',
+  hero_title: 'AI Agent Engineer · Web3 Data Consultant',
   hero_subtitle_lead: 'Construyo sistemas AI/software aplicados: agent workflows, ingestión de datos, dashboards, internal tools y automatización para operaciones reales.',
   hero_subtitle_body: '',
   hero_cta_projects: 'Mis Proyectos',
   hero_cta_contact: 'Contáctame',
   hero_available: 'Abierto a propuestas',
-  hero_location: '📍 Lisboa, Portugal — UTC+1',
+  hero_location: 'Lisboa, Portugal',
+  hero_location_fallback: 'Hora de Lisboa',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mí',
@@ -43,12 +43,12 @@ export const es = {
 
   // Experience — Software Engineer (current)
   exp_dev_title: 'Software Engineer (Programador) — AI / Python Automation',
-  exp_dev_company: 'Oleksandr Andrianov Unipessoal LDA · Lisboa',
+  exp_dev_company: 'Empresa de software con sede en Lisboa',
   exp_dev_period: 'Jun 2025 – Presente',
   exp_dev_location: 'Lisboa, Portugal',
   exp_dev_desc: 'Tiempo completo (40h), híbrido / mayormente remoto — pipelines de agentes IA, bots de Telegram con integraciones CRM y automatización Web3 para clientes bajo NDA.',
   exp_dev_b1: 'Software engineer a tiempo completo en una empresa de producto/servicios en Lisboa: código de aplicaciones, servidores, bases de datos y soporte de infraestructura',
-  exp_dev_b2: 'Trabajo para clientes bajo NDA (sin nombres de clientes): automatización Web3 — parsers on-chain, mint bots, scrapers, monitoreo de wallets',
+  exp_dev_b2: 'Trabajo para clientes bajo NDA: automatización Web3 — parsers de datos on-chain, scrapers y monitoreo de wallets/mercado',
   exp_dev_b3: 'Diseño y despliego pipelines de agentes IA con Claude y OpenAI APIs para automatización de procesos de negocio de clientes',
   exp_dev_b4: 'Entrego bots de Telegram con integraciones CRM y multi-provider LLM routing',
   exp_dev_b5: 'Responsable del ciclo completo, requisitos → arquitectura → producción (Render, Vercel), más CI/CD y PostgreSQL/SQLite',
@@ -59,10 +59,10 @@ export const es = {
   exp_freelance_period: '2023 – Presente',
   exp_freelance_location: 'Remoto, part-time',
   exp_freelance_desc: 'Consultoría a tiempo parcial junto a empleo a tiempo completo: mercados Web3, análisis on-chain, monitoreo y automatización en Python/agentes LLM.',
-  exp_freelance_b1: 'Consultoría en Web3 y datos on-chain: monitoreo de wallets y transacciones, señales de mercado y análisis de riesgo DeFi en EVM y Solana',
-  exp_freelance_b2: 'Construyó herramientas Python de scraping y analítica para inteligencia de mercado y monitoreo de datos públicos',
-  exp_freelance_b3: 'Orquestó agentes IA para procesamiento de datos, automatización de contenido y generación de digest diario a partir de 500+ mensajes',
-  exp_freelance_b4: 'Diseñó la arquitectura de enrutamiento LLM entre dominios de memoria especializada usando la Anthropic Claude API',
+  exp_freelance_b1: 'Asesoro a equipos Web3 y traders sobre estructura de mercado, análisis de tokens y flujos de wallets, y qué monitorear — de la pregunta a la recomendación basada en datos',
+  exp_freelance_b2: 'Construyo data parsers y pipelines de monitoreo/alertas (Telegram) para clientes',
+  exp_freelance_b3: 'Automatizo workflows de investigación e informes con Python y agentes LLM',
+  exp_freelance_b4: 'Construyó bots de Telegram y mini-apps para life-tracking, fitness y automatización empresarial',
 
   // Experience — Police (past)
   exp_police_title: 'Analista de Datos',
@@ -85,6 +85,7 @@ export const es = {
   tier_case_study: 'Caso de estudio',
   tier_source_private: 'Código privado',
   proj_source_private_note: 'Código privado — disponible bajo petición',
+  proj_screenshots_more: 'más',
 
   proj_ai_orch_title: 'Multi-Agent LLM Orchestration System',
   proj_ai_orch_desc:
@@ -96,13 +97,18 @@ export const es = {
   proj_mafia_desc:
     'PWA instalable que gestiona todo el flujo del moderador de un juego de deducción social en vivo: configuración, roles, acciones nocturnas, votación e historial de rondas con deshacer.',
   proj_mafia_long:
-    'Una PWA en producción creada para moderar sesiones en vivo de juegos de deducción social ("Mafia") con amigos. El motor de juego es determinista: 17 roles únicos en 3 facciones, más 16 cartas de artefacto que modifican el estado de la partida de formas complejas. El estado en tiempo real se sincroniza vía Supabase para que múltiples dispositivos puedan participar simultáneamente. Un simulador Monte Carlo ejecuta 500+ partidas simuladas para validar el balance de roles antes de publicar cambios de reglas. Desplegado en Vercel con soporte PWA offline completo.',
+    'Una PWA en producción creada para moderar sesiones en vivo de juegos de deducción social ("Mafia") con amigos. El motor de juego es determinista: 17 roles únicos en 3 facciones, más 16 cartas de artefacto que modifican el estado de la partida de formas complejas. El estado en tiempo real se sincroniza vía Supabase para que múltiples dispositivos puedan participar simultáneamente. Un simulador Monte Carlo ejecuta al menos 500 partidas simuladas para validar el balance de roles antes de publicar cambios de reglas. Desplegado en Vercel con soporte PWA offline completo.',
 
   proj_realty_title: 'Portugal Realty — Agregador Inmobiliario',
   proj_realty_desc:
     'Agrega 4 portales inmobiliarios portugueses en una vista de mercado deduplicada y señalizada por fraude, más una calculadora del impuesto de transmisión.',
   proj_realty_long:
     'Construido por necesidad real — encontrar vivienda en Lisboa está fragmentado entre portales. Agrega listados de 4 portales inmobiliarios portugueses en una vista deduplicada usando emparejamiento geográfico de Haversine y huella digital de direcciones, señala patrones sospechosos de republicación (554 casos señalados) y aplica las normas fiscales portuguesas vigentes (IMT) para estimaciones de costo precisas. SQLAlchemy sobre PostgreSQL, desplegado en Render.',
+
+  proj_lucent_title: 'LucentStays — Alquiler en Dubái',
+  proj_lucent_desc: 'Proyecto de cliente: plataforma de reservas para alquiler de apartamentos de lujo en Dubái.',
+  proj_lucent_long:
+    'Un proyecto de cliente: una plataforma completa de reservas para un negocio de alquiler en Dubái. Listados dinámicos vía Supabase, sistema de reservas Hostaway integrado, selector de monedas (AED/USD) e integración con WhatsApp. Cubre Downtown, Business Bay, Dubai Marina y otras áreas premium.',
 
   proj_viola_title: 'AI Assistant & Operator Dashboard',
   proj_viola_desc:
@@ -114,7 +120,7 @@ export const es = {
   proj_radar_desc:
     'Agrega anuncios de coches a través de 14 scrapers de marketplaces en 12 países de la UE, los normaliza y deduplica, y puntúa oportunidades con calculadoras de costo total.',
   proj_radar_long:
-    'Agrega anuncios de coches a través de 14 scrapers de marketplaces que cubren 12 países de la UE (9 verificados en vivo), los normaliza y deduplica (VIN / URL / hash de fotos), y puntúa oportunidades en una escala de 0–12. Las calculadoras de costo total manejan el impuesto de importación ISV de Portugal y la aduana ucraniana para decisiones de compra transfronteriza, con alertas de Telegram para buenas oportunidades y un programador con protección contra solapamiento. 1.195 pruebas automatizadas — el número más fuerte de cobertura de pruebas en todo el portafolio.',
+    'Agrega anuncios de coches a través de 14 scrapers de marketplaces que cubren 12 países de la UE (9 verificados en vivo), los normaliza y deduplica (VIN / URL / hash de fotos), y puntúa oportunidades en una escala de 0–12. Las calculadoras de costo total manejan el impuesto de importación ISV de Portugal y la aduana ucraniana para decisiones de compra transfronteriza, con alertas de Telegram para buenas oportunidades y un programador con protección contra solapamiento. 1.195 pruebas automatizadas.',
 
   proj_gitguardian_title: 'Git Guardian — Pre-Push Security Gate',
   proj_gitguardian_desc:
@@ -126,7 +132,7 @@ export const es = {
   proj_controlcenter_desc:
     'Aplicación de escritorio multiplataforma con un único panel GUI para monitorear y controlar una flota de bots y agentes en segundo plano en tiempo real.',
   proj_controlcenter_long:
-    'Una aplicación de escritorio multiplataforma (Tauri + React/TypeScript, sidecar en Python) que ofrece un único panel GUI en vivo para monitorear y controlar una flota de bots/agentes en segundo plano, sustituyendo la revisión manual de logs en muchos procesos separados. Construida sobre una biblioteca de runtime en Rust compartida para la gestión del ciclo de vida de procesos. El proyecto más activamente desarrollado del portafolio, con commits diarios.',
+    'Una aplicación de escritorio multiplataforma (Tauri + React/TypeScript, sidecar en Python) que ofrece un único panel GUI en vivo para monitorear y controlar una flota de bots/agentes en segundo plano, sustituyendo la revisión manual de logs en muchos procesos separados. Construida sobre una biblioteca de runtime en Rust compartida para la gestión del ciclo de vida de procesos.',
 
   proj_sidecar_title: 'tauri-sidecar-shell — Biblioteca de Runtime de Escritorio Compartida',
   proj_sidecar_desc:
@@ -265,13 +271,14 @@ export const es = {
   services_legal_desc: 'Automatización AI de procesos legales rutinarios',
   services_legal_examples: 'Lo que puedo construir:|Bot AI para consulta inicial que califica consultas|Generación automática de documentos (contratos, actas) desde tus plantillas|Rastreador interno de plazos de casos con notificaciones',
 
+  services_hotels_example: 'Construido: LucentStays — alquiler de apartamentos en Dubái',
   services_hotels_title: 'Hoteles y Alquiler Vacacional (Airbnb)',
   services_hotels_desc: 'Automatización de comunicación con huéspedes',
   services_hotels_examples: 'Lo que puedo construir:|Conserje AI multilingüe para responder preguntas de huéspedes 24/7|Sistema de monitoreo de reseñas con notificación instantánea|Automatización de comunicación con personal (notificaciones de limpieza)',
 
   services_construction_title: 'Construcción e Inmobiliaria',
   services_construction_desc: 'Agregación de datos y automatización de comunicación',
-  services_construction_example: 'Construido: Portugal Realty — 12K anuncios de 4 portales al día',
+  services_construction_example: 'Construido: Portugal Realty — 12K anuncios de 4 portales',
   services_construction_examples: 'Lo que puedo construir:|Agregador de anuncios que recopila ofertas de 4-5 portales en un solo lugar|Sistema de detección de fraude y duplicados en anuncios|Envío automático de actualizaciones de progreso para inversores',
 
   services_research_title: 'Investigación y Análisis',

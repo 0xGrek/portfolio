@@ -1,6 +1,6 @@
 export const en = {
   // ── Meta ──────────────────────────────────────────────
-  meta_title: 'Serhii | AI Engineer & Software Developer',
+  meta_title: 'Serhii Ivanenko — AI Agent Engineer · Web3 Data Consultant',
   meta_description: 'AI/software engineer building agent workflows, data pipelines, dashboards, internal tools, and product-facing automation.',
   meta_keywords:
     'AI engineer Lisbon, software developer Portugal, Python automation engineer, data pipeline developer, multi-agent systems',
@@ -17,16 +17,16 @@ export const en = {
   nav_cv: 'Download CV',
 
   // ── Hero ──────────────────────────────────────────────
-  hero_greeting: "Hi, I'm",
-  hero_name: 'Serhii',
+  hero_name: 'Serhii Ivanenko',
   hero_handle: '@0xGrek',
-  hero_title: 'AI Engineer & Software Developer',
+  hero_title: 'AI Agent Engineer · Web3 Data Consultant',
   hero_subtitle_lead: 'I build applied AI/software systems: agent workflows, data ingestion, dashboards, internal tools, and product-facing automation for real operations.',
   hero_subtitle_body: "",
   hero_cta_projects: 'My Projects',
   hero_cta_contact: 'Contact Me',
   hero_available: 'Open to opportunities',
-  hero_location: '📍 Lisbon, Portugal — UTC+1',
+  hero_location: 'Lisbon, Portugal',
+  hero_location_fallback: 'Lisbon time',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
@@ -44,12 +44,12 @@ export const en = {
 
   // Experience — Software Engineer (current)
   exp_dev_title: 'Software Engineer (Programador) — AI / Python Automation',
-  exp_dev_company: 'Oleksandr Andrianov Unipessoal LDA · Lisbon',
+  exp_dev_company: 'Lisbon-based software company',
   exp_dev_period: 'Jun 2025 – Present',
   exp_dev_location: 'Lisbon, Portugal',
   exp_dev_desc: 'Full-time (40h), hybrid / mostly remote — AI agent pipelines, Telegram bots with CRM integrations, and Web3 automation for clients under NDA.',
   exp_dev_b1: 'Full-time software engineer at a Lisbon product/services company: application code, servers, databases, and infrastructure support',
-  exp_dev_b2: 'Client work under NDA (no client names): Web3 automation — on-chain parsers, mint bots, scrapers, wallet monitoring',
+  exp_dev_b2: 'Client work under NDA: Web3 automation — on-chain data parsers, scrapers and wallet/market monitoring',
   exp_dev_b3: 'Design and ship AI agent pipelines with Claude and OpenAI APIs for client business-process automation',
   exp_dev_b4: 'Deliver Telegram bots with CRM integrations and multi-provider LLM routing',
   exp_dev_b5: 'Own the full lifecycle, requirements → architecture → production (Render, Vercel), plus CI/CD and PostgreSQL/SQLite',
@@ -60,10 +60,10 @@ export const en = {
   exp_freelance_period: '2023 – Present',
   exp_freelance_location: 'Remote, part-time',
   exp_freelance_desc: 'Part-time consulting alongside full-time employment: Web3 markets, on-chain analytics, monitoring, and Python/LLM-agent automation.',
-  exp_freelance_b1: 'Web3 and on-chain data consulting: wallet and transaction monitoring, market signals, and DeFi risk analysis across EVM and Solana',
-  exp_freelance_b2: 'Built Python data-scraping and analytics tooling for market intelligence and public-data monitoring',
-  exp_freelance_b3: 'Orchestrated AI agents for data processing, content automation, and daily digest generation from 500+ messages',
-  exp_freelance_b4: 'Designed LLM routing architecture across specialist memory domains using Anthropic Claude API',
+  exp_freelance_b1: 'Advise Web3 teams and traders on market structure, token and wallet-flow analysis, and what to monitor — from question to data-backed recommendation',
+  exp_freelance_b2: 'Build data parsers and monitoring/alerting pipelines (Telegram) for clients',
+  exp_freelance_b3: 'Automate research and reporting workflows with Python and LLM agents',
+  exp_freelance_b4: 'Built Telegram bots and mini-apps for life-tracking, fitness, and business automation',
 
   // Experience — Police (past)
   exp_police_title: 'Data Analyst',
@@ -86,6 +86,7 @@ export const en = {
   tier_case_study: 'Case study',
   tier_source_private: 'Source private',
   proj_source_private_note: 'Source private — available on request',
+  proj_screenshots_more: 'more',
 
   proj_ai_orch_title: 'Multi-Agent LLM Orchestration System',
   proj_ai_orch_desc:
@@ -97,13 +98,18 @@ export const en = {
   proj_mafia_desc:
     'Installable PWA running the full host flow for a live social-deduction game: setup, roles, night actions, voting, and round history with undo.',
   proj_mafia_long:
-    'A production PWA built for hosting live social-deduction ("Mafia") game sessions with friends. The game engine is deterministic: 17 unique roles across 3 factions, plus 16 artifact cards that modify game state in complex ways. Real-time state is synced via Supabase so multiple devices can participate simultaneously. A Monte Carlo simulator runs 500+ simulated games to validate role balance before shipping rule changes. Deployed on Vercel with full offline PWA support.',
+    'A production PWA built for hosting live social-deduction ("Mafia") game sessions with friends. The game engine is deterministic: 17 unique roles across 3 factions, plus 16 artifact cards that modify game state in complex ways. Real-time state is synced via Supabase so multiple devices can participate simultaneously. A Monte Carlo simulator runs at least 500 simulated games to validate role balance before shipping rule changes. Deployed on Vercel with full offline PWA support.',
 
   proj_realty_title: 'Portugal Realty — Real-Estate Aggregator',
   proj_realty_desc:
     'Aggregates 4 Portuguese property portals into one deduplicated, fraud-flagged market view, plus a Portuguese-tax-rules transfer-tax calculator.',
   proj_realty_long:
     'Built out of genuine need — finding housing in Lisbon is fragmented across portals. Aggregates listings from 4 Portuguese property portals into one deduplicated view using Haversine geo-matching and fuzzy address fingerprinting, flags suspicious relist-fraud patterns (554 cases flagged), and applies current Portuguese fiscal rules (IMT transfer tax) for accurate cost estimates. SQLAlchemy over PostgreSQL, deployed on Render.',
+
+  proj_lucent_title: 'LucentStays — Dubai Rentals',
+  proj_lucent_desc: 'Client project: booking platform for short-term luxury apartment rentals in Dubai.',
+  proj_lucent_long:
+    'A client project: a complete booking platform for a Dubai-based rental business. Property listings with dynamic data from Supabase, an integrated Hostaway booking system, a currency toggle (AED/USD), and WhatsApp contact integration. Covers Downtown, Business Bay, Dubai Marina, and other premium areas.',
 
   proj_viola_title: 'AI Assistant & Operator Dashboard',
   proj_viola_desc:
@@ -115,7 +121,7 @@ export const en = {
   proj_radar_desc:
     'Aggregates car listings across 14 marketplace scrapers and 12 EU countries, normalizes and dedupes them, and scores deals with landed-cost calculators.',
   proj_radar_long:
-    'Aggregates car listings across 14 marketplace scrapers covering 12 EU countries (9 verified live), normalizes and dedupes them (VIN / URL / photo-hash), and scores deals on a 0–12 scale. Landed-cost calculators handle Portugal ISV import tax and Ukraine customs for cross-border buying decisions, with Telegram alerts on hot deals and a scheduler with overlap protection. 1,195 automated tests — the strongest test-coverage number in the whole portfolio.',
+    'Aggregates car listings across 14 marketplace scrapers covering 12 EU countries (9 verified live), normalizes and dedupes them (VIN / URL / photo-hash), and scores deals on a 0–12 scale. Landed-cost calculators handle Portugal ISV import tax and Ukraine customs for cross-border buying decisions, with Telegram alerts on hot deals and a scheduler with overlap protection. 1,195 automated tests.',
 
   proj_gitguardian_title: 'Git Guardian — Pre-Push Security Gate',
   proj_gitguardian_desc:
@@ -127,7 +133,7 @@ export const en = {
   proj_controlcenter_desc:
     'Cross-platform desktop app giving a single GUI panel to monitor and control a fleet of background bots and agents in real time.',
   proj_controlcenter_long:
-    'A cross-platform desktop app (Tauri + React/TypeScript, Python sidecar) that gives a single live GUI panel to monitor and control a fleet of background bots/agents, replacing manual log-checking across many separate processes. Built on a shared Rust runtime library for process-lifecycle management. The most actively iterated project in the portfolio, with daily commits.',
+    'A cross-platform desktop app (Tauri + React/TypeScript, Python sidecar) that gives a single live GUI panel to monitor and control a fleet of background bots/agents, replacing manual log-checking across many separate processes. Built on a shared Rust runtime library for process-lifecycle management.',
 
   proj_sidecar_title: 'tauri-sidecar-shell — Shared Desktop Runtime Library',
   proj_sidecar_desc:
@@ -266,13 +272,14 @@ export const en = {
   services_legal_desc: 'AI automation of routine legal processes',
   services_legal_examples: 'What I can build:|AI bot for initial consultation that qualifies inquiries|Automatic document generation (contracts, deeds) from your templates|Internal case deadline tracker with notifications',
 
+  services_hotels_example: 'Built: LucentStays — Dubai apartment rentals',
   services_hotels_title: 'Hotels & Vacation Rentals (Airbnb)',
   services_hotels_desc: 'Guest communication automation',
   services_hotels_examples: 'What I can build:|Multilingual AI concierge for answering guest questions 24/7|Review monitoring system that instantly notifies about new comments|Staff communication automation (cleaning notifications)',
 
   services_construction_title: 'Construction & Real Estate',
   services_construction_desc: 'Data aggregation and communication automation',
-  services_construction_example: 'Built: Portugal Realty — 12K listings from 4 portals daily',
+  services_construction_example: 'Built: Portugal Realty — 12K listings from 4 portals',
   services_construction_examples: 'What I can build:|Listing aggregator collecting offers from 4-5 portals in one place|Fraud and duplicate detection system for listings|Automatic progress update mailings for investors',
 
   services_research_title: 'Research & Analysis',

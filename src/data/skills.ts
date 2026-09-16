@@ -80,8 +80,6 @@ export const skillCategories: SkillCategory[] = [
           'DeFi risk analysis',
           'EVM tooling (web3.py)',
           'Solana (solders)',
-          'Cross-chain bridge integration',
-          'ccxt / CEX integration',
         ],
       },
     ],

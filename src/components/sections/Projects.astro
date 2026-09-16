@@ -55,7 +55,7 @@ const categoryIcons: Record<string, string> = {
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children" id="projects-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start stagger-children" id="projects-grid">
       {projects.map((project, index) => (
         <article
           class={`project-card relative flex flex-col rounded-xl overflow-hidden${project.featured ? ' project-featured' : ''}${index >= 3 ? ' project-extra' : ''}`}
@@ -122,7 +122,9 @@ const categoryIcons: Record<string, string> = {
 
             <!-- Period + disclosure/status badge -->
             <div class="flex flex-wrap items-center gap-2 mb-2.5">
-              <span class="text-xs font-mono" style="color: var(--text-secondary); opacity: 0.75;">{project.period}</span>
+              {project.period && (
+                <span class="text-xs font-mono" style="color: var(--text-secondary); opacity: 0.75;">{project.period}</span>
+              )}
               <span
                 class="inline-block px-2 py-0.5 rounded text-[0.65rem] font-semibold uppercase tracking-wide"
                 style={tierBadgeStyle[project.tier]}
@@ -254,7 +256,7 @@ const categoryIcons: Record<string, string> = {
                   {project.screenshots.length > 3 && (
                     <details class="mt-2">
                       <summary class="text-xs cursor-pointer select-none" style="color: var(--accent);">
-                        +{project.screenshots.length - 3} more
+                        +{project.screenshots.length - 3} {t(lang, 'proj_screenshots_more' as any)}
                       </summary>
                       <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
                         {project.screenshots.slice(3).map((shot) => (

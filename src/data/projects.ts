@@ -30,8 +30,11 @@ export interface Project {
   tech: string[];
   category: 'web' | 'ai' | 'analytics' | 'case-study' | 'tool';
   featured: boolean;
-  /** Free-text period shown on the card, e.g. "2026" or "2024 – 2026". */
-  period: string;
+  /**
+   * Free-text period shown on the card, e.g. "2026" or "2024 – 2026".
+   * Optional — leave undefined when no source states a year (don't guess).
+   */
+  period?: string;
   /** Short domain tags, e.g. ['AI/LLM', 'Backend']. */
   areas: string[];
   /** Disclosure-aligned status badge (see 00_MASTER/CAREER_BASE/DISCLOSURE_LEVELS.md). */
@@ -99,7 +102,7 @@ export const projects: Project[] = [
     metrics: [
       { value: '17 roles · 3 factions' },
       { value: '16 artifact cards' },
-      { value: 'Monte Carlo 500+ games' },
+      { value: 'Monte Carlo, 500 games min.' },
     ],
   },
   {
@@ -112,16 +115,34 @@ export const projects: Project[] = [
     featured: true,
     period: '2025 – 2026',
     areas: ['Backend', 'Data aggregation'],
-    tier: 'case-study',
-    privateSource: false,
-    showcase: 'repo-readme',
-    links: {
-      github: 'https://github.com/0xGrek/portugal-realty',
-    },
+    tier: 'source-private',
+    privateSource: true,
+    showcase: 'case-study',
+    links: {},
     metrics: [
       { value: '12,000+ listings' },
       { value: '4 portals scraped' },
       { value: '554 relists flagged' },
+    ],
+  },
+  {
+    id: 'lucent-stays',
+    titleKey: 'proj_lucent_title',
+    descriptionKey: 'proj_lucent_desc',
+    longDescriptionKey: 'proj_lucent_long',
+    tech: ['HTML/CSS', 'JavaScript', 'Supabase', 'Hostaway API'],
+    category: 'web',
+    featured: false,
+    areas: ['Web', 'Client work'],
+    tier: 'live-demo',
+    privateSource: false,
+    showcase: 'live-demo',
+    links: {
+      live: 'https://lucentstays.com',
+    },
+    metrics: [
+      { value: 'Client project' },
+      { value: 'Booking platform' },
     ],
   },
   {
@@ -295,25 +316,6 @@ export const projects: Project[] = [
     metrics: [
       { value: 'Fully local (no cloud API)' },
       { value: 'Speaker diarization' },
-    ],
-  },
-  {
-    id: 'bridge-client',
-    titleKey: 'proj_bridge_title',
-    descriptionKey: 'proj_bridge_desc',
-    longDescriptionKey: 'proj_bridge_long',
-    tech: ['Python'],
-    category: 'tool',
-    featured: false,
-    period: '2026',
-    areas: ['Web3', 'Backend'],
-    tier: 'source-private',
-    privateSource: true,
-    showcase: 'case-study',
-    links: {},
-    metrics: [
-      { value: '3 bridge providers unified' },
-      { value: 'Adapter pattern' },
     ],
   },
 ];
