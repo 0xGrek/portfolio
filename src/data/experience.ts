@@ -19,7 +19,7 @@ export const experience: Experience[] = [
     locationKey: 'exp_dev_location',
     descriptionKey: 'exp_dev_desc',
     bullets: ['exp_dev_b1', 'exp_dev_b2', 'exp_dev_b3', 'exp_dev_b4', 'exp_dev_b5'],
-    tags: ['TypeScript', 'Python', 'PostgreSQL', 'Linux', 'Docker', 'CI/CD'],
+    tags: ['Python', 'Claude/OpenAI API', 'PostgreSQL', 'Telegram Bot API', 'Render/Vercel', 'CI/CD'],
   },
   {
     id: 'ai-dev',

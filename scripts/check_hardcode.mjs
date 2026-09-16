@@ -104,7 +104,7 @@ function blankExpressions(str) {
   let depth = 0;
   for (let i = 0; i < str.length; i++) {
     const ch = str[i];
-    if (ch === '{') { depth++; out += '\n' === ch ? '\n' : ' '; continue; }
+    if (ch === '{') { depth++; out += ' '; continue; }
     if (ch === '}') { depth = Math.max(0, depth - 1); out += ' '; continue; }
     out += depth > 0 ? (ch === '\n' ? '\n' : ' ') : ch;
   }

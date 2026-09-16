@@ -23,32 +23,49 @@ keep it consistent across the whole file (don't mix "пайплайн" and "ко
   four languages by design — it's a title, not a sentence.
 - **`hero_subtitle_lead`**: frozen verbatim per Serhii — do not touch, in any
   language, until he explicitly asks for a rewrite.
-- **Experience section (`exp_*` keys) as of 2026-09-16**: this copy was
-  dictated/approved by Serhii verbatim (including his own word choices like
-  "production"). Don't re-translate it as part of a routine localization
-  pass — treat it the same as `hero_subtitle_lead`. If Serhii asks for a new
-  Experience pass, that supersedes this note.
+- **`ua.ts` Experience section (`exp_*` keys) as of 2026-09-16**: this UA
+  copy was dictated/approved by Serhii verbatim (including his own word
+  choices like "production" and "лайф-трекінг, фітнес" — his own phrasing
+  from the old site and his CV, source: `master` commit `b4d4762` and the
+  `mid_FINAL` CV). Don't re-translate the **UA** text as part of a routine
+  localization pass — treat it the same as `hero_subtitle_lead`.
+  **This exemption is UA-only.** The `en.ts`/`pt.ts`/`es.ts` Experience
+  copy is a translation of that UA original done during the same pass, not
+  separately dictated by Serhii — it still has to follow the normal
+  glossary rules below (that's why "skills"/"shadow"/"Utilities" leaking
+  into the PT/ES Experience bullets was a real bug, not a frozen quote,
+  and got fixed on 2026-09-16). If Serhii asks for a new Experience pass,
+  that supersedes this note for whichever language(s) he redictates.
 
 ## Translate everything else
 
 Ordinary English vocabulary that leaked into prose gets translated, even if
-it's common in tech slang. Fixed renderings used on this site (Ukrainian
-shown; mirror the equivalent naturalized/translated form in pt/es):
+it's common in tech slang. Ukrainian uses Cyrillic naturalized loanwords
+where noted; PT/ES are Latin-script, so their "naturalization" is often
+just borrowing the word unchanged (`pipeline`, `dashboard`) — that's fine,
+it's not the same as leaving an *ordinary* English word like `skills` or
+`shadow` untranslated, which reads as broken PT/ES, not as a loanword.
 
-| English            | UA rendering            |
-|--------------------|--------------------------|
-| pipeline(s)        | пайплайн(и) *(naturalized loanword, not `pipeline`)* |
-| dashboard(s)       | дашборд(и) *(naturalized loanword)* |
-| workflow(s)        | робочі процеси |
-| internal tools     | внутрішні інструменти |
-| monitoring         | моніторинг *(already naturalized — keep)* |
-| alerting / alerts  | сповіщення |
-| analytics tools    | аналітичні інструменти |
-| structured review outputs | структуровані результати перевірки |
-| part-time          | часткова зайнятість |
-| backend            | бекенд *(naturalized loanword, matches existing "фронтенд")* |
-| software delivery  | розробка та постачання програмних продуктів |
-| boilerplate        | шаблонний код |
+| English                    | UA                    | PT                              | ES                               |
+|----------------------------|------------------------|----------------------------------|-----------------------------------|
+| pipeline(s)                | пайплайн(и) *(naturalized, not `pipeline`)* | pipeline(s) *(kept — established PT loanword)* | pipeline(s) *(kept — established ES loanword)* |
+| dashboard(s)                | дашборд(и) *(naturalized)* | dashboard(s) *(kept)* | dashboard(s) *(kept)* |
+| workflow(s)                | робочі процеси | fluxo(s) de trabalho | flujo(s) de trabajo |
+| internal tools              | внутрішні інструменти | ferramentas internas | herramientas internas |
+| monitoring                  | моніторинг *(already naturalized)* | monitorização | monitoreo |
+| alerting / alerts           | сповіщення | alertas / notificações | alertas / notificaciones |
+| analytics tools              | аналітичні інструменти | ferramentas de analytics | herramientas de analytics |
+| structured review outputs   | структуровані результати перевірки | resultados estruturados de revisão | resultados estructurados de revisión |
+| part-time                    | часткова зайнятість | a tempo parcial | a tiempo parcial |
+| backend                      | бекенд *(naturalized, matches "фронтенд")* | backend *(kept — established PT loanword)* | backend *(kept — established ES loanword)* |
+| software delivery            | розробка та постачання програмних продуктів | desenvolvimento e entrega de software | desarrollo y entrega de software |
+| boilerplate                  | шаблонний код | código repetitivo | código repetitivo |
+| skills (as in "skill library") | навички | competências *(matches `nav_skills`)* | habilidades *(matches `nav_skills`)* |
+| shadow (mode)                 | тіньовий режим | modo sombra | modo sombra |
+| utilities (noun, "utils")     | утиліти | utilitários | utilidades |
+| tiles (UI dashboard tiles)    | плитки | blocos | bloques |
+| provider                       | провайдер | fornecedor | proveedor |
+| inputs (noun, "incoming data") | вхідні дані | entradas | entradas |
 
 If a new English word shows up during a future edit and doesn't fit either
 list, default to translating it, then add it to this table so the next pass

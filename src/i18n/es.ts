@@ -1,7 +1,7 @@
 export const es = {
   // ── Meta ──────────────────────────────────────────────
   meta_title: 'Serhii Ivanenko — AI Agent Engineer · Web3 Data Consultant',
-  meta_description: 'AI/software engineer que construye flujos de agentes, pipelines de datos, dashboards, herramientas internas y automatización orientada a producto.',
+  meta_description: 'Ingeniero de AI/software que construye flujos de agentes, pipelines de datos, dashboards, herramientas internas y automatización orientada a producto.',
   meta_keywords:
     'AI engineer Lisboa, software developer Portugal, Python automation engineer, data pipelines, multi-agent systems',
 
@@ -31,7 +31,7 @@ export const es = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mí',
-  about_text_1: 'Construyo sistemas prácticos donde inputs desordenados se convierten en flujos de trabajo fiables: agentes de AI, pipelines de datos, dashboards internos, recepción de mensajes de Telegram y automatización de backend.',
+  about_text_1: 'Construyo sistemas prácticos donde entradas desordenadas se convierten en flujos de trabajo fiables: agentes de AI, pipelines de datos, dashboards internos, recepción de mensajes de Telegram y automatización de backend.',
   about_text_2: 'Mi experiencia combina el desarrollo y entrega de software con pensamiento analítico: datos estructurados, señales de riesgo, monitoreo y decisiones bajo incertidumbre.',
   about_text_3: '',
   about_text_4: '',
@@ -60,8 +60,8 @@ export const es = {
   exp_ai_period: '2024 – Presente',
   exp_ai_location: 'Portugal',
   exp_ai_desc: 'Sistemas de IA multiagente que corren a diario sobre datos reales.',
-  exp_ai_b1: 'Sistema multiagente propio con más de 20 agentes especializados: elige el modelo por tarea según el costo, tiene biblioteca de skills compartida y memoria persistente entre sesiones',
-  exp_ai_b2: 'Pipeline que clasifica a diario un flujo de fuentes de Telegram con un LLM y genera un digest corto; los nuevos clasificadores corren primero en modo shadow, los fallos se recuperan automáticamente',
+  exp_ai_b1: 'Sistema multiagente propio con más de 20 agentes especializados: elige el modelo por tarea según el costo, tiene biblioteca de habilidades compartida y memoria persistente entre sesiones',
+  exp_ai_b2: 'Pipeline que clasifica a diario un flujo de fuentes de Telegram con un LLM y genera un digest corto; los nuevos clasificadores corren primero en modo sombra, los fallos se recuperan automáticamente',
   exp_ai_b3: 'Asistente de IA para un negocio de cliente: redacta respuestas a clientes a partir del historial de conversación, aprende de las ediciones del operador, se sincroniza con el CRM',
 
   // Experience — On-Chain Data Automation, autónomo (ongoing)
@@ -111,9 +111,9 @@ export const es = {
 
   proj_ai_orch_title: 'Sistema de Orquestación Multi-Agente de LLM',
   proj_ai_orch_desc:
-    'Sistema multi-agente que ejecuto a diario: enrutamiento de modelos sensible al costo entre 20+ agentes especializados, biblioteca de skills compartida y un pipeline de digest para Telegram.',
+    'Sistema multi-agente que ejecuto a diario: enrutamiento de modelos sensible al costo entre 20+ agentes especializados, biblioteca de habilidades compartida y un pipeline de digest para Telegram.',
   proj_ai_orch_long:
-    'Un sistema multi-agente que ejecuto a diario: enrutamiento de modelos sensible al costo entre 20+ agentes especializados por rol, una biblioteca de skills compartida y memoria persistente entre sesiones. Un pipeline de clasificación LLM + digest diario corre sobre fuentes de Telegram curadas, con un clasificador en modo shadow y ejecuciones programadas con auto-recuperación. El repositorio público documenta una versión anterior de la arquitectura (~11 agentes).',
+    'Un sistema multi-agente que ejecuto a diario: enrutamiento de modelos sensible al costo entre 20+ agentes especializados por rol, una biblioteca de habilidades compartida y memoria persistente entre sesiones. Un pipeline de clasificación LLM + digest diario corre sobre fuentes de Telegram curadas, con un clasificador en modo sombra y ejecuciones programadas con auto-recuperación. El repositorio público documenta una versión anterior de la arquitectura (~11 agentes).',
 
   proj_mafia_title: 'Shadow Council — Consola de Moderador para Juegos de Deducción Social',
   proj_mafia_desc:
@@ -164,9 +164,9 @@ export const es = {
 
   proj_connectionshub_title: 'Connections Hub — Lanzador de Servicios OAuth',
   proj_connectionshub_desc:
-    'Dashboard de tiles de servicios con integración OAuth real de NextAuth (GitHub/Google), impulsado por configuración y sin necesidad de base de datos.',
+    'Dashboard de bloques de servicios con integración OAuth real de NextAuth (GitHub/Google), impulsado por configuración y sin necesidad de base de datos.',
   proj_connectionshub_long:
-    'Un dashboard de tiles de servicios con integración OAuth real de NextAuth (GitHub, Google), impulsado por configuración — un nuevo proveedor es una entrada de configuración, no un cambio de código. Funciona sin base de datos de backend, degradando con elegancia a un modo simulado cuando OAuth no está configurado — diseñado para que una demo pública pueda ejecutarse de forma segura sin exponer credenciales reales.',
+    'Un dashboard de bloques de servicios con integración OAuth real de NextAuth (GitHub, Google), impulsado por configuración — un nuevo proveedor es una entrada de configuración, no un cambio de código. Funciona sin base de datos de backend, degradando con elegancia a un modo simulado cuando OAuth no está configurado — diseñado para que una demo pública pueda ejecutarse de forma segura sin exponer credenciales reales.',
 
   proj_datahub_title: 'Data Hub — Archivo de Búsqueda de Texto Completo',
   proj_datahub_desc:

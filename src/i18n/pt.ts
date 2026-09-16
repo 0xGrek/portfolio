@@ -1,7 +1,7 @@
 export const pt = {
   // ── Meta ──────────────────────────────────────────────
   meta_title: 'Serhii Ivanenko — AI Agent Engineer · Web3 Data Consultant',
-  meta_description: 'AI/software engineer que cria fluxos de agentes, pipelines de dados, dashboards, ferramentas internas e automação orientada a produto.',
+  meta_description: 'Engenheiro de AI/software que cria fluxos de agentes, pipelines de dados, dashboards, ferramentas internas e automação orientada a produto.',
   meta_keywords:
     'AI engineer Lisboa, software developer Portugal, Python automation engineer, data pipelines, multi-agent systems',
 
@@ -31,7 +31,7 @@ export const pt = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
-  about_text_1: 'Crio sistemas práticos onde inputs desorganizados viram fluxos de trabalho fiáveis: agentes de AI, pipelines de dados, dashboards internos, receção de mensagens do Telegram e automação de backend.',
+  about_text_1: 'Crio sistemas práticos onde entradas desorganizadas viram fluxos de trabalho fiáveis: agentes de AI, pipelines de dados, dashboards internos, receção de mensagens do Telegram e automação de backend.',
   about_text_2: 'A minha experiência combina o desenvolvimento e entrega de software com pensamento analítico: dados estruturados, sinais de risco, monitorização e decisões sob incerteza.',
   about_text_3: '',
   about_text_4: '',
@@ -60,8 +60,8 @@ export const pt = {
   exp_ai_period: '2024 – Presente',
   exp_ai_location: 'Portugal',
   exp_ai_desc: 'Sistemas de AI multiagente que correm diariamente sobre dados reais.',
-  exp_ai_b1: 'Sistema multiagente próprio com mais de 20 agentes especializados: escolhe o modelo por tarefa com base no custo, tem biblioteca de skills partilhada e memória persistente entre sessões',
-  exp_ai_b2: 'Pipeline que classifica diariamente um fluxo de fontes do Telegram com um LLM e gera um digest curto; novos classificadores correm primeiro em modo shadow, falhas recuperam automaticamente',
+  exp_ai_b1: 'Sistema multiagente próprio com mais de 20 agentes especializados: escolhe o modelo por tarefa com base no custo, tem biblioteca de competências partilhada e memória persistente entre sessões',
+  exp_ai_b2: 'Pipeline que classifica diariamente um fluxo de fontes do Telegram com um LLM e gera um digest curto; novos classificadores correm primeiro em modo sombra, falhas recuperam automaticamente',
   exp_ai_b3: 'Assistente de AI para um negócio de cliente: prepara respostas a clientes com base no histórico de conversas, aprende com as edições do operador, sincroniza com o CRM',
 
   // Experience — On-Chain Data Automation, empresário individual (ongoing)
@@ -70,7 +70,7 @@ export const pt = {
   exp_crypto_period: '2023 – Presente',
   exp_crypto_location: 'Portugal',
   exp_crypto_desc: 'Ferramentas de monitorização e analytics para dados públicos fragmentados e fluxos de transações.',
-  exp_crypto_b1: 'Utilities de monitorização de wallets e transações com alertas no Telegram',
+  exp_crypto_b1: 'Utilitários de monitorização de wallets e transações com alertas no Telegram',
   exp_crypto_b2: 'Dashboards e relatórios estruturados para revisão de atividade',
   exp_crypto_b3: 'Desde 2025 — aconselho equipas Web3 e traders: estrutura de mercado, fluxos de tokens e wallets, o que monitorizar',
 
@@ -111,9 +111,9 @@ export const pt = {
 
   proj_ai_orch_title: 'Sistema de Orquestração Multi-Agente de LLM',
   proj_ai_orch_desc:
-    'Sistema multi-agente que corro diariamente: roteamento de modelos sensível a custo entre 20+ agentes especializados, biblioteca de skills partilhada e um pipeline de digest para Telegram.',
+    'Sistema multi-agente que corro diariamente: roteamento de modelos sensível a custo entre 20+ agentes especializados, biblioteca de competências partilhada e um pipeline de digest para Telegram.',
   proj_ai_orch_long:
-    'Um sistema multi-agente que corro diariamente: roteamento de modelos sensível a custo entre 20+ agentes especializados por função, uma biblioteca de skills partilhada e memória persistente entre sessões. Um pipeline de classificação LLM + digest diário corre sobre fontes Telegram curadas, com um classificador em modo shadow e execuções agendadas com auto-recuperação. O repositório público documenta uma versão anterior da arquitetura (~11 agentes).',
+    'Um sistema multi-agente que corro diariamente: roteamento de modelos sensível a custo entre 20+ agentes especializados por função, uma biblioteca de competências partilhada e memória persistente entre sessões. Um pipeline de classificação LLM + digest diário corre sobre fontes Telegram curadas, com um classificador em modo sombra e execuções agendadas com auto-recuperação. O repositório público documenta uma versão anterior da arquitetura (~11 agentes).',
 
   proj_mafia_title: 'Shadow Council — Consola de Anfitrião para Jogos de Dedução Social',
   proj_mafia_desc:
@@ -164,9 +164,9 @@ export const pt = {
 
   proj_connectionshub_title: 'Connections Hub — Lançador de Serviços OAuth',
   proj_connectionshub_desc:
-    'Dashboard de tiles de serviços com integração OAuth NextAuth real (GitHub/Google), orientado por configuração e sem necessidade de base de dados.',
+    'Dashboard de blocos de serviços com integração OAuth NextAuth real (GitHub/Google), orientado por configuração e sem necessidade de base de dados.',
   proj_connectionshub_long:
-    'Um dashboard de tiles de serviços com integração OAuth NextAuth real (GitHub, Google), orientado por configuração — um novo provider é uma entrada de configuração, não uma alteração de código. Corre sem base de dados de backend, degradando graciosamente para um modo simulado quando o OAuth não está configurado — concebido para que uma demo pública possa correr em segurança sem expor credenciais reais.',
+    'Um dashboard de blocos de serviços com integração OAuth NextAuth real (GitHub, Google), orientado por configuração — um novo fornecedor é uma entrada de configuração, não uma alteração de código. Corre sem base de dados de backend, degradando graciosamente para um modo simulado quando o OAuth não está configurado — concebido para que uma demo pública possa correr em segurança sem expor credenciais reais.',
 
   proj_datahub_title: 'Data Hub — Arquivo de Pesquisa de Texto Completo',
   proj_datahub_desc:

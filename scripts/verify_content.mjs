@@ -30,18 +30,22 @@ const SUBSTRING_TERMS = [
   'onrender',
   'snip',
   'airdrop',
-  '913371298',
   'casa-app',
   'vila-facaia',
   'hostaway',
+  '+351', // PT country code — catches any dialable phone number, formatted or not
+  'unipessoal', // PT legal-structure term (sole-member company) — not for public disclosure
 ];
 
-// Word-boundary matches — avoids false positives on substrings that occur
-// inside unrelated real words (e.g. a future "footprint" or "farming out
-// the design" type phrase, or minified JS identifiers).
+// Word-boundary / pattern matches — avoids false positives on substrings
+// that occur inside unrelated real words (e.g. a future "footprint" or
+// "farming out the design" type phrase, or minified JS identifiers), and
+// lets a single rule catch formatting variants (spaces/dashes/dots between
+// digit groups) instead of one hardcoded literal per format.
 const WORD_BOUNDARY_TERMS = [
   { label: 'mint', pattern: /\bmints?\b/gi },
   { label: 'farm', pattern: /\bfarms?(ing)?\b/gi },
+  { label: 'phone-913371298', pattern: /913\D?371\D?298/g },
 ];
 
 const SCAN_EXTENSIONS = new Set(['.html', '.xml', '.txt', '.json', '.js']);
