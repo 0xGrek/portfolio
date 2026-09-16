@@ -1,7 +1,7 @@
 export const pt = {
   // ── Meta ──────────────────────────────────────────────
   meta_title: 'Serhii Ivanenko — AI Agent Engineer · Web3 Data Consultant',
-  meta_description: 'AI/software engineer que cria agent workflows, data pipelines, dashboards, internal tools e automação orientada a produto.',
+  meta_description: 'AI/software engineer que cria fluxos de agentes, pipelines de dados, dashboards, ferramentas internas e automação orientada a produto.',
   meta_keywords:
     'AI engineer Lisboa, software developer Portugal, Python automation engineer, data pipelines, multi-agent systems',
 
@@ -30,14 +30,14 @@ export const pt = {
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
-  about_text_1: 'Crio sistemas práticos onde inputs desorganizados viram workflows fiáveis: AI agents, data pipelines, internal dashboards, Telegram intake e backend automation.',
-  about_text_2: 'A minha experiência combina software delivery com pensamento analítico: dados estruturados, risk signals, monitoring e decisões sob incerteza.',
+  about_text_1: 'Crio sistemas práticos onde inputs desorganizados viram fluxos de trabalho fiáveis: agentes de AI, pipelines de dados, dashboards internos, receção de mensagens do Telegram e automação de backend.',
+  about_text_2: 'A minha experiência combina o desenvolvimento e entrega de software com pensamento analítico: dados estruturados, sinais de risco, monitorização e decisões sob incerteza.',
   about_text_3: '',
   about_text_4: '',
-  about_stats_tools: 'Production Systems',
-  about_stats_chains: 'Data Pipelines',
-  about_stats_web3: 'AI Agents',
-  about_stats_police: 'Analytics Background',
+  about_stats_tools: 'Sistemas em Produção',
+  about_stats_chains: 'Pipelines de Dados',
+  about_stats_web3: 'Agentes de AI',
+  about_stats_police: 'Experiência Analítica',
   // ── Experience ────────────────────────────────────────
   experience_title: 'Experiência',
 
@@ -108,15 +108,15 @@ export const pt = {
   proj_source_private_note: 'Código privado — disponível a pedido',
   proj_screenshots_more: 'mais',
 
-  proj_ai_orch_title: 'Multi-Agent LLM Orchestration System',
+  proj_ai_orch_title: 'Sistema de Orquestração Multi-Agente de LLM',
   proj_ai_orch_desc:
-    'Sistema multi-agente que corro diariamente: model routing sensível a custo entre 20+ agentes especializados, biblioteca de skills partilhada e um pipeline de digest para Telegram.',
+    'Sistema multi-agente que corro diariamente: roteamento de modelos sensível a custo entre 20+ agentes especializados, biblioteca de skills partilhada e um pipeline de digest para Telegram.',
   proj_ai_orch_long:
-    'Um sistema multi-agente que corro diariamente: model routing sensível a custo entre 20+ agentes especializados por função, uma biblioteca de skills partilhada e memória persistente entre sessões. Um pipeline de classificação LLM + digest diário corre sobre fontes Telegram curadas, com um classificador em shadow-mode e execuções agendadas com auto-recuperação. O repositório público documenta uma versão anterior da arquitetura (~11 agentes).',
+    'Um sistema multi-agente que corro diariamente: roteamento de modelos sensível a custo entre 20+ agentes especializados por função, uma biblioteca de skills partilhada e memória persistente entre sessões. Um pipeline de classificação LLM + digest diário corre sobre fontes Telegram curadas, com um classificador em modo shadow e execuções agendadas com auto-recuperação. O repositório público documenta uma versão anterior da arquitetura (~11 agentes).',
 
   proj_mafia_title: 'Shadow Council — Consola de Anfitrião para Jogos de Dedução Social',
   proj_mafia_desc:
-    'PWA instalável que gere todo o fluxo do anfitrião de um jogo de dedução social ao vivo: configuração, papéis, ações noturnas, votação e histórico de rondas com undo.',
+    'PWA instalável que gere todo o fluxo do anfitrião de um jogo de dedução social ao vivo: configuração, papéis, ações noturnas, votação e histórico de rondas com opção de desfazer.',
   proj_mafia_long:
     'Uma PWA de produção criada para organizar sessões ao vivo de jogos de dedução social ("Máfia") com amigos. O motor do jogo é determinístico: 17 papéis únicos em 3 facções, mais 16 cartas de artefactos que modificam o estado do jogo de formas complexas. O estado em tempo real é sincronizado via Supabase para que vários dispositivos possam participar simultaneamente. Um simulador Monte Carlo executa pelo menos 500 jogos simulados para validar o equilíbrio dos papéis antes de publicar alterações às regras. Publicado no Vercel com suporte PWA offline completo.',
 
@@ -131,41 +131,41 @@ export const pt = {
   proj_lucent_long:
     'Um projeto de cliente: uma plataforma completa de reservas para um negócio de aluguer no Dubai. Listagens dinâmicas via Supabase, API de plataforma de reservas integrada, alternador de moedas (AED/USD) e integração com WhatsApp. Cobre Downtown, Business Bay, Dubai Marina e outras áreas premium.',
 
-  proj_viola_title: 'AI Assistant & Operator Dashboard',
+  proj_viola_title: 'Assistente de AI e Dashboard de Operador',
   proj_viola_desc:
     'Assistente AI de produção para um negócio de serviços: elabora respostas a clientes a partir do histórico de mensagens e aprende com as correções do operador.',
   proj_viola_long:
-    'Um projeto de cliente: um assistente de produção para um negócio de serviços que elabora respostas a clientes a partir do histórico de mensagens e aprende com as correções reais do operador (pares few-shot). Inclui um dashboard de operador (inbox, fila de prioridades, alertas de reservas), sincronização com CRM, um bot de Telegram para o operador e um watchdog que reinicia processos falhados. Multi-provider LLM routing (Claude + OpenAI) para resiliência.',
+    'Um projeto de cliente: um assistente de produção para um negócio de serviços que elabora respostas a clientes a partir do histórico de mensagens e aprende com as correções reais do operador (pares exemplo-resposta). Inclui um dashboard de operador (mensagens recebidas, fila de prioridades, alertas de reservas), sincronização com CRM, um bot de Telegram para o operador e um processo de vigilância que reinicia processos falhados. Routing entre múltiplos fornecedores de LLM (Claude + OpenAI) para resiliência.',
 
-  proj_radar_title: 'Radar — EU Car-Market Intelligence',
+  proj_radar_title: 'Radar — Inteligência do Mercado Automóvel da UE',
   proj_radar_desc:
-    'Agrega anúncios de carros através de 14 scrapers de marketplaces em 12 países da UE, normaliza e deduplica-os, e pontua negócios com calculadoras de custo total.',
+    'Agrega anúncios de carros através de 14 scrapers de marketplaces em 12 países da UE, normaliza e deduplica-os, e pontua negócios com calculadoras de custo total de importação.',
   proj_radar_long:
-    'Agrega anúncios de carros através de 14 scrapers de marketplaces cobrindo 12 países da UE (9 verificados ao vivo), normaliza e deduplica-os (VIN / URL / hash de fotos), e pontua negócios numa escala de 0–12. Calculadoras de custo total tratam do imposto de importação ISV em Portugal e da alfândega ucraniana para decisões de compra transfronteiriça, com alertas Telegram para boas oportunidades e um agendador com proteção contra sobreposição. 1.195 testes automatizados.',
+    'Agrega anúncios de carros através de 14 scrapers de marketplaces cobrindo 12 países da UE (9 verificados ativos), normaliza e deduplica-os (VIN / URL / hash de fotos), e pontua negócios numa escala de 0–12. Calculadoras de custo total de importação tratam do imposto de importação ISV em Portugal e da alfândega ucraniana para decisões de compra transfronteiriça, com alertas Telegram para boas oportunidades e um agendador com proteção contra sobreposição. 1.195 testes automatizados.',
 
-  proj_gitguardian_title: 'Git Guardian — Pre-Push Security Gate',
+  proj_gitguardian_title: 'Git Guardian — Portão de Segurança Antes do Push',
   proj_gitguardian_desc:
-    'Hook de git pre-push / aplicação desktop que analisa repositórios em busca de segredos, PII e lixo de build antes de o código sair da máquina, pontuando a prontidão de 0 a 10.',
+    'Git hook antes do push / aplicação desktop que analisa repositórios em busca de segredos, PII e lixo de build antes de o código sair da máquina, pontuando a prontidão de 0 a 10.',
   proj_gitguardian_long:
-    'Um hook de git pre-push e aplicação desktop (Tauri + Python) que analisa um repositório em busca de segredos, PII, caminhos fixos e lixo de build antes de o código sair da máquina. Combina scanners heurísticos/regex, deteção de segredos verificados via TruffleHog e verificações de metadados via ExifTool numa única pontuação composta de prontidão de 0 a 10 que bloqueia o push. Corre a sua própria CI em cada push (dogfooding).',
+    'Um git hook antes do push e aplicação desktop (Tauri + Python) que analisa um repositório em busca de segredos, PII, caminhos fixos e lixo de build antes de o código sair da máquina. Combina scanners heurísticos/regex, deteção de segredos verificados via TruffleHog e verificações de metadados via ExifTool numa única pontuação composta de prontidão de 0 a 10 que bloqueia o push. Corre a sua própria CI em cada push (usando a sua própria ferramenta).',
 
   proj_controlcenter_title: 'Control Center — Painel de Frota Desktop',
   proj_controlcenter_desc:
     'Aplicação desktop multiplataforma com um único painel GUI para monitorizar e controlar uma frota de bots e agentes em segundo plano em tempo real.',
   proj_controlcenter_long:
-    'Uma aplicação desktop multiplataforma (Tauri + React/TypeScript, sidecar Python) que dá um único painel GUI ao vivo para monitorizar e controlar uma frota de bots/agentes em segundo plano, substituindo a verificação manual de logs em muitos processos separados. Construída sobre uma biblioteca de runtime Rust partilhada para gestão do ciclo de vida de processos.',
+    'Uma aplicação desktop multiplataforma (Tauri + React/TypeScript, processo sidecar Python) que dá um único painel GUI ao vivo para monitorizar e controlar uma frota de bots/agentes em segundo plano, substituindo a verificação manual de logs em muitos processos separados. Construída sobre uma biblioteca de execução Rust partilhada para gestão do ciclo de vida de processos.',
 
-  proj_sidecar_title: 'tauri-sidecar-shell — Biblioteca de Runtime Desktop Partilhada',
+  proj_sidecar_title: 'tauri-sidecar-shell — Biblioteca de Execução Desktop Partilhada',
   proj_sidecar_desc:
-    'Biblioteca de runtime Rust partilhada entre várias aplicações desktop para que cada uma não reimplemente o mesmo boilerplate de ciclo de vida de processos.',
+    'Biblioteca de execução Rust partilhada entre várias aplicações desktop para que cada uma não reimplemente o mesmo código repetitivo de ciclo de vida de processos.',
   proj_sidecar_long:
-    'Uma biblioteca de runtime Rust partilhada entre várias aplicações desktop Tauri: Windows Job Object kill-on-close (processos filhos terminam mesmo quando a aplicação fecha), health-check com backoff, reutilização de portas e um guard de instância única. Substitui 60+ linhas de boilerplate por aplicação por cerca de 15 linhas de configuração. Pequena, focada, e coberta pelo seu próprio workflow de CI.',
+    'Uma biblioteca de execução Rust partilhada entre várias aplicações desktop Tauri: encerramento automático de processos filhos via Windows Job Object quando a aplicação fecha, atrasos progressivos na verificação de estado (health-check), reutilização de portas e proteção contra múltiplas instâncias simultâneas. Substitui 60+ linhas de código repetitivo por aplicação por cerca de 15 linhas de configuração. Pequena, focada, e coberta pelo seu próprio processo de CI.',
 
-  proj_connectionshub_title: 'Connections Hub — OAuth Service Launcher',
+  proj_connectionshub_title: 'Connections Hub — Lançador de Serviços OAuth',
   proj_connectionshub_desc:
     'Dashboard de tiles de serviços com integração OAuth NextAuth real (GitHub/Google), orientado por configuração e sem necessidade de base de dados.',
   proj_connectionshub_long:
-    'Um dashboard de tiles de serviços com integração OAuth NextAuth real (GitHub, Google), orientado por configuração — um novo provider é uma entrada de configuração, não uma alteração de código. Corre sem base de dados backend, degradando graciosamente para um modo placeholder quando o OAuth não está configurado — concebido para que uma demo pública possa correr em segurança sem expor credenciais reais.',
+    'Um dashboard de tiles de serviços com integração OAuth NextAuth real (GitHub, Google), orientado por configuração — um novo provider é uma entrada de configuração, não uma alteração de código. Corre sem base de dados de backend, degradando graciosamente para um modo simulado quando o OAuth não está configurado — concebido para que uma demo pública possa correr em segurança sem expor credenciais reais.',
 
   proj_datahub_title: 'Data Hub — Arquivo de Pesquisa de Texto Completo',
   proj_datahub_desc:
@@ -173,17 +173,17 @@ export const pt = {
   proj_datahub_long:
     'Ingere exportações de conversas de várias plataformas num arquivo pessoal pesquisável único, usando pesquisa de texto completo SQLite FTS5 em vez de montar um motor de pesquisa mais pesado — dimensionado corretamente para um corpus de escala pessoal. Exposto via REST API para que outras ferramentas internas possam consultá-lo, não apenas uma UI.',
 
-  proj_notes_title: 'Note-Taking System — Pipeline Telegram-para-Kanban',
+  proj_notes_title: 'Sistema de Notas — Pipeline Telegram-para-Kanban',
   proj_notes_desc:
     'Bot de Telegram que classifica mensagens recebidas com um LLM e arquiva-as automaticamente num quadro Kanban.',
   proj_notes_long:
     'Um bot de Telegram que classifica mensagens recebidas com um passo de classificação LLM e arquiva-as automaticamente na coluna certa de um planeador estilo Kanban, em vez de depender de triagem manual ou regras de palavras-chave rígidas.',
 
-  proj_transcription_title: 'Transcription Bot — Pipeline Local de Voz para Texto',
+  proj_transcription_title: 'Bot de Transcrição — Pipeline Local de Voz para Texto',
   proj_transcription_desc:
-    'Pipeline de transcrição totalmente local baseado em Whisper, com diarização de oradores e checkpointing em caso de falha.',
+    'Pipeline de transcrição totalmente local baseado em Whisper, com diarização de oradores e pontos de controlo em caso de falha.',
   proj_transcription_long:
-    'Um pipeline local de voz para texto: inferência Whisper totalmente local (sem dependência de API na cloud, por isso é gratuito e mantém o áudio no dispositivo), uma camada de diarização de oradores para gravações com vários intervenientes, e checkpointing para que trabalhos longos de transcrição possam retomar após uma falha em vez de recomeçar do zero.',
+    'Um pipeline local de voz para texto: execução do modelo Whisper totalmente local (sem dependência de API na cloud, por isso é gratuito e mantém o áudio no dispositivo), uma camada de diarização de oradores para gravações com vários intervenientes, e pontos de controlo para que trabalhos longos de transcrição possam retomar após uma falha em vez de recomeçar do zero.',
 
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Competências',
@@ -242,7 +242,7 @@ export const pt = {
 
   // ── Blog ──────────────────────────────────────────────
   blog_title: 'Blog',
-  blog_subtitle: 'Escrevo sobre AI systems, data automation, backend workflows e product engineering.',
+  blog_subtitle: 'Escrevo sobre sistemas de AI, automação de dados, fluxos de trabalho de backend e engenharia de produto.',
   blog_read_more: 'Ler Mais',
   blog_all_posts: 'Todos os Artigos',
   blog_empty: 'Artigos em breve.',
@@ -257,7 +257,7 @@ export const pt = {
   contact_form_submit: 'Enviar Mensagem',
   contact_form_success: 'Mensagem enviada! Responderei em menos de 24 horas.',
   contact_form_error: 'Algo correu mal. Por favor, envie-me um email diretamente.',
-  contact_available: 'Aberto para colaboração em AI automation, data systems e software engineering',
+  contact_available: 'Aberto para colaboração em automação de AI, sistemas de dados e engenharia de software',
   contact_response_time: 'Tempo de resposta: < 24 horas',
 
   // ── Services ──────────────────────────────────────────
@@ -300,9 +300,9 @@ export const pt = {
   services_research_desc: 'Recolha e análise de dados de qualquer fonte',
   services_research_examples: 'O que posso construir:|Pesquisa de vulnerabilidades de segurança|Análise de concorrentes e recolha automática de dados de fontes públicas|Dashboards que explicam em linguagem simples O QUE está a acontecer e PORQUÊ',
 
-  services_crypto_title: 'Monitoring & Risk Data',
-  services_crypto_desc: 'Alerting, transaction analytics e infrastructure observability',
-  services_crypto_examples: 'O que posso construir:|Monitoring de wallets ou public data com notificações instantâneas|Dashboards para unusual activity, relists ou operational signals|Review tools que transformam eventos ruidosos em structured decisions',
+  services_crypto_title: 'Monitorização e Dados de Risco',
+  services_crypto_desc: 'Notificações, análise de transações e observabilidade de infraestrutura',
+  services_crypto_examples: 'O que posso construir:|Monitorização de wallets ou dados públicos com notificações instantâneas|Dashboards para atividade fora do padrão, relistagens ou sinais operacionais|Ferramentas de revisão que transformam eventos ruidosos em decisões estruturadas',
 
   services_ai_title: 'AI e Automação de Conteúdo',
   services_ai_desc: 'Sistemas multi-agente e geração de conteúdo',
@@ -322,5 +322,5 @@ export const pt = {
   footer_built_with: 'Criado com Astro + Tailwind',
   footer_rights: '© 2026 Serhii. Todos os direitos reservados.',
   footer_privacy: 'Política de Privacidade',
-  footer_compliance: 'Compliance & Confidencialidade: Todas as soluções são desenvolvidas de acordo com os padrões de segurança de dados e termos de NDA.',
+  footer_compliance: 'Conformidade e Confidencialidade: Todas as soluções são desenvolvidas de acordo com os padrões de segurança de dados e termos de NDA.',
 } as const;
