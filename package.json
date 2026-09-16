@@ -7,10 +7,11 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/verify_content.mjs",
+    "build": "node scripts/check_hardcode.mjs && astro build && node scripts/verify_content.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "verify": "node scripts/verify_content.mjs"
+    "verify": "node scripts/verify_content.mjs",
+    "check-hardcode": "node scripts/check_hardcode.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

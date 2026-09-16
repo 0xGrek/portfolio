@@ -27,6 +27,7 @@ export const ua = {
   hero_available: 'Відкритий до пропозицій',
   hero_location: 'Лісабон, Португалія',
   hero_location_fallback: 'Час Лісабона',
+  hero_scroll_hint: 'гортайте',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Про мене',
@@ -258,6 +259,7 @@ export const ua = {
   contact_form_success: 'Повідомлення надіслано! Відповім протягом 24 годин.',
   contact_form_error: 'Щось пішло не так. Будь ласка, напишіть мені безпосередньо на email.',
   contact_available: 'Відкритий до співпраці у сфері AI-автоматизації, систем даних та розробки програмного забезпечення',
+  contact_remote_note: 'Готовий працювати віддалено з будь-якої точки світу',
   contact_response_time: 'Час відповіді: < 24 години',
 
   // ── Services ──────────────────────────────────────────
@@ -314,6 +316,8 @@ export const ua = {
 
   // ── Projects UI ───────────────────────────────────────
   proj_visit_site: 'Відвідати сайт',
+  proj_view_demo: 'Demo',
+  proj_view_github: 'GitHub',
   proj_collapse: 'Згорнути ▲',
   proj_show_more: 'Показати ще',
   proj_show_less: 'Згорнути',
@@ -322,5 +326,6 @@ export const ua = {
   footer_built_with: 'Побудовано на Astro + Tailwind',
   footer_rights: '© 2026 Сергій. Всі права захищені.',
   footer_privacy: 'Політика конфіденційності',
+  footer_back_to_top: 'Нагору',
   footer_compliance: 'Конфіденційність та відповідність: усі рішення розробляються з урахуванням стандартів безпеки даних та умов NDA.',
 } as const;

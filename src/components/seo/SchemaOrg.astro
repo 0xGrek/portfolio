@@ -1,6 +1,7 @@
 ---
 import type { Lang } from '../../i18n/index';
 import { t } from '../../i18n/index';
+import { SITE_URL, OG_IMAGE_PATH, CONTACT, LOCATION } from '../../data/site';
 
 interface Props {
   lang: Lang;
@@ -12,19 +13,19 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Serhii',
-  alternateName: '0xGrek',
-  url: `https://0xgrek.com/${lang}/`,
-  image: 'https://0xgrek.com/og-default.png',
+  alternateName: CONTACT.githubHandle,
+  url: `${SITE_URL}/${lang}/`,
+  image: `${SITE_URL}${OG_IMAGE_PATH}`,
   description: t(lang, 'meta_description'),
   jobTitle: t(lang, 'hero_title'),
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Lisbon',
-    addressCountry: 'PT',
+    addressLocality: LOCATION.city,
+    addressCountry: LOCATION.countryCode,
   },
   sameAs: [
-    'https://github.com/0xGrek',
-    'https://linkedin.com/in/ivanenko-pt',
+    CONTACT.githubUrl,
+    CONTACT.linkedinUrl,
   ],
   knowsAbout: [
     'AI Engineering',

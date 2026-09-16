@@ -27,6 +27,7 @@ export const en = {
   hero_available: 'Open to opportunities',
   hero_location: 'Lisbon, Portugal',
   hero_location_fallback: 'Lisbon time',
+  hero_scroll_hint: 'scroll',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'About Me',
@@ -259,6 +260,7 @@ export const en = {
   contact_form_success: "Message sent! I'll reply within 24 hours.",
   contact_form_error: 'Something went wrong. Please email me directly.',
   contact_available: 'Open for collaboration in AI automation, data systems, and software engineering',
+  contact_remote_note: 'Remote-ready worldwide',
   contact_response_time: 'Response time: < 24 hours',
 
   // ── Services ──────────────────────────────────────────
@@ -315,6 +317,8 @@ export const en = {
 
   // ── Projects UI ───────────────────────────────────────
   proj_visit_site: 'Visit Site',
+  proj_view_demo: 'Demo',
+  proj_view_github: 'GitHub',
   proj_collapse: 'Collapse ▲',
   proj_show_more: 'Show more',
   proj_show_less: 'Collapse',
@@ -323,5 +327,6 @@ export const en = {
   footer_built_with: 'Built with Astro + Tailwind',
   footer_rights: '© 2026 Serhii. All rights reserved.',
   footer_privacy: 'Privacy Policy',
+  footer_back_to_top: 'Top',
   footer_compliance: 'Compliance & Confidentiality: All solutions are developed in accordance with data security standards and NDA terms.',
 } as const;

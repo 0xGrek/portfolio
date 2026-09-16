@@ -1,7 +1,8 @@
 ---
-import { t } from '../../i18n/index';
+import { t, td } from '../../i18n/index';
 import type { Lang } from '../../i18n/index';
 import SectionTitle from '../ui/SectionTitle.astro';
+import { CLIENT_PROJECT_URLS } from '../../data/site';
 
 interface Props {
   lang: Lang;
@@ -11,7 +12,7 @@ const { lang } = Astro.props;
 
 const servicesRegular = [
   { id: 'legal',        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>`, example: false },
-  { id: 'hotels',       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/><rect x="9" y="6" width="6" height="4"/></svg>`, example: true, exampleUrl: 'https://lucentstays.com' },
+  { id: 'hotels',       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/><rect x="9" y="6" width="6" height="4"/></svg>`, example: true, exampleUrl: CLIENT_PROJECT_URLS.lucentStays },
   { id: 'construction', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="20" height="8" rx="1"/><path d="M6 14V8"/><path d="M18 14V8"/><path d="M2 10h20"/><path d="M6 6h12v2H6z"/></svg>`, example: false },
   { id: 'medical',      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`, example: false },
   { id: 'food',         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>`, example: false },
@@ -33,9 +34,9 @@ const servicesIT = [
       <p class="text-center mb-4 text-base" style="color: var(--text-secondary);">
         {t(lang, 'services_subtitle')}
       </p>
-      {t(lang, 'services_disclaimer' as any) && (
+      {td(lang, 'services_disclaimer') && (
         <p class="text-center mb-12 text-sm italic max-w-3xl mx-auto leading-relaxed" style="color: var(--text-secondary); opacity: 0.75;">
-          {t(lang, 'services_disclaimer' as any)}
+          {td(lang, 'services_disclaimer')}
         </p>
       )}
     </div>
@@ -44,12 +45,12 @@ const servicesIT = [
     <div class="reveal mb-10">
       <h2 class="category-header text-lg font-semibold mb-6 flex items-center gap-3" style="color: var(--text);">
         <span class="category-line"></span>
-        {t(lang, 'services_cat_regular' as any)}
+        {td(lang, 'services_cat_regular')}
         <span class="category-line"></span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
         {servicesRegular.map((service, index) => {
-          const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
+          const examplesRaw = td(lang, `services_${service.id}_examples`) as string | undefined;
           const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
           const examplesHeader = examplesParts[0] ?? '';
           const examplesBullets = examplesParts.slice(1);
@@ -62,10 +63,10 @@ const servicesIT = [
                 <span class="service-icon flex-shrink-0" aria-hidden="true" set:html={service.icon} />
                 <div class="flex-1 min-w-0">
                   <h3 class="text-base font-bold mb-2" style="color: var(--text);">
-                    {t(lang, `services_${service.id}_title` as any)}
+                    {td(lang, `services_${service.id}_title`)}
                   </h3>
                   <p class="service-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
-                    {t(lang, `services_${service.id}_desc` as any)}
+                    {td(lang, `services_${service.id}_desc`)}
                   </p>
                   {examplesBullets.length > 0 && (
                     <div class="service-details">
@@ -89,7 +90,7 @@ const servicesIT = [
                         style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); text-decoration: none;"
                       >
                         <span>✓</span>
-                        {t(lang, `services_${service.id}_example` as any)}
+                        {td(lang, `services_${service.id}_example`)}
                         <span class="example-badge-arrow" aria-hidden="true">↗</span>
                       </a>
                     ) : (
@@ -98,7 +99,7 @@ const servicesIT = [
                         style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
                       >
                         <span>✓</span>
-                        {t(lang, `services_${service.id}_example` as any)}
+                        {td(lang, `services_${service.id}_example`)}
                       </div>
                     )
                   )}
@@ -114,12 +115,12 @@ const servicesIT = [
     <div class="reveal mb-10">
       <h2 class="category-header text-lg font-semibold mb-6 flex items-center gap-3" style="color: var(--text);">
         <span class="category-line"></span>
-        {t(lang, 'services_cat_it' as any)}
+        {td(lang, 'services_cat_it')}
         <span class="category-line"></span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
         {servicesIT.map((service, index) => {
-          const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
+          const examplesRaw = td(lang, `services_${service.id}_examples`) as string | undefined;
           const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
           const examplesHeader = examplesParts[0] ?? '';
           const examplesBullets = examplesParts.slice(1);
@@ -132,10 +133,10 @@ const servicesIT = [
                 <span class="service-icon flex-shrink-0" aria-hidden="true" set:html={service.icon} />
                 <div class="flex-1 min-w-0">
                   <h3 class="text-base font-bold mb-2" style="color: var(--text);">
-                    {t(lang, `services_${service.id}_title` as any)}
+                    {td(lang, `services_${service.id}_title`)}
                   </h3>
                   <p class="service-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
-                    {t(lang, `services_${service.id}_desc` as any)}
+                    {td(lang, `services_${service.id}_desc`)}
                   </p>
                   {examplesBullets.length > 0 && (
                     <div class="service-details">
@@ -159,7 +160,7 @@ const servicesIT = [
                         style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); text-decoration: none;"
                       >
                         <span>✓</span>
-                        {t(lang, `services_${service.id}_example` as any)}
+                        {td(lang, `services_${service.id}_example`)}
                         <span class="example-badge-arrow" aria-hidden="true">↗</span>
                       </a>
                     ) : (
@@ -168,7 +169,7 @@ const servicesIT = [
                         style="background-color: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);"
                       >
                         <span>✓</span>
-                        {t(lang, `services_${service.id}_example` as any)}
+                        {td(lang, `services_${service.id}_example`)}
                       </div>
                     )
                   )}
@@ -185,17 +186,17 @@ const servicesIT = [
       style="background-color: color-mix(in srgb, var(--accent) 6%, var(--card-bg)); border: 1.5px solid color-mix(in srgb, var(--accent) 35%, transparent); box-shadow: 0 4px 24px color-mix(in srgb, var(--accent) 10%, transparent);"
     >
       <h3 class="text-xl font-bold mb-3" style="color: var(--text);">
-        {t(lang, 'services_cta_title' as any)}
+        {td(lang, 'services_cta_title')}
       </h3>
       <p class="text-base mb-6 max-w-2xl mx-auto leading-relaxed" style="color: var(--text-secondary);">
-        {t(lang, 'services_cta_desc' as any)}
+        {td(lang, 'services_cta_desc')}
       </p>
       <a
         href="#contact"
         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 cta-btn"
         style="background-color: var(--accent); color: #fff;"
       >
-        {t(lang, 'services_cta_button' as any)}
+        {td(lang, 'services_cta_button')}
         <span aria-hidden="true">→</span>
       </a>
     </div>

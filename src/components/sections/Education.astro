@@ -1,5 +1,5 @@
 ---
-import { t } from '../../i18n/index';
+import { t, td } from '../../i18n/index';
 import type { Lang } from '../../i18n/index';
 import { education } from '../../data/education';
 import SectionTitle from '../ui/SectionTitle.astro';
@@ -71,28 +71,28 @@ const eduIcons: Record<string, string> = {
           </div>
 
           <h3 class="text-base font-bold mb-1 leading-snug" style="color: var(--text);">
-            {t(lang, edu.titleKey as any)}
+            {td(lang, edu.titleKey)}
           </h3>
 
           <p class="text-sm font-medium mb-1" style="color: var(--accent);">
-            {t(lang, edu.schoolKey as any)}
+            {td(lang, edu.schoolKey)}
           </p>
 
           <div class="flex items-center gap-2 mb-3 text-xs" style="color: var(--text-secondary);">
-            <span>{t(lang, edu.periodKey as any)}</span>
+            <span>{td(lang, edu.periodKey)}</span>
             <span>·</span>
-            <span>{t(lang, edu.locationKey as any)}</span>
+            <span>{td(lang, edu.locationKey)}</span>
           </div>
 
-          {t(lang, edu.descriptionKey as any) && (
+          {td(lang, edu.descriptionKey) && (
             <p class="text-sm leading-relaxed flex-1 whitespace-pre-line" style="color: var(--text-secondary);">
-              {t(lang, edu.descriptionKey as any)}
+              {td(lang, edu.descriptionKey)}
             </p>
           )}
 
           {edu.noteKey && (
             <p class="mt-3 text-xs italic px-3 py-2 rounded-md" style="color: var(--accent); background-color: rgba(var(--accent-rgb), 0.06); border: 1px solid rgba(var(--accent-rgb), 0.15);">
-              {t(lang, edu.noteKey as any)}
+              {td(lang, edu.noteKey)}
             </p>
           )}
         </div>

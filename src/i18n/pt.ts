@@ -27,6 +27,7 @@ export const pt = {
   hero_available: 'Aberto a propostas',
   hero_location: 'Lisboa, Portugal',
   hero_location_fallback: 'Hora de Lisboa',
+  hero_scroll_hint: 'role',
 
   // ── About ─────────────────────────────────────────────
   about_title: 'Sobre Mim',
@@ -258,6 +259,7 @@ export const pt = {
   contact_form_success: 'Mensagem enviada! Responderei em menos de 24 horas.',
   contact_form_error: 'Algo correu mal. Por favor, envie-me um email diretamente.',
   contact_available: 'Aberto para colaboração em automação de AI, sistemas de dados e engenharia de software',
+  contact_remote_note: 'Disponível para trabalho remoto em qualquer lugar do mundo',
   contact_response_time: 'Tempo de resposta: < 24 horas',
 
   // ── Services ──────────────────────────────────────────
@@ -314,6 +316,8 @@ export const pt = {
 
   // ── Projects UI ───────────────────────────────────────
   proj_visit_site: 'Visitar site',
+  proj_view_demo: 'Demo',
+  proj_view_github: 'GitHub',
   proj_collapse: 'Recolher ▲',
   proj_show_more: 'Mostrar mais',
   proj_show_less: 'Recolher',
@@ -322,5 +326,6 @@ export const pt = {
   footer_built_with: 'Criado com Astro + Tailwind',
   footer_rights: '© 2026 Serhii. Todos os direitos reservados.',
   footer_privacy: 'Política de Privacidade',
+  footer_back_to_top: 'Topo',
   footer_compliance: 'Conformidade e Confidencialidade: Todas as soluções são desenvolvidas de acordo com os padrões de segurança de dados e termos de NDA.',
 } as const;
