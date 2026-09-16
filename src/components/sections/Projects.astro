@@ -16,6 +16,19 @@ const categoryColors: Record<string, string> = {
   ai: '#a371f7',
   analytics: '#3fb950',
   'case-study': '#8b949e',
+  tool: '#f0883e',
+};
+
+const tierLabelKeys: Record<string, string> = {
+  'live-demo': 'tier_live_demo',
+  'case-study': 'tier_case_study',
+  'source-private': 'tier_source_private',
+};
+
+const tierBadgeStyle: Record<string, string> = {
+  'live-demo': 'background-color: rgba(63,185,80,0.12); color: #3fb950; border: 1px solid rgba(63,185,80,0.3);',
+  'case-study': 'background-color: rgba(139,148,158,0.14); color: #8b949e; border: 1px solid rgba(139,148,158,0.3);',
+  'source-private': 'background-color: rgba(240,136,62,0.12); color: #f0883e; border: 1px solid rgba(240,136,62,0.3);',
 };
 
 // SVG icon paths per category — subtle, monochrome background placeholders
@@ -28,6 +41,8 @@ const categoryIcons: Record<string, string> = {
   analytics: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="64" height="64"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>`,
   // Archive / case study
   'case-study': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="64" height="64"><path d="M4 7h16"/><path d="M6 7v12h12V7"/><path d="M9 11h6"/><path d="M10 3h4l2 4H8l2-4z"/></svg>`,
+  // Wrench / dev tooling
+  tool: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" width="64" height="64"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L2 19l3 3 7.3-7.3a4 4 0 0 0 5.4-5.4l-2.65 2.65a1 1 0 0 1-1.4 0l-1.95-1.95a1 1 0 0 1 0-1.4L14.7 6.3z"/></svg>`,
 };
 ---
 
@@ -40,7 +55,7 @@ const categoryIcons: Record<string, string> = {
       />
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children" id="projects-grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start stagger-children" id="projects-grid">
       {projects.map((project, index) => (
         <article
           class={`project-card relative flex flex-col rounded-xl overflow-hidden${project.featured ? ' project-featured' : ''}${index >= 3 ? ' project-extra' : ''}`}
@@ -104,6 +119,33 @@ const categoryIcons: Record<string, string> = {
                 <svg class="project-arrow flex-shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color: rgba(var(--accent-rgb), 0.7);"><path d="M3 5.5L8 10.5L13 5.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
             </button>
+
+            <!-- Period + disclosure/status badge -->
+            <div class="flex flex-wrap items-center gap-2 mb-2.5">
+              {project.period && (
+                <span class="text-xs font-mono" style="color: var(--text-secondary); opacity: 0.75;">{project.period}</span>
+              )}
+              <span
+                class="inline-block px-2 py-0.5 rounded text-[0.65rem] font-semibold uppercase tracking-wide"
+                style={tierBadgeStyle[project.tier]}
+              >
+                {t(lang, tierLabelKeys[project.tier] as any)}
+              </span>
+            </div>
+
+            <!-- Area tags -->
+            {project.areas && project.areas.length > 0 && (
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                {project.areas.map((area) => (
+                  <span
+                    class="text-[0.7rem] px-2 py-0.5 rounded-full"
+                    style="color: var(--text-secondary); background-color: var(--bg-secondary); border: 1px solid var(--border);"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            )}
 
             <p class="text-sm leading-relaxed mb-4 flex-1" style="color: var(--text-secondary);">
               {t(lang, project.descriptionKey as any)}
@@ -189,7 +231,64 @@ const categoryIcons: Record<string, string> = {
                 </div>
               )}
 
-              <!-- Links -->
+              <!-- Screenshots gallery — only for showcase: 'screenshots' projects that actually have images -->
+              {project.showcase === 'screenshots' && project.screenshots && project.screenshots.length > 0 && (
+                <div class="mb-5">
+                  <p class="text-xs font-semibold uppercase tracking-widest mb-2" style="color: var(--text-secondary); opacity: 0.6;">
+                    {t(lang, 'project_screenshots' as any)}
+                  </p>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {project.screenshots.slice(0, 3).map((shot) => (
+                      <figure class="m-0">
+                        <img
+                          src={shot.src}
+                          alt={shot.caption}
+                          loading="lazy"
+                          class="w-full h-24 object-cover rounded-lg"
+                          style="border: 1px solid var(--border);"
+                        />
+                        <figcaption class="text-[0.65rem] mt-1 leading-snug" style="color: var(--text-secondary);">
+                          {shot.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  {project.screenshots.length > 3 && (
+                    <details class="mt-2">
+                      <summary class="text-xs cursor-pointer select-none" style="color: var(--accent);">
+                        +{project.screenshots.length - 3} {t(lang, 'proj_screenshots_more' as any)}
+                      </summary>
+                      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
+                        {project.screenshots.slice(3).map((shot) => (
+                          <figure class="m-0">
+                            <img
+                              src={shot.src}
+                              alt={shot.caption}
+                              loading="lazy"
+                              class="w-full h-24 object-cover rounded-lg"
+                              style="border: 1px solid var(--border);"
+                            />
+                            <figcaption class="text-[0.65rem] mt-1 leading-snug" style="color: var(--text-secondary);">
+                              {shot.caption}
+                            </figcaption>
+                          </figure>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+                </div>
+              )}
+
+              <!-- Links / private-source note -->
+              {!project.links.live && !project.links.demo && !project.links.github && (
+                <div
+                  class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full mb-3"
+                  style="background-color: rgba(var(--accent-rgb), 0.07); color: var(--text-secondary); border: 1px dashed rgba(var(--accent-rgb), 0.25);"
+                >
+                  <span aria-hidden="true">🔒</span>
+                  {t(lang, 'proj_source_private_note' as any)}
+                </div>
+              )}
               <div class="flex flex-wrap gap-2 mt-1">
                 {project.links.live && (
                   <a
@@ -247,49 +346,6 @@ const categoryIcons: Record<string, string> = {
 
         </article>
       ))}
-
-      <!-- Private Projects card — static, non-clickable -->
-      <article
-        class="private-card relative flex flex-col rounded-xl overflow-hidden"
-        style="border: 1.5px dashed var(--card-border); background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg) 100%);"
-      >
-        <!-- Top visual area -->
-        <div
-          class="relative h-40 flex items-center justify-center overflow-hidden"
-          style="background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%); border-bottom: 1px dashed var(--card-border);"
-        >
-          <!-- Lock icon -->
-          <span class="absolute top-3 right-3 text-lg" aria-hidden="true" style="opacity: 0.45;">🔒</span>
-
-          <!-- Big muted text -->
-          <span class="text-5xl font-bold font-mono select-none" style="color: var(--text); opacity: 0.07;">NDA</span>
-        </div>
-
-        <!-- Card body -->
-        <div class="flex flex-col flex-1 p-5">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="text-lg" aria-hidden="true">🔒</span>
-            <h3 class="text-base font-bold leading-snug" style="color: var(--text);">
-              {t(lang, 'proj_private_title' as any)}
-            </h3>
-          </div>
-
-          <p class="text-sm leading-relaxed flex-1" style="color: var(--text-secondary);">
-            {t(lang, 'proj_private_desc' as any)}
-          </p>
-
-          <!-- Bottom hint -->
-          <div class="mt-4 pt-3" style="border-top: 1px dashed var(--border);">
-            <span
-              class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full"
-              style="background-color: rgba(var(--accent-rgb), 0.07); color: var(--text-secondary); border: 1px dashed rgba(var(--accent-rgb), 0.25);"
-            >
-              <span aria-hidden="true">🔐</span>
-              Under NDA
-            </span>
-          </div>
-        </div>
-      </article>
 
     </div>
 
@@ -446,18 +502,6 @@ const categoryIcons: Record<string, string> = {
     transform: rotate(180deg);
   }
 
-  /* Private Projects card */
-  .private-card {
-    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    cursor: default;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-  .private-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(var(--accent-rgb), 0.3) !important;
-    box-shadow: var(--shadow-sm);
-  }
 
 </style>
 

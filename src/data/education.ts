@@ -12,6 +12,16 @@ export interface Education {
 
 export const education: Education[] = [
   {
+    id: 'rnu',
+    titleKey: 'edu_rnu_title',
+    schoolKey: 'edu_rnu_school',
+    periodKey: 'edu_rnu_period',
+    locationKey: 'edu_rnu_location',
+    descriptionKey: 'edu_rnu_desc',
+    type: 'degree',
+    status: 'in-progress',
+  },
+  {
     id: 'lyceum',
     titleKey: 'edu_lyceum_title',
     schoolKey: 'edu_lyceum_school',
