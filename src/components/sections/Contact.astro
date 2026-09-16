@@ -109,7 +109,7 @@ const socials = [
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="flex-shrink-0 social-card-arrow"
+            class="flex-shrink-0 social-arrow"
             style="color: var(--accent);"
           >
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -165,12 +165,12 @@ const socials = [
     transform: translateY(-2px);
     transition-duration: 0.1s;
   }
-  .social-card-arrow {
+  .social-arrow {
     opacity: 0;
     transform: translateX(-6px);
     transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .social-card:hover .social-card-arrow {
+  .social-card:hover .social-arrow {
     opacity: 1;
     transform: translateX(0);
   }

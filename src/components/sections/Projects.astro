@@ -152,7 +152,7 @@ const categoryIcons: Record<string, string> = {
             </p>
 
             <!-- Compact view: metric + tech — hidden when expanded -->
-            <div class="card-compact-footer">
+            <div class="compact-footer">
               <!-- Key metric (first only) -->
               {project.metrics && project.metrics[0] && (
                 <div class="mb-3">
@@ -442,10 +442,10 @@ const categoryIcons: Record<string, string> = {
    * Compact footer (metric + first 3 tags) скрывается при expand
    * чтобы не дублировать данные которые уже видны в панели
    */
-  .card-compact-footer {
+  .compact-footer {
     transition: opacity 0.2s ease;
   }
-  .project-card.expanded .card-compact-footer {
+  .project-card.expanded .compact-footer {
     display: none;
   }
 

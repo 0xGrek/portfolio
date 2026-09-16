@@ -47,7 +47,7 @@ const servicesIT = [
         {t(lang, 'services_cat_regular' as any)}
         <span class="category-line"></span>
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
         {servicesRegular.map((service, index) => {
           const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
           const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
@@ -55,7 +55,7 @@ const servicesIT = [
           const examplesBullets = examplesParts.slice(1);
           return (
             <div
-              class={`service-card p-6 rounded-xl${(service as any).featured ? ' featured-card' : ''}`}
+              class={`service-card p-7 rounded-xl${(service as any).featured ? ' featured-card' : ''}`}
               style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm);`}
             >
               <div class="flex items-start gap-4">
@@ -64,13 +64,13 @@ const servicesIT = [
                   <h3 class="text-base font-bold mb-2" style="color: var(--text);">
                     {t(lang, `services_${service.id}_title` as any)}
                   </h3>
-                  <p class="card-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
+                  <p class="service-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
                     {t(lang, `services_${service.id}_desc` as any)}
                   </p>
                   {examplesBullets.length > 0 && (
-                    <div class="card-details">
+                    <div class="service-details">
                       {examplesHeader && (
-                        <p class="text-xs font-semibold mb-1" style="color: var(--text-secondary); opacity: 0.7;">{examplesHeader}</p>
+                        <p class="text-xs font-semibold mb-1.5" style="color: var(--text-secondary); opacity: 0.85;">{examplesHeader}</p>
                       )}
                       <ul>
                         {examplesBullets.map((bullet) => (
@@ -117,7 +117,7 @@ const servicesIT = [
         {t(lang, 'services_cat_it' as any)}
         <span class="category-line"></span>
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
         {servicesIT.map((service, index) => {
           const examplesRaw = t(lang, `services_${service.id}_examples` as any) as string | undefined;
           const examplesParts = examplesRaw ? examplesRaw.split('|') : [];
@@ -125,7 +125,7 @@ const servicesIT = [
           const examplesBullets = examplesParts.slice(1);
           return (
             <div
-              class={`service-card p-6 rounded-xl${(service as any).featured ? ' featured-card' : ''}`}
+              class={`service-card p-7 rounded-xl${(service as any).featured ? ' featured-card' : ''}`}
               style={`background-color: var(--card-bg); border: 1px solid ${(service as any).featured ? 'color-mix(in srgb, var(--accent) 40%, transparent)' : 'var(--card-border)'}; box-shadow: var(--shadow-sm);`}
             >
               <div class="flex items-start gap-4">
@@ -134,13 +134,13 @@ const servicesIT = [
                   <h3 class="text-base font-bold mb-2" style="color: var(--text);">
                     {t(lang, `services_${service.id}_title` as any)}
                   </h3>
-                  <p class="card-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
+                  <p class="service-intro text-sm mb-3 leading-relaxed" style="color: var(--text-secondary);">
                     {t(lang, `services_${service.id}_desc` as any)}
                   </p>
                   {examplesBullets.length > 0 && (
-                    <div class="card-details">
+                    <div class="service-details">
                       {examplesHeader && (
-                        <p class="text-xs font-semibold mb-1" style="color: var(--text-secondary); opacity: 0.7;">{examplesHeader}</p>
+                        <p class="text-xs font-semibold mb-1.5" style="color: var(--text-secondary); opacity: 0.85;">{examplesHeader}</p>
                       )}
                       <ul>
                         {examplesBullets.map((bullet) => (
@@ -224,6 +224,10 @@ const servicesIT = [
     position: relative;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    /* Contrast fix: the card surface was nearly the same shade as the page
+       background, which read as a dark box nested inside a dark box.
+       Lighten it slightly relative to the page so the boundary is legible. */
+    background-color: color-mix(in srgb, var(--card-bg) 100%, var(--text) 4%) !important;
   }
   .service-card:hover {
     transform: scale(1.02) translateY(-2px);
@@ -263,21 +267,21 @@ const servicesIT = [
     font-size: 0.7rem;
     opacity: 0.7;
   }
-  .card-details ul {
+  .service-details ul {
     list-style: none;
     padding: 0;
-    margin-top: 0.25rem;
+    margin-top: 0.35rem;
     margin-bottom: 0.5rem;
   }
-  .card-details li {
-    padding: 0.2rem 0;
-    padding-left: 1rem;
+  .service-details li {
+    padding: 0.3rem 0;
+    padding-left: 1.1rem;
     position: relative;
-    font-size: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    line-height: 1.6;
     color: var(--text-secondary);
   }
-  .card-details li::before {
+  .service-details li::before {
     content: '•';
     position: absolute;
     left: 0;
