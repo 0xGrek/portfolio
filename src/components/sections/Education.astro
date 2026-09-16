@@ -84,9 +84,11 @@ const eduIcons: Record<string, string> = {
             <span>{t(lang, edu.locationKey as any)}</span>
           </div>
 
-          <p class="text-sm leading-relaxed flex-1 whitespace-pre-line" style="color: var(--text-secondary);">
-            {t(lang, edu.descriptionKey as any)}
-          </p>
+          {t(lang, edu.descriptionKey as any) && (
+            <p class="text-sm leading-relaxed flex-1 whitespace-pre-line" style="color: var(--text-secondary);">
+              {t(lang, edu.descriptionKey as any)}
+            </p>
+          )}
 
           {edu.noteKey && (
             <p class="mt-3 text-xs italic px-3 py-2 rounded-md" style="color: var(--accent); background-color: rgba(var(--accent-rgb), 0.06); border: 1px solid rgba(var(--accent-rgb), 0.15);">

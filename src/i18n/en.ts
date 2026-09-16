@@ -165,12 +165,6 @@ export const en = {
   proj_transcription_long:
     'A local speech-to-text pipeline: fully local Whisper-family inference (no cloud API dependency, so it is free and keeps audio on-device), a speaker-diarization layer for multi-speaker recordings, and checkpointing so long transcription jobs can resume after a crash instead of restarting from zero.',
 
-  proj_bridge_title: 'bridge_client — Cross-Chain Bridge Adapter Library',
-  proj_bridge_desc:
-    'Python library unifying 3 cross-chain bridge providers behind a single adapter interface, documented for reuse by other engineers.',
-  proj_bridge_long:
-    'A Python library unifying 3 cross-chain bridge providers (LI.FI, Mayan, CCTP) behind one common adapter interface, so calling code does not need provider-specific logic. Documented with an architecture doc and integration guide, designed to be picked up by other engineers rather than just used internally.',
-
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Skills',
   skills_ai_automation: 'AI & Automation',

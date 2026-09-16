@@ -164,12 +164,6 @@ export const es = {
   proj_transcription_long:
     'Un pipeline local de voz a texto: inferencia Whisper totalmente local (sin dependencia de API en la nube, por lo que es gratuito y mantiene el audio en el dispositivo), una capa de diarización de hablantes para grabaciones con varios interlocutores, y checkpointing para que trabajos largos de transcripción puedan reanudarse tras un fallo en lugar de reiniciar desde cero.',
 
-  proj_bridge_title: 'bridge_client — Biblioteca Adaptadora de Puentes Cross-Chain',
-  proj_bridge_desc:
-    'Biblioteca Python que unifica 3 proveedores de puentes cross-chain bajo una única interfaz adaptadora, documentada para su reutilización por otros ingenieros.',
-  proj_bridge_long:
-    'Una biblioteca Python que unifica 3 proveedores de puentes cross-chain (LI.FI, Mayan, CCTP) bajo una única interfaz adaptadora común, para que el código que la llama no necesite lógica específica del proveedor. Documentada con un documento de arquitectura y una guía de integración, diseñada para que otros ingenieros puedan adoptarla, no solo para uso interno.',
-
   // ── Skills ────────────────────────────────────────────
   skills_title: 'Habilidades',
   skills_ai_automation: 'AI y Automatización',
